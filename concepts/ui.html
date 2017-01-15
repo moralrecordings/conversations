@@ -94,13 +94,34 @@ html, body {
 <body>
     <div class="app" style="display: flex; flex-direction: column; height: 100%">
         <div class="desktop" style="flex: 1 0 auto">
-            <div class="window win-blue" style="width: 400px; height: 120px; ">
+            <div class="window win-blue resizable" style="width: 400px; height: 200px; ">
                 <div class="titlebar" style="display: flex;">
-                    <span style="flex: 1; width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Window title</span>
+                    <span style="flex: 1; width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Position Match - Allied Brands Inc., Social Media Specialist</span>
                     <button>×</button>
                 </div>
                 <div class="body-container" style=""><div class="body" style="">
-                    This window is fake.
+                    
+<p style="margin-top: 0;">
+<span style="display: block"><b>From:</b> EasyJob Careers &lt;alerts@easyjob&gt;</span>
+<span style="display: block"><b>To:</b> Me &lt;gameofpricks@ichiromail&gt;</span>
+<span style="display: block"><b>Subject:</b> Position Match - Allied Brands Inc., Social Media Specialist</span>
+</p>
+
+<p>Allied Brands Inc. is a leading multinational consumer goods company headquartered in Scranton, PA. We specialise in foods, cosmetics, pharmaceuticals, private-label and specialty products.</p>
+
+<p>Our marketing team is expanding, as part of a strategy to centralise the brand messaging from our diverse family of products. We need a quick-thinking and independent social media ninja to help drive customer engagement and brand awareness across our multiple North American businesses.</p>
+
+<h3>Required skills</h3>
+<ul>
+<li>Previous experience in a digital marketing or PR environment</li>
+<li>All-encompassing knowledge of social media platforms</li>
+<li>An inherent understanding of popular-culture and current trends is a must</li>
+<li>Strong literacy and copy writing skills</li>
+</ul>
+
+<p>This is a casual position, with a two-month internship period to provide on-the-job training and to confirm your efficacy for the role, and is a fantastic opportunity for a social media lover to advance their career!</p>
+
+
                 </div></div>
             </div>
         </div>
@@ -108,21 +129,43 @@ html, body {
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js"></script>
 <script type="text/javascript">
+    interact('.resizable').resizable({
+        preserveAspectRatio: false,
+        edges: { left: true, right: true, bottom: true, top: true },
+    }).on('resizemove', function (ev) {
+        var target = ev.target;
+        var x = (parseFloat(target.getAttribute('data-x')) || 0);
+        var y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+        target.style.width = ev.rect.width + 'px';
+        target.style.height = ev.rect.height + 'px';
+
+        x += ev.deltaRect.left;
+        y += ev.deltaRect.top;
+
+        target.style.left = x + 'px';
+        target.style.top = y + 'px';    
+
+        target.setAttribute('data-x', x);
+        target.setAttribute('data-y', y);
+    });
+
     interact('.titlebar').draggable({
         inertia: true,
         restrict: {
-            restriction: 'body',
-            endOnly: true
+            restriction: '.app',
+            endOnly: true,
+            elementRect: { top: 0, left: 0.5, bottom: 1, right: 0.5 }
         },
 
     }).on('dragmove', function (ev) {
-        var target = ev.target.parentNode,
-        x = (parseFloat(target.getAttribute('data-x')) || 0) + ev.dx,
-        y = (parseFloat(target.getAttribute('data-y')) || 0) + ev.dy;
+        var target = ev.target.parentNode;
+        var x = (parseFloat(target.getAttribute('data-x')) || 0) + ev.dx;
+        var y = (parseFloat(target.getAttribute('data-y')) || 0) + ev.dy;
 
         target.style.left = x + 'px';
-        target.style.top = y + 'px';
-        console.log(ev);
+        target.style.top = y + 'px';       
+
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
     });

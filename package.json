@@ -15,6 +15,7 @@
   "dependencies": {
     "foundation-sites": "^6.3.0",
     "interact.js": "^1.2.8",
+    "tracery": "^1.0.3",
     "vue": "^2.1.0"
   },
   "devDependencies": {
