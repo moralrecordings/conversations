@@ -30,10 +30,10 @@ html, body {
 }
 
 .titlebar {
+    display: flex;
     padding: 0.5em;
     font-weight: bold;
     line-height: 1.8em;
-    color: white;
     border: 1px solid;
     border-top-left-radius: 2px; 
     border-top-right-radius: 2px;
@@ -45,32 +45,48 @@ html, body {
 .titlebar button {
     font-weight: bold;
     font-size: 16px;
-    color: white;
     background: transparent;
     border: 1px solid transparent;
     border-radius: 2px;
+}
+
+.titlebar button {
+    color: inherit;
 }
 
 .titlebar button:hover {
     border: 1px solid white;
 }
 
-.win-blue {
-    border-color: #216778;
+.titlebar-text {
+    flex: 1; 
+    width: 0; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
 
-.win-blue .titlebar {
+
+
+.theme-blue .active {
+    border-color: #216778;
     background-color: #37abc8; 
+    color: white;
+}
+
+.theme-blue .active.titlebar {
     border-top-color: #5fbcd3;
     border-left-color: #5fbcd3; 
     border-right-color: #2c89a0; 
     border-bottom-color: #2c89a0;
-    user-select: none;
+}
+
+.overflow {
+    overflow: auto;
 }
 
 .body-container {
     flex: 1 0 auto;
-    overflow: auto; 
     height: 1%; 
     box-sizing: border-box;
     border: 1px solid;
@@ -83,12 +99,56 @@ html, body {
 }
 
 .body {
-    padding: 0.5em;
     box-sizing: border-box;
     display: block;
     width: 100%;
     height: 100%;
+}
 
+.email-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.email-select {
+    display: block;
+    min-width: 200px;
+    height: 100%;    
+    user-select: none;
+    -moz-user-select: none;
+    cursor: default;
+}
+
+.email-select-row {
+    padding: 0.5em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #cccccc;
+}
+
+.email-select-row span {
+    float: right; 
+    text-align: right;
+}
+
+.email-select-row p {
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.email-select-row p.sender {
+    margin-right: 4em;
+}
+
+
+.unread {
+    font-weight: bold;
+}
+
+.email-message {
+    padding: 0.5em;
 }
 
     </style>
@@ -97,34 +157,95 @@ html, body {
 
 <body>
     <div class="app" style="display: flex; flex-direction: column; height: 100%">
-        <div class="desktop" style="flex: 1 0 auto">
-            <div class="window win-blue resizable" style="width: 800px; height: 480px; ">
-                <div class="titlebar" style="display: flex;">
-                    <span style="flex: 1; width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Position Match - Allied Brands Inc., Social Media Specialist</span>
+        <div class="desktop theme-blue" style="flex: 1 0 auto">
+            <div class="window resizable" style="width: 800px; height: 480px; ">
+                <div class="titlebar active">
+                    <span class="titlebar-text">Position Match - Allied Brands Inc., Social Media Specialist</span>
                     <button>×</button>
                 </div>
-                <div class="body-container" style=""><div class="body" style="">
-                    
-<p style="margin-top: 0;">
-<span style="display: block"><b>From:</b> EasyJob Careers &lt;alerts@easyjob&gt;</span>
-<span style="display: block"><b>To:</b> Me &lt;againstpollution@ichiromail&gt;</span>
-<span style="display: block"><b>Subject:</b> Position Match - Allied Brands Inc., Social Media Specialist</span>
-</p>
+                <div class="body-container" style=""><div class="body email-body" style="">
+                   
+                    <div class="email-select overflow">
+                        <div class="email-select-row unread active">
+                            <span>9 Nov</span>
+                            <p class="sender">Tricia Huxton</p>
+                            <p>Orientation - READ FIRST</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
 
-<p>Allied Brands Inc. is a leading multinational consumer goods company headquartered in Scranton, PA. We specialise in foods, confectionary, cosmetics, pharmaceuticals, private-label goods and specialty products.</p>
+                        <div class="email-select-row unread">
+                            <p>EasyJob Careers</p>
+                            <p>Position Match - Allied Brands Inc., Social Media Specialist</p>
+                        </div>
+                    </div>
+                    <div class="email-message overflow">
+                        <p style="margin-top: 0;">
+                        <span style="display: block"><b>From:</b> EasyJob Careers &lt;alerts@easyjob&gt;</span>
+                        <span style="display: block"><b>To:</b> Me &lt;againstpollution@ichiromail&gt;</span>
+                        <span style="display: block"><b>Subject:</b> Position Match - Allied Brands Inc., Social Media Specialist</span>
+                        </p>
 
-<p>Our marketing team is expanding, as part of a strategy to centralise the brand messaging from our diverse family of products. We need a quick-thinking and independent social media ninja to help drive customer engagement and brand awareness across our multiple North American businesses.</p>
+                        <p>Allied Brands Inc. is a leading multinational consumer goods company headquartered in Scranton, PA. We specialise in foods, confectionary, cosmetics, pharmaceuticals, private-label goods and specialty products.</p>
 
-<h3>Required skills</h3>
-<ul>
-<li>Previous experience in a digital marketing or PR environment</li>
-<li>All-encompassing knowledge of social media platforms</li>
-<li>An inherent understanding of popular-culture and current trends is a must</li>
-<li>Strong literacy and copy writing skills</li>
-</ul>
+                        <p>Our marketing team is expanding, as part of a strategy to centralise the brand messaging from our diverse family of products. We need a quick-thinking and independent social media ninja to help drive customer engagement and brand awareness across our multiple North American businesses.</p>
 
-<p>This is a casual position, with a two-month internship period to provide on-the-job training and to confirm your efficacy for the role, and is a fantastic opportunity for a social media lover to advance their career!</p>
+                        <h3>Required skills</h3>
+                        <ul>
+                        <li>Previous experience in a digital marketing or PR environment</li>
+                        <li>All-encompassing knowledge of social media platforms</li>
+                        <li>An inherent understanding of popular-culture and current trends is a must</li>
+                        <li>Strong literacy and copy writing skills</li>
+                        </ul>
 
+                        <p>This is a casual position, with a two-month internship period to provide on-the-job training and to confirm your efficacy for the role, and is a fantastic opportunity for a social media lover to advance their career!</p>
+                    </div>
 
                 </div></div>
             </div>
