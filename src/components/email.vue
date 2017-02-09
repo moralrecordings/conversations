@@ -78,6 +78,12 @@
 <script>
 import moment from 'moment';
 
+var loadMessage = function(name) {
+    var data = require('emails/'+name+'.json');
+    data.date = moment(data.date, 'YYYYMMDD');
+    return data;
+}
+
 export default {
     name: 'email',
     data: function() {
@@ -85,28 +91,7 @@ export default {
             width: 800,
             height: 480,
             messages: [
-                {
-                    'date': moment('20111031', 'YYYYMMDD'),
-                    'unread': true,
-                    'sender': 'EasyJob Careers',
-                    'senderMail': 'alerts@easyjob',
-                    'recipient': 'Me',
-                    'recipientMail': 'againstpollution@ichiromail',
-                    'subject': 'Position Match - Allied Brands Inc., Social Media Specialist',
-                    'content': `<p>Allied Brands Inc. is a leading multinational consumer goods company headquartered in Scranton, PA. We specialise in foods, confectionary, cosmetics, pharmaceuticals, private-label goods and specialty products.</p>
-
-                        <p>Our marketing team is expanding, as part of a strategy to centralise the brand messaging from our diverse family of products. We need a quick-thinking and independent social media ninja to help drive customer engagement and brand awareness across our multiple North American businesses.</p>
-
-                        <h3>Required skills</h3>
-                        <ul>
-                        <li>Previous experience in a digital marketing or PR environment</li>
-                        <li>All-encompassing knowledge of social media platforms</li>
-                        <li>An inherent understanding of popular-culture and current trends is a must</li>
-                        <li>Strong literacy and copy writing skills</li>
-                        </ul>
-
-                        <p>This is a casual position, with a two-month internship period to provide on-the-job training and to confirm your efficacy for the role, and is a fantastic opportunity for a social media lover to advance their career!</p>`
-                }
+                loadMessage('day1_1')
             ],
             messageIndex: 0
         };

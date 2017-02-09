@@ -1,7 +1,10 @@
 <template>
-  <div id="conversations">
-    <email></email>
-  </div>
+    <div id="conversations" class="app" style="display: flex; flex-direction: column; height: 100%">
+        <div class="desktop theme-blue" style="flex: 1 0 auto">
+
+            <email></email>
+        </div>
+    </div>
 </template>
 
 
@@ -108,7 +111,31 @@ html, body {
 
 
 <script>
+import interact from 'interactjs';
+
 import email from './components/email';
+
+
+interact('.titlebar').draggable({
+    inertia: true,
+    restrict: {
+        restriction: '.app',
+        endOnly: true,
+        elementRect: { top: 0, left: 0.5, bottom: 1, right: 0.5 }
+    },
+
+}).on('dragmove', function (ev) {
+    var target = ev.target.parentNode;
+    var x = (parseFloat(target.getAttribute('data-x')) || 0) + ev.dx;
+    var y = (parseFloat(target.getAttribute('data-y')) || 0) + ev.dy;
+
+    target.style.left = x + 'px';
+    target.style.top = y + 'px';       
+
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
+});
+
 
 export default {
   name: 'conversations',
