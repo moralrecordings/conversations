@@ -88,9 +88,10 @@ export default {
     name: 'email',
     data: function() {
         return {
-            width: 800,
-            height: 480,
+            width: 1000,
+            height: 600,
             messages: [
+                loadMessage('day1_2'),
                 loadMessage('day1_1')
             ],
             messageIndex: 0

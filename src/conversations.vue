@@ -115,7 +115,6 @@ import interact from 'interactjs';
 
 import email from './components/email';
 
-
 interact('.titlebar').draggable({
     inertia: true,
     restrict: {
