@@ -8,11 +8,25 @@ UncleTobys
 CadburyAU
 
 
-
-{
+var tracery = require('tracery-grammar');
+var test = {
     "fanEmoji": ["👍", "😋", "😍", "😄", "💕", "✨", "💖", "💛", "💯", "😙", ],
-    "complainEmoji": ["👎", "😂", "🚮", "🚽", "🤷", "🤔", "🔥", "😑", "😐", "😒", "😥", "😲", "🤢", "💩", "😱"]
-}
+    "complainEmoji": ["👎", "😂", "🚮", "🚽", "🤷", "🤔", "🔥", "😑", "😐", "😒", "😥", "😲", "🤢", "💩", "😱"],
+    "complainEmojiSeq": ["#complainEmoji##complainEmoji##complainEmoji#", "[emoji:#complainEmoji#]#emoji##emoji##emoji##emoji##emoji#", "[emoji1:#complainEmoji#][emoji2:#complainEmoji#][emoji3:#complainEmoji#]#emoji1##emoji1##emoji1##emoji2##emoji2##emoji2##emoji3##emoji3##emoji3#", "", "", "", ""],
+    "exclamation": ["wtf", "wtf is this", "what the fuck", "what the hell is this", "what is this", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on"],
+    "size": ["large ", "gigantic ", "large ass ", "big ", "huge ", "enormous ", "fucking ", ""],
+    "foreignObject": ["rock", "piece of wood", "white pill thing", "wood chip", "stone", "hair", "clump of hair", "fingernail", "shard of glass", "peanut shell", "nail", "worm", "maggot", "dead rat", "fly", "spider", "plastic thing", "egg sac", "nest of tiny bugs", "bug", "roach", "cockroach", "severed finger"],
+    "sizeForeignObject": ["#size##foreignObject#"],
+    "object": ["my candy bar", "my snack", "this", "this bar", "this chocolate"],
+    "closingRemark": ["you're not even trying", "this is not fun at all", "I expected more", "this is the worst", "never buying again", "fucking disgusting", "really disappointed", "disappointed", "never again", "I feel ill", "step up your game", "fix this", "pay my medical bills", "see you in court", "I'm phoning corporate", "you'll hear from my lawyer", "from a reputable supermarket", "from my local shop", "don't buy this"],
+    "request": [
+        "#exclamation# @KingsleySnacks there's #sizeForeignObject.a# in #object#, #closingRemark#", 
+        "#complainEmojiSeq# #closingRemark# @KingsleySnacks why is there #sizeForeignObject.a# in #object#",
+        "#complainEmojiSeq# #exclamation# @KingsleySnacks"
+    ]
+};
+var gram = tracery.createGrammar(test); gram.addModifiers(tracery.baseEngModifiers);
+gram.flatten('#request#');
 
 
 
@@ -148,3 +162,51 @@ HOW DO WE DO MESSAGES:
  '@Hersheys Are your milk chocolate kisses peanut free? Are they made on a peanut free dedicated line? Thanks for your help!',
  "They should make @Hersheys kisses without the foil... I ain't got time to peel all of these wrappers"
 
+
+ '@Skittles this came out of my skittles box. I am disgusted. https://t.co/4wegLSOJve',
+ '@bwturner03 broke a tooth on some @skittles',
+ '@Skittles Just poured this out of a bag of Skittles Confused. Not very impressed. https://t.co/3ijaddGvX3',
+ '@Skittles I filled out the contact us section on your website about an issue 1 month+ ago, nobody has got back to me, top customer service!',
+ '@Skittles WHY ARE MY SOUR SKITTLES NOT SOUR!? 😠😠😠😠',
+ "@Skittles 2/2 in my mouth i was rather surprised to find a tooth! Not sure whether to be thankful or disgusted that it wasn't mine!",
+ "Is this what @Skittles is calling skittles now? There's like little skittle rocks and they're just so cute. https://t.co/BpIypQ55L3",
+ "@Skittles chipped my tooth on this yesterday! Whatever it is it's solid! Emailed and had no response. I'm not happy! https://t.co/NUa09TTsJy",
+ 'Wtf is this and why is it in my pack of skittles?! @Skittles https://t.co/RAFrftThCr',
+ '@Skittles it looks like @MarshawnLynch24 already got to my skittle! https://t.co/j6vyAmMOAb',
+ '@Skittles whatever the fuck yous have done to the red skittles to make them crunchy, stop it. They should be chewy not teeth breaking.',
+ 'why I gotta deformed ass skittle in my pack ? @Skittles https://t.co/talfHOLWJG',
+ '@Skittles excuse me, what is this?? https://t.co/UvGcl8loOK',
+ "what is this @Skittles the flavors don't go together at all https://t.co/KBr9ojnpMY",
+ '@Skittles explain to me what this is in your bag? https://t.co/Wi4DDVi0Fu',
+ "Uhm @Skittles there's a stray deformed skittle here n it's hard as a pebble. Yall goofin' up. Still luv Skittles tho https://t.co/aI2cCUlXjG",
+ 'This fun size pack with only 2 @Skittles is actually not fun at all.',
+ "Explain yourself @Skittles what's up with the colors https://t.co/rFABHH1DKe",
+ '@Skittles disappointed chaps you normally provide the best of the best :/ https://t.co/sdIFY9Qfz2',
+ 'seriously what the fuck is this @Skittles disgusting company never buying again https://t.co/rYQCoAmQO5',
+ '.@skittles found this in my bag of skittles. Gross! #gross #disgusting #skittles https://t.co/bugJO5mIh6',
+ "I'd like to sue @Skittles for having a hard ass rock in my skittles, I bit down so hard I felt it in my guts.",
+ '@Skittles ok so I have a problem with this, from a lifetime committed consumer... https://t.co/KIjqQwoVpc',
+ '@Skittles what is this..... Only one in there https://t.co/1yoxAcPMsr',
+ '@Skittles are you guys even trying anymore? https://t.co/BYpOvU3S32',
+ "@Skittles wtf? I didn't get the rainbow. https://t.co/k5pEDHPJMP",
+ 'What kind of monster have you created wrigley??? @Skittles https://t.co/aXOG2ULrDC',
+ '@Skittles what the hell is this. https://t.co/Sq9EyCC3l8',
+ '@Airheads I need yall to please recall ALL airheads bites I found another type of candy &amp; look it was @Skittles smh https://t.co/DvJHPbnhbN',
+ 'Hybrid skittle????? @Skittles https://t.co/Ui3eNqLKTR',
+ 'What is this @Skittles https://t.co/czwOlf1T2O',
+ 'Just got this out of fresh bag of @Skittles what is it https://t.co/rWzbwlUamc',
+ "@Skittles not really sure what's happened here. The #hodor of skittles https://t.co/E6kBCKz6FN",
+ '@Skittles got a couple jacked bags here... https://t.co/VYt4Tn1Zba',
+ '.@Skittles tonight I literally broke my tooth in half Bc I bit into a very hard skittle. I think you should give me some free stuff??',
+ 'Come on skittles, step up your game @Skittles https://t.co/3x2pt2Fzl2',
+ '@Skittles Not a fan of the new design... #AllCrustNoSkittle https://t.co/iOspVDmR6l',
+ '@Skittles what is this?! #tastetherainbow #notsureiwantto #skittletumor http://t.co/aTYIgTNIgb',
+ "@Skittles I'm all for the unusual, but that's one unusual skittle you've produced. Not sure whether to eat or marvel? http://t.co/o3DnNGwlpM",
+ 'What the fuck 😂 @Skittles http://t.co/TVy0uHSWfF',
+ '@Skittles what is the purple "skittle" nearly broke my tooth... #tastethepain not #tastetherainbow http://t.co/ZZiw1I8yvH',
+ '@Skittles what is this? this "skittle" came out my bag http://t.co/l2I7pWXZLI',
+ '@Skittles Ummmmmm What. Is. That? http://t.co/AbCFa785rI',
+ "@Skittles I've got 2 oddly shaped skittles, the orange one doesn't even have the S on it http://t.co/PtnTSb1zKX",
+ '@Skittles #thisisnotaskittle http://t.co/0OCC30uaeg',
+ 'I ate alot of sour skittles now my gums are bleeding',
+ '@Skittles  I feel disrespected 🚮 wtf are thoseeeeee http://t.co/8oj18AI4Ti'
