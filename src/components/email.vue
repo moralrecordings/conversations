@@ -85,11 +85,10 @@ var loadMessage = function(name) {
 }
 
 export default {
-    name: 'email',
+    name: 'email-app',
+    props: ['width', 'height'],
     data: function() {
         return {
-            width: 1000,
-            height: 600,
             messages: [
                 loadMessage('day1_2'),
                 loadMessage('day1_1')

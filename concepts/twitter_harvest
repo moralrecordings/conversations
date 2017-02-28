@@ -27,10 +27,10 @@ var test = {
     "size": ["large ", "gigantic ", "large ass ", "big ", "huge ", "enormous ", "fucking ", "", "", "", ""],
     "foreignObject": ["rock", "piece of wood", "white pill thing", "wood chip", "stone", "hair", "clump of hair", "fingernail", "shard of glass", "peanut shell", "nail", "worm", "maggot", "fly", "spider", "plastic thing", "egg sac", "nest of tiny bugs", "bug", "roach", "cockroach", "dead rat", "severed finger"],
     "sizeForeignObject": ["#size##foreignObject#"],
-    "object": ["#pTheir# candy bar", "#pTheir# snack", "this", "this bar", "this chocolate"],
-    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "this is pretty bad", "this is the worst", "never buying again", "fucking disgusting", "really disappointed", "disappointed", "never again", "avoid at all costs", "I feel ill", "step up your game", "fix this", "you ripped me off", "what a fucking swindle", "you better fix this", "pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# cracked #pTheir# tooth", "see you in court", "you'll hear from my lawyer", "from a reputable supermarket", "from my local shop", "everyone don't buy", "I'm so hungry", "you expect #pThem# to eat that", "not happy"],
+    "object": ["#pTheir# candy bar", "#pTheir# snack", "#pTheir# bar", "this", "this bar", "this choc bar", "this chocolate"],
+    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "this is pretty bad", "this is the worst", "never buying again", "fucking disgusting", "really disappointed", "disappointed", "never again", "avoid at all costs", "I feel ill", "step up your game", "fix this", "you ripped me off", "what a fucking swindle", "you better fix this", "pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# cracked #pTheir# tooth", "see you in court", "you'll hear from my lawyer", "from a reputable supermarket", "from my local shop", "everyone don't buy", "still hungry", "you expect #pThem# to eat that", "not happy"],
     "coda": [
-        " fml", " ffs", " you fuckers", "", "", "", "", "", "", "", ""
+        " fml", " ffs", " you fuckers", "", "", "", "", "", "", "", "", "", ""
     ],
     "genPerson": [
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my wife]",
@@ -75,16 +75,16 @@ var test = {
         "#defaultPerson#how come there's #sizeForeignObject.a# in #object#",
         "#defaultPerson#explain why there's #sizeForeignObject.a# in #object#",
     ],
-    "request": [
+    "discoveryMessage": [
         "#exclamation# @KingsleySnacks #discovery#, #closingRemark##coda#", 
-        "#complainEmojiSeq# #closingRemark# @KingsleySnacks #discovery##coda#",
+        "#complainEmojiSeq#[disco:#discovery#] #closingRemark# @KingsleySnacks #discovery##coda#",
         "#complainEmojiSeq# #exclamation# @KingsleySnacks#coda#",
         "#exclamation# @KingsleySnacks #complainEmojiSeq##coda#",
         "#complainEmojiSeq# #exclamation# @KingsleySnacks #closingRemark##coda#"
     ]
 };
 var gram = tracery.createGrammar(test); gram.addModifiers(tracery.baseEngModifiers);
-gram.flatten('#request#');
+gram.flatten('#discoveryMessage#');
 
 
 

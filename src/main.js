@@ -5,6 +5,8 @@ import conversations from './conversations';
 
 global.conversations = new Vue({
     el: '#conversations',
-    template: '<conversations/>',
-    components: { conversations },
+    template: '<mr-conversations/>',
+    components: { 
+        'mr-conversations': conversations 
+    },
 });

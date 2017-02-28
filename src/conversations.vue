@@ -2,7 +2,9 @@
     <div id="conversations" class="app" style="display: flex; flex-direction: column; height: 100%">
         <div class="desktop theme-blue" style="flex: 1 0 auto">
 
-            <email></email>
+            <mr-email-app width="1000" height="600"/>
+
+            <mr-messages-app/>
         </div>
     </div>
 </template>
@@ -68,6 +70,9 @@ html, body {
 }
 
 
+.theme-blue .body-container {
+    background: white;
+}
 
 .theme-blue .active {
     border-color: #216778;
@@ -114,6 +119,7 @@ html, body {
 import interact from 'interactjs';
 
 import email from './components/email';
+import messages from './components/messages';
 
 interact('.titlebar').draggable({
     inertia: true,
@@ -137,10 +143,15 @@ interact('.titlebar').draggable({
 
 
 export default {
-  name: 'conversations',
-  components: {
-    email,
-  },
+    name: 'conversations',
+    data: function () {
+        return {
+        }
+    },
+    components: {
+        'mr-email-app': email,
+        'mr-messages-app': messages,
+    },
 };
 </script>
 
