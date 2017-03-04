@@ -1,31 +1,80 @@
 <template>
-    <div class="messages-app">
-        <div v-for="msg in messages" class="window resizable" v-bind:style="{ width: msg.width + 'px', height: msg.height + 'px' }">
-            <div class="titlebar active">
-                <span class="titlebar-text">{{ msg.user }}</span>
-                <button>×</button>
-            </div>
-            <div class="body-container"><div class="body">
-                {{ msg.body }}
-            </div></div>
+    <div class="window resizable" v-bind:style="{ width: width + 'px' }">
+        <div class="titlebar active">
+            <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
+            <button>×</button>
         </div>
+        <div class="body-container"><div class="body">
+            <div class="message-block" v-on:click="hidden = false">
+                <div class="message-avatar"></div>
+
+                <span class="message-body">{{ message.body }}</span>
+            </div>
+            <div v-bind:class="{ closed: hidden }" class="message-hidden">
+                <button>Oh noes!</button>
+                <label>Reason<select>
+                    <option>----</option>
+                    <option>Misshapen product</option>
+                    <option>Spoilage</option>
+                    <option>Empty packaging</option>
+                    <option>Foreign object</option>
+                </select></label>
+                <button>Oh noes!</button>
+                <button>Oh noes!</button>
+                <button>Oh noes!</button>
+
+            </div>
+        </div></div>
     </div>
 </template>
 
 <style scoped>
+.message-block {
+    margin: 0.5em;
+}
 
+.message-hidden {
+    margin: 0.5em;
+    overflow-y: hidden;
+    max-height: 500px;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1)
+}
+
+.message-hidden.closed {
+    max-height: 0;
+}
+
+.message-avatar {
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    background-color: teal;
+    border-radius: 3px;
+}
+
+.message-body {
+    font-size: 18px;
+}
+
+.message-block button, .message-block select, .message-block input {
+    width: 100%;
+    display: block;
+    margin: 0 0 1rem 0;
+}
 </style>
 
 <script>
 export default {
     name: 'messages-app',
-    props: [],
+    props: ['message'],
     data: function () {
         return {
-            messages: [
-                { user: 'SalmonMan23', body: 'I can\'t believe this @KingsleySnacks why is there a large ass fly in this choc bar, you can do better ffs', loc: 'Cook County, IL', width: 400, height: 200 },
-                { user: 'PatriotXXL', body: 'wtf @KingsleySnacks you expect me to eat that', loc: 'Salt Lake City, UT', width: 400, height: 200 },
-            ]
+            hidden: true,
+            width: 400
         }
     },
 

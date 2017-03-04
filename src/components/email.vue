@@ -7,7 +7,7 @@
         <div class="body-container"><div class="body email-body">
             
             <div class="email-select overflow">
-                <div v-for="(message, index) in messages" class="email-select-row" v-bind:class="{ active: index == messageIndex, unread: message.unread }">
+                <div v-for="(message, index) in messages" class="email-select-row" v-bind:class="{ active: index == messageIndex, unread: message.read != true }" v-on:click="setMessage(index)">
                     <span>{{ message.date.format('D MMM') }}</span>
                     <p class="sender">{{ message.sender }}</p>
                     <p>{{ message.subject }}</p>
@@ -19,7 +19,7 @@
                     <span style="display: block"><b>To:</b> {{ messages[messageIndex].recipient }} &lt;{{ messages[messageIndex].recipientMail }}&gt;</span>
                     <span style="display: block"><b>Subject:</b> {{ messages[messageIndex].subject }}</span>
                 </p>
-
+                <hr/>
                 <div v-html="messages[messageIndex].content"/>
             </div>
 
@@ -95,6 +95,13 @@ export default {
             ],
             messageIndex: 0
         };
+    },
+    methods: {
+        setMessage: function(index) {
+            this.messages[this.messageIndex].read = true;
+            this.messageIndex = index;
+
+        }
     }
 };
 </script>

@@ -3,8 +3,8 @@
         <div class="desktop theme-blue" style="flex: 1 0 auto">
 
             <mr-email-app width="1000" height="600"/>
+            <mr-messages-app v-for="message in messages" v-bind:message="message"/>
 
-            <mr-messages-app/>
         </div>
     </div>
 </template>
@@ -28,7 +28,7 @@ html, body {
     flex-direction: column; 
     box-sizing: border-box;
     min-width: 200px;
-    min-height: 200px;
+    min-height: 64px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -121,6 +121,8 @@ import interact from 'interactjs';
 import email from './components/email';
 import messages from './components/messages';
 
+require('./assets/logo.svg');
+
 interact('.titlebar').draggable({
     inertia: true,
     restrict: {
@@ -146,6 +148,10 @@ export default {
     name: 'conversations',
     data: function () {
         return {
+            messages: [
+                { user: 'SalmonMan23', body: 'I can\'t believe this @KingsleySnacks why is there a large ass fly in this choc bar, you can do better ffs', loc: 'Cook County, IL, USA' },
+                { user: 'PatriotXXL', body: 'wtf @KingsleySnacks you expect me to eat that', loc: 'Salt Lake City, UT, USA' },
+            ]
         }
     },
     components: {
