@@ -8,10 +8,32 @@ UncleTobys
 CadburyAU
 
 
+
+Stupid email appendices
+
+This email (including any attachments) is confidential and intended for the named recipient(s) only. It may be subject to legal or other professional privilege and contain copyright material. Any confidentiality or privilege is not waived or lost because this email has been sent to you by mistake.
+
+Access to this email or its attachments by anyone else is unauthorised. If you are not the intended recipient, you may not disclose, copy or distribute this email or its attachments, nor take or omit to take any action in reliance on it. If you have received this email in error, please notify the sender immediately, delete it from your system and destroy any copies.
+
+We accept no liability for any loss or damage caused by this email or its attachments due to viruses, interference, interception, corruption or unauthorised access.
+
+Any views or opinions presented in this email or its attachments are solely those of the author and do not necessarily represent those of the company.
+
+
+
+This email contains information which is confidential and intended solely for the use of the individual or entity to whom it is addressed. Please notify the sender immediately if you have received this e-mail by mistake and delete this email from your system. If you are not the intended recipient, any form of distribution, copying or use of this communication or the information contained or attached is strictly prohibited.
+
+
+Please consider the environment before printing this email. 
+
+Please consider your carbon footprint before printing out this email. 
+
+
+
 var tracery = require('tracery-grammar');
 var test = {
-    "fanEmoji": ["👍", "😋", "😍", "😄", "💕", "✨", "💖", "💛", "💯", "😙", ],
-    "complainEmoji": ["👎", "😂", "🚮", "🚽", "🤷", "🤔", "🔥", "😑", "😐", "😒", "😥", "😲", "🤢", "💩", "😱"],
+    "fanEmoji": ["👍", "😋", "😍", "😄", "💕", "✨", "💖", "💛", "💯", "😙"],
+    "complainEmoji": ["👎", "😂", "🚮", "🚽", "🤷", "🤔", "🔥", "😑", "😐", "😒", "😥", "😲", "🤢", "💩", "😱", "😭"],
     "complainEmojiSeq": [
         "#complainEmoji#", 
         "#complainEmoji##complainEmoji#", 
@@ -23,9 +45,9 @@ var test = {
         "[emoji1:#complainEmoji#][emoji2:#complainEmoji#][emoji3:#complainEmoji#]#emoji1##emoji1##emoji2##emoji2##emoji3##emoji3#", 
         "", "", "", ""
     ],
-    "exclamation": ["wtf", "wtf is this", "what the fuck", "what the hell is this", "what is this", "wtf is this shit", "what is this horseshit", "what the shit", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "gross", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "jesus"],
+    "exclamation": ["wtf", "wtf is this", "what the fuck", "what the hell is this", "what is this", "wtf is this shit", "what is this horseshit", "what the shit", "holy shit", "holy wow", "my god", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "gross", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me"],
     "size": ["large ", "gigantic ", "large ass ", "big ", "huge ", "enormous ", "fucking ", "", "", "", ""],
-    "foreignObject": ["rock", "piece of wood", "white pill thing", "wood chip", "stone", "hair", "clump of hair", "fingernail", "shard of glass", "peanut shell", "nail", "worm", "maggot", "fly", "spider", "plastic thing", "egg sac", "nest of tiny bugs", "bug", "roach", "cockroach", "dead rat", "severed finger"],
+    "foreignObject": ["rock", "piece of wood", "white pill thing", "stick", "wood chip", "stone", "hair", "clump of hair", "fingernail", "shard of glass", "peanut shell", "nail", "worm", "maggot", "fly", "spider", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "bug", "roach", "cockroach", "dead rat", "severed finger"],
     "sizeForeignObject": ["#size##foreignObject#"],
     "object": ["#pTheir# candy bar", "#pTheir# snack", "#pTheir# bar", "this", "this bar", "this choc bar", "this chocolate"],
     "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "this is pretty bad", "this is the worst", "never buying again", "fucking disgusting", "really disappointed", "disappointed", "never again", "avoid at all costs", "I feel ill", "step up your game", "fix this", "you ripped me off", "what a fucking swindle", "you better fix this", "pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# cracked #pTheir# tooth", "see you in court", "you'll hear from my lawyer", "from a reputable supermarket", "from my local shop", "everyone don't buy", "still hungry", "you expect #pThem# to eat that", "not happy"],
