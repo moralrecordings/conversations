@@ -70,14 +70,34 @@ html, body {
 }
 
 
+.clickable {
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+
 .theme-blue .body-container {
     background: white;
 }
 
-.theme-blue .active {
+.theme-blue .clickable {
+    background-color: white;
+}
+
+.theme-blue .clickable:hover {
+    background-color: #f0f0f0;
+}
+
+.theme-blue .active.clickable {
     border-color: #216778;
     background-color: #37abc8; 
     color: white;
+}
+
+.theme-blue .active.clickable:hover {
+    background-color: #2a839a;
 }
 
 .theme-blue .active.titlebar {
@@ -85,6 +105,8 @@ html, body {
     border-left-color: #5fbcd3; 
     border-right-color: #2c89a0; 
     border-bottom-color: #2c89a0;
+    background-color: #37abc8; 
+    color: white;    
 }
 
 .overflow {

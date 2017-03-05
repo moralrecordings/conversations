@@ -5,7 +5,7 @@
             <button>×</button>
         </div>
         <div class="body-container"><div class="body">
-            <div class="message-block" v-on:click="hidden = false">
+            <div class="message-block clickable" v-on:click="hidden = !hidden">
                 <div class="message-avatar"></div>
 
                 <span class="message-body">{{ message.body }}</span>
@@ -38,8 +38,8 @@
     overflow-y: hidden;
     max-height: 500px;
     transition-property: all;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1)
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
 .message-hidden.closed {
