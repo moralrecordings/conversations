@@ -36,10 +36,10 @@
 .message-hidden {
     margin: 0.5em;
     overflow-y: hidden;
-    max-height: 500px;
+    max-height: 100px;
     transition-property: all;
     transition-duration: 0.5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition-timing-function: ease-out;
 }
 
 .message-hidden.closed {

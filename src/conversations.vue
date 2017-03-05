@@ -10,7 +10,7 @@
 </template>
 
 
-<style>
+<style lang="scss">
 html, body {
     height: 100%;
     margin: 0px;
@@ -72,42 +72,58 @@ html, body {
 
 .clickable {
     cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
     transition-property: all;
     transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition-timing-function: ease;
 }
 
+// Scripting is fun! Let's generate CSS for the colour scheme. 
+// For the window theme, we want to rig it so you can add a class to the top-level window div,
+// with colour rules that affect all the child divs.
+// To save lots of copypasting, let's make a template set of instructions that themes the window
+// based on a small set of colour variables.
+// First argument is a string with the CSS selector to bind it to.
 
-.theme-blue .body-container {
-    background: white;
+@mixin theme_factory($class, $bg, $bg_text, $active, $active_text, $inactive, $inactive_text) {
+    #{$class} .body-container {
+        background-color: $bg;
+        color: $bg_text;
+    }
+
+    #{$class} .clickable {
+        background-color: $bg;
+        color: $bg_text;
+    }
+
+    #{$class} .clickable:hover {
+        background-color: darken($bg, 5%);
+    }
+
+    #{$class} .active.clickable {
+        border-color: darken($active, 5%);
+        background-color: $active;
+        color: $active_text;
+    }
+
+    #{$class} .active.clickable:hover {
+        background-color: darken($active, 5%);
+    }
+
+    #{$class} .active.titlebar {
+        border-top-color: lighten($active, 15%);
+        border-left-color: lighten($active, 15%);
+        border-bottom-color: darken($active, 15%);
+        border-right-color: darken($active, 15%);
+        background-color: $active;
+        color: $active_text;
+    }
 }
 
-.theme-blue .clickable {
-    background-color: white;
-}
+// Now we can crank out one colour scheme class per line
+@include theme_factory( ".theme-blue", white, black, #37abc8, white, #bbbbbb, white);
 
-.theme-blue .clickable:hover {
-    background-color: #f0f0f0;
-}
-
-.theme-blue .active.clickable {
-    border-color: #216778;
-    background-color: #37abc8; 
-    color: white;
-}
-
-.theme-blue .active.clickable:hover {
-    background-color: #2a839a;
-}
-
-.theme-blue .active.titlebar {
-    border-top-color: #5fbcd3;
-    border-left-color: #5fbcd3; 
-    border-right-color: #2c89a0; 
-    border-bottom-color: #2c89a0;
-    background-color: #37abc8; 
-    color: white;    
-}
 
 .overflow {
     overflow: auto;

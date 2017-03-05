@@ -37,9 +37,6 @@
     display: block;
     min-width: 200px;
     height: 100%;    
-    user-select: none;
-    -moz-user-select: none;
-    cursor: default;
 }
 
 .email-select-row {
