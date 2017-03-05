@@ -75,7 +75,7 @@
 <script>
 import moment from 'moment';
 
-import emails from 'emails';
+import emails from 'assets/emails';
 emails.reverse();
 
 export default {
