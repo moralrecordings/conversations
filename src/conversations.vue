@@ -11,6 +11,7 @@
 
 
 <style lang="scss">
+// baseline style rules
 html, body {
     height: 100%;
     margin: 0px;
@@ -20,6 +21,7 @@ html, body {
     line-height: 1.5em;
 }
 
+// window class, for the topmost level floating box
 .window {
     position: absolute;
     border: 1px solid;
@@ -32,6 +34,7 @@ html, body {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+// titlebar block for a window
 .titlebar {
     display: flex;
     padding: 0.5em;
@@ -45,6 +48,7 @@ html, body {
     -moz-user-select: none;
 }
 
+// close button on the title bar
 .titlebar button {
     font-weight: bold;
     font-size: 16px;
@@ -57,10 +61,7 @@ html, body {
     color: inherit;
 }
 
-.titlebar button:hover {
-    border: 1px solid white;
-}
-
+// text spacing on the title bar
 .titlebar-text {
     flex: 1; 
     width: 0; 
@@ -69,7 +70,7 @@ html, body {
     text-overflow: ellipsis;
 }
 
-
+// clickable div (e.g. message body, email side pane)
 .clickable {
     cursor: pointer;
     user-select: none;
@@ -79,7 +80,42 @@ html, body {
     transition-timing-function: ease;
 }
 
-// Scripting is fun! Let's generate CSS for the colour scheme. 
+// class for divs which are meant to scroll as a pane inside the parent (e.g. email body)
+.overflow {
+    overflow: auto;
+}
+
+// window contents (outer frame)
+// we use border-box a lot; the default CSS box model assumed width and height == usable width 
+// and height inside of the div box, which excludes padding and border thickness. 
+// this meant that e.g. "width: 100%" was always (border + padding)*2 px wider than you wanted 
+// and required hand-mauling with hacks like negative margins. those were truly dark days.
+// border-box measures height and width as the outer extremities of the box, which
+// from a design perspective is waaaaay easier. thank you IE, you weren't all bad!
+.body-container {
+    flex: 1 0 auto;
+    height: 1%; 
+    box-sizing: border-box;
+    border: 1px solid;
+    border-top-color: #f0fefe;
+    border-left-color: #f0fefe;
+    border-bottom-color: #dbe2e3;
+    border-right-color: #dbe2e3;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+// window contents (inner frame, to reset the width and height)
+.body {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+// Scripting is fun! Let's generate the boilerplate CSS for the colour scheme. 
 // For the window theme, we want to rig it so you can add a class to the top-level window div,
 // with colour rules that affect all the child divs.
 // To save lots of copypasting, let's make a template set of instructions that themes the window
@@ -119,35 +155,17 @@ html, body {
         background-color: $active;
         color: $active_text;
     }
+
+    #{$class} .active.titlebar button:hover {
+        border: 1px solid $active_text;
+    }
 }
+
 
 // Now we can crank out one colour scheme class per line
-@include theme_factory( ".theme-blue", white, black, #37abc8, white, #bbbbbb, white);
+@include theme_factory( ".theme-blue", white, black, #37abc8, white, #bbbbbb, white );
 
 
-.overflow {
-    overflow: auto;
-}
-
-.body-container {
-    flex: 1 0 auto;
-    height: 1%; 
-    box-sizing: border-box;
-    border: 1px solid;
-    border-top-color: #f0fefe;
-    border-left-color: #f0fefe;
-    border-bottom-color: #dbe2e3;
-    border-right-color: #dbe2e3;
-    border-bottom-right-radius: 2px;
-    border-bottom-left-radius: 2px;
-}
-
-.body {
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
 
 
 </style>

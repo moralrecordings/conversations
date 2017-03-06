@@ -2,7 +2,6 @@
     <div class="window resizable" v-bind:style="{ width: width + 'px' }">
         <div class="titlebar active">
             <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
-            <button>×</button>
         </div>
         <div class="body-container"><div class="body">
             <div class="message-block clickable" v-on:click="hidden = !hidden">

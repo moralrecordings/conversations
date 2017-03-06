@@ -49,7 +49,8 @@ var test = {
     "size": ["large ", "gigantic ", "large ass ", "big ", "huge ", "enormous ", "fucking ", "", "", "", ""],
     "foreignObject": ["rock", "piece of wood", "white pill thing", "stick", "wood chip", "stone", "hair", "clump of hair", "fingernail", "shard of glass", "peanut shell", "nail", "worm", "maggot", "fly", "spider", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "bug", "roach", "cockroach", "dead rat", "severed finger"],
     "sizeForeignObject": ["#size##foreignObject#"],
-    "object": ["#pTheir# candy bar", "#pTheir# snack", "#pTheir# bar", "this", "this bar", "this choc bar", "this chocolate"],
+    "chocolate": ["candy bar", "bar", "choc bar", "choco bar", "chocolate", "chocolate bar", "🍫"],
+    "object": ["#pTheir# #chocolate#", "this #chocolate#"],
     "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "this is pretty bad", "this is the worst", "never buying again", "fucking disgusting", "really disappointed", "disappointed", "never again", "avoid at all costs", "I feel ill", "step up your game", "fix this", "you ripped me off", "what a fucking swindle", "you better fix this", "pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# cracked #pTheir# tooth", "see you in court", "you'll hear from my lawyer", "from a reputable supermarket", "from my local shop", "everyone don't buy", "still hungry", "you expect #pThem# to eat that", "not happy"],
     "coda": [
         " fml", " ffs", " you fuckers", "", "", "", "", "", "", "", "", "", ""
@@ -108,6 +109,15 @@ var test = {
 var gram = tracery.createGrammar(test); gram.addModifiers(tracery.baseEngModifiers);
 gram.flatten('#discoveryMessage#');
 
+
+SKU 
+-   
+
+Type of message
+-   Fan mail
+-   Complaint
+    
+    Litigious? []
 
 
 HOW DO WE DO MESSAGES:
