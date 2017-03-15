@@ -46,7 +46,7 @@ var test = {
         "", "", "", ""
     ],
     "exclamation": ["wtf", "wtf is this", "what the fuck", "what the hell is this", "what is this", "wtf is this shit", "what is this horseshit", "what the shit", "holy shit", "holy wow", "my god", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "gross", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me"],
-    "size": ["large ", "gigantic ", "large ass ", "big ", "huge ", "enormous ", "fucking ", "", "", "", ""],
+    "size": ["large ", "gigantic ", "great big fucking ", "largeass ", "big ", "bigass ", "goddamn ", "huge ", "enormous ", "fucking ", "", "", "", ""],
     "foreignObject": ["rock", "piece of wood", "white pill thing", "stick", "wood chip", "stone", "hair", "clump of hair", "fingernail", "shard of glass", "peanut shell", "nail", "worm", "maggot", "fly", "spider", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "bug", "roach", "cockroach", "dead rat", "severed finger"],
     "sizeForeignObject": ["#size##foreignObject#"],
     "chocolate": ["candy bar", "bar", "choc bar", "choco bar", "chocolate", "chocolate bar", "🍫"],
@@ -92,7 +92,7 @@ var test = {
         "#defaultPerson#why is there #sizeForeignObject.a# in #object#",
         "#genPerson##pName# bit into #sizeForeignObject.a#",
         "#defaultPerson#there's #sizeForeignObject.a# in #object#",
-        "#defaultPerson#there's literally a #sizeForeignObject.a# in #object#",
+        "#defaultPerson#there's literally #sizeForeignObject.a# in #object#",
         "#defaultPerson#wondering why there's #sizeForeignObject.a# in #object#",
         "#defaultPerson#can't believe there's #sizeForeignObject.a# in #object#",
         "#defaultPerson#how come there's #sizeForeignObject.a# in #object#",

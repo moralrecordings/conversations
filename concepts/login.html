@@ -6,7 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RemoteTeamPro Session</title>
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/6.3.0/foundation-flex.css"/>
+
+    <style>
+
+@keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+
+.blink {
+  animation: blink 1s step-start 0s infinite;
+  -webkit-animation: blink 1s step-start 0s infinite;
+}
+
+    </style>
+
 </head>
+
 
 <body>
 
@@ -23,7 +40,7 @@
 
     <p>RemoteTeamPro Server v15.0.31.2303</p>
     <p>Copyright (c) 2006 Alwyn Megasoftware Ltd.</p>
-    <p style="color: red; font-weight: bold;"><blink>TRIAL PERIOD EXPIRED!</blink> Please contact your local sales representative today.</p>
+    <p style="color: red; font-weight: bold;"><span class="blink">TRIAL PERIOD EXPIRED!</span> Please contact your local sales representative today.</p>
     <p>You are on day <b>3051</b> of your 30 day trial.</p>
     
 </body>

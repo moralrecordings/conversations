@@ -128,7 +128,7 @@ export default [
 
             <p>Thanks for replying back. I respect your decision, but I still think you're being played for a chump. Don't get me wrong, I do get that it's a really shit job market right now, but please promise me that you'll look for other positions. This isn't just me being bitter or the free work scam; Allied is seriously a fucked up place. The business is running at a loss, the leadership is an endless buck-passing circlejerk, and everyone is being pushed to cut corners. Jesus, they actually used the word "dissent" to justify cracking down on managers and quality control supervisors doing their job! I can't make this shit up.</p>
 
-            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but in a nutshell I do not use Allied Brands products, nor would I recommend them to anyone with plans of living to a ripe old age. Mark my words, one day there will be a public scandal, and it will be big enough that your job description will change to "human sewer rake". I would not wish that horrorshow on anyone.</p>
+            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but in a nutshell I do not use Allied Brands products, nor would I recommend them to anyone wishing to live to a ripe old age. Mark my words, one day there will be a public scandal, and it will be big enough that your job description will change to "human sewer rake". I would not wish that horrorshow on anyone.</p>
 
             <p>Cheers,<br/>Andrea</p>
         `
@@ -153,5 +153,34 @@ export default [
         `
     },
 
+
+
+    // week ???
+    {
+        "date": moment("20111107", "YYYYMMDD"),
+        "sender": "Nathaniel Hardcastle",
+        "senderMail": "nathaniel.hardcastle@alliedbrandsinc",
+        "recipient": "PR - All Users",
+        "recipientMail": "pr_all@alliedbrandsinc",
+        "subject": "URGENT - Policy change",
+        "content": `
+            <p>All,</p>
+            
+            <p>It has come to the attention of the Legal team that a small number of Excelsior Pharmaceuticals customers are expressing despair at a perceived inability to procure our products for themselves or their loved ones. Without question, the welfare of all our customers should come first and foremost in everything we do. As good corporate citizens and as Americans, we have a duty to look beyond what is best for our image or bottom line, and provide help to those who need it the most. It's time for us to open up our moral compass and chart a new, righteous course.</p>
+
+            <p>For any customer you would identify as "<b>at-risk</b>", please refer them to the National Suicide Prevention Lifeline for assistance. This should be done from the Allied Brands Inc. corporate account (<b>@alliedbrandsinc</b>) ONLY, so as not to conflate this serious issue with the light-hearted tone used for advertising/social media outreach by the individual brands.</p>
+
+            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
+            <p style="font-family: serif">This email (including any attachments) is confidential and intended for the named recipient(s) only. It may be subject to legal or other professional privilege and contain copyright material. Any confidentiality or privilege is not waived or lost because this email has been sent to you by mistake.</p>
+
+            <p style="font-family: serif">Access to this email or its attachments by anyone else is unauthorised. If you are not the intended recipient, you may not disclose, copy or distribute this email or its attachments, nor take or omit to take any action in reliance on it. If you have received this email in error, please notify the sender immediately, delete it from your system and destroy any copies.</p>
+
+            <p style="font-family: serif">We accept no liability for any loss or damage caused by this email or its attachments due to viruses, interference, interception, corruption or unauthorised access.</p>
+
+            <p style="font-family: serif">Any views or opinions presented in this email or its attachments are solely those of the author and do not necessarily represent those of the company.</p>
+
+
+        `
+    },
 
 ];
