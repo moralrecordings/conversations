@@ -208,7 +208,7 @@ export default {
                 { user: 'SalmonMan23', body: 'I can\'t believe this @KingsleySnacks why is there a large ass fly in this choc bar, you can do better ffs', loc: 'Cook County, IL, USA' },
                 { user: 'PatriotXXL', body: 'wtf @KingsleySnacks you expect me to eat that', loc: 'Salt Lake City, UT, USA' },
             ]
-        }
+        };
     },
     components: {
         'mr-email-app': email,
