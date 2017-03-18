@@ -21,6 +21,7 @@ html, body {
     line-height: 1.5em;
 }
 
+// app container sizing
 .app {
     display: flex; 
     flex-direction: column; 
@@ -183,6 +184,8 @@ import interact from 'interactjs';
 import email from './components/email';
 import messages from './components/messages';
 
+import firehose from './firehose';
+
 require('./assets/logo.svg');
 
 interact('.titlebar').draggable({
@@ -213,6 +216,7 @@ export default {
             messages: [
                 { user: 'SalmonMan23', body: 'I can\'t believe this @KingsleySnacks why is there a large ass fly in this choc bar, you can do better ffs', loc: 'Cook County, IL, USA' },
                 { user: 'PatriotXXL', body: 'wtf @KingsleySnacks you expect me to eat that', loc: 'Salt Lake City, UT, USA' },
+                { user: 'WhoDis', body: firehose.generateMessage() }
             ]
         };
     },
