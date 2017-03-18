@@ -1,5 +1,5 @@
 <template>
-    <div id="conversations" class="app" style="display: flex; flex-direction: column; height: 100%">
+    <div id="conversations" class="app">
         <div class="desktop theme-blue" style="flex: 1 0 auto">
 
             <mr-email-app width="1000" height="600"/>
@@ -19,6 +19,12 @@ html, body {
     font-size: 14px;
     font-family: "Ubuntu", sans-serif;
     line-height: 1.5em;
+}
+
+.app {
+    display: flex; 
+    flex-direction: column; 
+    height: 100%
 }
 
 // window class, for the topmost level floating box

@@ -1,7 +1,7 @@
 <template>
-    <div style="display: flex; flex-direction: column; height: 100%;">
-        <div style="flex: 1 0 auto;">
-            <div style="display: flex; align-items: center; justify-content: center; height: 100%; "><div style="border: 1px solid black; padding: 1em; min-width: 480px;">
+    <div id="login" class="app">
+        <div class="app-inner">
+            <div class="login-frame"><div class="login-window">
                 <p style="text-align: center;">Select remote session:</p>
                 <ul style="list-style: none; padding: 0;">
                     <li><button class="session-button">us3appprod020_FIRSTTIME</button></li>
@@ -15,14 +15,63 @@
                 </ul>
             </div></div>
         </div>
-        <div style="border-top: 1px solid #11335c; box-sizing: border-box; padding-left: 1em; padding-right: 1em; width: 100%; text-align: right; color: white; background-color: #316fbd; ">
+        <div class="footer">
             <p><b>RemoteTeamPro Server v6.0.31.2303</b> - Copyright (c) 2006 Alwyn Megasoftware Ltd.</p>
-            <p><span style="color: maroon; font-weight: bold;"><span class="blink">TRIAL PERIOD EXPIRED!</span><br/>Please contact your local sales representative today.</span><br/>You are on day <b>1825</b> of your 30 day trial.</p>
+            <p><span class="scare blink">TRIAL PERIOD EXPIRED!</span><br/><span class="scare">Please contact your local sales representative today.</span><br/>You are on day <b>1825</b> of your 30 day trial.</p>
         </div>
     </div>
 </template>
 
 <style>
+// baseline style rules
+html, body {
+    height: 100%;
+    margin: 0px;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: "Ubuntu", sans-serif;
+    line-height: 1.5em;
+}
+
+.app {
+    display: flex; 
+    flex-direction: column; 
+    height: 100%
+}
+
+.app-inner {
+    flex: 1 0 auto;
+}
+
+.login-frame {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100%; 
+}
+
+.login-window {
+    border: 1px solid black; 
+    padding: 1em; 
+    min-width: 480px;
+}
+
+.footer { 
+    border-top: 1px solid #11335c; 
+    box-sizing: border-box; 
+    padding-left: 1em; 
+    padding-right: 1em; 
+    width: 100%; 
+    text-align: right; 
+    color: white; 
+    background-color: #316fbd; 
+}
+
+.scare {
+    color: #ff6969; 
+    font-weight: bold;
+}
+
 @keyframes blink {
   50% {
     opacity: 0.0;
