@@ -8,6 +8,33 @@ UncleTobys
 CadburyAU
 
 
+KingsleyDefect
+- account: KingsleySnacks
+- type: defect
+
+- SKU: 
+  - fruit pebbles:
+  - original 
+
+- reason:
+  - misshapen product: 30%
+  - spoilage: 20%
+  - foreign object: 20%
+  - empty packaging: 30%
+
+- litigious: 
+  - yes: 30%
+  - no: 70%
+
+
+KingsleyCompliment
+- account: KingsleySnacks
+- type: compliment
+
+- SKU:
+  (as above)
+
+
 
 Stupid email appendices
 
