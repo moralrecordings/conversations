@@ -2,9 +2,10 @@
     <div id="conversations" class="app">
         <div class="desktop theme-blue" style="flex: 1 0 auto">
 
+            <button v-on:click="spawnMessage" style="position: absolute; width: 128px; height: 128px; right: 64px; bottom: 64px;">New message</button>
+            
             <mr-email-app width="1000" height="600"/>
             <mr-messages-app v-for="message in messages" v-bind:message="message"/>
-
         </div>
     </div>
 </template>
@@ -179,7 +180,8 @@ html, body {
 
 
 <script>
-import interact from 'interactjs';
+//import interact from 'interactjs';
+import Vue from 'vue';
 
 import email from './components/email';
 import messages from './components/messages';
@@ -188,7 +190,16 @@ import firehose from './firehose';
 
 require('./assets/logo.svg');
 
-interact('.titlebar').draggable({
+Vue.directive('window', {
+    inserted: function (el) {
+        $(el).draggable({
+            handle: '.titlebar',
+            containment: '.desktop'
+        });
+    }
+});
+
+/*interact('.titlebar').draggable({
     inertia: true,
     restrict: {
         restriction: '.app',
@@ -201,12 +212,12 @@ interact('.titlebar').draggable({
     var x = (parseFloat(target.getAttribute('data-x')) || 0) + ev.dx;
     var y = (parseFloat(target.getAttribute('data-y')) || 0) + ev.dy;
 
-    target.style.left = x + 'px';
-    target.style.top = y + 'px';       
+//    target.style.left = x + 'px';
+//    target.style.top = y + 'px';       
 
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
-});
+});*/
 
 
 export default {
@@ -216,9 +227,19 @@ export default {
             messages: [
                 { user: 'SalmonMan23', body: 'I can\'t believe this @KingsleySnacks why is there a large ass fly in this choc bar, you can do better ffs', loc: 'Cook County, IL, USA' },
                 { user: 'PatriotXXL', body: 'wtf @KingsleySnacks you expect me to eat that', loc: 'Salt Lake City, UT, USA' },
-                { user: 'WhoDis', body: firehose.generateMessage() }
             ]
         };
+    },
+    methods: {
+        spawnMessage: function() {
+            this.messages.push({
+                user: 'ToolbeltKiller',
+                loc: 'Newbridge, NJ, USA',
+                body: firehose.generateMessage(),
+                xPos: Math.floor( Math.random()*640 ),
+                yPos: Math.floor( Math.random()*480 ),
+            });
+        }
     },
     components: {
         'mr-email-app': email,

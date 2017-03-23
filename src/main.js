@@ -3,6 +3,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+require('jquery-ui-bundle');
+
 import conversations from './conversations';
 import login from './login';
 
