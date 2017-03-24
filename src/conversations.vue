@@ -190,21 +190,37 @@ import firehose from './firehose';
 
 require('./assets/logo.svg');
 
+// fake ordering using z-depth. 
+// every time we select a window, increase this by 1.
+var zLevel = 0;
+var zBump = function (ev) {
+    console.log(ev);
+    console.log(zLevel);
+    console.log(ev.currentTarget.style.zIndex);
+    if ((!ev.currentTarget.style.zIndex) | (ev.currentTarget.style.zIndex != zLevel)) {
+        zLevel += 1;
+        ev.currentTarget.style.zIndex = zLevel;
+    } 
+}
+
 // sometimes you want the ability to add arbitrary chunks of JS to components.
 // in this case, we want an easy way to add movable window functionality
 // to whatever thing we make. this is easy to do with jQuery (aka. the 
 // Krazy Glue of the internet), but how do we merge the web 2.0 DOMfoolery
 // with a web 3.0 reactgasm?
 // vue.js lets you make custom directives which e.g. let you wire up events
-// upon the element being inserted. this is good, as the component model 
+// upon the DOM element being inserted. this is good, as the component model 
 // doesn't really believe in inheritance or mixins.
 Vue.directive('window', {
-    inserted: function (el) {
+    inserted: function (el, binding, vnode) {
+        
+
         $(el).draggable({
             scroll: false,
             handle: '.titlebar',
-            containment: '.desktop'
-        });
+            containment: '.desktop',
+            start: zBump,
+        }).click(zBump);
     }
 });
 
