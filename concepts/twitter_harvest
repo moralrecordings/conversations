@@ -13,8 +13,9 @@ KingsleyDefect
 - type: defect
 
 - SKU: 
-  - fruit pebbles:
-  - original 
+  - fruit pebbles: 30%
+  - bar: 40%
+  - 
 
 - reason:
   - misshapen product: 30%

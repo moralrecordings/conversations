@@ -190,9 +190,18 @@ import firehose from './firehose';
 
 require('./assets/logo.svg');
 
+// sometimes you want the ability to add arbitrary chunks of JS to components.
+// in this case, we want an easy way to add movable window functionality
+// to whatever thing we make. this is easy to do with jQuery (aka. the 
+// Krazy Glue of the internet), but how do we merge the web 2.0 DOMfoolery
+// with a web 3.0 reactgasm?
+// vue.js lets you make custom directives which e.g. let you wire up events
+// upon the element being inserted. this is good, as the component model 
+// doesn't really believe in inheritance or mixins.
 Vue.directive('window', {
     inserted: function (el) {
         $(el).draggable({
+            scroll: false,
             handle: '.titlebar',
             containment: '.desktop'
         });
