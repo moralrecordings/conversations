@@ -1,6 +1,6 @@
 <template>
     <div class="window resizable" v-window v-bind:style="{ width: width + 'px' }" v-bind:data-x="message.xPos" v-bind:data-y="message.yPos">
-        <div class="titlebar active">
+        <div class="titlebar">
             <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
         </div>
         <div class="body-container"><div class="body">

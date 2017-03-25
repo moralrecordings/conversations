@@ -155,7 +155,20 @@ html, body {
         background-color: darken($active, 5%);
     }
 
-    #{$class} .active.titlebar {
+    #{$class} .window .titlebar {
+        border-top-color: lighten($inactive, 15%);
+        border-left-color: lighten($inactive, 15%);
+        border-bottom-color: darken($inactive, 15%);
+        border-right-color: darken($inactive, 15%);
+        background-color: $inactive;
+        color: $inactive_text;
+    }
+
+    #{$class} .window .titlebar button:hover {
+        border: 1px solid $inactive_text;
+    }
+
+    #{$class} .window.active .titlebar {
         border-top-color: lighten($active, 15%);
         border-left-color: lighten($active, 15%);
         border-bottom-color: darken($active, 15%);
@@ -164,7 +177,7 @@ html, body {
         color: $active_text;
     }
 
-    #{$class} .active.titlebar button:hover {
+    #{$class} .window.active .titlebar button:hover {
         border: 1px solid $active_text;
     }
 }
@@ -190,17 +203,20 @@ import firehose from './firehose';
 
 require('./assets/logo.svg');
 
-// fake ordering using z-depth. 
+// fake window ordering using CSS z-index. 
 // every time we select a window, increase this by 1.
 var zLevel = 0;
-var zBump = function (ev) {
-    console.log(ev);
-    console.log(zLevel);
-    console.log(ev.currentTarget.style.zIndex);
-    if ((!ev.currentTarget.style.zIndex) | (ev.currentTarget.style.zIndex != zLevel)) {
+var zBump = function (el) {
+    if ((!el.style.zIndex) | (el.style.zIndex != zLevel)) {
         zLevel += 1;
-        ev.currentTarget.style.zIndex = zLevel;
+        el.style.zIndex = zLevel;
     } 
+    // active window gets a coloured titlebar
+    $('.window').removeClass('active');
+    $(el).addClass('active');
+}
+var zBumpCb = function (ev) {
+    zBump(ev.currentTarget);
 }
 
 // sometimes you want the ability to add arbitrary chunks of JS to components.
@@ -213,14 +229,22 @@ var zBump = function (ev) {
 // doesn't really believe in inheritance or mixins.
 Vue.directive('window', {
     inserted: function (el, binding, vnode) {
-        
-
+        // add a jQuery UI draggable interaction to the window div
         $(el).draggable({
             scroll: false,
             handle: '.titlebar',
             containment: '.desktop',
-            start: zBump,
-        }).click(zBump);
+            start: zBumpCb,
+        }).click(zBumpCb);
+        
+        // if we use the "under" modifier, don't make the new window appear in
+        // front of whatever is active.
+        if (binding.modifiers.under) {
+            el.style.zIndex = zLevel-1;
+        // otherwise, bump it to the front!
+        } else {
+            zBump(el);
+        }
     }
 });
 
