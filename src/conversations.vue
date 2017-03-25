@@ -193,7 +193,6 @@ html, body {
 
 
 <script>
-//import interact from 'interactjs';
 import Vue from 'vue';
 
 import email from './components/email';
@@ -235,7 +234,16 @@ Vue.directive('window', {
             handle: '.titlebar',
             containment: '.desktop',
             start: zBumpCb,
-        }).click(zBumpCb);
+        }).mousedown(zBumpCb);
+
+        // resizable modifier makes the window resizable
+        if (binding.modifiers.resizable) {
+            $(el).resizable({
+                containment: '.desktop',
+                minHeight: 240,
+                minWidth: 240
+            });
+        }
         
         // if we use the "under" modifier, don't make the new window appear in
         // front of whatever is active.
