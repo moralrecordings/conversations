@@ -92,7 +92,7 @@ export default [
         "content": `
             <p>Hi there,</p>
 
-            <p>You probably don't know me, I used to be the social media manager for ABI. Sorry for the unsolicited email, I got your contact info from a friend still working for the Beast.</p>
+            <p>You probably don't know me, I used to be the social media manager for ABI. Sorry for the unsolicited email, I got your contact info from a friend still working inside the Beast.</p>
 
             <p>Basically, in case you haven't picked up on it there's no long-term prospects for the job. ABI hired some teenage fucks from the Bay Area to "train" some neural AI thing with what you're doing, which they intend to set loose on the public again as soon as they figure out how to make it stop talking like a Nazi. You probably heard about the last time their social media account was on the news? Yeah, that happened a few days after me and my team got canned and replaced with version 1. </p>
 
@@ -126,13 +126,76 @@ export default [
         "content": `
             <p>Heya,</p>
 
-            <p>Thanks for replying back. I respect your decision, but I still think you're being played for a chump. Don't get me wrong, I do get that it's a really shit job market right now, but please promise me that you'll look for other positions. This isn't just me being bitter; Allied is seriously a <i>fucked up</i> place. The business is running at a loss, the leadership is an endless buck-passing circlejerk, and everyone is being pushed to cut corners. Aggressive stack ranking has created a culture of undermining and snitching worthy of the Stasi. Jesus, they actually used the words "quash dissent" to justify cracking down on managers and quality control supervisors doing their job! I can't make this shit up.</p>
+            <p>Thanks for replying back. I respect your decision, but I still think you're being played for a chump. Don't get me wrong, I do get that it's a really shit job market right now, but please promise me that you'll look for other positions. This isn't just me being bitter; Allied is seriously a <i>fucked up</i> place. The business is running at a loss, the leadership is an endless buck-passing circlejerk, and everyone is being pushed to cut corners. Oh and they're <i>big</i> fans of stack ranking, so if you've ever wanted to see a culture of undermining and snitching worthy of the Stasi... Jesus, they actually used the words "quash dissent" to justify cracking down on managers and quality control supervisors for doing their job! I can't make this shit up.</p>
 
-            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but in a nutshell I do not use Allied Brands products, nor would I recommend them to anyone wanting to live to a ripe old age. Mark my words; one day there will be a public scandal, and it will be big enough that your job description will change to "human sewer rake". I would not wish that horrorshow on anyone.</p>
+            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but like the old saying goes I do not use Allied Brands products, nor would I recommend them to anyone wanting to live to a ripe old age. Mark my words; one day there will be a public scandal, and it will be big enough that your job description will change to "human sewer rake". I would not wish that horrorshow on anyone.</p>
 
             <p>Cheers,<br/>Andrea</p>
         `
     },
+
+    {
+        "date": moment("20111121", "YYYYMMDD"),
+        "sender": "Frank Billeton",
+        "senderMail": "frank.billeton@alliedbrandsinc",
+        "recipient": "PR - All Users",
+        "recipientMail": "pr_all@alliedbrandsinc",
+        "selfDestruct": 8000,
+        "subject": "IMPORTANT - New campaign for Kingsley's Fruit Pebbles",
+        "content": `
+
+        <p>Hi all,</p>
+
+        <p>Many of you are already across the new marketing campaign for Kingsley's Fruit Pebbles. For those who were unable to make it to the full presentation, I've nutshelled the main points for you below.</p>
+
+        <p>In all honesty, it's no secret that Fruit Pebbles has been slated for discontinuation. The product has missed sales targets for the last 12 quarters, and feedback from the focus groups has been that the brand is perceived as unexciting and old-fashioned.</p>
+        <p>However, there has been an <b>upsurge</b> in web searches for Fruit Pebbles in the past month, due to its misappropriation by a number of political figures. Naturally, the business has put out a full statement condemning the use of our snack product as an abhorrent and factually incorrect metaphor for ethnic cleansing. But the interest in the product is real; in the last few weeks unit sales have almost tripled!</p>
+        <p>This boom will most likely be a temporary one if we leave it unaddressed, but we have a rare and ideal opportunity to pivot this underperforming brand and focus like a laser on a new and growing group of consumers, making up the bulk of the new sales. The demographic is predominantly male, middle-class, age 15-35, single, and interested in technology and video games.</p>
+        <p>Now I know what you're thinking, and I promise you we are not going to fall into that 90s trope of "X-Treme"ifying everything!! This is 2017, and Fruit Pebbles are a mature product for mature consumers. It goes without saying that the advertising can and will be darker and more realistic compared to other campaigns.</p>
+        <p>Of course, no advertising campaign is complete without a compelling original character, and no character is complete without an origin story. Sit back, relax, and enjoy this slice from the distant future...</p>
+
+        <hr/>
+        <p>They only called him in for the exceptional cases. Where all other options have failed. Today was no different.</p>
+        <p>Vice-Captain Ricardo Hull of the 3rd Interstellar Reconnaissance Company kicked open the hatch and dropped from the ventilation duct, the familiar smell of blood and charred human remains filling his nostrils. He knew better than to look among the bodies for familiar faces. They were all dead, and he'd soon join them if he got sympathetic now.</p>
+        <p>For a brief moment, there was silence. Ricardo crouched against a wall, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would be back soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
+        <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
+        <p>As he attached the plastic explosive charges to the main reactor</p>
+
+        <p>From the wings came a bloodcurdling battle cry</p>
+
+        <p><i>"EAT IT, CUCKS!"</i></p>
+
+        <p>A few rounds ricocheted off the armored brim of his helmet; a gift from his late father.</p>
+
+        <hr/>
+        <p>As a limited edition tie-in to promote the character, Fruit Pebbles will be released in gunmetal grey. In your communications with Kingsley Snacks customers, be sure to work in a reference to the promotion and include the image attached below.</p>
+        <p>I hope you will join me in welcoming Ricardo into our permanent stable of brand mascots.</p>
+        <p>#ricardolives</p>
+
+
+
+<p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Thanks,<br/><br/><b>Frank Billeton</b><br/>Vice President - Marketing<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1517)<br/>Fax: 570-330-9000<br/></span><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+        
+        `,
+    },
+
+
+    {
+        "date": moment("20111121", "YYYYMMDD"),
+        "sender": "Roger Billeton",
+        "senderMail": "roger.billeton@alliedbrandsinc",
+        "recipient": "All Users",
+        "recipientMail": "all@alliedbrandsinc",
+        "selfDestruct": 8000,
+        "subject": "Re: FW: IMPORTANT - New branding strategy for Kingsley's Fruit Pebbles",
+        "content": `
+            <p>someone tell Kate's team they better get on Board with this shit if they want jobs after Christmas</p>
+
+<p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\"><b>Roger Billeton</b><br/>&nbsp;Chief Executive Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1119)<br/>Fax: 570-330-9000<br/></span></p>
+            <p style="font-family: serif">This email (including any attachments) is confidential and intended for the named recipient(s) only. It may be subject to legal or other professional privilege and contain copyright material. Any confidentiality or privilege is not waived or lost because this email has been sent to you by mistake.</p>
+        `,
+    },
+
 
 
     // week 5 starting 20111128
@@ -150,8 +213,8 @@ export default [
                 <p style="font-variant: small-caps">Robert Xam in Chicago</p>
 
                 <p>Beaufort North America LLC. has issued an immediate recall for its Healthland Farms milk product range, following widespread reports of children suffering from impaired kidney functionality.</p>
-                <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The majority of cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. Unconfirmed reports suggest that batches of milk were tainted by a melamine-like additive to boost the apparent protein content, similar to the Chinese milk adulteration scandal in 2008.</p>
-                <p>A spokesperson for Beaufort stated that that a nationwide recall was a necessary safety precaution, the company was "shocked and dismayed" at this turn of events, and that their investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort.</p>
+                <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The majority of cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. Unconfirmed reports suggest that batches of milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
+                <p>A spokesperson for Beaufort stated that a nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that their investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort.</p>
                 <p>The market response to the scandal has been severe, with Beaufort stock down $3.50 to $9.02.</p>
                 <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms Milk. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone activist investor demanding a higher premium on the market price.<p>
                 <p>A spokesperson for Allied Brands Inc. declined to comment, citing the complete divestment of the product line. The Allied stock price suffered some early losses when news of the scandal broke on Wednesday, but has since rallied to be slightly ahead by close of trading today.</p>
@@ -218,25 +281,6 @@ export default [
 
 
 
-
-
-
-
-    {
-        "date": moment("20111212", "YYYYMMDD"),
-        "sender": "Roger Billeton",
-        "senderMail": "roger.billeton@alliedbrandsinc",
-        "recipient": "All Users",
-        "recipientMail": "pr_all@alliedbrandsinc",
-        "selfDestruct": 8000,
-        "subject": "Re: FW: IMPORTANT - New branding strategy for Kingsley's Fruit Pebbles",
-        "content": `
-            <p>someone tell Kate's team that they better get on Board with this shit if they want jobs after Christmas</p>
-
-<p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\"><b>Roger Billeton</b><br/>Chief Executive Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1119)<br/>Fax: 570-330-9000<br/></span></p>
-            <p style="font-family: serif">This email (including any attachments) is confidential and intended for the named recipient(s) only. It may be subject to legal or other professional privilege and contain copyright material. Any confidentiality or privilege is not waived or lost because this email has been sent to you by mistake.</p>
-        `,
-    },
 
     // week ???
     {
