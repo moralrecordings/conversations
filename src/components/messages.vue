@@ -1,7 +1,8 @@
 <template>
-    <div class="window resizable" v-window.under v-bind:style="{ width: width + 'px' }" v-bind:data-x="message.xPos" v-bind:data-y="message.yPos">
+    <div class="window" v-window.under v-bind:style="{ width: width + 'px', left: message.xPos + 'px', top: message.yPos + 'px' }">
         <div class="titlebar">
             <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
+            <button>×</button>
         </div>
         <div class="body-container"><div class="body">
             <div class="message-block clickable" v-on:click="hidden = !hidden">

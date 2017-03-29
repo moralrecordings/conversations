@@ -1,5 +1,5 @@
 <template>
-    <div class="window resizable" v-window.resizable v-bind:style="{ width: width + 'px', height: height + 'px' }">
+    <div class="window" v-window.resizable v-bind:style="{ width: width + 'px', height: height + 'px' }">
         <div class="titlebar active">
             <span class="titlebar-text">{{ messages[messageIndex].subject }}</span>
             <button>×</button>

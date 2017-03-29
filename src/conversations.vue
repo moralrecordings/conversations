@@ -131,6 +131,10 @@ html, body {
 // First argument is a string with the CSS selector to bind it to.
 
 @mixin theme_factory($class, $bg, $bg_text, $active, $active_text, $inactive, $inactive_text) {
+    #{$class}.desktop {
+        background-color: darken($active, 15%);
+    }
+
     #{$class} .body-container {
         background-color: $bg;
         color: $bg_text;
@@ -232,7 +236,7 @@ Vue.directive('window', {
         $(el).draggable({
             scroll: false,
             handle: '.titlebar',
-            containment: '.desktop',
+            //containment: '.desktop',
             start: zBumpCb,
         }).mousedown(zBumpCb);
 
@@ -256,34 +260,12 @@ Vue.directive('window', {
     }
 });
 
-/*interact('.titlebar').draggable({
-    inertia: true,
-    restrict: {
-        restriction: '.app',
-        endOnly: true,
-        elementRect: { top: 0, left: 0.5, bottom: 1, right: 0.5 }
-    },
-
-}).on('dragmove', function (ev) {
-    var target = ev.target.parentNode;
-    var x = (parseFloat(target.getAttribute('data-x')) || 0) + ev.dx;
-    var y = (parseFloat(target.getAttribute('data-y')) || 0) + ev.dy;
-
-//    target.style.left = x + 'px';
-//    target.style.top = y + 'px';       
-
-    target.setAttribute('data-x', x);
-    target.setAttribute('data-y', y);
-});*/
-
 
 export default {
     name: 'conversations',
     data: function () {
         return {
             messages: [
-                { user: 'SalmonMan23', body: 'I can\'t believe this @KingsleySnacks why is there a large ass fly in this choc bar, you can do better ffs', loc: 'Cook County, IL, USA' },
-                { user: 'PatriotXXL', body: 'wtf @KingsleySnacks you expect me to eat that', loc: 'Salt Lake City, UT, USA' },
             ]
         };
     },
