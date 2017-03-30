@@ -65,7 +65,7 @@ export default [
         "content": `
             <p>All,</p>
             <p>Following a "lessons learned" analysis of last month's surprise loss in court, we are rolling out sweeping changes to our business procedures. In summary: a customer incident was reported to the company through social media and a response issued, but was not escalated to the Customer Settlement Response team in time. As a result, other related externalities convinced the affected customer to file suit against the company. We were unlucky that this individual was unusually well resourced to bring about a case.</p>
-            <p>As a precaution to avoid this same confluence of events happening again, we have added a new marker to the ticketing system. In future, please mark any messages wherein the author makes specific demands or legal threats to a business unit with the <b>"Litigious"</b> flag; these threads will be monitored by CSR for possible early settlement talks.</p>
+            <p>As a precaution to avoid this same confluence of events happening again, we have added a new marker to the ticketing system. In future, please mark any messages wherein the author makes specific legal demands/threats, or makes allegations of physical harm caused by an Allied Brands product, with the <b>"Litigious"</b> flag. These threads will be monitored by CSR for possible early settlement talks.</p>
 
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
             <p style="font-family: serif">This email (including any attachments) is confidential and intended for the named recipient(s) only. It may be subject to legal or other professional privilege and contain copyright material. Any confidentiality or privilege is not waived or lost because this email has been sent to you by mistake.</p>
@@ -149,9 +149,9 @@ export default [
         <p>Many of you are already across the new marketing campaign for Kingsley's Fruit Pebbles. For those who were unable to make it to the full presentation, I've nutshelled the main points for you below.</p>
 
         <p>In all honesty, it's no secret that Fruit Pebbles has been slated for discontinuation. The product has missed sales targets for the last 12 quarters, and feedback from the focus groups has been that the brand is perceived as unexciting and old-fashioned.</p>
-        <p>However, there has been an <b>upsurge</b> in web searches for Fruit Pebbles in the past month, due to its misappropriation by a number of political figures. Naturally, the business has put out a full statement condemning the use of our snack product as an abhorrent and factually incorrect metaphor for ethnic cleansing. But the interest in the product is real; in the last few weeks unit sales have almost tripled!</p>
+        <p>However, there has been an <b>upsurge</b> in web searches for Fruit Pebbles in the past month, due to its misappropriation by a number of political figures. Naturally, the business released a full statement condemning the use of our snack product as an abhorrent and factually incorrect metaphor for ethnic cleansing. But the interest in the product is real; in the last few weeks unit sales have almost tripled!</p>
         <p>This boom will most likely be a temporary one if we leave it unaddressed, but we have a rare and ideal opportunity to pivot this underperforming brand and focus like a laser on a new and growing group of consumers, making up the bulk of the new sales. The demographic is predominantly male, middle-class, age 15-35, single, and interested in technology and video games.</p>
-        <p>Now I know what you're thinking, and I promise you we are not going to fall into that 90s trope of "X-Treme"ifying everything!! This is 2017, and Fruit Pebbles are a mature product for mature consumers. It goes without saying that the advertising can and will be darker and more realistic compared to other campaigns.</p>
+        <p>Now I know what you're thinking, and I promise you we are not going to fall into that 90s trope of "X-Treme"ifying everything!! This is 2011, and Fruit Pebbles are a mature product for mature consumers. It goes without saying that the advertising can and will be darker and more realistic compared to other campaigns.</p>
         <p>Of course, no advertising campaign is complete without a compelling original character, and no character is complete without an origin story. Sit back, relax, and enjoy this slice from the distant future...</p>
 
         <hr/>
@@ -161,7 +161,7 @@ export default [
         <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
         <p>As he attached the plastic explosive charges to the main reactor</p>
 
-        <p>From the wings came a bloodcurdling battle cry</p>
+        <p>From the wings came a bloodcurdling battle cry. It would be the last thing they would hear.</p>
 
         <p><i>"EAT IT, CUCKS!"</i></p>
 

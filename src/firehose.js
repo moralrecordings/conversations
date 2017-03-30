@@ -22,6 +22,6 @@ grammar.distribution = 'shuffle';
 export default {
     grammar: grammar,
     generateMessage: function () {
-        return this.grammar.flatten('#discoveryMessage#');
+        return this.grammar.flatten('#ks_foreign#');
     }
 };

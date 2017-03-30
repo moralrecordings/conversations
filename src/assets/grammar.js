@@ -19,13 +19,13 @@ export default {
     "foreignObject": ["piece of wood", "stick", "wood chip", "pill", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand", "shell", "lump", "tile", "hair", "eyelash", "clump of hair", "fingernail", "finger nail", "fake nail", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "peanut shell", "nail", "worm", "maggot", "fly", "spider", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "bug", "roach", "cockroach", "dead rat", "severed finger"],
     "sizeForeignObject": ["#size##foreignObject.randomUpper(20)#"],
     "chocolate": ["candy bar", "bar", "choc bar", "choco bar", "chocolate", "chocolate bar", "🍫"],
-    "object": ["#pTheir# #chocolate#", "this #chocolate#"],
-    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "really disappointed", "disappointed", "never again", "avoid at all costs", "I feel disrespected", "#pThey# feel sick", "#pThey# feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a reputable supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "still hungry", "you expect #pThem# to eat that", "not happy", "the press will love this"],
+    "pronoun": ["#pTheir#", "#pTheir#", "#pTheir#", "this", "this", "this"],
+    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "really disappointed", "disappointed", "never again", "avoid at all costs", "AVOID", "I feel disrespected", "#pThey# feel sick", "#pThey# feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a reputable supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "still hungry", "you expect #pThem# to eat that", "not happy", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this" ],
     "litigiousRemark": [
-         "see you in court", "you'll hear from my lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "you pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# cracked #pTheir# tooth", "next step is a lawsuit", "better lawyer up", "I'm taking you down with me", "you're going down for this", "you'll burn for this", "enjoy being sued"
+         "see you in court", "SEE YOU IN COURT", "you'll hear from my lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# cracked #pTheir# tooth", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney", "anyone know a good lawyer"
     ],
     "coda": [
-        " fml", " ffs", " you fuckers", " FML", " FFS", " jesus", "", "", "", "", "", "", "", "", "", ""
+        " fml", " ffs", " you fuckers", " FML", " FFS", " jesus", " JFC", " sigh", "", "", "", "", "", "", "", "", "", ""
     ],
     "genPerson": [
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my wife]",
@@ -71,24 +71,26 @@ export default {
     ],
     "defaultPerson": ["[pTheir:my][pTheirs:mine][pThey:I][pThem:me][pName:I]"],
     "discovery": [
-        "#genPerson##pName# found #sizeForeignObject.a# in #object#",
+        "#genPerson##pName# found #sizeForeignObject.a# in #pronoun# #object#",
         "#genPerson##pName# bit into #sizeForeignObject.a#",
-        "#defaultPerson#why is there #sizeForeignObject.a# in #object#",
-        "#defaultPerson#why does #object# have #sizeForeignObject.a#",
-        "#defaultPerson#there's #sizeForeignObject.a# in #object#",
-        "#defaultPerson#there's literally #sizeForeignObject.a# in #object#",
-        "#defaultPerson#wondering why there's #sizeForeignObject.a# in #object#",
-        "#defaultPerson#can't believe there's #sizeForeignObject.a# in #object#",
-        "#defaultPerson#no shit there is #sizeForeignObject.a# in #object#",
-        "#defaultPerson#how come there's #sizeForeignObject.a# in #object#",
-        "#defaultPerson#explain why there's #sizeForeignObject.a# in #object#",
-        "#defaultPerson#is it normal for #object# to have #sizeForeignObject.a#",
+        "#defaultPerson#why is there #sizeForeignObject.a# in #pronoun# #object#",
+        "#defaultPerson#why does #pronoun# #object# have #sizeForeignObject.a#",
+        "#defaultPerson#there's #sizeForeignObject.a# in #pronoun# #object#",
+        "#defaultPerson#there's literally #sizeForeignObject.a# in #pronoun# #object#",
+        "#defaultPerson#wondering why there's #sizeForeignObject.a# in #pronoun# #object#",
+        "#defaultPerson#can't believe there's #sizeForeignObject.a# in #pronoun# #object#",
+        "#defaultPerson#no shit there is #sizeForeignObject.a# in #pronoun# #object#",
+        "#defaultPerson#how come there's #sizeForeignObject.a# in #pronoun# #object#",    
+        "#defaultPerson#explain why there's #sizeForeignObject.a# in #pronoun# #object#",
+        "#defaultPerson#is it normal for your #object.s# to have #sizeForeignObject.a#",
         "#defaultPerson#do you make all the #object.s# with #sizeForeignObject.a# in them",
     ],
-    "discoveryMessage": [
-        "#exclamation.randomUpper(30)# @KingsleySnacks #discovery#, #closingRemark##coda#", 
-        "@KingsleySnacks #exclamation.randomUpper(30)# #discovery#, #closingRemark##coda#", 
-        "#complainEmojiSeq#[disco:#discovery#] #closingRemark# @KingsleySnacks #discovery##coda#",
+    
+    "ks_foreign": [
+        "[object:#chocolate#]#exclamation.randomUpper(30)# @KingsleySnacks #discovery#, #closingRemark##coda#", 
+        "[object:#chocolate#]@KingsleySnacks #exclamation.randomUpper(30)# #discovery#, #closingRemark##coda#", 
+        "[object:#chocolate#]#complainEmojiSeq#[disco:#discovery#] #closingRemark# @KingsleySnacks #discovery##coda#",
+        "[object:#chocolate#]#complainEmojiSeq#[disco:#discovery#] @KingsleySnacks #discovery#, #closingRemark# #coda#",
 //        "#complainEmojiSeq# #exclamation# @KingsleySnacks#coda#",
 //        "#exclamation.randomUpper(30)# @KingsleySnacks #complainEmojiSeq##coda#",
 //        "#complainEmojiSeq# #exclamation.randomUpper(30)# @KingsleySnacks #closingRemark##coda#"
