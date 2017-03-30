@@ -271,12 +271,17 @@ export default {
     },
     methods: {
         spawnMessage: function() {
+            var xOffset = 32;
+            var xRange = $('.desktop').width() - 64 - 400;
+            var yOffset = 32;
+            var yRange = $('.desktop').height() - 64 - 128;
+
             this.messages.push({
                 user: 'ToolbeltKiller',
                 loc: 'Newbridge, NJ, USA',
                 body: firehose.generateMessage(),
-                xPos: Math.floor( Math.random()*640 ),
-                yPos: Math.floor( Math.random()*480 ),
+                xPos: Math.floor( Math.random()*xRange )+xOffset +'px',
+                yPos: Math.floor( Math.random()*yRange )+yOffset +'px',
             });
         }
     },

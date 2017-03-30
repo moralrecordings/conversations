@@ -1,5 +1,5 @@
 <template>
-    <div class="window" v-window.under v-bind:style="{ width: width + 'px', left: message.xPos + 'px', top: message.yPos + 'px' }">
+    <div class="window" v-window.under v-bind:style="{ width: width, left: message.xPos, top: message.yPos }">
         <div class="titlebar">
             <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
             <button>×</button>
@@ -74,7 +74,7 @@ export default {
     data: function () {
         return {
             hidden: true,
-            width: 400
+            width: '400px'
         }
     },
 
