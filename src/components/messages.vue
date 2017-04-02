@@ -21,7 +21,7 @@
                     <option>Foreign object</option>
                 </select></label>
                 <label>Reply
-                    <textarea v-bind:class="{ ready: replyReady }" v-on:keydown="typing" v-model="replyContent" placeholder="Reply to customer"/>
+                    <textarea v-bind:class="{ ready: replyReady }" v-on:keydown="typing" v-model="replyFull" placeholder="Reply to customer"/>
                 </label>
             </div>
         </div></div>
@@ -130,6 +130,13 @@ export default {
             }
 
             ev.preventDefault();
+        }
+    },
+    computed: {
+        replyFull: {
+            get: function () {
+                return '@' + this.message.user + ' ' + this.replyContent;
+            }
         }
     },
     data: function () {
