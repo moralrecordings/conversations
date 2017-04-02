@@ -1,5 +1,8 @@
 <template>
     <div id="conversations" class="app">
+        <template v-for="asset in svgAssets">
+            <div style="display: none" v-html="asset"/>
+        </template>
         <div class="desktop theme-blue" style="flex: 1 0 auto">
 
             <button v-on:click="spawnMessage" style="position: absolute; width: 128px; height: 128px; right: 64px; bottom: 64px;">New message</button>
@@ -204,7 +207,9 @@ import messages from './components/messages';
 
 import firehose from './firehose';
 
-require('./assets/logo.svg');
+var svgAssets = [
+    require('assets/egg.rawsvg')
+];
 
 // fake window ordering using CSS z-index. 
 // every time we select a window, increase this by 1.
@@ -261,12 +266,14 @@ Vue.directive('window', {
 });
 
 
+
 export default {
     name: 'conversations',
     data: function () {
         return {
             messages: [
-            ]
+            ],
+            svgAssets: svgAssets
         };
     },
     methods: {
@@ -282,6 +289,7 @@ export default {
                 body: firehose.generateMessage(),
                 xPos: Math.floor( Math.random()*xRange )+xOffset +'px',
                 yPos: Math.floor( Math.random()*yRange )+yOffset +'px',
+                reply: 'dude I just work here chill please'
             });
         }
     },

@@ -6,7 +6,7 @@ var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve (dir) {
-  return path.join(__dirname, '..', dir)
+  return path.resolve(__dirname, '..', dir);
 }
 
 module.exports = {
@@ -60,6 +60,11 @@ module.exports = {
           name: utils.assetsPath('img/[name].[ext]')
         }
       },
+      { 
+        test: /\.rawsvg$/,
+        loader: 'svg-inline-loader'
+      },
+
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',

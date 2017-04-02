@@ -6,12 +6,13 @@
         </div>
         <div class="body-container"><div class="body">
             <div class="message-block clickable" v-on:click="hidden = !hidden">
-                <div class="message-avatar"></div>
+                <svg class="message-avatar">
+                    <use x="0" y="0" xlink:href="#eggAvatar" v-bind:style="{ fill: eggColour }"/>
+                </svg>
 
                 <span class="message-body">{{ message.body }}</span>
             </div>
             <div v-bind:class="{ closed: hidden }" class="message-hidden">
-                <button>Oh noes!</button>
                 <label>Reason<select>
                     <option>----</option>
                     <option>Misshapen product</option>
@@ -19,16 +20,47 @@
                     <option>Empty packaging</option>
                     <option>Foreign object</option>
                 </select></label>
-                <button>Oh noes!</button>
-                <button>Oh noes!</button>
-                <button>Oh noes!</button>
-
+                <label>Reply
+                <textarea/></label>
             </div>
         </div></div>
     </div>
 </template>
 
 <style scoped>
+label {
+    display: block;
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.8;
+}
+
+[type="text"], [type="password"], [type="date"], [type="datetime"], [type="datetime-local"], [type="month"], [type="week"], [type="email"], [type="number"], [type="search"], [type="tel"], [type="time"], [type="url"], [type="color"], textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+  
+}
+
+textarea {
+    height: 64px;
+}
+
+select {
+    display: block;    
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: normal;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+
+}
+
 .message-block {
     margin: 0.5em;
 }
@@ -36,7 +68,7 @@
 .message-hidden {
     margin: 0.5em;
     overflow-y: hidden;
-    max-height: 100px;
+    max-height: 300px;
     transition-property: all;
     transition-duration: 0.5s;
     transition-timing-function: ease-out;
@@ -52,7 +84,6 @@
     float: left;
     margin-right: 0.5em;
     margin-bottom: 0.5em;
-    background-color: teal;
     border-radius: 3px;
 }
 
@@ -68,13 +99,25 @@
 </style>
 
 <script>
+
+// cribbed from https://www.quora.com/What-is-the-meaning-of-the-color-of-Twitters-egg-avatars?share=1
+var eggColours = [
+    '#346A85', '#AFE356', '#348569', '#F6A43D', '#AAD3E6',
+    '#7F3485', '#992B41', '#3B94D9', '#E95F28', '#4A913C',
+    '#FFAC33', '#8899A6', '#744EAA', '#BE1931',
+
+// plus tango colours because they are great
+    '#EDD400', '#73D216', '#F57900', '#3465A4', '#75507B', '#C17D11', '#CC0000'
+];
+
 export default {
     name: 'messages-app',
     props: ['message'],
     data: function () {
         return {
             hidden: true,
-            width: '400px'
+            width: '400px',
+            eggColour: eggColours[Math.floor(Math.random()*eggColours.length)]
         }
     },
 
