@@ -21,7 +21,8 @@
                     <option>Foreign object</option>
                 </select></label>
                 <label>Reply
-                <textarea/></label>
+                    <textarea v-bind:class="{ ready: replyReady }" v-on:keydown="typing" v-model="replyContent" placeholder="Reply to customer"/>
+                </label>
             </div>
         </div></div>
     </div>
@@ -48,6 +49,12 @@ label {
 
 textarea {
     height: 64px;
+    resize: none;
+}
+
+textarea.ready {
+    border: 1px solid #4e9a06;
+    background: #d2f4b1;
 }
 
 select {
@@ -113,11 +120,25 @@ var eggColours = [
 export default {
     name: 'messages-app',
     props: ['message'],
+    methods: {
+        typing: function (ev) {
+            if (this.replyContent.length < this.message.reply.length) {
+                this.replyContent += this.message.reply[this.replyContent.length];
+            }
+            if (this.replyContent.length == this.message.reply.length) {
+                this.replyReady = true;
+            }
+
+            ev.preventDefault();
+        }
+    },
     data: function () {
         return {
             hidden: true,
             width: '400px',
-            eggColour: eggColours[Math.floor(Math.random()*eggColours.length)]
+            eggColour: eggColours[Math.floor(Math.random()*eggColours.length)],
+            replyContent: '',
+            replyReady: false
         }
     },
 
