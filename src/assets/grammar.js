@@ -14,18 +14,18 @@ export default {
         "[emoji1:#complainEmoji#][emoji2:#complainEmoji#][emoji3:#complainEmoji#]#emoji1##emoji1##emoji2##emoji2##emoji3##emoji3#", 
         "", "", "", "", "", "", ""
     ],
-    "exclamation": ["wtf", "wtf is this", "what the fuck", "what the hell is this", "what is this", "wtf is this shit", "what is this horseshit", "what the shit", "holy shit", "holy wow", "my god", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "gross", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me"],
+    "exclamation": ["wtf", "wtf is this", "what the fuck", "what the hell is this", "what is this", "wtf is this shit", "what is this horseshit", "what the shit", "holy shit", "holy wow", "my god", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "gross", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "not cool", "not happy"],
     "size": ["large ", "gigantic ", "great big fucking ", "largeass ", "big ", "bigass ", "goddamn ", "huge ", "enormous ", "fucking ", "", "", "", ""],
     "foreignObject": ["piece of wood", "stick", "wood chip", "pill", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand", "shell", "lump", "tile", "hair", "eyelash", "clump of hair", "fingernail", "finger nail", "fake nail", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "peanut shell", "nail", "worm", "maggot", "fly", "spider", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "bug", "roach", "cockroach", "dead rat", "severed finger"],
     "sizeForeignObject": ["#size##foreignObject.randomUpper(20)#"],
     "chocolate": ["candy bar", "bar", "choc bar", "choco bar", "chocolate", "chocolate bar", "🍫"],
     "pronoun": ["#pTheir#", "#pTheir#", "#pTheir#", "this", "this", "this"],
-    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "really disappointed", "disappointed", "never again", "avoid at all costs", "AVOID", "I feel disrespected", "#pThey# feel sick", "#pThey# feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a reputable supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "still hungry", "you expect #pThem# to eat that", "not happy", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this" ],
+    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "really disappointed", "disappointed", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "#pThey# feel sick", "#pThey# feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a reputable supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "still hungry", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this" ],
     "litigiousRemark": [
-         "see you in court", "SEE YOU IN COURT", "you'll hear from my lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# cracked #pTheir# tooth", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney", "anyone know a good lawyer"
+         "see you in court", "SEE YOU IN COURT", "you'll hear from #pTheir# lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you better pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# cracked #pTheir# tooth", "#pThey# haven't stopped vomiting", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney", "anyone know a good lawyer"
     ],
     "coda": [
-        " fml", " ffs", " you fuckers", " FML", " FFS", " jesus", " JFC", " sigh", "", "", "", "", "", "", "", "", "", ""
+        " fml", " ffs", " you dicks", " you fuckers", " FML", " FFS", " jesus", " JFC", " sigh", "", "", "", "", "", "", "", "", "", ""
     ],
     "genPerson": [
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my wife]",
@@ -87,10 +87,10 @@ export default {
     ],
     
     "ks_foreign": [
-        "[object:#chocolate#]#exclamation.randomUpper(30)# @KingsleySnacks #discovery#, #closingRemark##coda#", 
+        "[object:#chocolate#]#exclamation.randomUpper(30)# @KingsleySnacks #discovery#, #closingRemark.randomUpper(20)##coda#", 
         "[object:#chocolate#]@KingsleySnacks #exclamation.randomUpper(30)# #discovery#, #closingRemark##coda#", 
-        "[object:#chocolate#]#complainEmojiSeq#[disco:#discovery#] #closingRemark# @KingsleySnacks #discovery##coda#",
-        "[object:#chocolate#]#complainEmojiSeq#[disco:#discovery#] @KingsleySnacks #discovery#, #closingRemark# #coda#",
+        "[object:#chocolate#]#complainEmojiSeq#[disco:#discovery#] #closingRemark.randomUpper(30)# @KingsleySnacks #discovery##coda#",
+        "[object:#chocolate#]#complainEmojiSeq#[disco:#discovery#] @KingsleySnacks #discovery#, #closingRemark.randomUpper(20)# #coda#",
 //        "#complainEmojiSeq# #exclamation# @KingsleySnacks#coda#",
 //        "#exclamation.randomUpper(30)# @KingsleySnacks #complainEmojiSeq##coda#",
 //        "#complainEmojiSeq# #exclamation.randomUpper(30)# @KingsleySnacks #closingRemark##coda#"
