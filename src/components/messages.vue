@@ -13,12 +13,31 @@
                 <span class="message-body">{{ message.body }}</span>
             </div>
             <div v-bind:class="{ closed: hidden }" class="message-hidden">
+                <label>Category<select>
+                    <option>----</option>
+                    <option>Compliment</option>
+                    <option>Product issue</option>
+                    <option>Abuse</option>
+                </select></label>               
                 <label>Reason<select>
                     <option>----</option>
                     <option>Misshapen product</option>
                     <option>Spoilage</option>
                     <option>Empty packaging</option>
                     <option>Foreign object</option>
+                </select></label>
+                <label>Type of abuse<select>
+                    <option>----</option>
+                    <option>Hate speech</option>
+                    <option>Stalking</option>
+                    <option>Extortion</option>
+                    <option>Death threat</option>
+                </select></label>
+                <label><input type="checkbox"/> Litigious</label>
+                <label><input type="checkbox"/> Suicide risk</label>
+                <label>Attachment<select>
+                    <option>----</option>
+                    <option>20111129FPDraftHeroFINAL2.jpg</option>
                 </select></label>
                 <label>Reply
                     <textarea v-bind:class="{ ready: replyReady }" v-on:keydown="typing" v-model="replyFull" placeholder="Reply to customer"/>
@@ -68,14 +87,16 @@ select {
 
 }
 
+
 .message-block {
+    display: inline-block;
     margin: 0.5em;
 }
 
 .message-hidden {
     margin: 0.5em;
     overflow-y: hidden;
-    max-height: 300px;
+    max-height: 500px;
     transition-property: all;
     transition-duration: 0.5s;
     transition-timing-function: ease-out;
