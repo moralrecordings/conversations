@@ -1,5 +1,5 @@
 <template>
-    <div class="window" v-window.under v-bind:style="{ width: width, left: message.xPos, top: message.yPos }">
+    <div class="window" v-window.under v-bind:class="{ flyout: flyout }" v-bind:style="{ width: width, left: message.xPos, top: message.yPos }">
         <div class="titlebar">
             <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
             <button>×</button>
@@ -42,6 +42,7 @@
                 <label>Reply
                     <textarea v-bind:class="{ ready: replyReady }" v-on:keydown="typing" v-model="replyFull" placeholder="Reply to customer"/>
                 </label>
+                
             </div>
         </div></div>
     </div>
@@ -124,6 +125,25 @@ select {
     display: block;
     margin: 0 0 1rem 0;
 }
+
+@keyframes flyout {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(2000px, 0, 0) scale(.1);
+        transform-origin: right center;
+    }
+}
+
+.flyout {
+    animation-name: flyout;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+}
 </style>
 
 <script>
@@ -150,6 +170,10 @@ export default {
                 this.replyReady = true;
             }
 
+            if (ev.keyCode == 13) { // enter
+                this.flyout = true;
+            }
+
             ev.preventDefault();
         }
     },
@@ -162,6 +186,7 @@ export default {
     },
     data: function () {
         return {
+            flyout: false,
             hidden: true,
             width: '400px',
             eggColour: eggColours[Math.floor(Math.random()*eggColours.length)],

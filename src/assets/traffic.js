@@ -25,6 +25,7 @@ var forms = {
             { id: 'spoilage', name 'Spoilage', visibleLevel: 0 },
             { id: 'emptyPackaging', name 'Empty packaging', visibleLevel: 0 },
             { id: 'foreignObject', name 'Foreign object', visibleLevel: 0 },
+            { id: 'sideEffects', name 'Side effects', visibleLevel: 0 },
         ]},
         { id: 'abuse', name: 'Abuse', visibleLevel: 6, subtypeName: 'Abuse type', subtypes: [
             { id: 'blank', name: '----', visibleLevel: 0 },
