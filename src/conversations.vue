@@ -3,7 +3,7 @@
         <template v-for="asset in svgAssets">
             <div style="display: none" v-html="asset"/>
         </template>
-        <div class="desktop theme-blue" style="flex: 1 0 auto">
+        <div class="desktop theme-abi" style="flex: 1 0 auto">
 
             <button v-on:click="spawnMessage" style="position: absolute; width: 128px; height: 128px; right: 64px; bottom: 64px;">New message</button>
             
@@ -191,7 +191,8 @@ html, body {
 
 
 // Now we can crank out one colour scheme class per line
-@include theme_factory( ".theme-blue", white, black, #37abc8, white, #bbbbbb, white );
+@include theme_factory( ".theme-abi", white, black, #37abc8, white, #bbbbbb, white );
+@include theme_factory( ".theme-excelsior", #eeeeec, black, white, #cc0000, #d7cfcf, #666666 );
 
 
 
