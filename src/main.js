@@ -24,7 +24,7 @@ const router = new VueRouter({
 
 const store = new Vuex.Store({
     state: {
-        week: 0
+        level: 8
     }
 });
 

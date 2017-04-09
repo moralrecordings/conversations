@@ -25,7 +25,7 @@ var forms = {
             { id: 'spoilage', name: 'Spoilage', visibleLevel: 0 },
             { id: 'emptyPackaging', name: 'Empty packaging', visibleLevel: 0 },
             { id: 'foreignObject', name: 'Foreign object', visibleLevel: 0 },
-            { id: 'sideEffects', name: 'Side effects', visibleLevel: 0 },
+            { id: 'sideEffects', name: 'Side effects', visibleLevel: 2 },
         ]},
         { id: 'abuse', name: 'Abuse', visibleLevel: 6, subtypeName: 'Abuse type', subtypes: [
             { id: 'blank', name: '----', visibleLevel: 0 },
@@ -51,7 +51,7 @@ var forms = {
 var messageTypes = {
     'ks_compliment': { account: 'KingsleySnacks', type: 'compliment', subtype: ''}, 
     'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject' },
-    'ks_foreignLegal': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', litigious: true },
+    'ks_foreignLegal': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
     'ks_empty': { account: 'KingsleySnacks', type: 'issue', subtype: 'emptyPackaging' },
     'ks_spoil': { account: 'KingsleySnacks', type: 'issue', subtype: 'spoilage' },
 };

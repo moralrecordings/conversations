@@ -13,31 +13,17 @@
                 <span class="message-body">{{ message.body }}</span>
             </div>
             <div v-bind:class="{ closed: hidden }" class="message-hidden">
-                <label>Category<select>
-                    <option>----</option>
-                    <option>Compliment</option>
-                    <option>Product issue</option>
-                    <option>Abuse</option>
+                <label>Category<select v-model="replyType">
+                    <option v-for="(type, index) in forms.types" v-if="type.visibleLevel <= $store.state.level" v-bind:value="index">{{ type.name }}</option>
                 </select></label>               
-                <label>Reason<select>
-                    <option>----</option>
-                    <option>Misshapen product</option>
-                    <option>Spoilage</option>
-                    <option>Empty packaging</option>
-                    <option>Foreign object</option>
+                <label v-if="forms.types[replyType].subtypes">{{ forms.types[replyType].subtypeName }}<select v-model="replySubtype">
+                    <option v-for="(subtype, index) in forms.types[replyType].subtypes" v-if="subtype.visibleLevel <= $store.state.level" v-bind:value="index">{{ subtype.name }}</option>
                 </select></label>
-                <label>Type of abuse<select>
-                    <option>----</option>
-                    <option>Hate speech</option>
-                    <option>Stalking</option>
-                    <option>Extortion</option>
-                    <option>Death threat</option>
-                </select></label>
-                <label><input type="checkbox"/> Litigious</label>
-                <label><input type="checkbox"/> Suicide risk</label>
-                <label>Attachment<select>
-                    <option>----</option>
-                    <option>20111129FPDraftHeroFINAL2.jpg</option>
+
+                <label v-for="(flag, index) in forms.flags"  v-if="flag.visibleLevel <= $store.state.level"><input type="checkbox" v-model="replyFlags[index]"/> {{ flag.name }}</label>
+                
+                <label v-if="forms.attachmentsVisibleLevel <= $store.state.level">Attachment<select v-model="replyAttachment">
+                    <option v-for="(attach, index) in forms.attachments" v-if="attach.visibleLevel <= $store.state.level" v-bind:value="index">{{ attach.name }}</option>
                 </select></label>
                 <label>Reply
                     <textarea v-bind:class="{ ready: replyReady }" v-on:keydown="typing" v-model="replyFull" placeholder="Reply to customer"/>
@@ -181,12 +167,12 @@ export default {
         },
         submit: function () {
             this.$emit('submit', {
-                
+                id: this.message.id
             });
         },
         close: function () {
             this.$emit('close', {
-
+                id: this.message.id
             });
         },
     },
@@ -199,6 +185,11 @@ export default {
     },
     data: function () {
         return {
+            forms: traffic.forms,
+            replyType: 0,
+            replySubtype: 0,
+            replyFlags: {},
+            replyAttachment: 0,
             flyout: false,
             hidden: true,
             width: '400px',

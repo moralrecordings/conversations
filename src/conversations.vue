@@ -9,7 +9,7 @@
             <button v-on:click="spawnMessage" style="position: absolute; width: 128px; height: 128px; right: 64px; bottom: 64px;">New message</button>
             
             <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmail"/>
-            <mr-messages-app v-for="message in messages" v-bind:message="message" v-on:submit="submitMessage"/>
+            <mr-messages-app v-for="msgId in messageWindows" v-bind:message="messages[msgId]" v-on:submit="submitMessage"/>
         </div>
     </div>
 </template>
@@ -87,7 +87,7 @@ html, body {
     cursor: pointer;
     user-select: none;
     -moz-user-select: none;
-    transition-property: all;
+    transition-property: background;
     transition-duration: .5s;
     transition-timing-function: ease;
 }
@@ -276,6 +276,8 @@ export default {
             showEmail: true,
             messages: [
             ],
+            messageWindows: [
+            ],
             svgAssets: svgAssets
         };
     },
@@ -292,7 +294,9 @@ export default {
             var yOffset = 32;
             var yRange = $('.desktop').height() - 64 - 128;
 
+            this.messageWindows.push(this.messages.length);
             this.messages.push({
+                id: this.messages.length,
                 user: 'ToolbeltKiller',
                 loc: 'Newbridge, NJ, USA',
                 body: firehose.generateMessage(),
