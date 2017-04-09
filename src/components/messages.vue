@@ -2,7 +2,7 @@
     <div class="window" v-window.under v-bind:class="{ flyout: flyout }" v-bind:style="{ width: width, left: message.xPos, top: message.yPos }">
         <div class="titlebar">
             <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
-            <button>×</button>
+            <button v-on:click="close">×</button>
         </div>
         <div class="body-container"><div class="body">
             <div class="message-block clickable" v-on:click="hidden = !hidden">
@@ -148,6 +148,8 @@ select {
 
 <script>
 
+import traffic from 'assets/traffic';
+
 // cribbed from https://www.quora.com/What-is-the-meaning-of-the-color-of-Twitters-egg-avatars?share=1
 var eggColours = [
     '#346A85', '#AFE356', '#348569', '#F6A43D', '#AAD3E6',
@@ -172,10 +174,21 @@ export default {
 
             if (ev.keyCode == 13) { // enter
                 this.flyout = true;
+                this.submit();
             }
 
             ev.preventDefault();
-        }
+        },
+        submit: function () {
+            this.$emit('submit', {
+                
+            });
+        },
+        close: function () {
+            this.$emit('close', {
+
+            });
+        },
     },
     computed: {
         replyFull: {

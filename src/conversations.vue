@@ -5,10 +5,11 @@
         </template>
         <div class="desktop theme-abi" style="flex: 1 0 auto">
 
+            <button 
             <button v-on:click="spawnMessage" style="position: absolute; width: 128px; height: 128px; right: 64px; bottom: 64px;">New message</button>
             
-            <mr-email-app width="1000" height="600"/>
-            <mr-messages-app v-for="message in messages" v-bind:message="message"/>
+            <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmail"/>
+            <mr-messages-app v-for="message in messages" v-bind:message="message" v-on:submit="submitMessage"/>
         </div>
     </div>
 </template>
@@ -50,7 +51,7 @@ html, body {
     display: flex;
     padding: 0.5em;
     font-weight: bold;
-    line-height: 1.8em;
+    line-height: 1.8em; 
     border: 1px solid;
     border-top-left-radius: 2px; 
     border-top-right-radius: 2px;
@@ -272,12 +273,19 @@ export default {
     name: 'conversations',
     data: function () {
         return {
+            showEmail: true,
             messages: [
             ],
             svgAssets: svgAssets
         };
     },
     methods: {
+        closeEmail: function() {
+            this.showEmail = false;
+        },
+        closeMessage: function() {
+            
+        },
         spawnMessage: function() {
             var xOffset = 32;
             var xRange = $('.desktop').width() - 64 - 400;
@@ -292,6 +300,9 @@ export default {
                 yPos: Math.floor( Math.random()*yRange )+yOffset +'px',
                 reply: 'dude I just work here chill please'
             });
+        },
+        submitMessage: function (ev) {
+            console.log(ev);
         }
     },
     components: {

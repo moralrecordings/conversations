@@ -2,7 +2,7 @@
     <div class="window" v-window.resizable v-bind:style="{ width: width + 'px', height: height + 'px' }">
         <div class="titlebar active">
             <span class="titlebar-text">{{ messages[messageIndex].subject }}</span>
-            <button>×</button>
+            <button v-on:click="close">×</button>
         </div>
         <div class="body-container"><div class="body email-body">
             
@@ -88,6 +88,9 @@ export default {
         };
     },
     methods: {
+        close: function() {
+            this.$emit('close');
+        },
         setMessage: function(index) {
             this.messages[this.messageIndex].read = true;
             this.messageIndex = index;
