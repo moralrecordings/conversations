@@ -48,6 +48,7 @@ var forms = {
     ]
 }
 
+
 var messageTypes = {
     'ks_compliment': { account: 'KingsleySnacks', type: 'compliment', subtype: ''}, 
     'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject' },

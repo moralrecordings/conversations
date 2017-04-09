@@ -166,9 +166,20 @@ export default {
             ev.preventDefault();
         },
         submit: function () {
-            this.$emit('submit', {
-                id: this.message.id
+            var vm = this;
+            var result = {
+                id: this.message.id,
+                type: this.forms.types[this.replyType].id,
+                subtype: this.forms.types[this.replyType].subtypes[this.replySubtype].id,
+                attachment: this.forms.attachments[this.replyAttachment].id,
+                ready: this.replpyReady,
+                flags: {},
+            };
+            this.forms.flags.forEach(function (el, index) {
+                result.flags[el.id] = vm.replyFlags[index] ? true : false; 
             });
+
+            this.$emit('submit', result);
         },
         close: function () {
             this.$emit('close', {
