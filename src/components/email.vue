@@ -94,7 +94,7 @@ export default {
         setMessage: function(index) {
             this.messages[this.messageIndex].read = true;
             this.messageIndex = index;
-
+            $('.email-message').scrollTop(0);
         }
     }
 };

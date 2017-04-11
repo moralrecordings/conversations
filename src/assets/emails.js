@@ -2,7 +2,8 @@ import moment from 'moment';
 
 export default [
     // week 1 starting 20111031
-    {
+    {   
+        "visibleLevel": 0,
         "date": moment("20111025", "YYYYMMDD"),
         "sender": "EasyJob Careers",
         "senderMail": "alerts@easyjob",
@@ -29,6 +30,7 @@ export default [
         `
     },
     {
+        "visibleLevel": 0,
         "date": moment("20111031", "YYYYMMDD"),
         "sender": "Tricia Huxton",
         "senderMail": "tricia.huxton@alliedbrandsinc",
@@ -56,6 +58,7 @@ export default [
 
     // week 2 starting 20111107
     {
+        "visibleLevel": 1,
         "date": moment("20111107", "YYYYMMDD"),
         "sender": "Nathaniel Hardcastle",
         "senderMail": "nathaniel.hardcastle@alliedbrandsinc",
@@ -64,8 +67,8 @@ export default [
         "subject": "URGENT - New business rule",
         "content": `
             <p>All,</p>
-            <p>Following a "lessons learned" analysis of last month's surprise loss in court, we are rolling out sweeping changes to our business procedures. In summary: a customer incident was reported to the company through social media and a response issued, but was not escalated to the Customer Settlement Response team in time. As a result, other related externalities convinced the affected customer to file suit against the company. We were unlucky that this individual was unusually well resourced to bring about a case.</p>
-            <p>As a precaution to avoid this same confluence of events happening again, we have added a new marker to the ticketing system. In future, please mark any messages wherein the author makes specific legal demands/threats, or makes allegations of physical harm caused by an Allied Brands product, with the <b>"Litigious"</b> flag. These threads will be monitored by CSR for possible early settlement talks.</p>
+            <p>Following a "lessons learned" analysis of last month's surprise loss in court, we are rolling out a sweeping change to our business procedures. In summary: a customer incident was reported to the company through social media and a response issued, but was not escalated to the Customer Settlement Response team in time. As a result, other related externalities convinced the affected customer to file suit against the company. We were unlucky that this individual was unusually well resourced to bring about a case.</p>
+            <p>To prevent the same terrible confluence of events from happening again, we have added a new marker to the ticketing system. In future, please mark any messages wherein a customer makes specific legal demands/threats, or makes allegations of physical harm caused by an Allied Brands product, with the <b>"Litigious"</b> flag. These threads will be monitored by CSR for possible early settlement talks.</p>
 
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
             <p style="font-family: serif">This email (including any attachments) is confidential and intended for the named recipient(s) only. It may be subject to legal or other professional privilege and contain copyright material. Any confidentiality or privilege is not waived or lost because this email has been sent to you by mistake.</p>
@@ -83,6 +86,7 @@ export default [
 
     // week 3 starting 20111114
     {
+        "visibleLevel": 2,
         "date": moment("20111112", "YYYYMMDD"),
         "sender": "Andrea Lisbon",
         "senderMail": "starbodies@ichiromail",
@@ -96,27 +100,29 @@ export default [
 
             <p>Basically, in case you haven't picked up on it there's no long-term prospects for the job. ABI hired some teenage fucks from the Bay Area to "train" some neural AI thing with what you're doing, which they intend to set loose on the public again as soon as they figure out how to make it stop talking like a Nazi. You probably heard about the last time their social media account was on the news? Yeah, that happened a few days after me and my team got canned and replaced with version 1. </p>
 
-            <p>What makes me fucking livid is this unpaid internship horseshit. Okay, the job wasn't great money, but it was at least a salary. I am 99% sure that their game plan is to ditch you at the end of the trial period and just churn people until they have enough data or whatever to switch CyberGoebbels back on. Obviously you're free to do as you wish, but I figure the least I can do is warn you about what's going down.</p>
+            <p>What makes me fucking livid is this unpaid internship horseshit. Okay, the job wasn't great money, but it was at least a salary! I am 99% sure that their game plan is to ditch you at the end of the trial period and just churn people until they have enough data or whatever to switch CyberGoebbels back on. Obviously you're free to do as you wish, but I figure the least I can do is warn you about what's going down.</p>
 
             <p>Cheers,<br/>Andrea</p>
         `
     },
     {
+        "visibleLevel": 2,
         "date": moment("20111114", "YYYYMMDD"),
         "sender": "Tricia Huxton",
         "senderMail": "tricia.huxton@alliedbrandsinc",
         "recipient": "PR - L1",
         "recipientMail": "pr_l1@alliedbrandsinc",
-        "subject": "New account - Cap'n Jack Food Holdings ",
+        "subject": "New account - Cap'n Jack Food Holdings",
         "content": `
             <p>All,</p>
-            <p>Allied Brands has finalized acquisition of the Cap'n Jack family of snack foods, including Cap'n Jack's Salted Peanut Poppers, Cap'n Jack's Compressed Fruit Sheets, and Cap'n Jack's Fun-Size Energy Loaf. As part of the handover, the Cap'n Jack social media presence (<b>@CapnJackFoods</b>) has been added to your console, and the incoming feed adjusted to include mentions of Cap'n Jack products. Please engage with as many such customers as possible from the Cap'n Jack account.</p>
+            <p>Allied Brands has completed its acquisition of the Cap'n Jack family of snack foods, including Cap'n Jack's Salted Peanut Poppers, Cap'n Jack's Compressed Fruit Sheets, and Cap'n Jack's Fun-Size Energy Loaf. As part of the handover, the Cap'n Jack social media presence (<b>@CapnJackFoods</b>) has been added to your console, and the incoming feed adjusted to include mentions of Cap'n Jack products. Please engage with as many such customers as possible from the Cap'n Jack account.</p>
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
 
     // week 4 starting 20111121
     {
+        "visibleLevel": 3,
         "date": moment("20111117", "YYYYMMDD"),
         "sender": "Andrea Lisbon",
         "senderMail": "starbodies@ichiromail",
@@ -135,6 +141,7 @@ export default [
     },
 
     {
+        "visibleLevel": 3,
         "date": moment("20111121", "YYYYMMDD"),
         "sender": "Frank Billeton",
         "senderMail": "frank.billeton@alliedbrandsinc",
@@ -146,9 +153,9 @@ export default [
 
         <p>Hi all,</p>
 
-        <p>Many of you are already across the new marketing campaign for Kingsley's Fruit Pebbles. For those who were unable to make it to the full presentation, I've nutshelled the main points for you below.</p>
+        <p>As you're probably aware, we are launching a new marketing campaign for Kingsley's Fruit Pebbles this week. Those of you who were present at the full presentation on Friday should already be across it, but for those who were unable to make it I've nutshelled the main points for you below.</p>
 
-        <p>In all honesty, it's no secret that the Fruit Pebbles line has been slated for discontinuation. The products have missed sales targets for the last 12 quarters, and feedback from the focus groups has been that the brand is perceived as unexciting and old-fashioned.</p>
+        <p>In all honesty, it's no secret that the Fruit Pebbles line has been considered for discontinuation. The products have missed sales targets for the last 12 quarters, and the focus groups have consistently reported that they perceive the brand as unexciting and old-fashioned.</p>
         <p>However, there has been an <b>upsurge</b> in web searches for Fruit Pebbles in the past month, due to its misappropriation by a number of political figures. Naturally, the business released a full statement condemning the use of our snack product as an abhorrent and factually incorrect metaphor for ethnic cleansing. But the interest in the product is real; in the last few weeks unit sales have almost tripled!</p>
         <p>This boom will most likely be a temporary one if we leave it unaddressed, but we have a rare and ideal opportunity to pivot this underperforming brand and focus like a laser on a new and growing group of consumers, making up the bulk of the new sales. The demographic is predominantly male, middle-class, age 15-35, single, and interested in technology and video games.</p>
         <p>Now I know what you're thinking, and I promise you we are not going to fall into that 90s trope of "X-Treme"ifying everything!! This is 2011, and Fruit Pebbles are a mature product for mature consumers. It goes without saying that the advertising can and will be darker and more realistic compared to other campaigns.</p>
@@ -157,7 +164,7 @@ export default [
         <hr/>
         <p>They only called him in for the exceptional cases. Where all other options have failed. Today was no different.</p>
         <p>Vice-Captain Ricardo Hull of the 3rd Interstellar Reconnaissance Company kicked open the hatch and dropped from the ventilation duct, the familiar smell of blood and charred human remains filling his nostrils. He knew better than to look among the bodies for familiar faces. They were all dead, and he'd soon join them if he got sympathetic now.</p>
-        <p>For a brief moment, there was silence. Ricardo crouched against a wall, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would be back soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
+        <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would be back soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
         <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
         <p>As he attached the plastic explosive charges to the main reactor</p>
 
@@ -181,6 +188,7 @@ export default [
 
 
     {
+        "visibleLevel": 3,
         "date": moment("20111121", "YYYYMMDD"),
         "sender": "Roger Billeton",
         "senderMail": "roger.billeton@alliedbrandsinc",
@@ -200,6 +208,7 @@ export default [
 
     // week 5 starting 20111128
     {
+        "visibleLevel": 4,
         "date": moment("20111124", "YYYYMMDD"),
         "sender": "MediaMunch Alerts",
         "senderMail": "alerts@mediamunch",
@@ -225,6 +234,7 @@ export default [
     },
 
     {
+        "visibleLevel": 4,
         "date": moment("20111124", "YYYYMMDD"),
         "sender": "Andrea Lisbon",
         "senderMail": "starbodies@ichiromail",
@@ -240,8 +250,9 @@ export default [
         `
     },
 
-
+    // week 6 starting 20111205
     {
+        "visibleLevel": 5,
         "date": moment("20111205", "YYYYMMDD"),
         "sender": "Tricia Huxton",
         "senderMail": "tricia.huxton@alliedbrandsinc",
@@ -257,8 +268,10 @@ export default [
         `
     },
 
+    // week 7 starting 20111212
 
     {
+        "visibleLevel": 6,
         "date": moment("20111209", "YYYYMMDD"),
         "sender": "Cody Briggs",
         "senderMail": "cody.briggs@alliedbrandsinc",
@@ -282,8 +295,9 @@ export default [
 
 
 
-    // week ???
+    // week 8 starting 20111220
     {
+        "visibleLevel": 7,
         "date": moment("20111219", "YYYYMMDD"),
         "sender": "Nathaniel Hardcastle",
         "senderMail": "nathaniel.hardcastle@alliedbrandsinc",
@@ -293,7 +307,7 @@ export default [
         "content": `
             <p>All,</p>
             
-            <p>It has come to the attention of Legal that a small number of Excelsior Pharmaceuticals customers are expressing despair at a perceived inability to procure our products for themselves or their loved ones. Without question, the welfare of all our customers should come first and foremost in everything we do. As good corporate citizens and as Americans, we have a duty to look beyond what is best for our image or bottom line, and provide help to those who need it the most. It's time for us to open up our moral compass and chart a new, righteous course.</p>
+            <p>It has come to the attention of Legal that a small number of Excelsior Pharmaceuticals customers are expressing despair at a perceived inability to procure our products for themselves or their loved ones. Without question, the welfare of our customers should come first and foremost in everything we do. As good corporate citizens and as Americans, we have a duty to look beyond what is best for our image or bottom line, and provide help to those who need it the most. It's time for us to open up our moral compass and chart a new, righteous course.</p>
 
             <p>For any customer you would identify as "<b>at-risk</b>", please refer them to the National Suicide Prevention Lifeline for assistance. This should be done from the Allied Brands Inc. corporate account (<b>@alliedbrandsinc</b>) ONLY, so as not to conflate this serious issue with the light-hearted tone used for advertising/social media outreach by the individual brands.</p>
 

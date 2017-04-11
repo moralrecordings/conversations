@@ -1,15 +1,19 @@
 <template>
-    <div id="conversations" class="app">
+    <div id="conversations" class="app theme-abi">
         <template v-for="asset in svgAssets">
             <div style="display: none" v-html="asset"/>
         </template>
-        <div class="desktop theme-abi" style="flex: 1 0 auto">
+        <div class="desktop">
 
             <button 
-            <button v-on:click="spawnMessage" style="position: absolute; width: 128px; height: 128px; right: 64px; bottom: 64px;">New message</button>
             
             <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmail"/>
             <mr-messages-app v-for="msgId in messageWindows" v-bind:message="messages[msgId]" v-on:submit="submitMessage"/>
+        </div>
+        <div class="taskbar">
+            <button>EMail</button>
+            <button>IssueMagic</button>
+            <button v-on:click="spawnMessage">Spawn angry tweet</button>
         </div>
     </div>
 </template>
@@ -33,10 +37,21 @@ html, body {
     height: 100%
 }
 
+// desktop flex magic
+.desktop {
+    flex: 1 0 auto;
+    border-bottom: 1px solid black;
+}
+
+// taskbar
+.taskbar {
+    padding: 4px;
+}
+
 // window class, for the topmost level floating box
 .window {
     position: absolute;
-    border: 1px solid;
+    border: 1px solid black;
     border-radius: 4px;
     display: flex;
     flex-direction: column; 
@@ -135,7 +150,7 @@ html, body {
 // First argument is a string with the CSS selector to bind it to.
 
 @mixin theme_factory($class, $bg, $bg_text, $active, $active_text, $inactive, $inactive_text) {
-    #{$class}.desktop {
+    #{$class} .desktop {
         background-color: darken($active, 15%);
     }
 
@@ -185,8 +200,24 @@ html, body {
         color: $active_text;
     }
 
+//    #{$class} .window.active .titlebar button {
+//        border: 1px solid;
+//        border-color: darken($active, 10%);
+//    }
+
     #{$class} .window.active .titlebar button:hover {
-        border: 1px solid $active_text;
+        border: 1px solid;
+        border-color: $active_text;
+    }
+
+    #{$class} .taskbar {
+        border: 1px solid;
+        border-top-color: lighten($active, 15%);
+        border-left-color: lighten($active, 15%);
+        border-bottom-color: darken($active, 15%);
+        border-right-color: darken($active, 15%);
+        background-color: $active;
+        color: $active_text;
     }
 }
 
@@ -292,7 +323,7 @@ export default {
             var xOffset = 32;
             var xRange = $('.desktop').width() - 64 - 400;
             var yOffset = 32;
-            var yRange = $('.desktop').height() - 64 - 128;
+            var yRange = $('.desktop').height() - 64 - 400;
 
             this.messageWindows.push(this.messages.length);
             this.messages.push({

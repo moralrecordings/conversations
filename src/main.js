@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 import VueRouter from 'vue-router';
 
 import 'jquery-ui-bundle/jquery-ui.structure.css';
@@ -25,7 +26,10 @@ const router = new VueRouter({
 const store = new Vuex.Store({
     state: {
         level: 8
-    }
+    },
+    plugins: [createPersistedState({
+        key: 'mr_conversations'
+    })]
 });
 
 global.conversations = new Vue({
