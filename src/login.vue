@@ -2,8 +2,8 @@
     <div id="login" class="app">
         <div class="app-inner">
             <div class="login-frame"><div class="login-window">
-                <p style="text-align: center;">Select remote session:</p>
-                <ul style="list-style: none; padding: 0;">
+                <p style="text-align: center;"><img v-bind:src="require('assets/logo-crap.jpg')" style="border: 1px solid #cccccc;"/><br/>Select remote session:</p>
+                <ul style="list-style: none; padding: 0; margin: auto;">
                     <li><button class="session-button">us3appprod020_FIRSTTIME</button></li>
                     <li><button class="session-button">us1appprod103_WEEK1</button></li>
                     <li><button class="session-button">us2appprod004_WEEK2</button></li>
@@ -16,8 +16,11 @@
             </div></div>
         </div>
         <div class="footer">
-            <p><b>RemoteTeamPro Server v6.0.31.2303</b> - Copyright (c) 2006 Alwyn Megasoftware Ltd.</p>
-            <p><span class="scare blink">TRIAL PERIOD EXPIRED!</span><br/><span class="scare">Please contact your local sales representative today.</span><br/>You are on day <b>1825</b> of your 30 day trial.</p>
+            <p>
+                <span class="chunk"><b>RemoteTeamPro Server v6.0.31.2303</b></span> - <span class="chunk">Copyright (c) 2006 Alwyn Megasoftware Ltd.</span><br/>
+                <span class="chunk scare blink">TRIAL PERIOD EXPIRED!</span> <span class="chunk scare">Please contact your local sales representative today.</span><br/>
+                <span class="chunk">You are on day <b>1825</b> of your 30 day trial.</span>
+            </p>
         </div>
     </div>
 </template>
@@ -48,12 +51,14 @@ html, body {
     align-items: center; 
     justify-content: center; 
     height: 100%; 
+    background-color: #316fbd; 
 }
 
 .login-window {
     border: 1px solid black; 
     padding: 1em; 
     min-width: 480px;
+    background-color: white;
 }
 
 .footer { 
@@ -62,13 +67,16 @@ html, body {
     padding-left: 1em; 
     padding-right: 1em; 
     width: 100%; 
-    text-align: right; 
-    color: white; 
-    background-color: #316fbd; 
+    text-align: center; 
+    background-color: #dddddd;
+}
+
+.chunk { 
+    display: inline-block;
 }
 
 .scare {
-    color: #ff6969; 
+    color: red; 
     font-weight: bold;
 }
 
