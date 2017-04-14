@@ -5,18 +5,19 @@
             <button v-on:click="close">×</button>
         </div>
         <div class="body-container"><div class="body">
-            <div class="message-block clickable" v-on:click="hidden = !hidden">
+            <div tabindex="0" class="message-block clickable" v-on:click="hidden = !hidden">
                 <svg class="message-avatar">
                     <use x="0" y="0" xlink:href="#eggAvatar" v-bind:style="{ fill: eggColour }"/>
                 </svg>
 
                 <span class="message-body">{{ message.body }}</span>
             </div>
+            
             <div v-bind:class="{ closed: hidden }" class="message-hidden">
-                <label>Category<select class="form" v-model="replyType">
+                <label>Category<select class="form" v-model="replyType" v-on:change="changeType">
                     <option v-for="(type, index) in forms.types" v-if="type.visibleLevel <= $store.state.level" v-bind:value="index">{{ type.name }}</option>
                 </select></label>               
-                <label v-if="forms.types[replyType].subtypes">{{ forms.types[replyType].subtypeName }}<select class="form" v-model="replySubtype">
+                <label v-if="forms.types[replyType].subtypes">{{ forms.types[replyType].subtypeName }}<select class="form" v-model="replySubtype" v-on:change="changeReply">
                     <option v-for="(subtype, index) in forms.types[replyType].subtypes" v-if="subtype.visibleLevel <= $store.state.level" v-bind:value="index">{{ subtype.name }}</option>
                 </select></label>
 
@@ -25,8 +26,8 @@
                 </template><template v-else-if="forms.types[replyType].id == 'abuse'">
                     <button class="form">Report user</button>
                 </template><template v-else>
-                    <label v-for="(flag, index) in forms.flags"  v-if="flag.visibleLevel <= $store.state.level"><input type="checkbox" v-model="replyFlags[index]"/> {{ flag.name }}</label>
-                    <label v-if="forms.attachmentsVisibleLevel <= $store.state.level">Attachment<select class="form" v-model="replyAttachment">
+                    <label v-for="(flag, index) in forms.flags"  v-if="flag.visibleLevel <= $store.state.level"><input type="checkbox" v-model="replyFlags[index]" v-on:change="changeReply"/> {{ flag.name }}</label>
+                    <label v-if="forms.attachmentsVisibleLevel <= $store.state.level">Attachment<select class="form" v-model="replyAttachment" v-on:change="changeReply">
                         <option v-for="(attach, index) in forms.attachments" v-if="attach.visibleLevel <= $store.state.level" v-bind:value="index">{{ attach.name }}</option>
                     </select></label>
                     <label>Reply
@@ -168,6 +169,14 @@ export default {
 
             ev.preventDefault();
         },
+        changeType: function (ev) {
+            this.replySubtype = 0;
+            this.changeReply(ev);
+        },
+        changeReply: function (ev) {
+            this.replyContent = '';
+            this.replyReady = false;
+        },
         submit: function () {
             var vm = this;
             var result = {
@@ -175,7 +184,7 @@ export default {
                 type: this.forms.types[this.replyType].id,
                 subtype: this.forms.types[this.replyType].subtypes[this.replySubtype].id,
                 attachment: this.forms.attachments[this.replyAttachment].id,
-                ready: this.replpyReady,
+                ready: this.replyReady,
                 flags: {},
             };
             this.forms.flags.forEach(function (el, index) {
