@@ -8,6 +8,7 @@
             <button 
             
             <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmail"/>
+            <mr-accounts-app/>
             <mr-messages-app v-for="msgId in messageWindows" v-bind:message="messages[msgId]" v-on:submit="submitMessage"/>
         </div>
         <div class="taskbar">
@@ -56,7 +57,6 @@ html, body {
     display: flex;
     flex-direction: column; 
     box-sizing: border-box;
-    min-width: 200px;
     min-height: 64px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -237,6 +237,7 @@ import Vue from 'vue';
 
 import email from './components/email';
 import messages from './components/messages';
+import accounts from './components/accounts';
 
 import firehose from './firehose';
 
@@ -343,6 +344,7 @@ export default {
     components: {
         'mr-email-app': email,
         'mr-messages-app': messages,
+        'mr-accounts-app': accounts
     },
 };
 </script>
