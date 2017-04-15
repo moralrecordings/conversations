@@ -6,10 +6,10 @@
 var forms = {
     // Social media accounts
     accounts: [
-        { id: 'KingsleySnacks', name: 'Kingsley® Snacks', icon: require('assets/allied_icon.svg'), visibleLevel: 0 }, 
-        { id: 'CapnJackFoods', name: 'Cap\'n Jack Foods', icon: require('assets/allied_icon.svg'), visibleLevel: 1 }, 
-        { id: 'AlliedBrandsInc', name: 'Allied Brands Inc.', icon: require('assets/allied_icon.svg'), visibleLevel: 2 }, 
-        { id: 'excelsior_rx', name: 'Excelsior Pharmaceuticals', icon: require('assets/allied_icon.svg'), visibleLevel: 2 },
+        { id: 'KingsleySnacks', name: 'Kingsley® Snacks', theme: 'theme-allied', icon: require('assets/kingsley_icon.svg'), visibleLevel: 0 }, 
+        { id: 'CapnJackFoods', name: 'Cap\'n Jack Foods', theme: 'theme-allied', icon: require('assets/allied_icon.svg'), visibleLevel: 1 }, 
+        { id: 'AlliedBrandsInc', name: 'Allied Brands Inc.', theme: 'theme-allied', icon: require('assets/allied_icon.svg'), visibleLevel: 2 }, 
+        { id: 'excelsior_rx', name: 'Excelsior Pharmaceuticals', theme: 'theme-excelsior', icon: require('assets/excelsior_icon.svg'), visibleLevel: 2 },
     ],
     // Message types and subtypes
     types: [

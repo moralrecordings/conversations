@@ -191,7 +191,7 @@ export default {
                 result.flags[el.id] = vm.replyFlags[index] ? true : false; 
             });
 
-            this.$emit('submit', result);
+            this.$emit('submitMessage', result);
         },
         close: function () {
             this.$emit('close', {

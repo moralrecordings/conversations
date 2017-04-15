@@ -1,15 +1,13 @@
 <template>
-    <div id="conversations" class="app theme-abi">
+    <div id="conversations" class="app" v-bind:class="[theme]">
         <template v-for="asset in svgAssets">
             <div style="display: none" v-html="asset"/>
         </template>
-        <div class="desktop">
-
-            <button 
-            
+        <div class="desktop"> 
             <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmail"/>
-            <mr-accounts-app/>
-            <mr-messages-app v-for="msgId in messageWindows" v-bind:message="messages[msgId]" v-on:submit="submitMessage"/>
+            <mr-accounts-app v-on:changeAccount="changeAccount"/>
+            <mr-activity-app/>
+            <mr-messages-app v-for="msgId in messageWindows" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage"/>
         </div>
         <div class="taskbar">
             <button>EMail</button>
@@ -103,9 +101,27 @@ html, body {
     user-select: none;
     -moz-user-select: none;
     transition-property: background;
-    transition-duration: .5s;
+    transition-duration: .3s;
     transition-timing-function: ease;
 }
+
+// picker div (e.g. account selector) 
+input[type=radio] + .picker {
+    display: block;
+    opacity: 0.5;
+    transition-property: opacity;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+input[type=radio]:hover + .picker {
+    opacity: 0.8;
+}
+
+input[type=radio]:checked + .picker {
+    opacity: 1.0;
+}
+
 
 // class for divs which are meant to scroll as a pane inside the parent (e.g. email body)
 .overflow {
@@ -219,11 +235,29 @@ html, body {
         background-color: $active;
         color: $active_text;
     }
+
+    #{$class} input[type=radio] + .picker {
+        border: 1px solid $inactive;
+        border-radius: 4px;
+    }
+
+    #{$class} input[type=radio]:active + .picker {
+        border-color: darken($active, 15%);
+    }
+
+    #{$class} input[type=radio]:checked + .picker, #{$class} input[type=radio]:hover:checked + .picker {
+        border-color: $active;
+    }
+
+    #{$class} input[type=radio]:hover + .picker {
+        border-color: $active;
+    }
+
 }
 
 
 // Now we can crank out one colour scheme class per line
-@include theme_factory( ".theme-abi", white, black, #37abc8, white, #bbbbbb, white );
+@include theme_factory( ".theme-allied", white, black, #37abc8, white, #bbbbbb, white );
 @include theme_factory( ".theme-excelsior", #eeeeec, black, white, #cc0000, #d7cfcf, #666666 );
 
 
@@ -238,6 +272,7 @@ import Vue from 'vue';
 import email from './components/email';
 import messages from './components/messages';
 import accounts from './components/accounts';
+import activity from './components/activity';
 
 import firehose from './firehose';
 
@@ -310,7 +345,8 @@ export default {
             ],
             messageWindows: [
             ],
-            svgAssets: svgAssets
+            svgAssets: svgAssets,
+            theme: 'theme-allied',
         };
     },
     methods: {
@@ -339,12 +375,17 @@ export default {
         },
         submitMessage: function (ev) {
             console.log(ev);
+        },
+        changeAccount: function (ev) {
+            console.log(ev);
+            this.theme = ev.theme;
         }
     },
     components: {
         'mr-email-app': email,
         'mr-messages-app': messages,
-        'mr-accounts-app': accounts
+        'mr-accounts-app': accounts,
+        'mr-activity-app': activity
     },
 };
 </script>

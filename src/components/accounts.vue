@@ -4,17 +4,21 @@
             <span class="titlebar-text">Accounts</span>
         </div>
         <div class="body-container"><div class="body">
-            <button class="account-switch" v-for="account in forms.accounts" v-bind:title="'@' + account.id + ' - ' + account.name" ><img v-bind:src="account.icon"/></button>
+            <form>
+                <label v-for="(account, index) in forms.accounts" v-if="account.visibleLevel <= $store.state.level" v-bind:title="'@' + account.id + ' - ' + account.name" >
+                    <input style="display: none" type="radio" name="accounts" v-on:change="changeAccount(index)"/>
+                    <img class="picker" v-bind:src="account.icon"/>
+                </label>
+            </form>
+            <!--button class="account-switch" v-for="account in forms.accounts" v-if="account.visibleLevel <= $store.state.level" v-bind:title="'@' + account.id + ' - ' + account.name" ><img v-bind:src="account.icon"/></button-->
         </div></div>
     </div>
 </template>
 
 <style scoped>
-.account-switch {
-    padding: 4px;
-    display: block;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+
+.body {
+    padding: 0.5em;
 }
 </style>
 
@@ -25,11 +29,13 @@ import traffic from 'assets/traffic';
 export default {
     name: 'accounts-app',
     methods: {
-
+        changeAccount: function (index) {
+            this.$emit('changeAccount', this.forms.accounts[index]);
+        }
     },
     data: function() {
         return {
-            forms: traffic.forms,
+            forms: traffic.forms 
         };
     }
 };
