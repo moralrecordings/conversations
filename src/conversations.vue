@@ -299,9 +299,9 @@ var windowList = [];
 
 // fake window ordering using CSS z-index. 
 // every time we select a window, increase this by 1.
-var zLevel = 0;
+var zLevel = 1;
 var zBump = function (el) {
-    if ((!el.style.zIndex) | (el.style.zIndex != zLevel)) {
+    if (el.style.zIndex != zLevel) {
         zLevel += 1;
         el.style.zIndex = zLevel;
     } 
@@ -370,7 +370,7 @@ Vue.directive('window', {
         // if we use the "under" modifier, don't make the new window appear in
         // front of whatever is active.
         if (binding.modifiers.under) {
-            el.style.zIndex = zLevel-1;
+            el.style.zIndex = Math.max(zLevel-1, 0);
         // otherwise, bump it to the front!
         } else {
             zBump(el);
@@ -385,7 +385,9 @@ Vue.directive('window', {
         console.log(index);
         if (index != -1) {
             windowList.splice(index, 1);
-            zBump(windowList[windowList.length-1]);
+            if (windowList.length) {
+                zBump(windowList[windowList.length-1]);
+            }
         }
     }
 });
