@@ -7,7 +7,7 @@
             <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmail"/>
             <mr-accounts-app v-on:changeAccount="changeAccount"/>
             <mr-activity-app/>
-            <mr-messages-app v-for="msgId in messageWindows" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage"/>
+            <mr-messages-app v-for="message in messages" v-bind:message="message" v-on:submitMessage="submitMessage" v-on:close="closeMessage"/>
         </div>
         <div class="taskbar">
             <button>EMail</button>
@@ -359,16 +359,25 @@ export default {
             ],
             messageWindows: [
             ],
+            messageCounter: 0,
             svgAssets: svgAssets,
             theme: 'theme-allied',
         };
     },
     methods: {
-        closeEmail: function() {
+        closeEmail: function(ev) {
             this.showEmail = false;
         },
-        closeMessage: function() {
-            
+        closeMessage: function(ev) {
+            var vm = this;
+            console.log('closeMessage');
+            console.log(ev);
+            var index = this.messages.findIndex(function (el) {
+                return el.id == ev.id;
+            });
+            if (index != -1) {
+                this.messages.splice(index, 1);
+            }
         },
         spawnMessage: function() {
             var xOffset = 32;
@@ -376,9 +385,8 @@ export default {
             var yOffset = 32;
             var yRange = $('.desktop').height() - 64 - 400;
 
-            this.messageWindows.push(this.messages.length);
             this.messages.push({
-                id: this.messages.length,
+                id: this.messageCounter,
                 user: 'ToolbeltKiller',
                 loc: 'Newbridge, NJ, USA',
                 body: firehose.generateMessage(),
@@ -386,11 +394,14 @@ export default {
                 yPos: Math.floor( Math.random()*yRange )+yOffset +'px',
                 reply: 'dude I just work here chill please'
             });
+            this.messageCounter += 1;
         },
         submitMessage: function (ev) {
+            console.log('submitMessage');
             console.log(ev);
         },
         changeAccount: function (ev) {
+            console.log('changeAccount');
             console.log(ev);
             this.theme = ev.theme;
         }
