@@ -7,7 +7,7 @@
         <div class="body-container"><div class="body">
             <div tabindex="0" class="message-block clickable" v-on:click="hidden = !hidden">
                 <svg class="message-avatar">
-                    <use x="0" y="0" xlink:href="#eggAvatar" v-bind:style="{ fill: eggColour }"/>
+                    <use x="0" y="0" xlink:href="#eggAvatar" v-bind:style="{ fill: message.eggColour }"/>
                 </svg>
 
                 <span class="message-body">{{ message.body }}</span>
@@ -130,23 +130,15 @@ textarea.ready {
 
 <script>
 
+import debounce from 'debounce';
 import traffic from 'assets/traffic';
-
-// cribbed from https://www.quora.com/What-is-the-meaning-of-the-color-of-Twitters-egg-avatars?share=1
-var eggColours = [
-    '#346A85', '#AFE356', '#348569', '#F6A43D', '#AAD3E6',
-    '#7F3485', '#992B41', '#3B94D9', '#E95F28', '#4A913C',
-    '#FFAC33', '#8899A6', '#744EAA', '#BE1931',
-
-// plus tango colours because they are great
-    '#EDD400', '#73D216', '#F57900', '#3465A4', '#75507B', '#C17D11', '#CC0000'
-];
 
 export default {
     name: 'messages-app',
     props: ['message'],
     methods: {
         typing: function (ev) {
+            var vm = this;
             if (this.replyContent.length < this.message.reply.length) {
                 this.replyContent += this.message.reply[this.replyContent.length];
             }
@@ -155,8 +147,7 @@ export default {
             }
 
             if (ev.keyCode == 13) { // enter
-                this.flyout = true;
-                this.submit();
+                vm.submit();
             }
 
             ev.preventDefault();
@@ -169,8 +160,9 @@ export default {
             this.replyContent = '';
             this.replyReady = false;
         },
-        submit: function () {
+        submit: debounce(function () {
             var vm = this;
+            this.flyout = true;
             var result = {
                 id: this.message.id,
                 type: this.forms.types[this.replyType].id,
@@ -184,7 +176,8 @@ export default {
             });
 
             this.$emit('submitMessage', result);
-        },
+            setTimeout(this.close, 500);
+        }, 2000, true),
         close: function () {
             this.$emit('close', {
                 id: this.message.id
@@ -208,7 +201,6 @@ export default {
             flyout: false,
             hidden: true,
             width: '400px',
-            eggColour: eggColours[Math.floor(Math.random()*eggColours.length)],
             replyContent: '',
             replyReady: false
         }

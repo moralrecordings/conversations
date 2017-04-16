@@ -6,8 +6,8 @@
         <div class="desktop"> 
             <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app xPos="100" yPos="100" v-if="showIssues" v-on:changeAccount="changeAccount"/>
-            <mr-activity-app v-if="showIssues" />
-            <mr-messages-app v-for="message in messages" v-bind:message="message" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
+            <mr-activity-app width="300" v-if="showIssues" />
+            <mr-messages-app v-for="msgId in messageWindows" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
         </div>
         <div class="taskbar">
             <button v-on:click="showEmailWindow">EMail</button>
@@ -359,10 +359,24 @@ Vue.directive('window', {
         });
         if (index != -1) {
             windowList.splice(index, 1);
-            zBump(windowList[Math.min(index, windowList.length-1)]);
+            //zBump(windowList[Math.min(index, windowList.length-1)]);
         }
     }
 });
+
+// cribbed from https://www.quora.com/What-is-the-meaning-of-the-color-of-Twitters-egg-avatars?share=1
+var eggColours = [
+    '#346A85', '#AFE356', '#348569', '#F6A43D', '#AAD3E6',
+    '#7F3485', '#992B41', '#3B94D9', '#E95F28', '#4A913C',
+    '#FFAC33', '#8899A6', '#744EAA', '#BE1931',
+
+// plus tango colours because they are great
+    '#EDD400', '#73D216', '#F57900', '#3465A4', '#75507B', '#C17D11', '#CC0000'
+];
+
+var randomEggColour = function () {
+    return eggColours[Math.floor(Math.random()*eggColours.length)];
+};
 
 
 
@@ -376,24 +390,25 @@ export default {
             ],
             messageWindows: [
             ],
-            messageCounter: 0,
             svgAssets: svgAssets,
             theme: 'theme-allied',
         };
     },
     methods: {
         closeEmailWindow: function(ev) {
+            console.log('closeEmailWindow');
             this.showEmail = false;
         },
         closeMessageWindow: function(ev) {
             var vm = this;
-            console.log('closeMessage');
+            console.log('closeMessageWindow');
             console.log(ev);
-            var index = this.messages.findIndex(function (el) {
-                return el.id == ev.id;
+            var index = this.messageWindows.findIndex(function (el) {
+                return el === ev.id;
             });
+            console.log(this.messageWindows[index]);
             if (index != -1) {
-                this.messages.splice(index, 1);
+                this.messageWindows.splice(index, 1);
             }
         },
         showEmailWindow: function() {
@@ -409,17 +424,18 @@ export default {
             var xRange = $('.desktop').width() - 64 - 400;
             var yOffset = 32;
             var yRange = $('.desktop').height() - 64 - 400;
-
+            var msgId = this.messages.length;
             this.messages.push({
-                id: this.messageCounter,
+                id: msgId,
                 user: 'ToolbeltKiller',
                 loc: 'Newbridge, NJ, USA',
                 body: firehose.generateMessage(),
+                eggColour: randomEggColour(),
                 xPos: Math.floor( Math.random()*xRange )+xOffset +'px',
                 yPos: Math.floor( Math.random()*yRange )+yOffset +'px',
                 reply: 'dude I just work here chill please'
             });
-            this.messageCounter += 1;
+            this.messageWindows.push(msgId);
         },
         submitMessage: function (ev) {
             console.log('submitMessage');
