@@ -308,6 +308,13 @@ var zBump = function (el) {
     // active window gets a coloured titlebar
     $('.window').removeClass('active');
     $(el).addClass('active');
+    var index = windowList.findIndex(function (fel) {
+        return fel === el;
+    });
+    if (index != -1) {
+        windowList.splice(index, 1);
+    }
+    windowList.push(el);
 }
 var zBumpCb = function (ev) {
     zBump(ev.currentTarget);
@@ -371,12 +378,14 @@ Vue.directive('window', {
     },
 
     unbind: function(el, binding, vnode) {
+        console.log('UNBIND');
         var index = windowList.findIndex(function (fel) {
             return fel === el;
         });
+        console.log(index);
         if (index != -1) {
             windowList.splice(index, 1);
-            //zBump(windowList[Math.min(index, windowList.length-1)]);
+            zBump(windowList[windowList.length-1]);
         }
     }
 });
