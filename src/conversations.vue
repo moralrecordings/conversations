@@ -4,14 +4,14 @@
             <div style="display: none" v-html="asset"/>
         </template>
         <div class="desktop"> 
-            <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmail"/>
-            <mr-accounts-app v-on:changeAccount="changeAccount"/>
-            <mr-activity-app/>
-            <mr-messages-app v-for="message in messages" v-bind:message="message" v-on:submitMessage="submitMessage" v-on:close="closeMessage"/>
+            <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmailWindow"/>
+            <mr-accounts-app xPos="100" yPos="100" v-if="showIssues" v-on:changeAccount="changeAccount"/>
+            <mr-activity-app v-if="showIssues" />
+            <mr-messages-app v-for="message in messages" v-bind:message="message" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
         </div>
         <div class="taskbar">
-            <button>EMail</button>
-            <button>IssueMagic</button>
+            <button v-on:click="showEmailWindow">EMail</button>
+            <button v-on:click="showIssueWindow">IssueMagic</button>
             <button v-on:click="spawnMessage">Spawn angry tweet</button>
         </div>
     </div>
@@ -294,6 +294,9 @@ var svgAssets = [
     require('assets/egg.rawsvg')
 ];
 
+// top level window management crap!
+var windowList = [];
+
 // fake window ordering using CSS z-index. 
 // every time we select a window, increase this by 1.
 var zLevel = 0;
@@ -319,7 +322,10 @@ var zBumpCb = function (ev) {
 // upon the DOM element being inserted. this is good, as the component model 
 // doesn't really believe in inheritance or mixins.
 Vue.directive('window', {
-    inserted: function (el, binding, vnode) {
+    bind: function (el, binding, vnode) {
+        // add to the window list
+        windowList.push(el);
+
         // add a jQuery UI draggable interaction to the window div
         $(el).draggable({
             scroll: false,
@@ -345,6 +351,16 @@ Vue.directive('window', {
         } else {
             zBump(el);
         }
+    },
+
+    unbind: function(el, binding, vnode) {
+        var index = windowList.findIndex(function (fel) {
+            return fel === el;
+        });
+        if (index != -1) {
+            windowList.splice(index, 1);
+            zBump(windowList[Math.min(index, windowList.length-1)]);
+        }
     }
 });
 
@@ -354,7 +370,8 @@ export default {
     name: 'conversations',
     data: function () {
         return {
-            showEmail: true,
+            showEmail: false,
+            showIssues: false,
             messages: [
             ],
             messageWindows: [
@@ -365,10 +382,10 @@ export default {
         };
     },
     methods: {
-        closeEmail: function(ev) {
+        closeEmailWindow: function(ev) {
             this.showEmail = false;
         },
-        closeMessage: function(ev) {
+        closeMessageWindow: function(ev) {
             var vm = this;
             console.log('closeMessage');
             console.log(ev);
@@ -378,6 +395,14 @@ export default {
             if (index != -1) {
                 this.messages.splice(index, 1);
             }
+        },
+        showEmailWindow: function() {
+            console.log('showEmailWindow');
+            this.showEmail = true;
+        },
+        showIssueWindow: function() {
+            console.log('showIssueWindow');
+            this.showIssues = true;
         },
         spawnMessage: function() {
             var xOffset = 32;

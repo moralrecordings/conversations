@@ -1,5 +1,5 @@
 <template>
-    <div class="window" v-window>
+    <div class="window" v-window v-bind:style="{ left: xPos + 'px', top: yPos + 'px' }">
         <div class="titlebar active">
             <span class="titlebar-text">Accounts</span>
         </div>
@@ -28,6 +28,7 @@ import traffic from 'assets/traffic';
 
 export default {
     name: 'accounts-app',
+    props: ['xPos', 'yPos'],
     methods: {
         changeAccount: function (index) {
             this.$emit('changeAccount', this.forms.accounts[index]);

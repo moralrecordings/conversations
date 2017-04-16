@@ -1,5 +1,5 @@
 <template>
-    <div class="window" v-window.resizable v-bind:style="{ width: width + 'px', height: height + 'px' }">
+    <div class="window" v-window.resizable v-bind:style="{ width: width + 'px', height: height + 'px', left: xPos + 'px', top: yPos + 'px' }">
         <div class="titlebar active">
             <span class="titlebar-text">Inbox - {{ messages[messageIndex].subject }}</span>
             <button v-on:click="close">×</button>
@@ -80,7 +80,7 @@ emails.reverse();
 
 export default {
     name: 'email-app',
-    props: ['width', 'height'],
+    props: ['width', 'height', 'xPos', 'yPos'],
     data: function() {
         return {
             messages: emails,

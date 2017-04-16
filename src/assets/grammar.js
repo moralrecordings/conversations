@@ -73,7 +73,7 @@ export default {
 
 
     // foreign object types and righteous outrage generator
-    "foreignObject": ["piece of wood", "stick", "wood chip", "wood splinter", "splinter", "pill", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand",  "coin", "penny", "shell", "lump", "tile", "hair", "eyelash", "dandruff flake", "dust bunny", "ball of dust", "ball of lint", "chunk of lint", "clump of hair", "fingernail", "finger nail", "fake nail", "bandaid", "sticking plaster", "bone", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "wire", "bit of wire", "peanut shell", "nail", "fly", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "worm", "maggot", "spider", "insect", "bug", "roach", "cockroach", "locust", "dead rat", "tail", "severed finger"],
+    "foreignObject": ["piece of wood", "stick", "wood chip", "wood splinter", "splinter", "pill", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand",  "coin", "penny", "shell", "lump", "hair", "eyelash", "dandruff flake", "dust bunny", "ball of dust", "ball of lint", "chunk of lint", "clump of hair", "fingernail", "finger nail", "fake nail", "bandaid", "sticking plaster", "bone", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "wire", "bit of wire", "peanut shell", "nail", "fly", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "worm", "maggot", "spider", "insect", "bug", "roach", "cockroach", "locust", "dead rat", "tail", "severed finger"],
     "sizeForeignObject": ["[whut:#size##foreignObject#]#whut.randomUpper(10)#", "#size##foreignObject.randomUpper(10)#"],
     "foreignObjectDiscovery": [
         "#genPerson##pName# found #sizeForeignObject.a# in #pronoun# #object#",
@@ -101,6 +101,10 @@ export default {
         "[disco:#foreignObjectDiscovery#]#complainEmojiSeq# #closingRemark.randomUpper(30)# @#account# #disco##coda#",
         "[disco:#foreignObjectDiscovery#]#complainEmojiSeq# @#account# #disco#, #closingRemark.randomUpper(20)# #coda#",
     ],
+
+    
+    // spoilage types
+    "spoilage": [],
 
 
     // product types

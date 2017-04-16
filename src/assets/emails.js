@@ -195,7 +195,7 @@ export default [
         "recipient": "All Users",
         "recipientMail": "all@alliedbrandsinc",
         "selfDestruct": 8000,
-        "subject": "Re: FW: IMPORTANT - New branding strategy for Kingsley's Fruit Pebbles",
+        "subject": "Re: FW: IMPORTANT - New campaign for Kingsley's Fruit Pebbles",
         "content": `
             <p>someone tell Kate's team they better get on Board with this shit if they want jobs after Christmas</p>
 
