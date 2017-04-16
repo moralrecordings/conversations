@@ -100,15 +100,13 @@ html, body {
     cursor: pointer;
     user-select: none;
     -moz-user-select: none;
-    transition-property: background;
-    transition-duration: .3s;
-    transition-timing-function: ease;
 }
 
 // picker div (e.g. account selector) 
 input[type=radio] + .picker {
     display: block;
     opacity: 0.5;
+    cursor: pointer;
     transition-property: opacity;
     transition-duration: .3s;
     transition-timing-function: ease;
@@ -122,6 +120,15 @@ input[type=radio]:checked + .picker {
     opacity: 1.0;
 }
 
+.form {
+    display: block;    
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: normal;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+}
 
 // class for divs which are meant to scroll as a pane inside the parent (e.g. email body)
 .overflow {
@@ -156,6 +163,12 @@ input[type=radio]:checked + .picker {
     height: 100%;
 }
 
+// dumb fade between themes
+.titlebar, .clickable, .desktop, .taskbar, .body-container  {
+    transition-property: background, border, color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
 
 
 // Scripting is fun! Let's generate the boilerplate CSS for the colour scheme. 
@@ -163,7 +176,7 @@ input[type=radio]:checked + .picker {
 // with colour rules that affect all the child divs.
 // To save lots of copypasting, let's make a template set of instructions that themes the window
 // based on a small set of colour variables.
-// First argument is a string with the CSS selector to bind it to.
+// First argument is a string with the CSS selector to bind it to, rest are colour variables
 
 @mixin theme_factory($class, $bg, $bg_text, $active, $active_text, $inactive, $inactive_text) {
     #{$class} .desktop {
@@ -257,8 +270,9 @@ input[type=radio]:checked + .picker {
 
 
 // Now we can crank out one colour scheme class per line
-@include theme_factory( ".theme-allied", white, black, #37abc8, white, #bbbbbb, white );
-@include theme_factory( ".theme-excelsior", #eeeeec, black, white, #cc0000, #d7cfcf, #666666 );
+@include theme_factory( ".theme-allied", white, black, #37abc8, white, #b0b0b0, white );
+@include theme_factory( ".theme-kingsley", #fffbea, #403501, #bc2e00, #ffe980, #a68075, #dfded8 );
+@include theme_factory( ".theme-excelsior", #eeeeec, black, white, #cc0000, #d7cfcf, #666666 ); 
 
 
 

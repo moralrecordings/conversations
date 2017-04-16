@@ -6,9 +6,9 @@
 var forms = {
     // Social media accounts
     accounts: [
-        { id: 'KingsleySnacks', name: 'Kingsley® Snacks', theme: 'theme-allied', icon: require('assets/kingsley_icon.svg'), visibleLevel: 0 }, 
+        { id: 'AlliedBrandsInc', name: 'Allied Brands Inc.', theme: 'theme-allied', icon: require('assets/allied_icon.svg'), visibleLevel: 0 }, 
+        { id: 'KingsleySnacks', name: 'Kingsley® Snacks', theme: 'theme-kingsley', icon: require('assets/kingsley_icon.svg'), visibleLevel: 0 }, 
         { id: 'CapnJackFoods', name: 'Cap\'n Jack Foods', theme: 'theme-allied', icon: require('assets/allied_icon.svg'), visibleLevel: 1 }, 
-        { id: 'AlliedBrandsInc', name: 'Allied Brands Inc.', theme: 'theme-allied', icon: require('assets/allied_icon.svg'), visibleLevel: 2 }, 
         { id: 'excelsior_rx', name: 'Excelsior Pharmaceuticals', theme: 'theme-excelsior', icon: require('assets/excelsior_icon.svg'), visibleLevel: 2 },
     ],
     // Message types and subtypes
@@ -33,6 +33,7 @@ var forms = {
             { id: 'stalking', name: 'Stalking', visibleLevel: 0 },
             { id: 'extortion', name: 'Extortion', visibleLevel: 0 },
             { id: 'deathThreat', name: 'Death threat', visibleLevel: 0 },
+            { id: 'personal', name: 'Personal attack', visibleLevel: 0 },
         ]}
     ],
     // Flags

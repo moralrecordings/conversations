@@ -69,15 +69,7 @@ textarea.ready {
     background: #d2f4b1;
 }
 
-.form {
-    display: block;    
-    font-family: inherit;
-    font-size: 1rem;
-    line-height: normal;
-    width: 100%;
-    height: 2.4375rem;
-    margin: 0 0 1rem;
-}
+
 
 .message-block {
     display: inline-block;
