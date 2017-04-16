@@ -1,5 +1,5 @@
 <template>
-    <div class="window" v-window.under v-bind:class="{ flyout: flyout }" v-bind:style="{ width: width, left: message.xPos, top: message.yPos }">
+    <div class="window" v-window.under="{ xPos: message.xPos, yPos: message.yPos }" v-bind:class="{ flyout: flyout }">
         <div class="titlebar">
             <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
             <button v-on:click="close">×</button>
@@ -41,6 +41,10 @@
 </template>
 
 <style scoped>
+.window {
+    width: 400px;
+}
+
 label {
     display: block;
     margin: 0;
@@ -189,7 +193,7 @@ export default {
             get: function () {
                 return '@' + this.message.user + ' ' + this.replyContent;
             }
-        }
+        },
     },
     data: function () {
         return {
@@ -200,7 +204,6 @@ export default {
             replyAttachment: 0,
             flyout: false,
             hidden: true,
-            width: '400px',
             replyContent: '',
             replyReady: false
         }

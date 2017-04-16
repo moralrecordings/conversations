@@ -7,7 +7,7 @@
             <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app xPos="100" yPos="100" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app width="300" v-if="showIssues" />
-            <mr-messages-app v-for="msgId in messageWindows" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
+            <mr-messages-app v-for="msgId in messageWindows" :key="msgId" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
         </div>
         <div class="taskbar">
             <button v-on:click="showEmailWindow">EMail</button>
@@ -326,13 +326,30 @@ Vue.directive('window', {
         // add to the window list
         windowList.push(el);
 
+        if (binding.value) {
+            if (binding.value.xPos) {
+        //        el.dataset.xPos = binding.value.xPos;
+                el.style.left = binding.value.xPos;
+            }
+            if (binding.value.yPos) {
+        //        el.dataset.yPos = binding.value.yPos;
+                el.style.top = binding.value.yPos;
+            }
+        }
+
         // add a jQuery UI draggable interaction to the window div
         $(el).draggable({
             scroll: false,
             handle: '.titlebar',
             //containment: '.desktop',
             start: zBumpCb,
-        }).mousedown(zBumpCb);
+        }).mousedown(
+            zBumpCb
+        );
+        /*).on('drag', function (ev, ui) {
+            ev.target.dataset.xPos = ui.offset.left;  
+            ev.target.dataset.yPos = ui.offset.top;
+        });*/
 
         // resizable modifier makes the window resizable
         if (binding.modifiers.resizable) {
