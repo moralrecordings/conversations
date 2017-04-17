@@ -170,6 +170,46 @@ input[type=radio]:checked + .picker {
     transition-timing-function: ease;
 }
 
+// flyout animation for sent messages
+@keyframes flyout {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(2000px, 0, 0) scale(.1);
+        transform-origin: right center;
+    }
+}
+
+.flyout {
+    animation-name: flyout;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+}
+
+
+// zoom animation for appearing windows
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.window {
+    animation-name: zoomIn;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+
 
 // Scripting is fun! Let's generate the boilerplate CSS for the colour scheme. 
 // For the window theme, we want to rig it so you can add a class to the top-level window div,

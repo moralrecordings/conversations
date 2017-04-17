@@ -112,24 +112,6 @@ textarea.ready {
     margin: 0 0 1rem 0;
 }
 
-@keyframes flyout {
-    from {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    to {
-        opacity: 0;
-        transform: translate3d(2000px, 0, 0) scale(.1);
-        transform-origin: right center;
-    }
-}
-
-.flyout {
-    animation-name: flyout;
-    animation-duration: 0.75s;
-    animation-fill-mode: forwards;
-}
 </style>
 
 <script>
