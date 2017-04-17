@@ -1,5 +1,5 @@
 <template>
-    <div class="window" v-window.resizable v-bind:style="{ width: width + 'px', height: height + 'px', left: xPos + 'px', top: yPos + 'px' }">
+    <div class="window" v-window.resizable v-bind:class="{ close: closed }" v-bind:style="{ width: width + 'px', height: height + 'px', left: xPos + 'px', top: yPos + 'px' }">
         <div class="titlebar active">
             <span class="titlebar-text">Inbox - {{ messages[messageIndex].subject }}</span>
             <button v-on:click="close">×</button>
@@ -84,11 +84,13 @@ export default {
     data: function() {
         return {
             messages: emails,
-            messageIndex: 0
+            messageIndex: 0,
+            closed: false
         };
     },
     methods: {
         close: function() {
+            this.closed = true;
             this.$emit('close');
         },
         setMessage: function(index) {

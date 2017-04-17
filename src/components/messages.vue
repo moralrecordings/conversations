@@ -1,5 +1,5 @@
 <template>
-    <div class="window" v-window.under="{ xPos: message.xPos, yPos: message.yPos }" v-bind:class="{ flyout: flyout }">
+    <div class="window" v-window.under="{ xPos: message.xPos, yPos: message.yPos }" v-bind:class="{ flyout: flyout, close: closed }">
         <div class="titlebar">
             <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
             <button v-on:click="close">×</button>
@@ -122,6 +122,20 @@ import traffic from 'assets/traffic';
 export default {
     name: 'messages-app',
     props: ['message'],
+    data: function () {
+        return {
+            forms: traffic.forms,
+            replyType: 0,
+            replySubtype: 0,
+            replyFlags: {},
+            replyAttachment: 0,
+            flyout: false,
+            hidden: true,
+            replyContent: '',
+            replyReady: false,
+            closed: false
+        }
+    },
     methods: {
         typing: function (ev) {
             var vm = this;
@@ -165,6 +179,7 @@ export default {
             setTimeout(this.close, 500);
         }, 2000, true),
         close: function () {
+            this.closed = true;
             this.$emit('close', {
                 id: this.message.id
             });
@@ -177,19 +192,7 @@ export default {
             }
         },
     },
-    data: function () {
-        return {
-            forms: traffic.forms,
-            replyType: 0,
-            replySubtype: 0,
-            replyFlags: {},
-            replyAttachment: 0,
-            flyout: false,
-            hidden: true,
-            replyContent: '',
-            replyReady: false
-        }
-    },
+
 
 }
 </script>

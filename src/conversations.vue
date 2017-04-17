@@ -199,6 +199,24 @@ input[type=radio]:checked + .picker {
     }
 }
 
+// zoom animation for disappearing windows
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+    }
+    
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+}
+
+
+
 .window {
     animation-name: zoomIn;
     animation-duration: 0.15s;
@@ -208,6 +226,12 @@ input[type=radio]:checked + .picker {
 .window.flyout {
     animation-name: flyout;
     animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+}
+
+.window.close {
+    animation-name: zoomOut;
+    animation-duration: 0.15s;
     animation-fill-mode: forwards;
 }
 
@@ -322,6 +346,7 @@ input[type=radio]:checked + .picker {
 
 <script>
 import Vue from 'vue';
+import debounce from 'debounce';
 
 import email from './components/email';
 import messages from './components/messages';
@@ -467,11 +492,11 @@ export default {
         };
     },
     methods: {
-        closeEmailWindow: function(ev) {
+        closeEmailWindow: debounce(function(ev) {
             console.log('closeEmailWindow');
             this.showEmail = false;
-        },
-        closeMessageWindow: function(ev) {
+        }, 200),
+        closeMessageWindow: debounce(function(ev) {
             var vm = this;
             console.log('closeMessageWindow');
             console.log(ev);
@@ -482,7 +507,7 @@ export default {
             if (index != -1) {
                 this.messageWindows.splice(index, 1);
             }
-        },
+        }, 200),
         showEmailWindow: function() {
             console.log('showEmailWindow');
             this.showEmail = true;
