@@ -186,12 +186,6 @@ input[type=radio]:checked + .picker {
     }
 }
 
-.flyout {
-    animation-name: flyout;
-    animation-duration: 0.75s;
-    animation-fill-mode: forwards;
-}
-
 
 // zoom animation for appearing windows
 @keyframes zoomIn {
@@ -211,7 +205,11 @@ input[type=radio]:checked + .picker {
     animation-fill-mode: forwards;
 }
 
-
+.window.flyout {
+    animation-name: flyout;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+}
 
 // Scripting is fun! Let's generate the boilerplate CSS for the colour scheme. 
 // For the window theme, we want to rig it so you can add a class to the top-level window div,
