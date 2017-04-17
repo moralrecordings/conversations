@@ -176,7 +176,7 @@ export default {
             });
 
             this.$emit('submitMessage', result);
-            setTimeout(this.close, 500);
+            setTimeout(this.close, 800);
         }, 2000, true),
         close: function () {
             this.closed = true;

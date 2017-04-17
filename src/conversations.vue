@@ -223,7 +223,7 @@ input[type=radio]:checked + .picker {
     animation-fill-mode: forwards;
 }
 
-.window.flyout {
+.window.flyout, .window.flyout.close {
     animation-name: flyout;
     animation-duration: 0.75s;
     animation-fill-mode: forwards;
