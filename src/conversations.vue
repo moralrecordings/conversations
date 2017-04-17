@@ -4,9 +4,9 @@
             <div style="display: none" v-html="asset"/>
         </template>
         <div class="desktop"> 
-            <mr-email-app width="1000" height="600" v-if="showEmail" v-on:close="closeEmailWindow"/>
-            <mr-accounts-app xPos="100" yPos="100" v-if="showIssues" v-on:changeAccount="changeAccount"/>
-            <mr-activity-app width="300" v-if="showIssues" />
+            <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y"  v-if="showEmail" v-on:close="closeEmailWindow"/>
+            <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-if="showIssues" v-on:changeAccount="changeAccount"/>
+            <mr-activity-app v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" width="300" v-if="showIssues" />
             <mr-messages-app v-for="msgId in messageWindows" :key="msgId" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
             <!--mr-fail-app/-->
         </div>
@@ -483,6 +483,9 @@ export default {
         return {
             showEmail: false,
             showIssues: false,
+            activityPos: {x: 0, y: 0},
+            accountsPos: {x: 300, y: 300},
+            emailPos: {x: 0, y: 0, w: 1000, h: 600},
             messages: [
             ],
             messageWindows: [
@@ -510,10 +513,16 @@ export default {
         }, 200),
         showEmailWindow: function() {
             console.log('showEmailWindow');
+            this.emailPos.x = ($('.desktop').width() - this.emailPos.w)/2;
+            this.emailPos.y = ($('.desktop').height() - this.emailPos.h)/2;
             this.showEmail = true;
         },
         showIssueWindow: function() {
             console.log('showIssueWindow');
+            this.accountsPos.x = $('.desktop').width() - 96; 
+            this.accountsPos.y = ($('.desktop').height() - 320)/2; 
+            this.activityPos.x = 16;
+            this.activityPos.y = ($('.desktop').height() - 400)/2;
             this.showIssues = true;
         },
         spawnMessage: function() {
