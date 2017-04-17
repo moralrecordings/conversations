@@ -8,6 +8,7 @@
             <mr-accounts-app xPos="100" yPos="100" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app width="300" v-if="showIssues" />
             <mr-messages-app v-for="msgId in messageWindows" :key="msgId" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
+            <!--mr-fail-app/-->
         </div>
         <div class="taskbar">
             <button v-on:click="showEmailWindow">EMail</button>
@@ -50,6 +51,7 @@ html, body {
 // window class, for the topmost level floating box
 .window {
     position: absolute;
+    margin: 0;
     border: 1px solid black;
     border-radius: 4px;
     display: flex;
@@ -327,6 +329,7 @@ import email from './components/email';
 import messages from './components/messages';
 import accounts from './components/accounts';
 import activity from './components/activity';
+import fail from './components/fail';
 
 import firehose from './firehose';
 
@@ -397,6 +400,9 @@ Vue.directive('window', {
             ev.target.dataset.xPos = ui.offset.left;  
             ev.target.dataset.yPos = ui.offset.top;
         });*/
+        
+        // some awful browsers will add "position: relative" to the window? clobber that.
+        el.style.position = '';
 
         // resizable modifier makes the window resizable
         if (binding.modifiers.resizable) {
@@ -519,7 +525,8 @@ export default {
         'mr-email-app': email,
         'mr-messages-app': messages,
         'mr-accounts-app': accounts,
-        'mr-activity-app': activity
+        'mr-activity-app': activity,
+        'mr-fail-app': fail,
     },
 };
 </script>
