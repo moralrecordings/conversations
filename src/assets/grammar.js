@@ -118,6 +118,10 @@ export default {
 
 
     // furious tweet generators
-    "ks_foreign": ["[account:KingsleySnacks][object:#ks_prod#]#foreignMessage#"]
+    "ks_foreign": ["[account:KingsleySnacks][object:#ks_prod#]#foreignMessage#"],
 
+
+    "ks_complaint_reply": ["@#account# Hi, we\'re sorry for your experience but thank you for letting us know, please call 570-330-3000 to discuss"],
+
+    "cj_complaint_reply": ["@#account# Aye, very sorry ta be hearin' yer snack weren't ship-shape. Please be callin' 570-330-3000 t' parley about it"]
 };
