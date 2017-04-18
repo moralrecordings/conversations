@@ -83,14 +83,14 @@ textarea.ready {
 .message-hidden {
     margin: 0.5em;
     overflow-y: hidden;
-    max-height: 500px;
+    height: 360px;
     transition-property: all;
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
     transition-timing-function: ease-out;
 }
 
 .message-hidden.closed {
-    max-height: 0;
+    height: 0;
 }
 
 .message-avatar {
