@@ -10,7 +10,6 @@
                     <img class="picker" v-bind:src="account.icon"/>
                 </label>
             </form>
-            <!--button class="account-switch" v-for="account in forms.accounts" v-if="account.visibleLevel <= $store.state.level" v-bind:title="'@' + account.id + ' - ' + account.name" ><img v-bind:src="account.icon"/></button-->
         </div></div>
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <div class="window" v-window v-bind:style="{ width: width + 'px', height: height + 'px', left: xPos + 'px', top: yPos + 'px' }">
+    <div class="window" v-window v-bind:style="{ left: xPos + 'px', top: yPos + 'px' }">
         <div class="titlebar active">
             <span class="titlebar-text">IssueMagic</span>
         </div>
@@ -27,6 +27,10 @@
 </template>
 
 <style scoped>
+
+.window {
+    width: 300px;
+}
 
 .head {
     margin-top: 0.5em;
