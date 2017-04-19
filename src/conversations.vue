@@ -336,6 +336,7 @@ input[type=radio]:checked + .picker {
 // Now we can crank out one colour scheme class per line
 @include theme_factory( ".theme-allied", white, black, #37abc8, white, #b0b0b0, white );
 @include theme_factory( ".theme-kingsley", #fffbea, #403501, #bc2e00, #ffe980, #a68075, #dfded8 );
+@include theme_factory( ".theme-capnjack", #f3f7fb, #0a172a, #204a87, white, #666666, white );
 @include theme_factory( ".theme-excelsior", #eeeeec, black, white, #cc0000, #d7cfcf, #666666 ); 
 
 
@@ -490,6 +491,11 @@ export default {
             ],
             messageWindows: [
             ],
+            score: {
+                open: 0,
+                rslv: 0,
+                warn: 0,
+            },
             svgAssets: svgAssets,
             theme: 'theme-allied',
         };
