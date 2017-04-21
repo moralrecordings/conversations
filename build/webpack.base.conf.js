@@ -11,7 +11,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    map: './src/main.js'
+    conversations: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
