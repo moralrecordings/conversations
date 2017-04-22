@@ -118,10 +118,11 @@ textarea.ready {
 
 import debounce from 'debounce';
 import traffic from 'assets/traffic';
+import firehose from 'src/firehose';
 
 export default {
     name: 'messages-app',
-    props: ['message'],
+    props: ['message', 'account'],
     data: function () {
         return {
             forms: traffic.forms,
@@ -131,6 +132,7 @@ export default {
             replyAttachment: 0,
             flyout: false,
             hidden: true,
+            replyBody: '',
             replyContent: '',
             replyReady: false,
             closed: false
@@ -139,10 +141,10 @@ export default {
     methods: {
         typing: function (ev) {
             var vm = this;
-            if (this.replyContent.length < this.message.reply.length) {
-                this.replyContent += this.message.reply[this.replyContent.length];
+            if (this.replyContent.length < this.replyBody.length) {
+                this.replyContent += this.replyBody[this.replyContent.length];
             }
-            if (this.replyContent.length == this.message.reply.length) {
+            if (this.replyContent.length == this.replyBody.length) {
                 this.replyReady = true;
             }
 
@@ -158,22 +160,31 @@ export default {
         },
         changeReply: function (ev) {
             this.replyContent = '';
+            this.replyBody = firehose.generateResponse(this.getResult());
             this.replyReady = false;
         },
-        submit: debounce(function () {
+        getResult: function () {
             var vm = this;
-            this.flyout = true;
             var result = {
+                account: this.account,
                 id: this.message.id,
                 type: this.forms.types[this.replyType].id,
-                subtype: this.forms.types[this.replyType].subtypes[this.replySubtype].id,
                 attachment: this.forms.attachments[this.replyAttachment].id,
                 ready: this.replyReady,
                 flags: {},
             };
+            if (this.forms.types[this.replyType].subtypes) {
+                result.subtype = this.forms.types[this.replyType].subtypes[this.replySubtype].id;
+            }
             this.forms.flags.forEach(function (el, index) {
                 result.flags[el.id] = vm.replyFlags[index] ? true : false; 
             });
+            return result;
+        },
+        submit: debounce(function () {
+            var vm = this;
+            this.flyout = true;
+            var result = this.getResult(); 
 
             this.$emit('submitMessage', result);
             setTimeout(this.close, 800);
@@ -192,7 +203,11 @@ export default {
             }
         },
     },
-
+    watch: {
+        account: function (newAccount) {
+            this.changeReply();
+        }
+    },
 
 }
 </script>

@@ -6,8 +6,8 @@
         <div class="desktop"> 
             <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y"  v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-if="showIssues" v-on:changeAccount="changeAccount"/>
-            <mr-activity-app v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" width="300" v-if="showIssues" />
-            <mr-messages-app v-for="msgId in messageWindows" :key="msgId" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
+            <mr-activity-app v-bind:score="score" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" width="300" v-if="showIssues" />
+            <mr-messages-app v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
             <!--mr-fail-app/-->
         </div>
         <div class="taskbar">
@@ -491,13 +491,10 @@ export default {
             ],
             messageWindows: [
             ],
-            score: {
-                open: 0,
-                rslv: 0,
-                warn: 0,
-            },
+            score: {open: 0, rslv: 0, warn: 0},
             svgAssets: svgAssets,
             theme: 'theme-allied',
+            account: 'AlliedBrandsInc',
         };
     },
     methods: {
@@ -541,11 +538,10 @@ export default {
                 id: msgId,
                 user: 'ToolbeltKiller',
                 loc: 'Newbridge, NJ, USA',
-                body: firehose.generateMessage(),
+                body: firehose.generateMessage(0, 0),
                 eggColour: randomEggColour(),
                 xPos: Math.floor( Math.random()*xRange )+xOffset +'px',
-                yPos: Math.floor( Math.random()*yRange )+yOffset +'px',
-                reply: 'dude I just work here chill please'
+                yPos: Math.floor( Math.random()*yRange )+yOffset +'px'
             });
             this.messageWindows.push(msgId);
         },
@@ -557,6 +553,7 @@ export default {
             console.log('changeAccount');
             console.log(ev);
             this.theme = ev.theme;
+            this.account = ev.id;
         }
     },
     components: {

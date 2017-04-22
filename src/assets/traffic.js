@@ -43,25 +43,35 @@ var forms = {
         { id: 'suicidal', name: 'Suicide risk', visibleLevel: 5 },
     ],
     // Attachments
-    attachmentsVisibleLevel: 5,
+    attachmentsVisibleLevel: 3,
     attachments: [
-        { id: 'blank', name: '----', visibleLevel: 5 },
-        { id: 'ricardo', name: '20111129FPDraftFINAL2.jpg', visibleLevel: 5 },
+        { id: 'blank', name: '----', visibleLevel: 3 },
+        { id: 'ricardo', name: '20111121FPDraftFINAL2.jpg', visibleLevel: 3 },
+        { id: 'shaftoproxin', name: '20111129 FINAL KC APPROVED amend2.jpg', visibleLevel: 5 },
     ]
 }
 
-
+// all the types of customer feedback 
 var messageTypes = {
-    'ks_compliment': { account: 'KingsleySnacks', type: 'compliment', subtype: ''}, 
+    'ks_experience': { account: 'KingsleySnacks', type: 'compliment', subtype: 'experience'}, 
+    'ks_advertising': { account: 'KingsleySnacks', type: 'compliment', subtype: 'advertising'}, 
     'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject' },
     'ks_foreignLegal': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
     'ks_empty': { account: 'KingsleySnacks', type: 'issue', subtype: 'emptyPackaging' },
     'ks_spoil': { account: 'KingsleySnacks', type: 'issue', subtype: 'spoilage' },
+    'ks_misshapen': { account: 'KingsleySnacks', type: 'issue', subtype: 'misshapen' },
 };
 
+// reply with the first response type in the list that matches all of the criteria
+var responses = [
+    {type: 'ks_compliment_reply', match: {account: 'KingsleySnacks', type: 'compliment'}},
+    {type: 'ks_issue_reply', match: {account: 'KingsleySnacks', type: 'issue'}},
+    {type: 'cj_issue_reply', match: {account: 'CapnJackFoods', type: 'issue'}},
+    {type: 'generic_reply', match: {}},
+];
 
-var levels = {
-    0: {
+var levels = [
+    {
         time: 180,
         firstTimeDelay: true,
         timeline: [
@@ -69,18 +79,21 @@ var levels = {
                 endMark: 180, periodMin: 3.0, periodMax: 5.0,
                 grammar: [
                     { weight: 40, type: 'ks_foreign' },
-                    { weight: 20, type: 'ks_spoil' },
+                    { weight: 10, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
-                    { weight: 20, type: 'ks_compliment' },
+                    { weight: 10, type: 'ks_misshapen' },
+                    { weight: 20, type: 'ks_experience' },
+                    { weight: 10, type: 'ks_advertising' },
                 ]
             }
         ]
     }
-}
+]
+
 
 export default {
     forms: forms,
-    levels: levels,
     messageTypes: messageTypes,
-
+    responses: responses,
+    levels: levels,
 };

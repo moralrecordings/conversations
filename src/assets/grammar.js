@@ -89,11 +89,12 @@ export default {
         "#defaultPerson#can't believe there's #sizeForeignObject.a# in #pronoun# #object#",
         "#defaultPerson#can't believe #pronoun# #object# has #sizeForeignObject.a# in it",
         "#defaultPerson#no shit there is #sizeForeignObject.a# in #pronoun# #object#",
+        "#defaultPerson#no fooling there is #sizeForeignObject.a# in #pronoun# #object#",
         "#defaultPerson#how come there's #sizeForeignObject.a# in #pronoun# #object#",    
         "#defaultPerson#explain why there's #sizeForeignObject.a# in #pronoun# #object#",
         "#defaultPerson#explain why #pronoun# #object# has #sizeForeignObject.a# in it",
-        "#defaultPerson#is it normal for your #object.s# to have #sizeForeignObject.a#",
-        "#defaultPerson#do you make all the #object.s# with #sizeForeignObject.a# in them",
+        "#defaultPerson#is it normal for #object.a# to have #sizeForeignObject.a#",
+        "#defaultPerson#do you make every #object# with #sizeForeignObject.a# in them",
     ], 
     "foreignMessage": [
         "[disco:#foreignObjectDiscovery#]#exclamation.randomUpper(30)# @#account# #disco#, #closingRemark.randomUpper(20)##coda#", 
@@ -105,7 +106,14 @@ export default {
     
     // spoilage types
     "spoilage": [],
+    "spoilMessage": ["@#account# wah wah wah my food spoiled"],
 
+    // empty types
+    "emptyMessage": ["@#account# wah wah wah I bought an empty packet"],
+
+    // misshapen types
+    "misshapenMessage": ["@#account# wah wah wah my food was shaped weird"],
+    
 
     // product types
     "prod_chocolate": ["candy bar", "bar", "choc bar", "choco bar", "chocolate", "chocolate bar", "Kingsley chocolate bar", "🍫"],
@@ -117,11 +125,22 @@ export default {
                 "#prod_pebbles#", "#prod_pebbles#", "#prod_pebbles#", ],
 
 
+    // happy tweet weighting
+    "ks_advertising": ["[account:KingsleySnacks]@#account# catchphrase tagline I am a consumer whore"],
+    "ks_experience": ["[account:KingsleySnacks]@#account# please send me free shit"],
+
+
     // furious tweet generators
     "ks_foreign": ["[account:KingsleySnacks][object:#ks_prod#]#foreignMessage#"],
+    "ks_spoil": ["[account:KingsleySnacks][object:#ks_prod#]#spoilMessage#"],
+    "ks_empty": ["[account:KingsleySnacks][object:#ks_prod#]#emptyMessage#"],
+    "ks_misshapen": ["[account:KingsleySnacks][object:#ks_prod#]#misshapenMessage#"],
 
 
-    "ks_complaint_reply": ["@#account# Hi, we\'re sorry for your experience but thank you for letting us know, please call 570-330-3000 to discuss"],
+    "ks_compliment_reply": ["we're honored to have a fan like you on Team Kingsley!"],
+    "ks_issue_reply": ["Hi, we\'re sorry for your experience but thank you for letting us know, please call 570-330-3000 to discuss"],
 
-    "cj_complaint_reply": ["@#account# Aye, very sorry ta be hearin' yer snack weren't ship-shape. Please be callin' 570-330-3000 t' parley about it"]
+    "cj_issue_reply": ["Aye, very sorry ta be hearin' yer snack weren't ship-shape. Please be callin' 570-330-3000 t' parley about it"],
+
+    "generic_reply": ["I care so little have this generic reply"]
 };

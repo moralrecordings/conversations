@@ -11,12 +11,12 @@
                 <div class="quart">Open</div><div class="quart">Rslv.</div><div class="quart">Warn</div><div class="quart">Total</div>
             </div>
             <div class="sub">
-                <div class="quart">5</div><div class="quart">30</div><div class="quart">2/5</div><div class="quart">37</div>
+                <div class="quart">{{ score.open }}</div><div class="quart">{{ score.rslv }}</div><div class="quart">{{ score.warn }}/5</div><div class="quart">{{ scoreTotal }}</div>
             </div>
             <div class="head">Avg. resolution time:</div>
             <div class="sub">10.6 sec</div>
             <div class="head">Resolution rate:</div>
-            <div class="sub">40%</div>
+            <div class="sub">{{ resolutionRate }}</div>
             <div class="head">Avg. resolution time (global):</div>
             <div class="sub">10.6 sec</div>
             <div class="head">Resolution rate (global):</div>
@@ -59,9 +59,21 @@ import traffic from 'assets/traffic';
 
 export default {
     name: 'activity-app',
-    props: ['width', 'height', 'xPos', 'yPos'],
+    props: ['xPos', 'yPos', 'score'],
     methods: {
 
+    },
+    computed: {
+        scoreTotal: {
+            get: function () {
+                return this.score.open+this.score.rslv+this.score.warn;
+            }
+        },
+        resolutionRate: {
+            get: function () {
+                return this.scoreTotal ? Number.toString(Math.floor(this.score.rslv/this.scoreTotal))+'%' : '-';
+            }
+        },
     },
     data: function() {
         return {
