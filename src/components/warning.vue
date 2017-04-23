@@ -1,5 +1,5 @@
 <template>
-    <div class="window" v-window v-bind:style="{ left: xPos + 'px', top: yPos + 'px' }"  v-bind:class="{ close: closed }">
+    <div class="window" v-window.under v-bind:style="{ left: xPos + 'px', top: yPos + 'px' }"  v-bind:class="{ close: closed }">
         <div class="titlebar active">
             <span class="titlebar-text">Message from Supervisor</span>
             <button v-on:click="close">×</button>

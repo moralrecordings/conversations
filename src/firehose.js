@@ -120,7 +120,7 @@ export default {
             errors.push('Response message was sent unfinished.');
         }
         return {
-            valid: errors > 0,
+            valid: errors.length === 0,
             errors: errors
         };
     },

@@ -71,7 +71,7 @@ export default {
         },
         resolutionRate: {
             get: function () {
-                return this.scoreTotal ? Number.toString(Math.floor(this.score.rslv/this.scoreTotal))+'%' : '-';
+                return this.scoreTotal ? Number(Math.floor(100*this.score.rslv/this.scoreTotal)).toString()+'%' : '-';
             }
         },
     },

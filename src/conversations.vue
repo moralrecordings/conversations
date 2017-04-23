@@ -8,7 +8,7 @@
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app v-bind:score="score" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" width="300" v-if="showIssues" />
             <mr-messages-app v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
-            <mr-warning-app v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
+            <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
             <!--mr-fail-app/-->
         </div>
         <div class="taskbar">
@@ -538,6 +538,8 @@ export default {
         },
         showWarningWindow: function() {
             console.log('showWarningWindow');
+            this.warningPos.x = $('.desktop').width() - 420 -16;
+            this.warningPos.y = 16;
             this.showWarning = true;
         },
         spawnMessage: function() {
@@ -547,7 +549,7 @@ export default {
             var yRange = $('.desktop').height() - 64 - 500;
             var msgId = this.messages.length;
             var msgData = firehose.generateMessage(0, 0);
-
+            this.score.open += 1;
             this.messages.push({
                 id: msgId,
                 user: 'ToolbeltKiller',
@@ -566,12 +568,16 @@ export default {
             console.log(ev);
             var results = firehose.validate(this.messages[ev.id].type, ev);
             this.closeWarningWindow();
-            if (!results.valid) {
-                setTimeout(function () {
+            setTimeout(function () {
+                if (!results.valid) {
                     vm.warningErrors = results.errors;
-                    vm.showWarning = true;
-                }, 2000);
-            }
+                    vm.showWarningWindow();
+                    vm.score.warn += 1;
+                } else {
+                    vm.score.rslv += 1;
+                }
+                vm.score.open -= 1;
+            }, 2000);
         },
         changeAccount: function (ev) {
             console.log('changeAccount');
