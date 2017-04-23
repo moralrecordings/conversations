@@ -5,7 +5,7 @@
             <button v-on:click="close">×</button>
         </div>
         <div class="body-container"><div class="body">
-            Last customer response contained errors:
+            Last customer response contained mistakes:
             <ul>
                 <li v-for="error in errors">{{ error }}</li>
             </ul>

@@ -6,10 +6,10 @@
         <div class="desktop"> 
             <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y"  v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-if="showIssues" v-on:changeAccount="changeAccount"/>
-            <mr-activity-app v-bind:score="score" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" width="300" v-if="showIssues" />
-            <mr-messages-app v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
+            <mr-activity-app v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" width="300" v-if="showIssues" />
+            <mr-messages-app v-bind:class="{ close: showFail }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
             <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
-            <!--mr-fail-app/-->
+            <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-if="showFail"/>
         </div>
         <div class="taskbar">
             <button v-on:click="showEmailWindow">EMail</button>
@@ -487,15 +487,18 @@ export default {
             showEmail: false,
             showIssues: false,
             showWarning: false,
+            showFail: false,
             activityPos: {x: 0, y: 0},
             accountsPos: {x: 300, y: 300},
             warningPos: {x: 300, y: 300},
+            failPos: {x: 0, y: 0},
             emailPos: {x: 0, y: 0, w: 1000, h: 600},
             messages: [
             ],
             messageWindows: [
             ],
             score: {open: 0, rslv: 0, warn: 0},
+            maxWarnings: 5,
             svgAssets: svgAssets,
             theme: 'theme-allied',
             account: 'AlliedBrandsInc',
@@ -542,6 +545,11 @@ export default {
             this.warningPos.y = 16;
             this.showWarning = true;
         },
+        showFailWindow: function () {
+            this.failPos.x = ($('.desktop').width() - 800)/2;
+            this.failPos.y = ($('.desktop').height() - 320)/2;
+            this.showFail = true;
+        },
         spawnMessage: function() {
             var xOffset = 32;
             var xRange = $('.desktop').width() - 64 - 400;
@@ -571,8 +579,12 @@ export default {
             setTimeout(function () {
                 if (!results.valid) {
                     vm.warningErrors = results.errors;
-                    vm.showWarningWindow();
                     vm.score.warn += 1;
+                    if (vm.score.warn < vm.maxWarnings) {
+                        vm.showWarningWindow();
+                    } else {
+                        vm.showFailWindow();
+                    }
                 } else {
                     vm.score.rslv += 1;
                 }

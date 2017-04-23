@@ -11,7 +11,7 @@
                 <div class="quart">Open</div><div class="quart">Rslv.</div><div class="quart">Warn</div><div class="quart">Total</div>
             </div>
             <div class="sub">
-                <div class="quart">{{ score.open }}</div><div class="quart">{{ score.rslv }}</div><div class="quart">{{ score.warn }}/5</div><div class="quart">{{ scoreTotal }}</div>
+                <div class="quart">{{ score.open }}</div><div class="quart">{{ score.rslv }}</div><div class="quart">{{ score.warn }}/{{ maxWarnings }}</div><div class="quart">{{ scoreTotal }}</div>
             </div>
             <div class="head">Avg. resolution time:</div>
             <div class="sub">10.6 sec</div>
@@ -59,7 +59,7 @@ import traffic from 'assets/traffic';
 
 export default {
     name: 'activity-app',
-    props: ['xPos', 'yPos', 'score'],
+    props: ['xPos', 'yPos', 'score', 'maxWarnings'],
     methods: {
 
     },
