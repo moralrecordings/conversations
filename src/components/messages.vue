@@ -142,7 +142,12 @@ export default {
         typing: function (ev) {
             var vm = this;
             if (this.replyContent.length < this.replyBody.length) {
-                this.replyContent += this.replyBody[this.replyContent.length];
+                var end = this.replyBody.indexOf(' ', this.replyContent.length);
+                if (end === -1) {
+                    this.replyContent += this.replyBody.substring(this.replyContent.length);
+                } else {
+                    this.replyContent += this.replyBody.substring(this.replyContent.length, end+1);
+                }
             }
             if (this.replyContent.length == this.replyBody.length) {
                 this.replyReady = true;
