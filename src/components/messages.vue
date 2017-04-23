@@ -160,7 +160,7 @@ export default {
         },
         changeReply: function (ev) {
             this.replyContent = '';
-            this.replyBody = firehose.generateResponse(this.getResult());
+            this.replyBody = firehose.generateResponse(this.getResult()).response;
             this.replyReady = false;
         },
         getResult: function () {

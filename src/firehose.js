@@ -25,9 +25,13 @@ export default {
     generateMessage: function (level, time) {
         // FIXME: do proper timecheck!
         var grammarWeight = traffic.levels[level].timeline[0].grammar;
-        return this.getMessage(grammarWeight);
+        var messageType = this.getMessageType(grammarWeight);
+        return {
+            type: messageType,
+            message: this.grammar.flatten('#'+messageType+'#'),
+        };
     },
-    getMessage: function (grammarWeight) {
+    getMessageType: function (grammarWeight) {
         var sum = 0;
         grammarWeight.forEach(function (el) {
             sum += el.weight;
@@ -40,8 +44,7 @@ export default {
             }
             return true;
         }).type;
-
-        return this.grammar.flatten('#'+messageType+'#');
+        return messageType;
     },
     generateResponse: function (params) {
         var responseType = traffic.responses.find(function (el) {
@@ -63,6 +66,62 @@ export default {
             }
             return true;
         }).type;
-        return this.grammar.flatten('#'+responseType+'#');
+        return {
+            type: responseType,
+            response: this.grammar.flatten('#'+responseType+'#'),
+        };
+    },
+    validate: function (messageType, response) {
+        var match = traffic.messageTypes[messageType];
+        var errors = [];
+        if (match.account != response.account) {
+            errors.push('Response should be sent from @'+match.account+' account.');
+        }
+        
+        var type = traffic.forms.types.find(function (el) {
+            return el.id === match.type;
+        });
+        if (match.type != response.type) {
+            errors.push('Response type should be "'+type.name+'".');
+        }
+        if (match.subtype != response.subtype) {
+            var subtype = type.subtypes.find(function (el) {
+                return el.id === match.subtype;
+            });
+            errors.push('Response subtype should be "'+subtype.name+'".');
+        }
+        for (var flag in response.flags) {
+            var flagName = traffic.forms.flags.find(function (el) {
+                return el.id === flag;
+            }).name;
+            if (response.flags[flag] === true) {
+                if (!(match.flags) || !(flag in match.flags)) {
+                    errors.push('Flag "'+flagName+'" does not apply to this message.');
+                }
+            } else if ('flags' in match) {
+                if ((flag in match.flags) && (match.flags[flag] === true)) {
+                    errors.push('Flag "'+flagName+'" should have been set.');
+                }
+            }
+        }
+        if ('attachment' in match) {
+            if (match.attachment != response.attachment) {
+                var attachName = traffic.forms.attachments.find(function (el) {
+                    return el.id === match.attachment;
+                }).name;
+                errors.push('Attachment should be "'+attachName+'".');
+            }
+        } else {
+            if (response.attachment != 'blank') {
+                errors.push('No attachment required.');
+            }
+        }
+        if (!response.ready) {
+            errors.push('Response message was sent unfinished.');
+        }
+        return {
+            valid: errors > 0,
+            errors: errors
+        };
     },
 };

@@ -8,6 +8,7 @@
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app v-bind:score="score" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" width="300" v-if="showIssues" />
             <mr-messages-app v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
+            <mr-warning-app v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
             <!--mr-fail-app/-->
         </div>
         <div class="taskbar">
@@ -354,6 +355,7 @@ import messages from './components/messages';
 import accounts from './components/accounts';
 import activity from './components/activity';
 import fail from './components/fail';
+import warning from './components/warning';
 
 import firehose from './firehose';
 
@@ -484,8 +486,10 @@ export default {
         return {
             showEmail: false,
             showIssues: false,
+            showWarning: false,
             activityPos: {x: 0, y: 0},
             accountsPos: {x: 300, y: 300},
+            warningPos: {x: 300, y: 300},
             emailPos: {x: 0, y: 0, w: 1000, h: 600},
             messages: [
             ],
@@ -514,6 +518,10 @@ export default {
                 this.messageWindows.splice(index, 1);
             }
         }, 200),
+        closeWarningWindow: debounce(function(ev) {
+            console.log('closeWarningWindow');
+            this.showWarning = false;
+        }, 200),
         showEmailWindow: function() {
             console.log('showEmailWindow');
             this.emailPos.x = ($('.desktop').width() - this.emailPos.w)/2;
@@ -528,17 +536,24 @@ export default {
             this.activityPos.y = ($('.desktop').height() - 400)/2;
             this.showIssues = true;
         },
+        showWarningWindow: function() {
+            console.log('showWarningWindow');
+            this.showWarning = true;
+        },
         spawnMessage: function() {
             var xOffset = 32;
             var xRange = $('.desktop').width() - 64 - 400;
             var yOffset = 32;
-            var yRange = $('.desktop').height() - 64 - 400;
+            var yRange = $('.desktop').height() - 64 - 500;
             var msgId = this.messages.length;
+            var msgData = firehose.generateMessage(0, 0);
+
             this.messages.push({
                 id: msgId,
                 user: 'ToolbeltKiller',
                 loc: 'Newbridge, NJ, USA',
-                body: firehose.generateMessage(0, 0),
+                type: msgData.type,
+                body: msgData.message,
                 eggColour: randomEggColour(),
                 xPos: Math.floor( Math.random()*xRange )+xOffset +'px',
                 yPos: Math.floor( Math.random()*yRange )+yOffset +'px'
@@ -546,8 +561,17 @@ export default {
             this.messageWindows.push(msgId);
         },
         submitMessage: function (ev) {
+            var vm = this;
             console.log('submitMessage');
             console.log(ev);
+            var results = firehose.validate(this.messages[ev.id].type, ev);
+            this.closeWarningWindow();
+            if (!results.valid) {
+                setTimeout(function () {
+                    vm.warningErrors = results.errors;
+                    vm.showWarning = true;
+                }, 2000);
+            }
         },
         changeAccount: function (ev) {
             console.log('changeAccount');
@@ -562,6 +586,7 @@ export default {
         'mr-accounts-app': accounts,
         'mr-activity-app': activity,
         'mr-fail-app': fail,
+        'mr-warning-app': warning,
     },
 };
 </script>
