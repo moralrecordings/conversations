@@ -15,6 +15,14 @@ export default {
         "[emoji1:#complainEmoji#][emoji2:#complainEmoji#][emoji3:#complainEmoji#]#emoji1##emoji1##emoji2##emoji2##emoji3##emoji3#", 
         "", "", "", "", "", "", ""
     ],
+    "exclaimed": [
+        "!", "!", "!", "!",
+        "!!!",
+        "!!!!!",
+        "!!!!!!",
+        "?!",
+        "!?!?!"
+    ],
     
 
     // person generator
@@ -99,6 +107,7 @@ export default {
     "foreignMessage": [
         "[disco:#foreignObjectDiscovery#]#exclamation.randomUpper(30)# @#account# #disco#, #closingRemark.randomUpper(20)##coda#", 
         "[disco:#foreignObjectDiscovery#]@#account# #exclamation.randomUpper(30)# #disco#, #closingRemark##coda#", 
+        "[disco:#foreignObjectDiscovery#]@#account# #exclamation.randomUpper(50)##exclaimed# #disco#, #closingRemark##coda#", 
         "[disco:#foreignObjectDiscovery#]#complainEmojiSeq# #closingRemark.randomUpper(30)# @#account# #disco##coda#",
         "[disco:#foreignObjectDiscovery#]#complainEmojiSeq# @#account# #disco#, #closingRemark.randomUpper(20)# #coda#",
     ],
@@ -116,6 +125,7 @@ export default {
     
 
     // product types
+    // should only be used in the singular! pluralisation is too hard
     "prod_chocolate": ["candy bar", "bar", "choc bar", "choco bar", "chocolate", "chocolate bar", "Kingsley chocolate bar", "🍫"],
     "prod_pebbles": ["fruit pebble", "🍬", "bag of fruit pebbles", "bag of Fruit Pebbles", "bag of 🍬", "Fruit Pebbles bag", "pack of Fruit Pebbles", "pack of fruit pebbles", "pack of 🍬", "Fruit Pebbles pack"],
     

@@ -53,8 +53,8 @@ var forms = {
 
 // all the types of customer feedback 
 var messageTypes = {
-    'ks_experience': { account: 'KingsleySnacks', type: 'compliment', subtype: 'experience'}, 
-    'ks_advertising': { account: 'KingsleySnacks', type: 'compliment', subtype: 'advertising'}, 
+    'ks_experience': { account: 'KingsleySnacks', type: 'compliment', subtype: 'experience' }, 
+    'ks_advertising': { account: 'KingsleySnacks', type: 'compliment', subtype: 'advertising' }, 
     'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject' },
     'ks_foreignLegal': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
     'ks_empty': { account: 'KingsleySnacks', type: 'issue', subtype: 'emptyPackaging' },
@@ -78,10 +78,10 @@ var levels = [
             {
                 endMark: 180, periodMin: 3.0, periodMax: 5.0,
                 grammar: [
-                    { weight: 40, type: 'ks_foreign' },
-                    { weight: 10, type: 'ks_spoil' },
+                    { weight: 50, type: 'ks_foreign' },
+                    { weight: 5, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
-                    { weight: 10, type: 'ks_misshapen' },
+                    { weight: 5, type: 'ks_misshapen' },
                     { weight: 20, type: 'ks_experience' },
                     { weight: 10, type: 'ks_advertising' },
                 ]
