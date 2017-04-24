@@ -84,25 +84,25 @@ export default {
     "foreignObject": ["piece of wood", "stick", "wood chip", "wood splinter", "splinter", "pill", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand",  "coin", "penny", "shell", "lump", "hair", "eyelash", "dandruff flake", "dust bunny", "ball of dust", "ball of lint", "chunk of lint", "clump of hair", "fingernail", "finger nail", "fake nail", "bandaid", "sticking plaster", "bone", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "wire", "bit of wire", "peanut shell", "nail", "fly", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "worm", "maggot", "spider", "insect", "bug", "roach", "cockroach", "locust", "dead rat", "tail", "severed finger"],
     "sizeForeignObject": ["[whut:#size##foreignObject#]#whut.randomUpper(10)#", "#size##foreignObject.randomUpper(10)#"],
     "foreignObjectDiscovery": [
-        "#genPerson##pName# found #sizeForeignObject.a# in #pronoun# #object#",
+        "#genPerson##pName# found #sizeForeignObject.a# in #pronoun# #product#",
         "#genPerson##pName# bit into #sizeForeignObject.a#",
-        "#defaultPerson#found #sizeForeignObject.a# in #pronoun# #object#",
-        "#defaultPerson#why is there #sizeForeignObject.a# in #pronoun# #object#",
-        "#defaultPerson#why does #pronoun# #object# have #sizeForeignObject.a#",
-        "#defaultPerson#there's #sizeForeignObject.a# in #pronoun# #object#",
-        "#defaultPerson#there's literally #sizeForeignObject.a# in #pronoun# #object#",
-        "#defaultPerson##pronoun# #object# literally has #sizeForeignObject.a# in it",
-        "#defaultPerson#wondering why there's #sizeForeignObject.a# in #pronoun# #object#",
-        "#defaultPerson#wondering why #pronoun# #object# has #sizeForeignObject.a# in it",
-        "#defaultPerson#can't believe there's #sizeForeignObject.a# in #pronoun# #object#",
-        "#defaultPerson#can't believe #pronoun# #object# has #sizeForeignObject.a# in it",
-        "#defaultPerson#no shit there is #sizeForeignObject.a# in #pronoun# #object#",
-        "#defaultPerson#no fooling there is #sizeForeignObject.a# in #pronoun# #object#",
-        "#defaultPerson#how come there's #sizeForeignObject.a# in #pronoun# #object#",    
-        "#defaultPerson#explain why there's #sizeForeignObject.a# in #pronoun# #object#",
-        "#defaultPerson#explain why #pronoun# #object# has #sizeForeignObject.a# in it",
-        "#defaultPerson#is it normal for #object.a# to have #sizeForeignObject.a#",
-        "#defaultPerson#do you make every #object# with #sizeForeignObject.a# in them",
+        "#defaultPerson#found #sizeForeignObject.a# in #pronoun# #product#",
+        "#defaultPerson#why is there #sizeForeignObject.a# in #pronoun# #product#",
+        "#defaultPerson#why does #pronoun# #product# have #sizeForeignObject.a#",
+        "#defaultPerson#there's #sizeForeignObject.a# in #pronoun# #product#",
+        "#defaultPerson#there's literally #sizeForeignObject.a# in #pronoun# #product#",
+        "#defaultPerson##pronoun# #product# literally has #sizeForeignObject.a# in it",
+        "#defaultPerson#wondering why there's #sizeForeignObject.a# in #pronoun# #product#",
+        "#defaultPerson#wondering why #pronoun# #product# has #sizeForeignObject.a# in it",
+        "#defaultPerson#can't believe there's #sizeForeignObject.a# in #pronoun# #product#",
+        "#defaultPerson#can't believe #pronoun# #product# has #sizeForeignObject.a# in it",
+        "#defaultPerson#no shit there is #sizeForeignObject.a# in #pronoun# #product#",
+        "#defaultPerson#no fooling there is #sizeForeignObject.a# in #pronoun# #product#",
+        "#defaultPerson#how come there's #sizeForeignObject.a# in #pronoun# #product#",    
+        "#defaultPerson#explain why there's #sizeForeignObject.a# in #pronoun# #product#",
+        "#defaultPerson#explain why #pronoun# #product# has #sizeForeignObject.a# in it",
+        "#defaultPerson#is it normal for #product.a# to have #sizeForeignObject.a#",
+        "#defaultPerson#do you make every #product# with #sizeForeignObject.a# in them",
     ], 
     "foreignMessage": [
         "[disco:#foreignObjectDiscovery#]#exclamation.randomUpper(30)# @#account# #disco#, #closingRemark.randomUpper(20)##coda#", 
@@ -118,16 +118,56 @@ export default {
     "spoilMessage": ["@#account# wah wah wah my food spoiled"],
 
     // empty types
-    "emptyMessage": ["@#account# wah wah wah I bought an empty packet"],
+    "emptyVolume": [
+        "empty",
+        "empty",
+        "maybe half empty",
+        "mostly empty",
+        "nearly empty",
+        "just air",
+        "mostly air",
+        "full of air",
+        "full of nothing",
+        "mostly sailboat fuel",
+    ],
+    "emptyDiscovery": [
+        "#genPerson##pName# bought a #product# and there was nothing inside the #package#",
+        "#genPerson##pName# bought a #product# and there was nothing in it",
+        "#genPerson##pNameTheir# #product# is #emptyVolume#",
+        "#genPerson#did someone at the factory get hungry? check out this #emptyVolume# #product#",
+        "#genPerson#how come there's no #productSingular# in this #package#",
+        "#genPerson#is your new business model selling #package.s# that are #emptyVolume#",
+        "#genPerson#I see you've just switched to making the #package.s# #emptyVolume#",
+        "#genPerson#trying to be cheap, my #productSingular# #package# was #emptyVolume#",
+    ],
+    "emptyMessage": ["@#account# #emptyDiscovery#"],
 
     // misshapen types
     "misshapenMessage": ["@#account# wah wah wah my food was shaped weird"],
     
 
     // product types
-    // should only be used in the singular! pluralisation is too hard
-    "prod_chocolate": ["candy bar", "bar", "choc bar", "choco bar", "chocolate", "chocolate bar", "Kingsley chocolate bar", "🍫"],
-    "prod_pebbles": ["fruit pebble", "🍬", "bag of fruit pebbles", "bag of Fruit Pebbles", "bag of 🍬", "Fruit Pebbles bag", "pack of Fruit Pebbles", "pack of fruit pebbles", "pack of 🍬", "Fruit Pebbles pack"],
+    "prod_chocolate": [
+        "[productSingular:chocolate][product:candy bar][package:wrapper]", 
+        "[productSingular:chocolate][product:bar][package:wrapper]", 
+        "[productSingular:chocolate][product:choc bar][package:wrapper]", 
+        "[productSingular:chocolate][product:choco bar][package:wrapper]", 
+        "[productSingular:chocolate][product:chocolate bar][package:wrapper]", 
+        "[productSingular:chocolate][product:Kingsley chocolate bar][package:wrapper]", 
+        "[productSingular:chocolate][product:Kingsley bar][package:wrapper]", 
+        "[productSingular:chocolate][product:🍫][package:wrapper]"
+    ],
+    "prod_pebbles": [
+        "[productSingular:fruit pebble][product:🍬][package:wrapper]", 
+        "[productSingular:fruit pebble][product:bag of fruit pebbles][package:wrapper]", 
+        "[productSingular:Fruit Pebble][product:bag of Fruit Pebbles][package:wrapper]", 
+        "[productSingular:fruit pebble][product:bag of 🍬][package:wrapper]", 
+        "[productSingular:Fruit Pebble][product:Fruit Pebbles bag]", 
+        "[productSingular:Fruit Pebble][product:pack of Fruit Pebbles][package:box]", 
+        "[productSingular:fruit pebble][product:pack of fruit pebbles][package:box]", 
+        "[productSingular:fruit pebble][product:pack of 🍬][package:box]", 
+        "[productSingular:Fruit Pebble][product:Fruit Pebbles pack][package:box]", 
+    ],
     
 
     // crappy product weighting
@@ -141,10 +181,10 @@ export default {
 
 
     // furious tweet generators
-    "ks_foreign": ["[account:KingsleySnacks][object:#ks_prod#]#foreignMessage#"],
-    "ks_spoil": ["[account:KingsleySnacks][object:#ks_prod#]#spoilMessage#"],
-    "ks_empty": ["[account:KingsleySnacks][object:#ks_prod#]#emptyMessage#"],
-    "ks_misshapen": ["[account:KingsleySnacks][object:#ks_prod#]#misshapenMessage#"],
+    "ks_foreign": ["[account:KingsleySnacks]#ks_prod##foreignMessage#"],
+    "ks_spoil": ["[account:KingsleySnacks]#ks_prod##spoilMessage#"],
+    "ks_empty": ["[account:KingsleySnacks]#ks_prod##emptyMessage#"],
+    "ks_misshapen": ["[account:KingsleySnacks]#ks_prod##misshapenMessage#"],
 
 
     "ks_compliment_reply": ["we're honored to have a fan like you on Team Kingsley!"],
