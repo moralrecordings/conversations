@@ -76,7 +76,7 @@ var levels = [
         firstTimeDelay: true,
         timeline: [
             {
-                endMark: 180, periodMin: 3.0, periodMax: 5.0,
+                endMark: 180, periodMin: 5.0, periodMax: 10.0,
                 grammar: [
                     { weight: 50, type: 'ks_foreign' },
                     { weight: 5, type: 'ks_spoil' },

@@ -29,6 +29,7 @@
 
 <style scoped>
 .email-body {
+    height: 100%;
     display: flex;
     flex-direction: row;
 }
@@ -36,7 +37,6 @@
 .email-select {
     display: block;
     min-width: 200px;
-    height: 100%;    
 }
 
 .email-select-row {

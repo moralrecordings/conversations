@@ -46,7 +46,7 @@ export default [
                 <li>All interaction with customers is handled through our form-based ticketing system, Alwynsoft IssueMagic. Tickets in IssueMagic are drawn from a number of social media sources, including @ mentions, direct messages and mentions of specific keywords.</li>
                 <li>When a ticket shows up in IssueMagic, click on the message to expand the answer form. Answering a ticket in IssueMagic will send a response back to the customer; it's easy as that!</li>
                 <li>When preparing a response to a customer, it is important that it arrives to them from the <b>correct brand account</b>. You can change the active account using the button group on the right side of the IssueMagic interface.</li>
-                <li>We wouldn't expect you to respond to every single query that arrives in on a given day. That said, the business has reasonable expectations for KPIs such as <b>weekly response totals</b>. You can keep track of these metrics using the gauges on the left side of the IssueMagic interface.</li>
+                <li>We wouldn't expect you to respond to every single query that arrives in on a given day. That said, the business has reasonable expectations for KPIs such as <b>resolution rate</b>. You can keep track of these metrics using the gauges on the left side of the IssueMagic interface.</li>
                 <li>All responses you make to customer queries are verified by a supervisor before release. Any noted mistakes will be flagged with a <b>formal warning</b>, which you should review to help avoid future mistakes.</li>
                 <li>Repeated warnings may result in performance management or disciplinary proceedings.</li>
             </ul>
@@ -244,7 +244,7 @@ export default [
         "content": `
             <p>Heya,</p>
             
-            <p>Gosh, would you look at what's on the front page of almost EVERY paper! Some free advice; don't trust any line from the executive level. They are scum. They are all scum.</p>
+            <p>Gosh, would you look at what's on the front page of almost EVERY paper! Some free advice; don't trust any line from the executive level, they are scum. They are all scum.</p>
 
             <p>Cheers,<br/>Andrea</p>
         `

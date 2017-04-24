@@ -31,6 +31,11 @@ html, body {
     line-height: 1.5em;
 }
 
+// tweak for mobile safari
+body {
+    position: relative;
+}
+
 // app container sizing
 .app {
     display: flex; 
@@ -47,6 +52,17 @@ html, body {
 // taskbar
 .taskbar {
     padding: 4px;
+}
+
+// fade to black
+.fader { 
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999999;
 }
 
 // window class, for the topmost level floating box
@@ -83,6 +99,8 @@ html, body {
     background: transparent;
     border: 1px solid transparent;
     border-radius: 2px;
+    padding: 0 6px 0 6px;
+    margin: 0;
 }
 
 .titlebar button {
@@ -146,8 +164,11 @@ input[type=radio]:checked + .picker {
 // border-box measures height and width as the outer extremities of the box, which
 // from a design perspective is waaaaay easier. thank you IE, you weren't all bad!
 .body-container {
-    flex: 1 0 auto;
-    height: 1%; 
+    flex: 1;
+    overflow: auto;
+    // stupid hack to make window overflow work
+    // breaks under webkit
+    // height: 1%; 
     box-sizing: border-box;
     border: 1px solid;
     border-top-color: #f0fefe;
@@ -349,6 +370,7 @@ input[type=radio]:checked + .picker {
 <script>
 import Vue from 'vue';
 import debounce from 'debounce';
+import moment from 'moment';
 
 import email from './components/email';
 import messages from './components/messages';
@@ -564,6 +586,7 @@ export default {
                 loc: 'Newbridge, NJ, USA',
                 type: msgData.type,
                 body: msgData.message,
+                created: moment(),
                 eggColour: randomEggColour(),
                 xPos: Math.floor( Math.random()*xRange )+xOffset +'px',
                 yPos: Math.floor( Math.random()*yRange )+yOffset +'px'
@@ -586,6 +609,7 @@ export default {
                         vm.showFailWindow();
                     }
                 } else {
+                    console.log(moment().diff(vm.messages[ev.id].created));
                     vm.score.rslv += 1;
                 }
                 vm.score.open -= 1;
