@@ -27,7 +27,6 @@
 
 <script>
 
-import traffic from 'assets/traffic';
 
 export default {
     name: 'fail-app',
@@ -39,7 +38,6 @@ export default {
     },
     data: function() {
         return {
-            forms: traffic.forms,
         };
     }
 };

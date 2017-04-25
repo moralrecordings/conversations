@@ -7,9 +7,10 @@
             <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y"  v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-on:startShift="startShift" v-if="showIssues" />
-            <mr-messages-app v-bind:class="{ close: showFail }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
+            <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
             <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
             <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-if="showFail"/>
+            <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-if="showSuccess"/>
         </div>
         <div class="taskbar">
             <button v-on:click="showEmailWindow">EMail</button>
@@ -376,6 +377,7 @@ import email from './components/email';
 import messages from './components/messages';
 import accounts from './components/accounts';
 import activity from './components/activity';
+import success from './components/success';
 import fail from './components/fail';
 import warning from './components/warning';
 
@@ -511,10 +513,12 @@ export default {
             showIssues: false,
             showWarning: false,
             showFail: false,
+            showSuccess: false,
             activityPos: {x: 0, y: 0},
             accountsPos: {x: 300, y: 300},
             warningPos: {x: 300, y: 300},
             failPos: {x: 0, y: 0},
+            successPos: {x: 0, y: 0},
             emailPos: {x: 0, y: 0, w: 1000, h: 600},
             messages: [
             ],
@@ -577,6 +581,11 @@ export default {
             this.failPos.y = ($('.desktop').height() - 320)/2;
             this.showFail = true;
         },
+        showSuccessWindow: function () {
+            this.successPos.x = ($('.desktop').width() - 800)/2;
+            this.successPos.y = ($('.desktop').height() - 320)/2;
+            this.showSuccess = true;
+        },
         startShift: function () {
             this.timer.duration = firehose.getLevel(this.$store.state.level).duration;
             this.timer.count = 0;
@@ -593,7 +602,14 @@ export default {
                 this.timer.duration-this.timer.count, 'seconds'
             ).format('m:ss', {trim: false});
             if (this.timer.count >= this.timer.duration) {
+                console.log('TIME OVER!');
                 this.stopShift();
+                if ((this.score.rslv / (this.score.open+this.score.rslv+this.score.warn))< this.resolutionRate) {
+                    // we're below the target completed rate, bomb out
+                    this.showFailWindow();
+                } else {
+                    this.showSuccessWindow();
+                }
             }
         },
         _trafficCB: function () {
@@ -640,6 +656,7 @@ export default {
                     if (vm.score.warn < vm.maxWarnings) {
                         vm.showWarningWindow();
                     } else {
+                        vm.stopShift();
                         vm.showFailWindow();
                     }
                 } else {
@@ -666,6 +683,7 @@ export default {
         'mr-messages-app': messages,
         'mr-accounts-app': accounts,
         'mr-activity-app': activity,
+        'mr-success-app': success,
         'mr-fail-app': fail,
         'mr-warning-app': warning,
     },
