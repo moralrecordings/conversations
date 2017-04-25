@@ -75,7 +75,7 @@ export default {
     // angry customer dialogue chunks
     "exclamation": ["wtf", "wtf is this", "what the fuck", "what the hell is this", "what is this", "wtf is this shit", "what is this shit", "what is this horseshit", "what the shit", "holy shit", "holy wow", "my god", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "gross", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "not cool", "not happy", "unacceptable"],
     "size": ["large ", "gigantic ", "great big fucking ", "largeass ", "big ", "bigass ", "goddamn ", "huge ", "enormous ", "fucking ", "", "", "", ""],
-    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "very disappointed", "really disappointed", "disappointed", "really sad", "very sad", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "I feel sick", "I feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a good supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "still hungry", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this", "this shit is unacceptable", "this is unacceptable" ],
+    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "very disappointed", "really disappointed", "disappointed", "really sad", "very sad", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "I feel sick", "I feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a good supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "still hungry", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this", "this shit is unacceptable", "this is unacceptable", "this is fucking dangerous" ],
     "litigiousRemark": ["see you in court", "SEE YOU IN COURT", "you'll hear from #pTheir# lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you better pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# is bleeding everywhere", "#pThey# cracked #pTheir# tooth", "#pThey# can't stop vomiting", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney now", "anyone know a good lawyer"],
     "coda": [" fml", " ffs", " you dicks", " you fuckers", " FML", " FFS", " jesus", " JFC", " sigh", " don't @ me", "", "", "", "", "", "", "", "", "", "", "", ""],
 
@@ -136,9 +136,10 @@ export default {
         "#genPerson##pNameTheir# #product# is #emptyVolume#",
         "#genPerson#did someone at the factory get hungry? check out this #emptyVolume# #product#",
         "#genPerson#how come there's no #productSingular# in this #package#",
-        "#genPerson#is your new business model selling #package.s# that are #emptyVolume#",
+        "#genPerson#is your new business model selling #emptyVolume# #package.s#",
         "#genPerson#I see you've just switched to making the #package.s# #emptyVolume#",
         "#genPerson#trying to be cheap, my #productSingular# #package# was #emptyVolume#",
+        "#genPerson#which genius thought of making a #product# that's #emptyVolume#",
     ],
     "emptyMessage": ["@#account# #emptyDiscovery#"],
 
@@ -161,11 +162,11 @@ export default {
         "[productSingular:fruit pebble][product:🍬][package:wrapper]", 
         "[productSingular:fruit pebble][product:bag of fruit pebbles][package:wrapper]", 
         "[productSingular:Fruit Pebble][product:bag of Fruit Pebbles][package:wrapper]", 
-        "[productSingular:fruit pebble][product:bag of 🍬][package:wrapper]", 
+        "[productSingular:fruit pebble][product:bag of 🍬s][package:wrapper]", 
         "[productSingular:Fruit Pebble][product:Fruit Pebbles bag]", 
         "[productSingular:Fruit Pebble][product:pack of Fruit Pebbles][package:box]", 
         "[productSingular:fruit pebble][product:pack of fruit pebbles][package:box]", 
-        "[productSingular:fruit pebble][product:pack of 🍬][package:box]", 
+        "[productSingular:fruit pebble][product:pack of 🍬s][package:box]", 
         "[productSingular:Fruit Pebble][product:Fruit Pebbles pack][package:box]", 
     ],
     

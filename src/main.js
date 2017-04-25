@@ -8,6 +8,8 @@ import VueRouter from 'vue-router';
 import 'jquery-ui-bundle/jquery-ui.structure.css';
 require('jquery-ui-bundle');
 
+require('moment-duration-format');
+
 import conversations from './conversations';
 import login from './login';
 
@@ -25,7 +27,7 @@ const router = new VueRouter({
 
 const store = new Vuex.Store({
     state: {
-        level: 8
+        level: 0
     },
     plugins: [createPersistedState({
         key: 'mr_conversations'

@@ -72,11 +72,13 @@ var responses = [
 
 var levels = [
     {
-        time: 180,
+        duration: 120,
+        maxWarnings: 5,
+        resolutionRate: 0.4,
         firstTimeDelay: true,
         timeline: [
             {
-                endMark: 180, periodMin: 5.0, periodMax: 10.0,
+                endMark: 120, periodMin: 5.0, periodMax: 10.0,
                 grammar: [
                     { weight: 50, type: 'ks_foreign' },
                     { weight: 5, type: 'ks_spoil' },

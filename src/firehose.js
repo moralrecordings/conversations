@@ -22,9 +22,20 @@ grammar.distribution = 'shuffle';
 
 export default {
     grammar: grammar,
+    getLevel: function (level) {
+        return traffic.levels[level];
+    },
+    getTimeline: function (level, time) {
+        return traffic.levels[level].timeline.find(function (el) {
+            return time <= el.endMark;   
+        });
+    },
+    getPeriod: function (level, time) {
+        var timeline = this.getTimeline(level, time);
+        return timeline.periodMin + Math.random()*(timeline.periodMax -timeline.periodMin);
+    },
     generateMessage: function (level, time) {
-        // FIXME: do proper timecheck!
-        var grammarWeight = traffic.levels[level].timeline[0].grammar;
+        var grammarWeight = this.getTimeline(level, time).grammar;
         var messageType = this.getMessageType(grammarWeight);
         return {
             type: messageType,

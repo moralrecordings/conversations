@@ -7,7 +7,7 @@
         <div class="body-container"><div class="body email-body">
             
             <div class="email-select overflow">
-                <div v-for="(message, index) in messages" class="email-select-row clickable" v-bind:class="{ active: index == messageIndex, unread: message.read != true }" v-on:click="setMessage(index)">
+                <div v-for="(message, index) in messages" class="email-select-row clickable" v-bind:class="{ active: index == messageIndex, unread: message.read != true }" v-if="$store.state.level >= message.visibleLevel" v-on:click="setMessage(index)">
                     <span>{{ message.date.format('D MMM') }}</span>
                     <p class="sender">{{ message.sender }}</p>
                     <p>{{ message.subject }}</p>

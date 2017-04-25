@@ -4,19 +4,23 @@
             <span class="titlebar-text">IssueMagic</span>
         </div>
         <div class="body-container"><div class="body">
-            <button class="form">Begin shift</button>
+            <button class="form" v-bind:disabled="startActive" v-on:click="startShift">Begin shift</button>
             <div class="head">Time remaining:</div>
-            <div class="sub">5:30</div>
+            <div class="sub">{{ timer.clock }}</div>
             <div class="head">
                 <div class="quart">Open</div><div class="quart">Rslv.</div><div class="quart">Warn</div><div class="quart">Total</div>
             </div>
             <div class="sub">
                 <div class="quart">{{ score.open }}</div><div class="quart">{{ score.rslv }}</div><div class="quart">{{ score.warn }}/{{ maxWarnings }}</div><div class="quart">{{ scoreTotal }}</div>
             </div>
+            <div class="head">
+                <div class="half">Resolution rate:</div><div class="half">Target rate:</div>
+            </div>
+            <div class="sub">
+                <div class="half">{{ resolutionRate }}</div><div class="half">{{ resolutionTargetRate }}</div>
+            </div>
             <div class="head">Avg. resolution time:</div>
             <div class="sub">10.6 sec</div>
-            <div class="head">Resolution rate:</div>
-            <div class="sub">{{ resolutionRate }}</div>
             <div class="head">Avg. resolution time (global):</div>
             <div class="sub">10.6 sec</div>
             <div class="head">Resolution rate (global):</div>
@@ -42,6 +46,11 @@
     font-size: 16px;
 }
 
+.half {
+    display: inline-block;
+    width: 50%;
+}
+
 .quart {
     display: inline-block;
     width: 25%;
@@ -59,9 +68,18 @@ import traffic from 'assets/traffic';
 
 export default {
     name: 'activity-app',
-    props: ['xPos', 'yPos', 'score', 'maxWarnings'],
+    props: ['xPos', 'yPos', 'score', 'timer', 'maxWarnings', 'resolutionTarget'],
+    data: function() {
+        return {
+            forms: traffic.forms,
+            startActive: false,
+        };
+    },
     methods: {
-
+        startShift: function () {
+            this.startActive = false;
+            this.$emit('startShift');
+        }
     },
     computed: {
         scoreTotal: {
@@ -74,11 +92,11 @@ export default {
                 return this.scoreTotal ? Number(Math.floor(100*this.score.rslv/this.scoreTotal)).toString()+'%' : '-';
             }
         },
+        resolutionTargetRate: {
+            get: function () {
+                return Number(Math.floor(this.resolutionTarget*100)).toString()+'%';
+            }
+        }
     },
-    data: function() {
-        return {
-            forms: traffic.forms,
-        };
-    }
 };
 </script>

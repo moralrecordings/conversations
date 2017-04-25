@@ -6,7 +6,7 @@
         <div class="desktop"> 
             <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y"  v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-if="showIssues" v-on:changeAccount="changeAccount"/>
-            <mr-activity-app v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" width="300" v-if="showIssues" />
+            <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-on:startShift="startShift" v-if="showIssues" />
             <mr-messages-app v-bind:class="{ close: showFail }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
             <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
             <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-if="showFail"/>
@@ -380,6 +380,7 @@ import fail from './components/fail';
 import warning from './components/warning';
 
 import firehose from './firehose';
+import traffic from 'assets/traffic';
 
 var svgAssets = [
     require('assets/egg.rawsvg')
@@ -520,7 +521,11 @@ export default {
             messageWindows: [
             ],
             score: {open: 0, rslv: 0, warn: 0},
+            timer: {duration: 0, count: 0, clock: '-:--', interval: null},
+            
             maxWarnings: 5,
+            resolutionRate: 0.5,
+
             svgAssets: svgAssets,
             theme: 'theme-allied',
             account: 'AlliedBrandsInc',
@@ -572,13 +577,41 @@ export default {
             this.failPos.y = ($('.desktop').height() - 320)/2;
             this.showFail = true;
         },
+        startShift: function () {
+            this.timer.duration = firehose.getLevel(this.$store.state.level).duration;
+            this.timer.count = 0;
+            this.timer.interval = setInterval(this._countdownCB, 1000);
+            setTimeout(this._trafficCB, 1000);
+        },
+        stopShift: function () {
+            clearInterval(this.timer.interval);
+            this.timer.interval = null;
+        },
+        _countdownCB: function () {
+            this.timer.count += 1;
+            this.timer.clock = moment.duration(
+                this.timer.duration-this.timer.count, 'seconds'
+            ).format('m:ss', {trim: false});
+            if (this.timer.count >= this.timer.duration) {
+                this.stopShift();
+            }
+        },
+        _trafficCB: function () {
+            console.log('traffic!');
+            if (!this.timer.interval) {
+                // timer is off, short circuit
+                return;
+            }
+            this.spawnMessage();
+            setTimeout(this._trafficCB, Math.floor(1000*firehose.getPeriod(this.$store.state.level, this.timer.count)));
+        },
         spawnMessage: function() {
             var xOffset = 32;
             var xRange = $('.desktop').width() - 64 - 400;
             var yOffset = 32;
             var yRange = $('.desktop').height() - 64 - 500;
             var msgId = this.messages.length;
-            var msgData = firehose.generateMessage(0, 0);
+            var msgData = firehose.generateMessage(this.$store.state.level, this.timer.count);
             this.score.open += 1;
             this.messages.push({
                 id: msgId,
@@ -593,6 +626,7 @@ export default {
             });
             this.messageWindows.push(msgId);
         },
+
         submitMessage: function (ev) {
             var vm = this;
             console.log('submitMessage');
@@ -621,6 +655,11 @@ export default {
             this.theme = ev.theme;
             this.account = ev.id;
         }
+    },
+    mounted: function () {
+        var level = firehose.getLevel(this.$store.state.level);
+        this.maxWarnings = level.maxWarnings;
+        this.resolutionRate = level.resolutionRate;
     },
     components: {
         'mr-email-app': email,
