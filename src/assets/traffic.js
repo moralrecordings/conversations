@@ -81,10 +81,10 @@ var levels = [
                 endMark: 120, periodMin: 5.0, periodMax: 10.0,
                 grammar: [
                     { weight: 50, type: 'ks_foreign' },
-                    { weight: 5, type: 'ks_spoil' },
+                    { weight: 10, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
-                    { weight: 5, type: 'ks_misshapen' },
-                    { weight: 20, type: 'ks_experience' },
+                    { weight: 10, type: 'ks_misshapen' },
+                    { weight: 10, type: 'ks_experience' },
                     { weight: 10, type: 'ks_advertising' },
                 ]
             }
