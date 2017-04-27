@@ -114,6 +114,31 @@ export default {
 
     
     // spoilage types
+    "stench": [
+        "rot",
+        "mold",
+        "moldy cheese",
+        "fungus",
+        "rotten eggs",
+        "ass",
+        "farts",
+        "wet farts",
+        "a bag of old farts",
+        "urine",
+        "piss",
+        "cat piss",
+        "a slaughterhouse floor",
+        "an abbatoir",
+        "dumpster juice",
+        "rotting garbage",
+        "fetid garbage",
+        "a urinal cake",
+        "a rendering plant",
+        "chemicals",
+        "bad chemicals",
+        "acid",
+        "oven cleaner",
+    ],
     "spoilage": [],
     "spoilMessage": ["@#account# wah wah wah my food spoiled"],
 

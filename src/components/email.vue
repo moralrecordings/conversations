@@ -144,6 +144,7 @@ export default {
             console.log(el);
         });
         vm.messages.reverse();
+        console.log(vm.messages);
     },
 };
 </script>

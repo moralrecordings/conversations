@@ -74,7 +74,7 @@ var levels = [
     {
         duration: 120,
         maxWarnings: 5,
-        resolutionRate: 0.4,
+        resolutionRate: 0.3,
         firstTimeDelay: true,
         timeline: [
             {

@@ -6,7 +6,7 @@
         <div class="body-container"><div class="body">
             <form>
                 <label v-for="(account, index) in forms.accounts" v-if="account.visibleLevel <= $store.state.level" v-bind:title="'@' + account.id + ' - ' + account.name" >
-                    <input style="display: none" type="radio" name="accounts" v-on:change="changeAccount(index)"/>
+                    <input style="display: none" type="radio" v-bind:checked="index == 0" name="accounts" v-on:change="changeAccount(index)"/>
                     <img class="picker" v-bind:src="account.icon"/>
                 </label>
             </form>
