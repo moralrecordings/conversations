@@ -127,6 +127,9 @@ export default {
     mounted: function () {
         var vm = this;
         emails.forEach(function (el, index) {
+            if (el.visibleLevel > vm.$store.state.level) {
+                return;
+            }
             if (vm.messages.length <= el.visibleLevel) {
                 for (var i=0; i<el.visibleLevel - vm.messages.length+1; i += 1) {
                     vm.messages.push([]);
@@ -144,6 +147,7 @@ export default {
             console.log(el);
         });
         vm.messages.reverse();
+        vm.selectIndex = vm.messages[0][0].index;
         console.log(vm.messages);
     },
 };

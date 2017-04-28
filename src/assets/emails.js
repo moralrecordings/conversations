@@ -59,7 +59,7 @@ export default [
     // week 2 starting 20111107
     {
         "visibleLevel": 1,
-        "date": moment("20111107", "YYYYMMDD"),
+        "date": moment("20111104", "YYYYMMDD"),
         "sender": "Nathaniel Hardcastle",
         "senderMail": "nathaniel.hardcastle@alliedbrandsinc",
         "recipient": "PR - All Users",
@@ -83,6 +83,20 @@ export default [
         `
     },
 
+    {
+        "visibleLevel": 1,
+        "date": moment("20111107", "YYYYMMDD"),
+        "sender": "Tricia Huxton",
+        "senderMail": "tricia.huxton@alliedbrandsinc",
+        "recipient": "PR - L1",
+        "recipientMail": "pr_l1@alliedbrandsinc",
+        "subject": "New account - Cap'n Jack Food Holdings",
+        "content": `
+            <p>All,</p>
+            <p>Allied Brands has completed its acquisition of the Cap'n Jack family of snack foods, including Cap'n Jack's Salted Peanut Poppers, Cap'n Jack's Compressed Fruit Sheets, and Cap'n Jack's Fun-Size Energy Loaf. As part of the handover, the Cap'n Jack social media presence (<b>@CapnJackFoods</b>) has been added to your console, and the incoming feed adjusted to include mentions of Cap'n Jack products. Please engage with as many such customers as possible from the Cap'n Jack account.</p>
+            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+        `
+    },
 
     // week 3 starting 20111114
     {
@@ -92,11 +106,11 @@ export default [
         "senderMail": "starbodies@ichiromail",
         "recipient": "Me",
         "recipientMail": "againstpollution@ichiromail",
-        "subject": "So, you're the new flack for Allied?",
+        "subject": "You're the new flack for Allied?",
         "content": `
             <p>Hi there,</p>
 
-            <p>You probably don't know me, I used to be the social media manager for ABI. Sorry for the unsolicited email, I got your contact info from a friend still working inside the Beast.</p>
+            <p>You probably don't know me, I used to be the social media manager for Allied Brands. Sorry for the unsolicited email, I got your contact info from a friend still working inside the Beast.</p>
 
             <p>Basically, in case you haven't picked up on it there's no long-term prospects for the job. ABI hired some teenage fucks from the Bay Area to "train" some neural AI thing with what you're doing, which they intend to set loose on the public again as soon as they figure out how to make it stop talking like a Nazi. You probably heard about the last time their social media account was on the news? Yeah, that happened a few days after me and my team got canned and replaced with version 1. </p>
 
@@ -112,10 +126,10 @@ export default [
         "senderMail": "tricia.huxton@alliedbrandsinc",
         "recipient": "PR - L1",
         "recipientMail": "pr_l1@alliedbrandsinc",
-        "subject": "New account - Cap'n Jack Food Holdings",
+        "subject": "New account - Excelsior Pharmaceuticals",
         "content": `
             <p>All,</p>
-            <p>Allied Brands has completed its acquisition of the Cap'n Jack family of snack foods, including Cap'n Jack's Salted Peanut Poppers, Cap'n Jack's Compressed Fruit Sheets, and Cap'n Jack's Fun-Size Energy Loaf. As part of the handover, the Cap'n Jack social media presence (<b>@CapnJackFoods</b>) has been added to your console, and the incoming feed adjusted to include mentions of Cap'n Jack products. Please engage with as many such customers as possible from the Cap'n Jack account.</p>
+            <p>The Excelsior Pharmaceuticals division has finished transitioning their customer relations roles to the new central PR group. Excelsior is among the oldest businesses in the Allied Brands stable, and is our primary mark for over-the-counter and prescription medications. Please engage with as many such customers as possible from the Excelsior Pharmaceuticals account (<b>@excelsior_rx</b>).</p>
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
@@ -222,11 +236,11 @@ export default [
                 <p style="font-variant: small-caps">Robert Xam in Chicago</p>
 
                 <p>Beaufort North America LLC. has issued an immediate recall for its Healthland Farms milk product range, following widespread reports of children suffering from impaired kidney functionality.</p>
-                <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The majority of cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. Unconfirmed reports suggest that batches of milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
-                <p>A spokesperson for Beaufort stated that a nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that their investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort.</p>
+                <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The majority of these cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. Unconfirmed reports suggest that batches of milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
+                <p>A spokesperson for Beaufort stated that a nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that the investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort.</p>
                 <p>The market response to the scandal has been severe, with Beaufort stock down $3.50 to $9.02.</p>
                 <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms Milk. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone activist investor demanding a higher premium on the market price.<p>
-                <p>A spokesperson for Allied Brands Inc. declined to comment, citing the complete divestment of the product line. The Allied stock price suffered some early losses when news of the scandal broke on Wednesday, but has since rallied to be slightly ahead by close of trading today.</p>
+                <p>A spokesperson for Allied Brands Inc. declined to comment, citing the complete divestment of the Healthland Farms product line. The Allied stock price suffered some early losses when news of the scandal broke on Wednesday, but has since rallied to be slightly ahead by close of trading today.</p>
             </div>
             <p style="text-align: center;"><small>© 2011 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
 
@@ -262,7 +276,8 @@ export default [
         "content": `
             <p>Hi team,</p>
             <p>There's been some good news from our medical division Excelsior Pharmaceuticals. Shaftoproxin® is a pharmaceutical product originally developed as a treatment for stump rash, boatswain's disease, and night prowls. Thanks to some diligent work by our excellent pathology team Shaftoproxin® has been proven effective in relieving the symptoms of sudden onset kidney trauma, and as the product has existing FDA approval, Excelsior is first to market with such a treatment.</p>
-            <p>In order to best engage customers about the benefits of Shaftoproxin®, the company plans to launch an awareness campaign along with updated product packaging and marketing materials, plus a wider rollout to retailers to meet anticipated demand. As part of this push, the incoming feed will now include messages from prospective customers who have posted about sudden onset kidney trauma. Please encourage as many prospective customers as possible to ask their healthcare provider about Shaftoproxin®, from the Excelsior Pharmaceuticals (<b>@excelsior_rx</b>) account.</p>
+            <p>In order to best engage customers and medical professionals about the benefits of Shaftoproxin®, Excelsior plans to launch an awareness campaign along with updated product packaging and marketing materials, plus a wider rollout to retailers to meet anticipated demand. </p>
+            <p>As part of this push, the incoming feed will now include messages from prospective customers who have posted about sudden onset kidney trauma. Please note that this treatment is still an off-label use of the drug, so from a legal standpoint it is crucial that we do not directly advocate people buy Shaftoproxin®. Instead, please encourage as many prospective customers as possible to <b>ask their doctor or healthcare provider</b> about exciting new treatments for sudden onset kidney trauma, from the Excelsior Pharmaceuticals (<b>@excelsior_rx</b>) account. </p>
 
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
