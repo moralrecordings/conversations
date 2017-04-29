@@ -5,13 +5,13 @@
             <button v-on:click="close">×</button>
         </div>
         <div class="body-container"><div class="body">
-            <div tabindex="0" class="message-block clickable" v-on:click="hidden = !hidden">
+            <button class="message-block clickable" v-on:click="hidden = !hidden">
                 <svg class="message-avatar">
                     <use x="0" y="0" xlink:href="#eggAvatar" v-bind:style="{ fill: message.eggColour }"/>
                 </svg>
 
                 <span class="message-body">{{ message.body }}</span>
-            </div>
+            </button>
             
             <div v-bind:class="{ closed: hidden }" class="message-hidden">
                 <label>Category<select class="form" v-model="replyType" v-on:change="changeType">
@@ -31,7 +31,7 @@
                         <option v-for="(attach, index) in forms.attachments" v-if="attach.visibleLevel <= $store.state.level" v-bind:value="index">{{ attach.name }}</option>
                     </select></label>
                     <label>Reply
-                        <textarea v-bind:class="{ ready: replyReady }" v-on:keydown="typing" v-model="replyFull" placeholder="Reply to customer"/>
+                        <textarea v-bind:class="{ ready: replyReady }" v-on:keypress="typing" v-model="replyFull" placeholder="Reply to customer"/>
                     </label>
                 </template> 
                 
@@ -77,7 +77,7 @@ textarea.ready {
 
 .message-block {
     display: inline-block;
-    margin: 0.5em;
+    padding: 0.5em;
 }
 
 .message-hidden {
@@ -104,11 +104,13 @@ textarea.ready {
 
 .message-body {
     font-size: 18px;
+    line-height: 1.3em;
 }
 
 .message-block button, .message-block select, .message-block input {
     width: 100%;
     display: block;
+    box-sizing: border-box;
     margin: 0 0 1rem 0;
 }
 

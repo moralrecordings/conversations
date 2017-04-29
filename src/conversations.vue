@@ -122,6 +122,12 @@ body {
     cursor: pointer;
     user-select: none;
     -moz-user-select: none;
+    // we need to use this with <button> to get click handlers, 
+    display: block;
+    border: 0;
+    padding: 0;
+    text-align: inherit;
+    width: 100%;
 }
 
 // picker div (e.g. account selector) 

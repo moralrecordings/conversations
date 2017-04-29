@@ -27,7 +27,7 @@ const router = new VueRouter({
 
 const store = new Vuex.Store({
     state: {
-        level: 8
+        level: 0
     },
     plugins: [createPersistedState({
         key: 'mr_conversations'
