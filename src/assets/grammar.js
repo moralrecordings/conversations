@@ -3,7 +3,8 @@
 export default {
     // emoji sequence generator
     "fanEmoji": ["👍", "😋", "😍", "😄", "💕", "✨", "💖", "💛", "💯", "😙"],
-    "complainEmoji": ["👎", "😂", "🚮", "🚽", "🤷", "🤔", "🔥", "😑", "😐", "😒", "😥", "😲", "🤢", "💩", "😱", "😭", "😠"],
+    "complainEmoji": ["👎", "🚮", "🚽", "🤷",  "😂", "🤔", "🔥", "😑", "😐", "😒", "😥", "😲", "🤢", "💩", "😱", "😭", "😠"],
+    "sadEmoji": ["😂", "🤔", "😶", "😧", "😦", "😞", "☹"],
     "emojiSeq": [
         "#emoji1#", 
         "#emoji1##emoji2#", 
@@ -17,6 +18,7 @@ export default {
     ],
     "fanEmojiSeq": ["[emoji1:#fanEmoji#][emoji2:#fanEmoji#][emoji3:#fanEmoji#]#emojiSeq#"],
     "complainEmojiSeq": ["[emoji1:#complainEmoji#][emoji2:#complainEmoji#][emoji3:#complainEmoji#]#emojiSeq#"],
+    "sadEmojiSeq": ["[emoji1:#sadEmoji#][emoji2:#sadEmoji#][emoji3:#sadEmoji#]#emojiSeq#"],
 
     "exclaimed": [
         "!", "!", "!", "!",
@@ -76,7 +78,7 @@ export default {
 
 
     // angry customer dialogue chunks
-    "sadness": ["what gives", "kinda disappointing", "was really looking forward to it too", "so hungry", "still hungry", "don't mean to overreact or anything", "a replacement would be nice" ],
+    "sadness": ["what gives", "kinda disappointing", "was really looking forward to it too", "so hungry", "still hungry", "don't mean to overreact or anything", "a replacement would be nice", "this is subpar", "really", "huh", "pretty funny", "comedy gold", "who needs QA", "talk about a letdown", "such an anticlimax", ],
     "exclamation": ["wtf", "wtf is this", "what the fuck", "fuck me sideways", "what the hell is this", "what is this", "wtf is this shit", "what is this shit", "what is this horseshit", "what the shit", "holy shit", "holy wow", "my god", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "gross", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "not cool", "not happy", "unacceptable"],
     "big": ["large ", "gigantic ", "great big fucking ", "largeass ", "big ", "bigass ", "goddamn ", "huge ", "enormous ", "fucking ", "", "", "", ""],
     "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "very disappointed", "really disappointed", "disappointed", "really sad", "very sad", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "I feel sick", "I feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a good supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this", "this shit is unacceptable", "this is unacceptable", "this is fucking dangerous" ],
@@ -172,7 +174,7 @@ export default {
         "#genPerson#trying to be cheap, my #productSingular# #package# was #emptyVolume#",
         "#genPerson#which genius thought of making a #product# that's #emptyVolume#",
     ],
-    "emptyMessage": ["@#account# #emptyDiscovery#"],
+    "emptyMessage": ["@#account# #emptyDiscovery#", "#sadEmojiSeq# @#account# #emptyDiscovery#", "@#account# #sadEmojiSeq# #emptyDiscovery#"],
 
     // misshapen types
     "misshapenMessage": ["@#account# wah wah wah my food was shaped weird"],
