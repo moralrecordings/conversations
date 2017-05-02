@@ -13,7 +13,11 @@
             <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-if="showSuccess"/>
         </div>
         <div class="taskbar">
-            <button v-on:click="showEmailWindow">EMail</button>
+            <button v-on:click="showEmailWindow" title="Email">
+                <svg style="display: block;" width="64" height="64" class="throb">
+                    <use x="0" y="0" xlink:href="#emailIcon"/>
+                </svg>
+            </button>
             <button v-on:click="showIssueWindow">IssueMagic</button>
             <button v-on:click="spawnMessage">Spawn angry tweet</button>
         </div>
@@ -53,6 +57,14 @@ body {
 // taskbar
 .taskbar {
     padding: 4px;
+    height: 66px;
+}
+
+.taskbar button {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0;
 }
 
 // fade to black
@@ -128,6 +140,7 @@ body {
     padding: 0;
     text-align: inherit;
     width: 100%;
+    font-family: "Ubuntu", sans-serif;
 }
 
 // picker div (e.g. account selector) 
@@ -272,35 +285,35 @@ input[type=radio]:checked + .picker {
 // First argument is a string with the CSS selector to bind it to, rest are colour variables
 
 @mixin theme_factory($class, $bg, $bg_text, $active, $active_text, $inactive, $inactive_text) {
-    #{$class} .desktop {
+    .#{$class} .desktop {
         background-color: darken($active, 15%);
     }
 
-    #{$class} .body-container {
+    .#{$class} .body-container {
         background-color: $bg;
         color: $bg_text;
     }
 
-    #{$class} .clickable {
+    .#{$class} .clickable {
         background-color: $bg;
         color: $bg_text;
     }
 
-    #{$class} .clickable:hover {
+    .#{$class} .clickable:hover {
         background-color: darken($bg, 5%);
     }
 
-    #{$class} .active.clickable {
+    .#{$class} .active.clickable {
         border-color: darken($active, 5%);
         background-color: $active;
         color: $active_text;
     }
 
-    #{$class} .active.clickable:hover {
+    .#{$class} .active.clickable:hover {
         background-color: darken($active, 5%);
     }
 
-    #{$class} .window .titlebar {
+    .#{$class} .window .titlebar {
         border-top-color: lighten($inactive, 15%);
         border-left-color: lighten($inactive, 15%);
         border-bottom-color: darken($inactive, 15%);
@@ -309,30 +322,32 @@ input[type=radio]:checked + .picker {
         color: $inactive_text;
     }
 
-    #{$class} .window .titlebar button:hover {
+    .#{$class} .window .titlebar button:hover {
         border: 1px solid $inactive_text;
     }
 
-    #{$class} .window.active .titlebar {
-        border-top-color: lighten($active, 15%);
-        border-left-color: lighten($active, 15%);
-        border-bottom-color: darken($active, 15%);
-        border-right-color: darken($active, 15%);
-        background-color: $active;
-        color: $active_text;
-    }
-
-//    #{$class} .window.active .titlebar button {
-//        border: 1px solid;
-//        border-color: darken($active, 10%);
-//    }
-
-    #{$class} .window.active .titlebar button:hover {
+    .#{$class} .window.active .titlebar button:hover, 
+    .#{$class} .taskbar button:hover {
         border: 1px solid;
         border-color: $active_text;
     }
 
-    #{$class} .taskbar {
+    .#{$class} .window.active .titlebar {
+        border-top-color: lighten($active, 15%);
+        border-left-color: lighten($active, 15%);
+        border-bottom-color: darken($active, 15%);
+        border-right-color: darken($active, 15%);
+        background-color: $active;
+        color: $active_text;
+    }
+
+//    .#{$class} .window.active .titlebar button {
+//        border: 1px solid;
+//        border-color: darken($active, 10%);
+//    }
+
+
+    .#{$class} .taskbar {
         border: 1px solid;
         border-top-color: lighten($active, 15%);
         border-left-color: lighten($active, 15%);
@@ -342,20 +357,38 @@ input[type=radio]:checked + .picker {
         color: $active_text;
     }
 
-    #{$class} input[type=radio] + .picker {
+    @keyframes #{$class}-svgthrob {
+        0% {
+            fill: $active_text;
+        }
+        50% {
+            fill: lighten($active, 25%);
+        }
+        100% {
+            fill: $active_text;
+        }
+    }
+
+    .#{$class} .throb {
+        animation-name: #{$class}-svgthrob;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    .#{$class} input[type=radio] + .picker {
         border: 1px solid $inactive;
         border-radius: 4px;
     }
 
-    #{$class} input[type=radio]:active + .picker {
+    .#{$class} input[type=radio]:active + .picker {
         border-color: darken($active, 15%);
     }
 
-    #{$class} input[type=radio]:checked + .picker, #{$class} input[type=radio]:hover:checked + .picker {
+    .#{$class} input[type=radio]:checked + .picker, .#{$class} input[type=radio]:hover:checked + .picker {
         border-color: $active;
     }
 
-    #{$class} input[type=radio]:hover + .picker {
+    .#{$class} input[type=radio]:hover + .picker {
         border-color: $active;
     }
 
@@ -363,10 +396,10 @@ input[type=radio]:checked + .picker {
 
 
 // Now we can crank out one colour scheme class per line
-@include theme_factory( ".theme-allied", white, black, #37abc8, white, #b0b0b0, white );
-@include theme_factory( ".theme-kingsley", #fffbea, #403501, #bc2e00, #ffe980, #a68075, #dfded8 );
-@include theme_factory( ".theme-capnjack", #f3f7fb, #0a172a, #204a87, white, #666666, white );
-@include theme_factory( ".theme-excelsior", #eeeeec, black, white, #cc0000, #d7cfcf, #666666 ); 
+@include theme_factory( "theme-allied", white, black, #37abc8, white, #b0b0b0, white );
+@include theme_factory( "theme-kingsley", #fffbea, #403501, #bc2e00, #ffe980, #a68075, #dfded8 );
+@include theme_factory( "theme-capnjack", #f3f7fb, #0a172a, #204a87, white, #666666, white );
+@include theme_factory( "theme-excelsior", #eeeeec, black, white, #cc0000, #d7cfcf, #666666 ); 
 
 
 
@@ -390,8 +423,13 @@ import warning from './components/warning';
 import firehose from './firehose';
 import traffic from 'assets/traffic';
 
+// sometimes there'll be SVGs we want to be able to style with CSS
+// these have to be inserted inline as <svg> DOM spew instead of an <img> tag
+// the GOOD news is that this only has to be done once, then you can throw down
+// <use xlink:href="#svgid"/> to happily stamp it in multiple places.
 var svgAssets = [
-    require('assets/egg.rawsvg')
+    require('assets/egg.rawsvg'),
+    require('assets/email.rawsvg'),
 ];
 
 // top level window management crap!
