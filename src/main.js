@@ -7,6 +7,7 @@ import VueRouter from 'vue-router';
 
 import 'jquery-ui-bundle/jquery-ui.structure.css';
 require('jquery-ui-bundle');
+require('jquery-ui-touch-punch');
 
 require('moment-duration-format');
 

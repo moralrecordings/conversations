@@ -18,7 +18,11 @@
                     <use x="0" y="0" xlink:href="#emailIcon"/>
                 </svg>
             </button>
-            <button v-on:click="showIssueWindow">IssueMagic</button>
+            <button v-on:click="showIssueWindow" title="IssueMagic">
+                <svg style="display: block;" width="64" height="64" class="throb">
+                    <use x="0" y="0" xlink:href="#activityIcon"/>
+                </svg>
+            </button>
             <button v-on:click="spawnMessage">Spawn angry tweet</button>
         </div>
     </div>
@@ -430,6 +434,7 @@ import traffic from 'assets/traffic';
 var svgAssets = [
     require('assets/egg.rawsvg'),
     require('assets/email.rawsvg'),
+    require('assets/activity.rawsvg'),
 ];
 
 // top level window management crap!
