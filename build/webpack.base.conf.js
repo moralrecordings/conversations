@@ -64,7 +64,14 @@ module.exports = {
         test: /\.rawsvg$/,
         loader: 'svg-inline-loader'
       },
-
+      {
+        test: /\.(wav|ogg|mp3)(\?.*)?$/,
+        loader: 'file-loader',
+        query: {
+          limit: 10000,
+          name: utils.assetsPath('audio/[name].[ext]')
+        }
+      },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',

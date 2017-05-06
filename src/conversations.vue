@@ -14,12 +14,12 @@
         </div>
         <div class="taskbar">
             <button v-on:click="showEmailWindow" title="Email">
-                <svg style="display: block;" width="64" height="64" class="throb">
+                <svg width="64" height="64" class="throb">
                     <use x="0" y="0" xlink:href="#emailIcon"/>
                 </svg>
             </button>
             <button v-on:click="showIssueWindow" title="IssueMagic">
-                <svg style="display: block;" width="64" height="64" class="throb">
+                <svg width="64" height="64" class="">
                     <use x="0" y="0" xlink:href="#activityIcon"/>
                 </svg>
             </button>
@@ -212,8 +212,8 @@ input[type=radio]:checked + .picker {
 }
 
 // dumb fade between themes
-.titlebar, .clickable, .desktop, .taskbar, .body-container  {
-    transition-property: background, border, color;
+.titlebar, .clickable, .desktop, .taskbar, .body-container, .taskbar svg {
+    transition-property: background, border, color, fill;
     transition-duration: .3s;
     transition-timing-function: ease;
 }
@@ -373,10 +373,20 @@ input[type=radio]:checked + .picker {
         }
     }
 
-    .#{$class} .throb {
+    .#{$class} .taskbar svg {
+        display: block;
+        fill: mix($active_text, lighten($active, 25%), 50%);
+    }
+
+    .#{$class} .taskbar svg.throb {
         animation-name: #{$class}-svgthrob;
         animation-duration: 2s;
         animation-iteration-count: infinite;
+    }
+
+    .#{$class} .taskbar button:hover svg, .#{$class} .taskbar button:hover svg.throb {
+        animation: none;
+        fill: $active_text;
     }
 
     .#{$class} input[type=radio] + .picker {
@@ -436,6 +446,9 @@ var svgAssets = [
     require('assets/email.rawsvg'),
     require('assets/activity.rawsvg'),
 ];
+var audioAssets = {
+    'tick': new Audio(require('assets/tick.wav'))
+};
 
 // top level window management crap!
 var windowList = [];
@@ -650,6 +663,9 @@ export default {
             this.timer.clock = moment.duration(
                 this.timer.duration-this.timer.count, 'seconds'
             ).format('m:ss', {trim: false});
+            if (this.timer.duration - this.timer.count < 15) {
+                audioAssets['tick'].play();
+            }
             if (this.timer.count >= this.timer.duration) {
                 console.log('TIME OVER!');
                 this.stopShift();
@@ -677,19 +693,23 @@ export default {
             var yRange = $('.desktop').height() - 64 - 500;
             var msgId = this.messages.length;
             var msgData = firehose.generateMessage(this.$store.state.level, this.timer.count);
-            this.score.open += 1;
-            this.messages.push({
-                id: msgId,
-                user: 'ToolbeltKiller',
-                loc: 'Newbridge, NJ, USA',
-                type: msgData.type,
-                body: msgData.message,
-                created: moment(),
-                eggColour: randomEggColour(),
-                xPos: Math.floor( Math.random()*xRange )+xOffset +'px',
-                yPos: Math.floor( Math.random()*yRange )+yOffset +'px'
-            });
-            this.messageWindows.push(msgId);
+            // during mercy periods, firehose.generateMessage can refuse 
+            // to return anything
+            if (msgData) {
+                this.score.open += 1;
+                this.messages.push({
+                    id: msgId,
+                    user: 'ToolbeltKiller',
+                    loc: 'Newbridge, NJ, USA',
+                    type: msgData.type,
+                    body: msgData.message,
+                    created: moment(),
+                    eggColour: randomEggColour(),
+                    xPos: Math.floor( Math.random()*xRange )+xOffset +'px',
+                    yPos: Math.floor( Math.random()*yRange )+yOffset +'px'
+                });
+                this.messageWindows.push(msgId);
+            }
         },
 
         submitMessage: function (ev) {
@@ -723,6 +743,7 @@ export default {
         }
     },
     mounted: function () {
+        console.log(audioAssets);
         var level = firehose.getLevel(this.$store.state.level);
         this.maxWarnings = level.maxWarnings;
         this.resolutionRate = level.resolutionRate;

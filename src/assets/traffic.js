@@ -71,6 +71,9 @@ var responses = [
 ];
 
 var levels = [
+    // level 0:
+    // - kingsley only
+    // - 30% required
     {
         duration: 120,
         maxWarnings: 5,
@@ -78,7 +81,54 @@ var levels = [
         firstTimeDelay: true,
         timeline: [
             {
-                endMark: 120, periodMin: 5.0, periodMax: 10.0,
+                endMark: 60, periodMin: 5.0, periodMax: 10.0,
+                grammar: [
+                    { weight: 50, type: 'ks_foreign' },
+                    { weight: 10, type: 'ks_spoil' },
+                    { weight: 10, type: 'ks_empty' },
+                    { weight: 10, type: 'ks_misshapen' },
+                    { weight: 10, type: 'ks_experience' },
+                    { weight: 10, type: 'ks_advertising' },
+                ]
+            },
+            {   
+                endMark: 110, periodMin: 10.0, periodMax: 25.0,
+                grammar: [
+                    { weight: 50, type: 'ks_foreign' },
+                    { weight: 10, type: 'ks_spoil' },
+                    { weight: 10, type: 'ks_empty' },
+                    { weight: 10, type: 'ks_misshapen' },
+                    { weight: 10, type: 'ks_experience' },
+                    { weight: 10, type: 'ks_advertising' },
+                ]
+            },
+            {
+                endMark: 120, periodMin: 10.0, periodMax: 25.0,
+                grammar: []
+            }
+        ]
+    },
+    // level 1:
+    // - kingsley and capnjack
+    // - 30% required
+    {
+        duration: 120,
+        maxWarnings: 5,
+        resolutionRate: 0.3,
+        timeline: [
+            {
+                endMark: 90, periodMin: 5.0, periodMax: 10.0,
+                grammar: [
+                    { weight: 50, type: 'ks_foreign' },
+                    { weight: 10, type: 'ks_spoil' },
+                    { weight: 10, type: 'ks_empty' },
+                    { weight: 10, type: 'ks_misshapen' },
+                    { weight: 10, type: 'ks_experience' },
+                    { weight: 10, type: 'ks_advertising' },
+                ]
+            },
+            {   
+                endMark: 120, periodMin: 10.0, periodMax: 25.0,
                 grammar: [
                     { weight: 50, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_spoil' },
@@ -89,7 +139,8 @@ var levels = [
                 ]
             }
         ]
-    }
+    },
+
 ]
 
 

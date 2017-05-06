@@ -37,16 +37,23 @@ export default {
     generateMessage: function (level, time) {
         var grammarWeight = this.getTimeline(level, time).grammar;
         var messageType = this.getMessageType(grammarWeight);
-        return {
-            type: messageType,
-            message: this.grammar.flatten('#'+messageType+'#'),
-        };
+        if (messageType) {
+            return {
+                type: messageType,
+                message: this.grammar.flatten('#'+messageType+'#'),
+            };
+        }
+        return null;
     },
     getMessageType: function (grammarWeight) {
         var sum = 0;
         grammarWeight.forEach(function (el) {
             sum += el.weight;
         });
+        // for periods with no messages defined, return null
+        if ((grammarWeight.length == 0) || (sum == 0)) {
+            return null;
+        }
         var pos = Math.random()*sum;
         var messageType = grammarWeight.find(function (el) {
             if (pos > el.weight) {

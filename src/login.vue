@@ -3,7 +3,7 @@
         <div class="app-inner">
             <div class="login-frame"><div class="login-window">
                 <p style="text-align: center;"><img v-bind:src="require('assets/logo-crap.jpg')" style="border: 1px solid #cccccc;"/><br/>Select remote session:</p>
-                <ul style="list-style: none; padding: 0; margin: auto;">
+                <ul class="session-list">
                     <li><button class="session-button">us3appprod020_FIRSTTIME</button></li>
                     <li><button class="session-button">us1appprod103_WEEK1</button></li>
                     <li><button class="session-button">us2appprod004_WEEK2</button></li>
@@ -58,6 +58,7 @@ html, body {
     border: 1px solid black; 
     padding: 1em; 
     min-width: 480px;
+    width: 800px;
     background-color: white;
 }
 
@@ -91,10 +92,25 @@ html, body {
   -webkit-animation: blink 1s step-start 0s infinite;
 }
 
+.session-list {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    padding: 0;
+    margin: auto;
+}
+
+.session-list li {
+    flex: 0 0 50%;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
 .session-button {
     padding: 1em;
     min-width: 256px;
 }
+
 </style>
 
 <script>
