@@ -2,6 +2,39 @@ import tracery from 'tracery-grammar';
 import grammarData from './assets/grammar';
 import traffic from './assets/traffic';
 
+
+var getRandomChoice = function(table) {
+    var source = table;
+    var sum = 0;
+    source.forEach(function (el) {
+        sum += el.weight;
+    });
+    return function () {
+        // for periods with no messages defined, return null
+        if ((source.length == 0) || (sum == 0)) {
+            return null;
+        }
+
+        var pos = Math.random()*sum;
+        return source.find(function (el) {
+            if (pos > el.weight) {
+                pos -= el.weight;
+                return false;
+            }
+            return true;
+        });
+    };
+};
+
+// pregenerate random choice closures
+traffic.locations = getRandomChoice(traffic.locations);
+traffic.levels.forEach(function (el) {
+    el.timeline.forEach(function (fl) {
+        fl.grammar = getRandomChoice(fl.grammar);
+    });
+});
+
+
 var conversationsMods = {
     upper: function( s ) {
         return s.toUpperCase();
@@ -35,34 +68,25 @@ export default {
         return timeline.periodMin + Math.random()*(timeline.periodMax -timeline.periodMin);
     },
     generateMessage: function (level, time) {
-        var grammarWeight = this.getTimeline(level, time).grammar;
-        var messageType = this.getMessageType(grammarWeight);
-        if (messageType) {
+        var messageType = this.getTimeline(level, time).grammar();
+        if (messageType && messageType.type) {
             return {
-                type: messageType,
-                message: this.grammar.flatten('#'+messageType+'#'),
+                type: messageType.type,
+                message: this.getMessageBody(messageType.type),
             };
         }
         return null;
     },
-    getMessageType: function (grammarWeight) {
-        var sum = 0;
-        grammarWeight.forEach(function (el) {
-            sum += el.weight;
-        });
-        // for periods with no messages defined, return null
-        if ((grammarWeight.length == 0) || (sum == 0)) {
-            return null;
-        }
-        var pos = Math.random()*sum;
-        var messageType = grammarWeight.find(function (el) {
-            if (pos > el.weight) {
-                pos -= el.weight;
-                return false;
-            }
-            return true;
-        }).type;
-        return messageType;
+    getMessageBody: function (type) {
+        return this.grammar.flatten('#'+type+'#');
+    },
+    getMessageLocation: function () {
+        var locale = traffic.locations();
+        return locale.name + ', ' + locale.state;
+    },
+    getUser: function () {
+        // TODO: user generator
+        return 'ToolbeltKiller';
     },
     generateResponse: function (params) {
         var responseType = traffic.responses.find(function (el) {

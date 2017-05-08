@@ -1,5 +1,5 @@
 <template>
-    <div class="window" v-window.under="{ xPos: message.xPos, yPos: message.yPos }" v-bind:class="{ flyout: flyout, close: closed }">
+    <div class="window window-messages" v-window.under="{ xPos: message.xPos, yPos: message.yPos }" v-bind:class="{ flyout: flyout, close: closed }">
         <div class="titlebar">
             <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
             <button v-on:click="close">×</button>
@@ -14,10 +14,10 @@
             </button>
             
             <div v-bind:class="{ closed: hidden }" class="message-hidden">
-                <label>Category<select class="form" v-model="replyType" v-on:change="changeType">
+                <label>Category<select class="form" v-model="replyType" name="replyType" v-on:change="changeType">
                     <option v-for="(type, index) in forms.types" v-if="type.visibleLevel <= $store.state.level" v-bind:value="index">{{ type.name }}</option>
                 </select></label>               
-                <label v-if="forms.types[replyType].subtypes">{{ forms.types[replyType].subtypeName }}<select class="form" v-model="replySubtype" v-on:change="changeReply">
+                <label v-if="forms.types[replyType].subtypes">{{ forms.types[replyType].subtypeName }}<select class="form" v-model="replySubtype" name="replySubtype" v-on:change="changeReply">
                     <option v-for="(subtype, index) in forms.types[replyType].subtypes" v-if="subtype.visibleLevel <= $store.state.level" v-bind:value="index">{{ subtype.name }}</option>
                 </select></label>
 
@@ -31,7 +31,7 @@
                         <option v-for="(attach, index) in forms.attachments" v-if="attach.visibleLevel <= $store.state.level" v-bind:value="index">{{ attach.name }}</option>
                     </select></label>
                     <label>Reply
-                        <textarea v-bind:class="{ ready: replyReady }" v-on:keypress="typing" v-model="replyFull" placeholder="Reply to customer"/>
+                        <textarea name="replyFull" v-bind:class="{ ready: replyReady }" v-on:keypress="typing" v-model="replyFull" placeholder="Reply to customer"/>
                     </label>
                 </template> 
                 

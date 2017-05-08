@@ -6,8 +6,12 @@
         <div class="desktop"> 
             <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y"  v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-if="showIssues" v-on:changeAccount="changeAccount"/>
-            <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-on:startShift="startShift" v-if="showIssues" />
+            <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-on:startShift="start" v-if="showIssues" />
+            <!-- message windows -->
             <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
+            <!-- tutorial messages -->
+            <mr-messages-app v-if="tutorialMessage" v-bind:account="account" v-bind:message="tutorialMessage" v-on:submitMessage="submitTutorialMessage"  v-on:close="closeTutorialMessageWindow" />
+            <!-- warning window -->
             <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
             <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-if="showFail"/>
             <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-if="showSuccess"/>
@@ -436,6 +440,7 @@ import warning from './components/warning';
 
 import firehose from './firehose';
 import traffic from 'assets/traffic';
+import tutorial from 'assets/tutorial';
 
 // sometimes there'll be SVGs we want to be able to style with CSS
 // these have to be inserted inline as <svg> DOM spew instead of an <img> tag
@@ -576,6 +581,8 @@ export default {
             showWarning: false,
             showFail: false,
             showSuccess: false,
+            tutorialMode: false,
+            tutorialMessage: null,
             activityPos: {x: 0, y: 0},
             accountsPos: {x: 300, y: 300},
             warningPos: {x: 300, y: 300},
@@ -648,6 +655,43 @@ export default {
             this.successPos.y = ($('.desktop').height() - 320)/2;
             this.showSuccess = true;
         },
+        start: function () {
+            if (this.tutorialMode) {
+                this.startTutorial();
+            } else {
+                this.startShift();
+            }
+        },
+
+        // methods for running the tutorial 
+        startTutorial: function () {
+            this.spawnTutorialMessage();
+        },
+        spawnTutorialMessage: function (ev) {
+            var xOffset = 32;
+            var xRange = $('.desktop').width() - 64 - 400;
+            var yOffset = 32;
+            var yRange = $('.desktop').height() - 64 - 500;
+            this.tutorialMessage = {
+                id: 'tut',
+                user: firehose.getUser(),
+                loc: firehose.getMessageLocation(),
+                type: tutorial.messageType,
+                body: firehose.getMessageBody(tutorial.messageType),
+                created: moment(),
+                eggColour: randomEggColour(),
+                xPos: Math.floor( ( xOffset + xRange )/2 ) +'px',
+                yPos: Math.floor( ( yOffset + yRange )/2 ) +'px'
+            };
+            tutorial.tour.start();
+        },
+        submitTutorialMessage: function (ev) {
+
+        },
+        closeTutorialMessageWindow: function (ev) {
+
+        },
+        // methods for running the game
         startShift: function () {
             this.timer.duration = firehose.getLevel(this.$store.state.level).duration;
             this.timer.count = 0;
@@ -699,8 +743,8 @@ export default {
                 this.score.open += 1;
                 this.messages.push({
                     id: msgId,
-                    user: 'ToolbeltKiller',
-                    loc: 'Newbridge, NJ, USA',
+                    user: firehose.getUser(),
+                    loc: firehose.getMessageLocation(),
                     type: msgData.type,
                     body: msgData.message,
                     created: moment(),
@@ -745,6 +789,9 @@ export default {
     mounted: function () {
         console.log(audioAssets);
         var level = firehose.getLevel(this.$store.state.level);
+        if (level.tutorial) {
+            this.tutorialMode = true;
+        }
         this.maxWarnings = level.maxWarnings;
         this.resolutionRate = level.resolutionRate;
     },

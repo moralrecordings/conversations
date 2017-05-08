@@ -173,7 +173,7 @@ export default {
         "#genPerson##pNameTheir# #product# is #emptyVolume#",
         "#genPerson#did someone at the factory get hungry? check out this #emptyVolume# #product#",
         "#genPerson#how come there's no #productSingular# in this #package#",
-        "#genPerson#is your new business model selling #emptyVolume# #package.s#",
+        "#genPerson#is your new business model selling #package.s# that are #emptyVolume#",
         "#genPerson#I see you've just switched to making the #package.s# #emptyVolume#",
         "#genPerson#trying to be cheap, my #productSingular# #package# was #emptyVolume#",
         "#genPerson#which genius thought of making a #product# that's #emptyVolume#",

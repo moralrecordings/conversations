@@ -1,10 +1,10 @@
 <template>
-    <div class="window" v-window v-bind:style="{ left: xPos + 'px', top: yPos + 'px' }">
+    <div class="window window-activity" v-window v-bind:style="{ left: xPos + 'px', top: yPos + 'px' }">
         <div class="titlebar active">
             <span class="titlebar-text">IssueMagic</span>
         </div>
         <div class="body-container"><div class="body">
-            <button class="form" v-bind:disabled="startActive" v-on:click="startShift">Begin shift</button>
+            <button class="form" v-bind:disabled="!startActive" v-on:click="startShift">Begin shift</button>
             <div class="head">Time remaining:</div>
             <div class="sub">{{ timer.clock }}</div>
             <div class="head">
@@ -72,7 +72,7 @@ export default {
     data: function() {
         return {
             forms: traffic.forms,
-            startActive: false,
+            startActive: true,
         };
     },
     methods: {
