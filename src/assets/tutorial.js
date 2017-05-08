@@ -1,8 +1,11 @@
 
 import Shepherd from 'tether-shepherd';
+require('tether-shepherd/dist/css/shepherd-theme-arrows.css');
 
 var tour = new Shepherd.Tour({
-
+    defaults: {
+        classes: 'shepherd-theme-arrows'
+    }
 });
 
 tour.addStep({
@@ -52,8 +55,11 @@ tour.addStep({
 
 });
 
+var mediator = new Shepherd.Evented;
+
 
 export default {
     tour: tour,
+    mediator: mediator,
     messageType: 'ks_empty'   
 };
