@@ -165,7 +165,7 @@ export default {
         "mostly air",
         "full of air",
         "full of nothing",
-        "mostly sailboat fuel",
+        "full of sailboat fuel",
     ],
     "emptyDiscovery": [
         "#genPerson##pName# bought a #product# and there was nothing inside the #package#",
@@ -174,7 +174,7 @@ export default {
         "#genPerson#did someone at the factory get hungry? check out this #emptyVolume# #product#",
         "#genPerson#how come there's no #productSingular# in this #package#",
         "#genPerson#is your new business model selling #package.s# that are #emptyVolume#",
-        "#genPerson#I see you've just switched to making the #package.s# #emptyVolume#",
+        "#genPerson#I see you've just switched to making the #product.s# #emptyVolume#",
         "#genPerson#trying to be cheap, my #productSingular# #package# was #emptyVolume#",
         "#genPerson#which genius thought of making a #product# that's #emptyVolume#",
     ],
