@@ -10,7 +10,7 @@ var tour = new Shepherd.Tour({
 
 tour.addStep({
     id: 'setAccount',
-    text: '<p>You can change the account used to reply to a message by selecting it here, or using the number keys on the keyboard.</p><p>The message you just received was addressed to the <b>@KingsleySnacks</b> account, so select it here!</p>',
+    text: '<p>You can change the account used to reply to a message by selecting it here.</p><p>The message you just received was addressed to the <b>@KingsleySnacks</b> account, so select it here!</p>',
     buttons: false,
     attachTo: {
         element: '.window-accounts input[value="KingsleySnacks"] + img',
@@ -63,15 +63,42 @@ tour.addStep({
 
 var mediator = new Shepherd.Evented;
 mediator.on('setAccount', function (account) {
-    if (Shepherd.activeTour && (Shepherd.activeTour.getCurrentStep() == 'setAccount')) {
+    if (Shepherd.activeTour && (Shepherd.activeTour.getCurrentStep().id == 'setAccount')) {
         if (account == 'KingsleySnacks') {
             Shepherd.activeTour.show('openMessage');
         }
     }
 });
 
+var glue = function () {
+    tour.start();
+
+
+
+    var setAccountSelect  = '.window-accounts input[value="KingsleySnacks"]';
+    var setAccount = function (ev) {
+        console.log(ev);
+        console.log(Shepherd.activeTour);
+        if (this.checked && Shepherd.activeTour && (Shepherd.activeTour.getCurrentStep().id == 'setAccount')){
+            Shepherd.activeTour.show('openMessage');
+            $(setAccountSelect).off('change', setAccount);
+        }
+    };
+    $(setAccountSelect).on('change', setAccount);
+
+    var openMessageSelect = '.window-messages button.message-block';
+    var openMessage = function (ev) {
+        
+    };
+    $('.window-messages button.message-block').one('click', function (ev) {
+        
+    });
+    
+};
+
 export default {
     tour: tour,
+    glue: glue,
     mediator: mediator,
     messageType: 'ks_empty'   
 };

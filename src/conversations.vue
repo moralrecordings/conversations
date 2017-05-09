@@ -683,7 +683,7 @@ export default {
                 xPos: Math.floor( ( xOffset + xRange )/2 ) +'px',
                 yPos: Math.floor( ( yOffset + yRange )/2 ) +'px'
             };
-            tutorial.tour.start();
+            tutorial.glue();
         },
         submitTutorialMessage: function (ev) {
 
