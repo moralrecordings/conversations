@@ -5,7 +5,7 @@
             <button v-on:click="close">×</button>
         </div>
         <div class="body-container"><div class="body">
-            <button class="message-block clickable" v-on:click="hidden = !hidden">
+            <button class="message-block clickable" v-on:click="toggleHide">
                 <svg class="message-avatar">
                     <use x="0" y="0" xlink:href="#eggAvatar" v-bind:style="{ fill: message.eggColour }"/>
                 </svg>
@@ -160,6 +160,11 @@ export default {
             }
 
             ev.preventDefault();
+        },
+        toggleHide: function (ev) {
+            this.hidden = !this.hidden;
+            // used by tutorial
+            $(ev.target).triggerHandler('toggleHide', [this.hidden]);
         },
         changeType: function (ev) {
             this.replySubtype = 0;

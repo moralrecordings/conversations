@@ -73,27 +73,58 @@ mediator.on('setAccount', function (account) {
 var glue = function () {
     tour.start();
 
+    // for sanity's sake, we won't add tutorial hooks to all of the vue.js code.
+    // no, instead we'll do things the bonkers way with selectors and jquery!
+    //
+    // see, we know that when the tutorial code is going to be invoked, there will be a
+    // single message window, plus all of the issuemagic controls. which means we can 
+    // use a DOM selector to pick out the individual elements and put a temporary event
+    // hook on activating them which moves the tutorial forward. nicer than having
+    // to click NEXT NEXT NEXT all the damn time.
+    //
+    // it almost seems like we could use jquery's .one() method to make an event that
+    // removes itself after use, but really we want to remove it after the tutorial moves
+    // forward. so we're going to make a bunch of callbacks which check the status of the UI, 
+    // and if they match, move the tour up by one. oh and we'll call the next callback in the 
+    // chain while we're here, as we don't want to bother with tutorial steps that aren't 
+    // relevant because the user has already clicked on ahead. 
+    //
+    // these callbacks are temporarily wired up with bits of the UI, the wires get cut after
+    // the tutorial step changes.
 
-
-    var setAccountSelect  = '.window-accounts input[value="KingsleySnacks"]';
-    var setAccount = function (ev) {
-        console.log(ev);
-        console.log(Shepherd.activeTour);
-        if (this.checked && Shepherd.activeTour && (Shepherd.activeTour.getCurrentStep().id == 'setAccount')){
+    var setAccountSelect  = $('.window-accounts input[value="KingsleySnacks"]');
+    var setAccount = function () {
+        if (setAccountSelect[0].checked && Shepherd.activeTour && (Shepherd.activeTour.getCurrentStep().id == 'setAccount')){
             Shepherd.activeTour.show('openMessage');
-            $(setAccountSelect).off('change', setAccount);
+            openMessage();
+            setAccountSelect.off('change', setAccount);
         }
     };
-    $(setAccountSelect).on('change', setAccount);
+    setAccountSelect.on('change', setAccount);
 
-    var openMessageSelect = '.window-messages button.message-block';
+    var openMessageSelect = $('.window-messages button.message-block');
     var openMessage = function (ev) {
-        
+        console.log($('.window-messages button.message-block'));
+        var test = ev ? ev[0] : false;
+        if (test || !$('.window-messages .message-hidden').hasClass('closed')) {
+            Shepherd.activeTour.show('selectType');
+            selectType();
+            openMessageSelect.off('toggleHide', openMessage);
+        }
     };
-    $('.window-messages button.message-block').one('click', function (ev) {
-        
-    });
-    
+    openMessageSelect.on('toggleHide', openMessage);
+
+    var selectTypeSelect = $('.window-messages select[name="replyType"]');
+    var selectType = function () {
+        if (selectTypeSelect.value == '2') { // product issue
+            Shepherd.activeTour.show('selectSubtype');
+            selectSubtype();
+            selectTypeSelect.off('change', selectType);
+        }
+    };
+    selectTypeSelect.on('change', selectType);
+
+
 };
 
 export default {
