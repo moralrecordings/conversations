@@ -91,7 +91,7 @@ var glue = function () {
     var stepCheck = function (name, cb) {
         return function () {
             console.log('STEPCHECK '+name);
-            if (Shepherd.activeTour && Shepherd.activeTour.getCurrentStep().id == name) {
+            if (tour && tour.getCurrentStep().id == name) {
                 cb();
             }
         }
@@ -102,7 +102,7 @@ var glue = function () {
     var setAccount = function () {
         console.log('setAccount');
         if (setAccountSelect[0].checked) {
-            Shepherd.activeTour.show('openMessage');
+            tour.show('openMessage');
             openMessage();
             setAccountSelect.off('change', setAccountCB);
         }
@@ -117,7 +117,7 @@ var glue = function () {
         // DONT'T JUDGE
         setTimeout(function () {
             if (!$('.window-messages .message-hidden').hasClass('closed')) {
-                Shepherd.activeTour.show('selectType');
+                tour.show('selectType');
                 selectType();
                 openMessageSelect.off('click', openMessageCB);
             }
@@ -135,7 +135,7 @@ var glue = function () {
                 setTimeout( function () {
                     $('.window-messages select[name="replySubtype"]').on('change', selectSubtypeCB);
 
-                    Shepherd.activeTour.show('selectSubtype');
+                    tour.show('selectSubtype');
                 }, 50);
             }
         }, 50);
@@ -148,7 +148,7 @@ var glue = function () {
         setTimeout(function () {
             var selectSubtypeSelect = $('.window-messages select[name="replySubtype"]');
             if (selectSubtypeSelect[0].value == '3') { // empty packaging
-                Shepherd.activeTour.show('sendResponse');
+                tour.show('sendResponse');
                 selectSubtypeSelect.off('change', selectSubtypeCB);
             }
         }, 50);

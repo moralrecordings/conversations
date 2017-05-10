@@ -27,7 +27,7 @@
                     <use x="0" y="0" xlink:href="#activityIcon"/>
                 </svg>
             </button>
-            <button v-on:click="spawnMessage">Spawn angry tweet</button>
+            <!--button v-on:click="spawnMessage">Spawn angry tweet</button-->
         </div>
     </div>
 </template>
@@ -666,6 +666,8 @@ export default {
         // methods for running the tutorial 
         startTutorial: function () {
             this.spawnTutorialMessage();
+            // cheat the race condition by giving the JS engine time to breathe
+            setTimeout(tutorial.glue, 250);
         },
         spawnTutorialMessage: function (ev) {
             var xOffset = 32;
@@ -683,14 +685,41 @@ export default {
                 xPos: Math.floor( ( xOffset + xRange )/2 ) +'px',
                 yPos: Math.floor( ( yOffset + yRange )/2 ) +'px'
             };
-            // cheat the race condition by giving the JS engine time to breathe
-            setTimeout(tutorial.glue, 250);
         },
         submitTutorialMessage: function (ev) {
+            var vm = this;
+            var results = firehose.validate(tutorial.messageType, ev);
+            tutorial.tour.hide();
+            vm.closeWarningWindow();
+            setTimeout(function () {
+                vm.tutorialMessage = null;
+            }, 300);
 
+            if (!results.valid) {
+                setTimeout(function () {
+                    vm.warningErrors = results.errors;
+                    vm.showWarningWindow();
+                    vm.spawnTutorialMessage();
+                    setTimeout(function () {
+                        tutorial.tour.show('readFeedback');
+                    }, 300);
+                }, 1000);
+            } else {
+                // tutorial is ALL DONE
+                vm.tutorialMode = false;
+                tutorial.tour.complete();
+                vm.startShift();
+            }
         },
         closeTutorialMessageWindow: function (ev) {
-
+            var vm = this;
+            tutorial.tour.complete();
+            setTimeout(function () {
+                vm.tutorialMessage = null;
+            }, 300);
+            setTimeout(function () {
+                vm.startTutorial();
+            }, 1000);
         },
         // methods for running the game
         startShift: function () {

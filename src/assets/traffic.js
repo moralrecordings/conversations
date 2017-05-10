@@ -81,7 +81,7 @@ var levels = [
         tutorial: true,
         timeline: [
             {
-                endMark: 60, periodMin: 5.0, periodMax: 10.0,
+                endMark: 60, periodMin: 10.0, periodMax: 20.0,
                 grammar: [
                     { weight: 50, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_spoil' },
@@ -92,7 +92,7 @@ var levels = [
                 ]
             },
             {   
-                endMark: 110, periodMin: 10.0, periodMax: 25.0,
+                endMark: 110, periodMin: 15.0, periodMax: 25.0,
                 grammar: [
                     { weight: 50, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_spoil' },
