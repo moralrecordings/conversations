@@ -683,7 +683,8 @@ export default {
                 xPos: Math.floor( ( xOffset + xRange )/2 ) +'px',
                 yPos: Math.floor( ( yOffset + yRange )/2 ) +'px'
             };
-            tutorial.glue();
+            // cheat the race condition by giving the JS engine time to breathe
+            setTimeout(tutorial.glue, 250);
         },
         submitTutorialMessage: function (ev) {
 

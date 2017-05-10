@@ -61,17 +61,11 @@ tour.addStep({
 
 });
 
-var mediator = new Shepherd.Evented;
-mediator.on('setAccount', function (account) {
-    if (Shepherd.activeTour && (Shepherd.activeTour.getCurrentStep().id == 'setAccount')) {
-        if (account == 'KingsleySnacks') {
-            Shepherd.activeTour.show('openMessage');
-        }
-    }
-});
 
 var glue = function () {
     tour.start();
+
+    global.$ = $;
 
     // for sanity's sake, we won't add tutorial hooks to all of the vue.js code.
     // no, instead we'll do things the bonkers way with selectors and jquery!
@@ -92,44 +86,81 @@ var glue = function () {
     // these callbacks are temporarily wired up with bits of the UI, the wires get cut after
     // the tutorial step changes.
 
+    // wrapper to check for the current step before invoking a callback.
+    // this is used for wiring up to events.
+    var stepCheck = function (name, cb) {
+        return function () {
+            console.log('STEPCHECK '+name);
+            if (Shepherd.activeTour && Shepherd.activeTour.getCurrentStep().id == name) {
+                cb();
+            }
+        }
+    }
+
+
     var setAccountSelect  = $('.window-accounts input[value="KingsleySnacks"]');
     var setAccount = function () {
-        if (setAccountSelect[0].checked && Shepherd.activeTour && (Shepherd.activeTour.getCurrentStep().id == 'setAccount')){
+        console.log('setAccount');
+        if (setAccountSelect[0].checked) {
             Shepherd.activeTour.show('openMessage');
             openMessage();
-            setAccountSelect.off('change', setAccount);
+            setAccountSelect.off('change', setAccountCB);
         }
     };
-    setAccountSelect.on('change', setAccount);
+    var setAccountCB = stepCheck('setAccount', setAccount);
+    setAccountSelect.on('change', setAccountCB);
 
     var openMessageSelect = $('.window-messages button.message-block');
-    var openMessage = function (ev) {
-        console.log($('.window-messages button.message-block'));
-        var test = ev ? ev[0] : false;
-        if (test || !$('.window-messages .message-hidden').hasClass('closed')) {
-            Shepherd.activeTour.show('selectType');
-            selectType();
-            openMessageSelect.off('toggleHide', openMessage);
-        }
+    var openMessage = function () {
+        // we check for the closed class, which gets applied after vue.js eats the click
+        // so lets hack it in with a delay!
+        // DONT'T JUDGE
+        setTimeout(function () {
+            if (!$('.window-messages .message-hidden').hasClass('closed')) {
+                Shepherd.activeTour.show('selectType');
+                selectType();
+                openMessageSelect.off('click', openMessageCB);
+            }
+        }, 50);
     };
-    openMessageSelect.on('toggleHide', openMessage);
+    var openMessageCB = stepCheck('openMessage', openMessage);
+    openMessageSelect.on('click', openMessageCB);
 
     var selectTypeSelect = $('.window-messages select[name="replyType"]');
     var selectType = function () {
-        if (selectTypeSelect.value == '2') { // product issue
-            Shepherd.activeTour.show('selectSubtype');
-            selectSubtype();
-            selectTypeSelect.off('change', selectType);
-        }
+        console.log('selectType');
+        setTimeout(function () {
+            if (selectTypeSelect[0].value == '2') { // product issue
+                selectTypeSelect.off('change', selectTypeCB);
+                setTimeout( function () {
+                    $('.window-messages select[name="replySubtype"]').on('change', selectSubtypeCB);
+
+                    Shepherd.activeTour.show('selectSubtype');
+                }, 50);
+            }
+        }, 50);
     };
-    selectTypeSelect.on('change', selectType);
+    var selectTypeCB = stepCheck('selectType', selectType);
+    selectTypeSelect.on('change', selectTypeCB);
+
+    // following elements are behind a v-if rendering switch, and need to be hooked at runtime
+    var selectSubtype = function () {
+        setTimeout(function () {
+            var selectSubtypeSelect = $('.window-messages select[name="replySubtype"]');
+            if (selectSubtypeSelect[0].value == '3') { // empty packaging
+                Shepherd.activeTour.show('sendResponse');
+                selectSubtypeSelect.off('change', selectSubtypeCB);
+            }
+        }, 50);
+    };
+    var selectSubtypeCB = stepCheck('selectSubtype', selectSubtype);
 
 
 };
 
+
 export default {
     tour: tour,
     glue: glue,
-    mediator: mediator,
     messageType: 'ks_empty'   
 };
