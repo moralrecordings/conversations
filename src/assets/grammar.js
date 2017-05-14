@@ -200,7 +200,7 @@ export default {
         "[productSingular:fruit pebble][product:bag of fruit pebbles][package:wrapper]", 
         "[productSingular:Fruit Pebble][product:bag of Fruit Pebbles][package:wrapper]", 
         "[productSingular:fruit pebble][product:bag of 🍬s][package:wrapper]", 
-        "[productSingular:Fruit Pebble][product:Fruit Pebbles bag]", 
+        "[productSingular:Fruit Pebble][product:Fruit Pebbles bag][package:wrapper]", 
         "[productSingular:Fruit Pebble][product:pack of Fruit Pebbles][package:box]", 
         "[productSingular:fruit pebble][product:pack of fruit pebbles][package:box]", 
         "[productSingular:fruit pebble][product:pack of 🍬s][package:box]", 

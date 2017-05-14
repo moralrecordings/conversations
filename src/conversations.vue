@@ -27,7 +27,7 @@
                     <use x="0" y="0" xlink:href="#activityIcon"/>
                 </svg>
             </button>
-            <!--button v-on:click="spawnMessage">Spawn angry tweet</button-->
+            <button v-on:click="spawnMessage">DEBUG - Spawn angry tweet</button>
         </div>
     </div>
 </template>

@@ -143,6 +143,11 @@ export default {
     methods: {
         typing: function (ev) {
             var vm = this;
+            console.log(ev);
+            if (ev.keyCode == 9) { // tab
+                return;
+            } 
+            
             if (this.replyContent.length < this.replyBody.length) {
                 var end = this.replyBody.indexOf(' ', this.replyContent.length);
                 if (end === -1) {
@@ -154,7 +159,6 @@ export default {
             if (this.replyContent.length == this.replyBody.length) {
                 this.replyReady = true;
             }
-
             if (ev.keyCode == 13) { // enter
                 vm.submit();
             }
