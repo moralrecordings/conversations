@@ -44,13 +44,15 @@ html, body {
 
 .app-inner {
     flex: 1 0 auto;
+    display: flex;
 }
 
 .login-frame {
+    width: 100%;
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    height: 100%; 
+//    height: 100%; 
     background-color: #316fbd; 
 }
 
