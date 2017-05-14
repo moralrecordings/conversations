@@ -462,6 +462,10 @@ var windowList = [];
 // every time we select a window, increase this by 1.
 var zLevel = 1;
 var zBump = function (el) {
+    if ($(el).hasClass('active')) {
+        // window is already in front, short circuit
+        return;
+    }
     if (el.style.zIndex != zLevel) {
         zLevel += 1;
         el.style.zIndex = zLevel;
@@ -512,6 +516,8 @@ Vue.directive('window', {
             //containment: '.desktop',
             start: zBumpCb,
         }).mousedown(
+            zBumpCb
+        ).focusin(
             zBumpCb
         );
         /*).on('drag', function (ev, ui) {
