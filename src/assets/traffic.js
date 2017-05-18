@@ -75,6 +75,7 @@ var levels = [
     // - kingsley only
     // - 30% required
     {
+        name: 'us3appprod020_FIRSTTIME',
         duration: 120,
         maxWarnings: 5,
         resolutionRate: 0.3,
@@ -92,7 +93,7 @@ var levels = [
                 ]
             },
             {   
-                endMark: 110, periodMin: 10.0, periodMax: 20.0,
+                endMark: 110, periodMin: 8.0, periodMax: 13.0,
                 grammar: [
                     { weight: 50, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_spoil' },
@@ -112,6 +113,7 @@ var levels = [
     // - kingsley and capnjack
     // - 30% required
     {
+        name: 'us1appprod103_WEEK1',
         duration: 120,
         maxWarnings: 5,
         resolutionRate: 0.3,
@@ -139,6 +141,42 @@ var levels = [
                 ]
             }
         ]
+    },
+    // level 2:
+    {  
+        name: 'us2appprod004_WEEK2',
+    },
+    // level 3:
+    {  
+        name: 'us6appprod090_WEEK3',
+    },
+    // level 4:
+    {  
+        name: 'us1appprod045_WEEK4',
+    },
+    // level 5:
+    {  
+        name: 'us3appprod055_WEEK5',
+    },
+    // level 6:
+    {  
+        name: 'us2appprod024_WEEK6',
+    },
+    // level 7:
+    {  
+        name: 'us6appprod060_WEEK7',
+    },
+    // level 8:
+    {  
+        name: 'us5appprod011_WEEK8',
+    },
+    // level 9:
+    {  
+        name: 'us1appprod028_WEEK9',
+    },
+    // level 10:
+    {  
+        name: 'us6appprod032_CODA',
     },
 
 ];

@@ -18,12 +18,12 @@
         </div>
         <div class="taskbar">
             <button v-on:click="showEmailWindow" title="Email">
-                <svg width="64" height="64" class="throb">
+                <svg width="64" height="64" v-bind:class="{ throb: flashEmail }">
                     <use x="0" y="0" xlink:href="#emailIcon"/>
                 </svg>
             </button>
             <button v-on:click="showIssueWindow" title="IssueMagic">
-                <svg width="64" height="64" class="">
+                <svg width="64" height="64" v-bind:class="{ throb: flashIssues }">
                     <use x="0" y="0" xlink:href="#activityIcon"/>
                 </svg>
             </button>
@@ -47,6 +47,25 @@ html, body {
 // tweak for mobile safari
 body {
     position: relative;
+}
+
+// fade to black
+.fader { 
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    pointer-events: none;
+    transition-property: background;
+    transition-timing-function: ease;
+}
+
+.fader.active {
+    background-color: black;
+    transition-duration: 1s;
+    pointer-events: auto;
 }
 
 // app container sizing
@@ -73,18 +92,9 @@ body {
     border: 1px solid transparent;
     border-radius: 4px;
     padding: 0;
+    color: inherit;
 }
 
-// fade to black
-.fader { 
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    z-index: 9999999;
-}
 
 // window class, for the topmost level floating box
 .window {
@@ -582,11 +592,18 @@ export default {
     name: 'conversations',
     data: function () {
         return {
+            // window visibility flags
             showEmail: false,
             showIssues: false,
             showWarning: false,
             showFail: false,
             showSuccess: false,
+
+            // flashing icons
+            flashEmail: true,
+            flashIssues: false,
+
+            // tutorial flags
             tutorialMode: false,
             tutorialMessage: null,
             activityPos: {x: 0, y: 0},
@@ -636,6 +653,7 @@ export default {
             this.emailPos.x = ($('.desktop').width() - this.emailPos.w)/2;
             this.emailPos.y = ($('.desktop').height() - this.emailPos.h)/2;
             this.showEmail = true;
+            this.flashEmail = false;
         },
         showIssueWindow: function() {
             console.log('showIssueWindow');

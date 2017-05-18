@@ -239,7 +239,7 @@ export default [
                 <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The majority of these cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. Unconfirmed reports suggest that batches of milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
                 <p>A spokesperson for Beaufort stated that the nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that the investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort.</p>
                 <p>The market response to the scandal has been severe, with Beaufort stock down $3.50 to $9.02.</p>
-                <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms Milk. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone activist investor demanding a higher premium on the market price.<p>
+                <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms Milk. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone activist investor demanding a higher premium on the market price. A source inside Beaufort, who asked not to be identified, said that efforts to link the incident back to Allied Brands senior management have been a large part of the ongoing investigation.<p>
                 <p>A spokesperson for Allied Brands Inc. declined to comment, citing the complete divestment of the Healthland Farms product line. The Allied stock price suffered some early losses when news of the scandal broke on Wednesday, but has since rallied to be slightly ahead by close of trading today.</p>
             </div>
             <p style="text-align: center;"><small>© 2011 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
@@ -263,6 +263,23 @@ export default [
             <p>Cheers,<br/>Andrea</p>
         `
     },
+
+    {
+        "visibleLevel": 4,
+        "date": moment("20111128", "YYYYMMDD"),
+        "sender": "Cody Briggs",
+        "senderMail": "cody.briggs@alliedbrandsinc",
+        "recipient": "PR - L1",
+        "recipientMail": "pr_l1@alliedbrandsinc",
+        "subject": "Response to Healthland Farms milk scandal",
+        "content": `
+        <p>All,</p>
+        <p>As you have probably heard, there has been an unfortunate incident of customers getting ill from drinking a contaminated batch of Healthland Farms milk. As of last September, Allied Brands Inc. is no longer involved with the production, marketing or distribution of Healthland Farms milk products, with all assets and manufacturing staff transferred to Beaufort International. Nonetheless, our thoughts and prayers are with the families of those affected by the tainted products.</p>
+        <p>As the transfer of ownership happened so recently, there is still a strong association in the minds of consumers between Healthland Farms and Allied Brands. It is vital that we move quickly to address this confusion. For any customers that contact the company citing Healthland Farms, please inform them of the change of ownership and direct them to Beaufort International's social media presence (@BeaufortIntl).</p>
+            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+        `
+    },
+
 
     // week 6 starting 20111205
     {
@@ -324,7 +341,7 @@ export default [
             
             <p>It has come to the attention of Legal that a small number of Excelsior Pharmaceuticals customers are expressing despair at a perceived inability to procure our products for themselves or their loved ones. Without question, the welfare of our customers should come first and foremost in everything we do. As good corporate citizens and as Americans, we have a duty to look beyond what is best for our image or bottom line, and provide help to those who need it the most. It's time for us to open up our moral compass and chart a new, righteous course.</p>
 
-            <p>For any customer you would identify as "<b>at-risk</b>", please refer them to the National Suicide Prevention Lifeline for assistance. This should be done from the Allied Brands Inc. corporate account (<b>@alliedbrandsinc</b>) ONLY, so as not to conflate this serious issue with the light-hearted tone used for advertising/social media outreach by the individual brands.</p>
+            <p>For any customer you would identify as "<b>at-risk</b>", please refer them to the National Suicide Prevention Lifeline for assistance. This should be done from the Allied Brands Inc. corporate account (<b>@alliedbrandsinc</b>) ONLY, so as not to conflate this serious issue with the light-hearted tone used for advertising/social media outreach by the individual brands. To fulfill our liability waiver obligations under state law, please ensure you reply <b>within 30 seconds</b> of receiving the customer communication.</p>
 
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
             <p style="font-family: serif">This email (including any attachments) is confidential and intended for the named recipient(s) only. It may be subject to legal or other professional privilege and contain copyright material. Any confidentiality or privilege is not waived or lost because this email has been sent to you by mistake.</p>

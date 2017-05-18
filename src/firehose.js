@@ -29,9 +29,11 @@ var getRandomChoice = function(table) {
 // pregenerate random choice closures
 traffic.locations = getRandomChoice(traffic.locations);
 traffic.levels.forEach(function (el) {
-    el.timeline.forEach(function (fl) {
-        fl.grammar = getRandomChoice(fl.grammar);
-    });
+    if (el.timeline) {
+        el.timeline.forEach(function (fl) {
+            fl.grammar = getRandomChoice(fl.grammar);
+        });
+    }
 });
 
 

@@ -230,5 +230,7 @@ export default {
 
     "cj_issue_reply": ["Aye, very sorry ta be hearin' yer snack weren't ship-shape. Please be callin' 570-330-3000 t' parley about it"],
 
-    "generic_reply": ["I care so little have this generic reply"]
+    "generic_reply": ["I care so little have this generic reply"],
+
+    "abi_beaufort": ["As of September ownership of Healthland Farms has transferred to Beaufort International, you can contact them at @BeaufortIntl"]
 };
