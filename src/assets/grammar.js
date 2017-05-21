@@ -232,5 +232,5 @@ export default {
 
     "generic_reply": ["I care so little have this generic reply"],
 
-    "abi_beaufort": ["As of September ownership of Healthland Farms has transferred to Beaufort International, you can contact them at @BeaufortIntl"]
+    "abi_beaufort": ["As of September ownership of Healthland Farms has transferred to Beaufort International, for customer service enquiries please contact @BeaufortIntl"]
 };

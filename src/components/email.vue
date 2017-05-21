@@ -8,10 +8,10 @@
             
             <div class="email-select overflow">
                 <template v-for="(messageGroup, groupIndex) in messages">
-                    <div v-if="messages.length-1 -groupIndex <= $store.state.level" class="email-group">
+                    <div v-if="messages.length-1 -groupIndex <= level" class="email-group">
                         {{ getGroup(groupIndex) }}
                     </div>
-                    <button v-for="(message, messageIndex) in messageGroup" class="email-select-row clickable" v-bind:class="{ active: message.index == selectIndex, unread: message.read != true }" v-if="$store.state.level >= emails[message.index].visibleLevel" v-on:click="setMessage(groupIndex, messageIndex)">
+                    <button v-for="(message, messageIndex) in messageGroup" class="email-select-row clickable" v-bind:class="{ active: message.index == selectIndex, unread: message.read != true }" v-if="level >= emails[message.index].visibleLevel" v-on:click="setMessage(groupIndex, messageIndex)">
                         <span>{{ emails[message.index].date.format('D MMM') }}</span>
                         <p class="sender">{{ emails[message.index].sender }}</p>
                         <p>{{ emails[message.index].subject }}</p>
@@ -95,7 +95,7 @@ import emails from 'assets/emails';
 
 export default {
     name: 'email-app',
-    props: ['width', 'height', 'xPos', 'yPos'],
+    props: ['width', 'height', 'xPos', 'yPos', 'level'],
     data: function() {
         return {
             emails: emails,
@@ -112,7 +112,7 @@ export default {
         },
         getGroup: function(index) {
             var week = this.messages.length-1 - index;
-            var test = this.$store.state.level - week;
+            var test = this.level - week;
             if (test < 1) {
                 return 'This week';
             } else if (test < 2) {
@@ -129,7 +129,7 @@ export default {
     mounted: function () {
         var vm = this;
         emails.forEach(function (el, index) {
-            if (el.visibleLevel > vm.$store.state.level) {
+            if (el.visibleLevel > vm.level) {
                 return;
             }
             if (vm.messages.length <= el.visibleLevel) {

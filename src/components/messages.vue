@@ -15,10 +15,10 @@
             
             <div v-bind:class="{ closed: hidden }" class="message-hidden">
                 <label>Category<select class="form" v-model="replyType" name="replyType" v-on:change="changeType">
-                    <option v-for="(type, index) in forms.types" v-if="type.visibleLevel <= $store.state.level" v-bind:value="index">{{ type.name }}</option>
+                    <option v-for="(type, index) in forms.types" v-if="type.visibleLevel <= level" v-bind:value="index">{{ type.name }}</option>
                 </select></label>               
                 <label v-if="forms.types[replyType].subtypes">{{ forms.types[replyType].subtypeName }}<select class="form" v-model="replySubtype" name="replySubtype" v-on:change="changeReply">
-                    <option v-for="(subtype, index) in forms.types[replyType].subtypes" v-if="subtype.visibleLevel <= $store.state.level" v-bind:value="index">{{ subtype.name }}</option>
+                    <option v-for="(subtype, index) in forms.types[replyType].subtypes" v-if="subtype.visibleLevel <= level" v-bind:value="index">{{ subtype.name }}</option>
                 </select></label>
 
                 
@@ -26,9 +26,9 @@
                 </template><template v-else-if="forms.types[replyType].id == 'abuse'">
                     <button class="form">Report user</button>
                 </template><template v-else>
-                    <label v-for="(flag, index) in forms.flags"  v-if="flag.visibleLevel <= $store.state.level"><input type="checkbox" v-model="replyFlags[index]" v-on:change="changeReply"/> {{ flag.name }}</label>
-                    <label v-if="forms.attachmentsVisibleLevel <= $store.state.level">Attachment<select class="form" v-model="replyAttachment" v-on:change="changeReply">
-                        <option v-for="(attach, index) in forms.attachments" v-if="attach.visibleLevel <= $store.state.level" v-bind:value="index">{{ attach.name }}</option>
+                    <label v-for="(flag, index) in forms.flags"  v-if="flag.visibleLevel <= level"><input type="checkbox" v-model="replyFlags[index]" v-on:change="changeReply"/> {{ flag.name }}</label>
+                    <label v-if="forms.attachmentsVisibleLevel <= level">Attachment<select class="form" v-model="replyAttachment" v-on:change="changeReply">
+                        <option v-for="(attach, index) in forms.attachments" v-if="attach.visibleLevel <= level" v-bind:value="index">{{ attach.name }}</option>
                     </select></label>
                     <label>Reply
                         <textarea name="replyFull" v-bind:class="{ ready: replyReady }" v-on:keypress="typing" v-model="replyFull" placeholder="Reply to customer"/>
@@ -124,7 +124,7 @@ import firehose from 'src/firehose';
 
 export default {
     name: 'messages-app',
-    props: ['message', 'account'],
+    props: ['message', 'account', 'level'],
     data: function () {
         return {
             forms: traffic.forms,

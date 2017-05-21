@@ -4,17 +4,17 @@
             <div style="display: none" v-html="asset"/>
         </template>
         <div class="desktop"> 
-            <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y"  v-if="showEmail" v-on:close="closeEmailWindow"/>
-            <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-if="showIssues" v-on:changeAccount="changeAccount"/>
+            <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y" v-bind:level="level" v-if="showEmail" v-on:close="closeEmailWindow"/>
+            <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-bind:level="level" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-on:startShift="start" v-if="showIssues" />
             <!-- message windows -->
-            <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
+            <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-bind:level="level" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
             <!-- tutorial messages -->
-            <mr-messages-app v-if="tutorialMessage" v-bind:account="account" v-bind:message="tutorialMessage" v-on:submitMessage="submitTutorialMessage"  v-on:close="closeTutorialMessageWindow" />
+            <mr-messages-app v-if="tutorialMessage" v-bind:account="account" v-bind:message="tutorialMessage" v-bind:level="level" v-on:submitMessage="submitTutorialMessage"  v-on:close="closeTutorialMessageWindow" />
             <!-- warning window -->
             <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
             <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-if="showFail"/>
-            <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-if="showSuccess"/>
+            <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-bind:level="level" v-if="showSuccess"/>
         </div>
         <div class="taskbar">
             <button v-on:click="showEmailWindow" title="Email">
@@ -606,16 +606,24 @@ export default {
             // tutorial flags
             tutorialMode: false,
             tutorialMessage: null,
+
+            // window position hacks
             activityPos: {x: 0, y: 0},
             accountsPos: {x: 300, y: 300},
             warningPos: {x: 300, y: 300},
             failPos: {x: 0, y: 0},
             successPos: {x: 0, y: 0},
             emailPos: {x: 0, y: 0, w: 1000, h: 600},
+
+            // messages produced in current session
             messages: [
             ],
+            // message window list
             messageWindows: [
             ],
+
+            level: 0,
+
             score: {open: 0, rslv: 0, warn: 0},
             timer: {duration: 0, count: 0, clock: '-:--', interval: null},
             
@@ -747,7 +755,7 @@ export default {
         },
         // methods for running the game
         startShift: function () {
-            this.timer.duration = firehose.getLevel(this.$store.state.level).duration;
+            this.timer.duration = firehose.getLevel(this.level).duration;
             this.timer.count = 0;
             this.timer.interval = setInterval(this._countdownCB, 1000);
             setTimeout(this._trafficCB, 1000);
@@ -782,7 +790,7 @@ export default {
                 return;
             }
             this.spawnMessage();
-            setTimeout(this._trafficCB, Math.floor(1000*firehose.getPeriod(this.$store.state.level, this.timer.count)));
+            setTimeout(this._trafficCB, Math.floor(1000*firehose.getPeriod(this.level, this.timer.count)));
         },
         spawnMessage: function() {
             var xOffset = 32;
@@ -790,7 +798,7 @@ export default {
             var yOffset = 32;
             var yRange = $('.desktop').height() - 64 - 500;
             var msgId = this.messages.length;
-            var msgData = firehose.generateMessage(this.$store.state.level, this.timer.count);
+            var msgData = firehose.generateMessage(this.level, this.timer.count);
             // during mercy periods, firehose.generateMessage can refuse 
             // to return anything
             if (msgData) {
@@ -842,7 +850,9 @@ export default {
     },
     mounted: function () {
         console.log(audioAssets);
-        var level = firehose.getLevel(this.$store.state.level);
+        var vm = this;
+        vm.level = this.$store.state.level;
+        var level = firehose.getLevel(vm.level);
         if (level.tutorial) {
             this.tutorialMode = true;
         }

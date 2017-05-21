@@ -18,7 +18,7 @@ Vue.use(Vuex);
 Vue.use(VueRouter);
 
 const routes = [
-    { path: '/conversations', component: conversations },
+    { path: '/session/:session_id', component: conversations },
     { path: '/', component: login }
 ];
 
@@ -32,7 +32,8 @@ const store = new Vuex.Store({
         savedLevel: 4
     },
     plugins: [createPersistedState({
-        key: 'mr_conversations'
+        key: 'mr_conversations',
+        paths: []
     })]
 });
 

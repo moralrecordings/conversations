@@ -4,8 +4,11 @@
             <div class="login-frame"><div class="login-window">
                 <p style="text-align: center;"><img v-bind:src="require('assets/logo-crap.jpg')" style="border: 1px solid #cccccc;"/><br/>Select remote session to join:</p>
                 <ul class="session-list">
-                    <li v-for="(level, index) in levels"><button class="session-button" v-on:click="loadLevel(index)">{{ level.name }}</button></li>
-                    <li><button class="session-button">us4appprod096_ENDLESS</button></li>
+                    <li v-for="(level, index) in levels">
+                        <button v-if="index <= $store.state.savedLevel" class="session-button" v-on:click="loadLevel(index)">{{ level.name }}</button>
+                        <button v-else class="session-button" disabled>{{ level.name }}</button>
+                    </li>
+                    <li><button class="session-button" disabled>us4appprod096_ENDLESS</button></li>
                 </ul>
             </div></div>
         </div>
@@ -18,7 +21,7 @@
         </div>
         <div class="fader" v-bind:class="{ active: fadeout }">
         </div>
-        <div class="intro" v-if="showIntro" v-bind:class="{ psyche: showIntro == 1 }">
+        <div class="intro" v-if="showIntro != 0" v-bind:class="{ psyche: showIntro == 1 }">
         </div>
     </div>
 </template>
@@ -148,10 +151,10 @@ export default {
         var vm = this;
         setTimeout(function () {
             vm.showIntro = 2;
+            setTimeout(function () {
+                vm.showIntro = 0;
+            }, 500);
         }, 500);
-        setTimeout(function () {
-            vm.showIntro = 0;
-        }, 1000);
     }
 };
 </script>
