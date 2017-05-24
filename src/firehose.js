@@ -60,6 +60,11 @@ export default {
     getLevel: function (level) {
         return traffic.levels[level];
     },
+    getLevelByName: function (name) {
+        return traffic.levels.findIndex(function (el) {
+            return name == el.name
+        });
+    },
     getTimeline: function (level, time) {
         return traffic.levels[level].timeline.find(function (el) {
             return time <= el.endMark;   

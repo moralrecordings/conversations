@@ -70,6 +70,19 @@ var responses = [
     {type: 'generic_reply', match: {}},
 ];
 
+
+// generator for dumb timesheet display at the end of a level
+var timesheets = [
+    { date: '2011/11/06', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/11/13', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/11/20', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,2,1,0,0] },
+    { date: '2011/11/27', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/11/06', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/11/06', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/11/06', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+];
+
+
 var levels = [
     // level 0:
     // - kingsley only
@@ -954,5 +967,6 @@ export default {
     messageTypes: messageTypes,
     responses: responses,
     levels: levels,
-    locations: locations
+    locations: locations,
+    timesheets: timesheets
 };

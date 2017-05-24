@@ -587,53 +587,59 @@ var randomEggColour = function () {
 };
 
 
+// initial data constructor method.
+// moved out here into the void of space, so we can call it on route change
+
+var initialData = function () {
+    return {
+        // window visibility flags
+        showEmail: false,
+        showIssues: false,
+        showWarning: false,
+        showFail: false,
+        showSuccess: false,
+
+        // flashing icons
+        flashEmail: true,
+        flashIssues: false,
+
+        // tutorial flags
+        tutorialMode: false,
+        tutorialMessage: null,
+
+        // window position hacks
+        activityPos: {x: 0, y: 0},
+        accountsPos: {x: 300, y: 300},
+        warningPos: {x: 300, y: 300},
+        failPos: {x: 0, y: 0},
+        successPos: {x: 0, y: 0},
+        emailPos: {x: 0, y: 0, w: 1000, h: 600},
+
+        // messages produced in current session
+        messages: [
+        ],
+        // message window list
+        messageWindows: [
+        ],
+
+        level: 0,
+
+        score: {open: 0, rslv: 0, warn: 0},
+        timer: {duration: 0, count: 0, clock: '-:--', interval: null, nextMessage: null},
+        
+        maxWarnings: 5,
+        resolutionRate: 0.5,
+
+        svgAssets: svgAssets,
+        theme: 'theme-allied',
+        account: 'AlliedBrandsInc',
+    };
+}
 
 export default {
     name: 'conversations',
     data: function () {
-        return {
-            // window visibility flags
-            showEmail: false,
-            showIssues: false,
-            showWarning: false,
-            showFail: false,
-            showSuccess: false,
-
-            // flashing icons
-            flashEmail: true,
-            flashIssues: false,
-
-            // tutorial flags
-            tutorialMode: false,
-            tutorialMessage: null,
-
-            // window position hacks
-            activityPos: {x: 0, y: 0},
-            accountsPos: {x: 300, y: 300},
-            warningPos: {x: 300, y: 300},
-            failPos: {x: 0, y: 0},
-            successPos: {x: 0, y: 0},
-            emailPos: {x: 0, y: 0, w: 1000, h: 600},
-
-            // messages produced in current session
-            messages: [
-            ],
-            // message window list
-            messageWindows: [
-            ],
-
-            level: 0,
-
-            score: {open: 0, rslv: 0, warn: 0},
-            timer: {duration: 0, count: 0, clock: '-:--', interval: null},
-            
-            maxWarnings: 5,
-            resolutionRate: 0.5,
-
-            svgAssets: svgAssets,
-            theme: 'theme-allied',
-            account: 'AlliedBrandsInc',
-        };
+        return initialData();
     },
     methods: {
         closeEmailWindow: debounce(function(ev) {
@@ -758,11 +764,17 @@ export default {
             this.timer.duration = firehose.getLevel(this.level).duration;
             this.timer.count = 0;
             this.timer.interval = setInterval(this._countdownCB, 1000);
-            setTimeout(this._trafficCB, 1000);
+            this.timer.nextMessage = setTimeout(this._trafficCB, 1000);
         },
         stopShift: function () {
-            clearInterval(this.timer.interval);
-            this.timer.interval = null;
+            if (this.timer.interval != null) {    
+                clearInterval(this.timer.interval);
+                this.timer.interval = null;
+            }
+            if (this.timer.nextMessage != null) {
+                clearTimeout(this.timer.nextMessage);
+                this.timer.nextMessage = null;
+            }
         },
         _countdownCB: function () {
             this.timer.count += 1;
@@ -787,10 +799,11 @@ export default {
             console.log('traffic!');
             if (!this.timer.interval) {
                 // timer is off, short circuit
+                this.timer.nextMessage = null;
                 return;
             }
             this.spawnMessage();
-            setTimeout(this._trafficCB, Math.floor(1000*firehose.getPeriod(this.level, this.timer.count)));
+            this.timer.nextMessage = setTimeout(this._trafficCB, Math.floor(1000*firehose.getPeriod(this.level, this.timer.count)));
         },
         spawnMessage: function() {
             var xOffset = 32;
@@ -846,18 +859,45 @@ export default {
             console.log(ev);
             this.theme = ev.theme;
             this.account = ev.id;
-        }
+        },
+        reset: function (levelID) {
+            var vm = this;
+            // if a game is in progress, turn off the timers
+            vm.stopShift();
+            // wipe the slate clean
+            $.extend(vm.$data, initialData());
+            
+            // level-specific setup crap
+            vm.level = levelID;
+            var level = firehose.getLevel(vm.level);
+            if (level.tutorial) {
+                this.tutorialMode = true;
+            }
+            this.maxWarnings = level.maxWarnings;
+            this.resolutionRate = level.resolutionRate;
+        },
     },
     mounted: function () {
         console.log(audioAssets);
-        var vm = this;
-        vm.level = this.$store.state.level;
-        var level = firehose.getLevel(vm.level);
-        if (level.tutorial) {
-            this.tutorialMode = true;
+    },
+    beforeRouteEnter: function (to, from, next) {
+        var levelID = firehose.getLevelByName(to.params.session_id);
+        if (levelID < 0) {
+            next('/');
+            return;
         }
-        this.maxWarnings = level.maxWarnings;
-        this.resolutionRate = level.resolutionRate;
+        next(function (vm) {
+            vm.reset(levelID);
+        });
+    },
+    beforeRouteUpdate: function (to, from, next) {
+        var levelID = firehose.getLevelByName(to.params.session_id);
+        if (levelID < 0) {
+            next('/');
+            return;
+        }
+        this.reset(levelID);
+        next();
     },
     components: {
         'mr-email-app': email,

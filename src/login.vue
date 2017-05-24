@@ -26,7 +26,7 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // see style rules in conversations.vue
 
 .app-inner {
@@ -143,8 +143,12 @@ export default {
         };
     },
     methods: {
-        loadLevel: function (level) {
+        loadLevel: function (index) {
+            var vm = this;
             this.fadeout = true;
+            setTimeout(function () {
+                vm.$router.push('/session/'+vm.levels[index].name);
+            }, 1200);
         }
     },
     mounted: function () {
