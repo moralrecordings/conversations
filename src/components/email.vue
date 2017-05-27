@@ -18,7 +18,7 @@
                     </button>
                 </template>
             </div>
-            <div class="email-message overflow">
+            <div class="email-message overflow" tabindex="0">
                 <p style="margin-top: 0;">
                     <span style="display: block"><b>From:</b> {{ emails[selectIndex].sender }} &lt;{{ emails[selectIndex].senderMail }}&gt;</span>
                     <span style="display: block"><b>To:</b> {{ emails[selectIndex].recipient }} &lt;{{ emails[selectIndex].recipientMail }}&gt;</span>

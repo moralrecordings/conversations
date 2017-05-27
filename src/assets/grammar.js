@@ -94,8 +94,8 @@ export default {
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my friend][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my fiance][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my man][pNameTheir:#pName#'s]",
-        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my kid][pNameTheir:#pName#'s]",
-        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my sibling][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my fiancee][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my fiance][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my partner][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my friend][pNameTheir:#pName#'s]",
     ],
@@ -108,7 +108,7 @@ export default {
     
     "exclamation": ["wtf", "wtf is this", "what the fuck", "fuck me sideways", "what the hell is this", "what is this", "wtf is this shit", "what is this shit", "what is this horseshit", "what the shit", "holy shit", "holy wow", "my god", "christ", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "not cool", "not happy", "unacceptable", "thanks for nothing"],
     
-    "big": ["large ", "gigantic ", "great big fucking ", "largeass ", "big ", "bigass ", "goddamn ", "huge ", "enormous ", "fucking ", "", "", "", ""],
+    "big": ["large ", "gigantic ", "great big fucking ", "largeass ", "big ", "bigass ", "goddamn ", "huge ", "enormous ", "shitting great ", "fucking ", "", "", "", ""],
     
     "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "very disappointed", "really disappointed", "disappointed", "really sad", "very sad", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "I feel sick", "I feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a good supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this", "this shit is unacceptable", "this is unacceptable", "this is fucking dangerous" ],
 
@@ -123,7 +123,8 @@ export default {
     "foreignObjectDiscovery": [
         "#genPerson##pName# found #bigForeignObject.a# in #pTheir# #productDesc#",
         "#genPerson##pName# bit into #bigForeignObject.a#",
-        "#genPerson##pName# opened #pTheir# #productDesc# and there was #bigForeignObject.a# in it",
+        "#genPerson##pName# opened #productDesc.a# and there was #bigForeignObject.a# in it",
+        "#genPerson##pName# swallowed a #foreignObject# because it was in #pTheir# #productDesc#",
         "#defaultPerson#found #bigForeignObject.a# in #pronoun# #productDesc#",
         "#defaultPerson#why is there #bigForeignObject.a# in #pronoun# #productDesc#",
         "#defaultPerson#why does #pronoun# #productDesc# have #bigForeignObject.a#",
@@ -219,20 +220,20 @@ export default {
     "emptyMessage": ["@#account# #emptyDiscovery#", "#sadEmojiSeq# @#account# #emptyDiscovery#", "@#account# #sadEmojiSeq# #emptyDiscovery#"],
 
     // misshapen types
-    "shape": ["dead worm", "turd", "tumor", "blob", "mass", "morass", "lump", "brick", "clump", "slab", ""],
+    "shape": ["dead worm", "turd", "tumor", "blob", "mass", "morass", "lump", "brick", "clump", "slab"],
     "misshapenMessage": ["@#account# wah wah wah my food was shaped weird"],
     
     // experiences
     "experience": [
         "end of the day, time to kick back with some @#account# #productSingular.s#",
-        "omg I left a @#account# #product# in the fridge",
-        "#genPartner##pName# must have left a @#account# #product# lying around... #fanEmojiSeq#",
+        "omg I left a @#account# #productDesc# in the fridge",
+        "#genPartner##pName# must have left a @#account# #productDesc# lying around... #fanEmojiSeq#",
         "man I can never get enough @#account# #product#",
         "I seriously need more @#account# #product# in my life",
-        "one @#account# #product# left! past me you are a goddamn genius",
-        "#genPartner#really hope #pName# doesn't disown me for eating the last @#account# #product# #fanEmojiSeq#",
+        "one @#account# #productDesc# left! past me you are a goddamn genius",
+        "#genPartner#really hope #pName# doesn't disown me for eating the last @#account# #productDesc# #fanEmojiSeq#",
         "#genPartner##pName# should know better than to buy @#account# #product#! just wolfed the lot",
-        "#genPartner#love is real #fanEmojiSeq# #pName# just gave me a @#account# #product#",
+        "#genPartner#love is real #fanEmojiSeq# #pName# just gave me a @#account# #productDesc#",
         "dear @#account#, please send me as many free products as possible",
         "hey @#account# if I get a million RTs can I have free #product.s# for a year?",
         "this @#account# #productDesc# is too good for this world",

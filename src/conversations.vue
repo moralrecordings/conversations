@@ -462,7 +462,9 @@ var svgAssets = [
     require('assets/activity.rawsvg'),
 ];
 var audioAssets = {
-    'tick': new Audio(require('assets/tick.wav'))
+    'tick': new Audio(require('assets/tick.mp3')),
+    'messageSend': new Audio(require('assets/message_send.mp3')),
+    'messageGet': new Audio(require('assets/message_get.mp3'))
 };
 
 // top level window management crap!
@@ -708,6 +710,7 @@ export default {
             setTimeout(tutorial.glue, 250);
         },
         spawnTutorialMessage: function (ev) {
+            audioAssets.messageGet.play();                        
             var xOffset = 32;
             var xRange = $('.desktop').width() - 64 - 400;
             var yOffset = 32;
@@ -725,6 +728,7 @@ export default {
             };
         },
         submitTutorialMessage: function (ev) {
+            audioAssets.messageSend.play();
             var vm = this;
             var results = firehose.validate(tutorial.messageType, ev);
             tutorial.tour.hide();
@@ -806,6 +810,7 @@ export default {
             this.timer.nextMessage = setTimeout(this._trafficCB, Math.floor(1000*firehose.getPeriod(this.level, this.timer.count)));
         },
         spawnMessage: function() {
+            audioAssets.messageGet.play();            
             var xOffset = 32;
             var xRange = $('.desktop').width() - 64 - 400;
             var yOffset = 32;
@@ -832,6 +837,7 @@ export default {
         },
 
         submitMessage: function (ev) {
+            audioAssets.messageSend.play();            
             var vm = this;
             console.log('submitMessage');
             console.log(ev);
