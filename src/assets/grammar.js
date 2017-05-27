@@ -2,7 +2,7 @@
 
 export default {
     // emoji sequence generator
-    "fanEmoji": ["👍", "😋", "😍", "😄", "💕", "✨", "💖", "💛", "💯", "😙"],
+    "fanEmoji": ["👍", "😋", "😍", "😄", "💕", "✨", "💖", "💛", "💯", "😙", "👀"],
     "complainEmoji": ["👎", "🚮", "🚽", "🤷",  "😂", "🤔", "🔥", "😑", "😐", "😒", "😥", "😲", "🤢", "💩", "😱", "😭", "😠"],
     "sadEmoji": ["😂", "🤔", "😶", "😧", "😦", "😞", "☹"],
     "emojiSeq": [
@@ -12,6 +12,7 @@ export default {
         "#emoji1##emoji1##emoji1##emoji1##emoji1#",
         "#emoji1##emoji1##emoji1#",
         "#emoji1##emoji1##emoji1#",
+        "#emoji1##emoji1##emoji1##emoji1##emoji1#",
         "#emoji1##emoji1##emoji1##emoji2##emoji2##emoji2##emoji3##emoji3##emoji3#",
         "#emoji1##emoji1##emoji2##emoji2##emoji3##emoji3#", 
         "", "", "", "", "", "", ""
@@ -32,25 +33,30 @@ export default {
 
     // person generator
     "genPerson": [
-        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my wife][pNameTheir:#pName#'s]",
-        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my daughter][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my sister][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my sis][pNameTheir:#pName#']",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my daughter][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my girlfriend][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my gf][pNameTheir:#pName#'s]",
-        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my wife][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my partner][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my friend][pNameTheir:#pName#'s]",
-        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my husband][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my fiancee][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my lady][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my son][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my brother][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my kid][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my bro][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my husband][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my boyfriend][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my bf][pNameTheir:#pName#'s]",
-        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my kid][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my partner][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my friend][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my fiance][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my man][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my sibling][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my partner][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my friend][pNameTheir:#pName#'s]",
         "[pTheir:my][pTheirs:mine][pThey:I][pThem:me][pName:I][pNameTheir:#pTheir#]",
@@ -73,46 +79,69 @@ export default {
         "[pTheir:my][pTheirs:mine][pThey:I][pThem:me][pName:I][pNameTheir:#pTheir#]",
         "[pTheir:my][pTheirs:mine][pThey:I][pThem:me][pName:I][pNameTheir:#pTheir#]",
     ],
+    "genPartner": [
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my girlfriend][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my gf][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my wife][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my partner][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my friend][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my fiancee][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my lady][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my husband][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my boyfriend][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my bf][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my partner][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my friend][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my fiance][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my man][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my sibling][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my partner][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my friend][pNameTheir:#pName#'s]",
+    ],
     "defaultPerson": ["[pTheir:my][pTheirs:mine][pThey:I][pThem:me][pName:I][pNameTheir:#pTheir#]"],
     "pronoun": ["#pNameTheir#", "#pNameTheir#", "#pNameTheir#", "this", "this", "this"],
 
 
     // angry customer dialogue chunks
-    "sadness": ["what gives", "what happened", "kinda disappointing", "was really looking forward to it too", "so hungry", "still hungry", "don't mean to overreact or anything", "a replacement would be nice", "this is subpar", "really", "huh", "pretty funny", "comedy gold", "who needs QA", "talk about a letdown", "such an anticlimax", ],
+    "sadness": ["what gives", "what happened", "kinda disappointing", "was really looking forward to it too", "so hungry", "still hungry", "don't mean to overreact or anything", "a replacement would be nice", "this is subpar", "really", "huh", "pretty funny", "comedy gold", "who needs QA, right?", "talk about a letdown", "such an anticlimax", "dunno what to say", "kinda bummed", "this sucks", "this bites", "lame", "frig"],
     
-    "exclamation": ["wtf", "wtf is this", "what the fuck", "fuck me sideways", "what the hell is this", "what is this", "wtf is this shit", "what is this shit", "what is this horseshit", "what the shit", "holy shit", "holy wow", "my god", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "gross", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "not cool", "not happy", "unacceptable"],
+    "exclamation": ["wtf", "wtf is this", "what the fuck", "fuck me sideways", "what the hell is this", "what is this", "wtf is this shit", "what is this shit", "what is this horseshit", "what the shit", "holy shit", "holy wow", "my god", "christ", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "not cool", "not happy", "unacceptable", "thanks for nothing"],
     
     "big": ["large ", "gigantic ", "great big fucking ", "largeass ", "big ", "bigass ", "goddamn ", "huge ", "enormous ", "fucking ", "", "", "", ""],
     
     "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "very disappointed", "really disappointed", "disappointed", "really sad", "very sad", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "I feel sick", "I feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a good supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this", "this shit is unacceptable", "this is unacceptable", "this is fucking dangerous" ],
 
-    "litigiousRemark": ["see you in court", "SEE YOU IN COURT", "you'll hear from #pTheir# lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you better pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# is bleeding everywhere", "#pThey# cracked #pTheir# tooth", "#pThey# can't stop vomiting", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney now", "anyone know a good lawyer"],
-    "coda": [" fml", " ffs", " you dicks", " you fuckers", " FML", " FFS", " jesus", " JFC", " sigh", " don't @ me", "", "", "", "", "", "", "", "", "", "", "", ""],
+    "litigiousRemark": ["see you in court", "SEE YOU IN COURT", "you'll hear from #pTheir# lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you better pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# is bleeding everywhere", "#pThey# cracked #pTheir# tooth", "#pThey# can't stop vomiting", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney now", "anyone know a good lawyer", "#pThey# almost died"],
+    
+    "coda": [" fml", " ffs", " you dicks", " you fuckers", " you bastards", " FML", " FFS", " jesus", " JFC", " sigh", " smh", " don't @ me", "", "", "", "", "", "", "", "", "", "", "", ""],
 
 
     // foreign object types and righteous outrage generator
-    "foreignObject": ["piece of wood", "stick", "wood chip", "wood splinter", "splinter", "pill", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand",  "coin", "penny", "shell", "lump", "hair", "eyelash", "dandruff flake", "dust bunny", "ball of dust", "ball of lint", "chunk of lint", "clump of hair", "fingernail", "finger nail", "fake nail", "bandaid", "sticking plaster", "bone", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "wire", "bit of wire", "peanut shell", "nail", "fly", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "worm", "maggot", "spider", "insect", "bug", "roach", "cockroach", "locust", "dead rat", "tail", "severed finger"],
+    "foreignObject": ["piece of wood", "stick", "wood chip", "wood splinter", "splinter", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand",  "coin", "penny", "shell", "lump", "hair", "eyelash", "dandruff flake", "dust bunny", "ball of dust", "ball of lint", "chunk of lint", "clump of hair", "fingernail", "finger nail", "fake nail", "bandaid", "sticking plaster", "bone", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "wire", "bit of wire", "peanut shell", "nail", "fly", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "worm", "maggot", "spider", "insect", "bug", "roach", "cockroach", "locust", "dead rat", "tail", "severed finger"],
     "bigForeignObject": ["[whut:#big##foreignObject#]#whut.randomUpper(10)#", "#big##foreignObject.randomUpper(10)#"],
     "foreignObjectDiscovery": [
-        "#genPerson##pName# found #bigForeignObject.a# in #pronoun# #product#",
+        "#genPerson##pName# found #bigForeignObject.a# in #pTheir# #productDesc#",
         "#genPerson##pName# bit into #bigForeignObject.a#",
-        "#defaultPerson#found #bigForeignObject.a# in #pronoun# #product#",
-        "#defaultPerson#why is there #bigForeignObject.a# in #pronoun# #product#",
-        "#defaultPerson#why does #pronoun# #product# have #bigForeignObject.a#",
-        "#defaultPerson#there's #bigForeignObject.a# in #pronoun# #product#",
-        "#defaultPerson#there's literally #bigForeignObject.a# in #pronoun# #product#",
-        "#defaultPerson##pronoun# #product# literally has #bigForeignObject.a# in it",
-        "#defaultPerson#wondering why there's #bigForeignObject.a# in #pronoun# #product#",
-        "#defaultPerson#wondering why #pronoun# #product# has #bigForeignObject.a# in it",
-        "#defaultPerson#can't believe there's #bigForeignObject.a# in #pronoun# #product#",
-        "#defaultPerson#can't believe #pronoun# #product# has #bigForeignObject.a# in it",
-        "#defaultPerson#no shit there is #bigForeignObject.a# in #pronoun# #product#",
-        "#defaultPerson#no fooling there is #bigForeignObject.a# in #pronoun# #product#",
-        "#defaultPerson#how come there's #bigForeignObject.a# in #pronoun# #product#",    
-        "#defaultPerson#explain why there's #bigForeignObject.a# in #pronoun# #product#",
-        "#defaultPerson#explain why #pronoun# #product# has #bigForeignObject.a# in it",
-        "#defaultPerson#is it normal for #product.a# to have #bigForeignObject.a#",
-        "#defaultPerson#do you make every #product# with #bigForeignObject.a# in them",
+        "#genPerson##pName# opened #pTheir# #productDesc# and there was #bigForeignObject.a# in it",
+        "#defaultPerson#found #bigForeignObject.a# in #pronoun# #productDesc#",
+        "#defaultPerson#why is there #bigForeignObject.a# in #pronoun# #productDesc#",
+        "#defaultPerson#why does #pronoun# #productDesc# have #bigForeignObject.a#",
+        "#defaultPerson#there's #bigForeignObject.a# in #pronoun# #productDesc#",
+        "#defaultPerson#there's literally #bigForeignObject.a# in #pronoun# #productDesc#",
+        "#defaultPerson##pronoun# #productDesc# literally has #bigForeignObject.a# in it",
+        "#defaultPerson#wondering why there's #bigForeignObject.a# in #pronoun# #productDesc#",
+        "#defaultPerson##pName# was enjoying this #productDesc# until I found a #bigForeignObject.a# in it",
+        "#defaultPerson#wondering why #pronoun# #productDesc# has #bigForeignObject.a# in it",
+        "#defaultPerson#can't believe there's #bigForeignObject.a# in #pronoun# #productDesc#",
+        "#defaultPerson#can't believe #pronoun# #productDesc# has #bigForeignObject.a# in it",
+        "#defaultPerson#no shit there is #bigForeignObject.a# in #pronoun# #productDesc#",
+        "#defaultPerson#no fooling there is #bigForeignObject.a# in #pronoun# #productDesc#",
+        "#defaultPerson#how come there's #bigForeignObject.a# in #pronoun# #productDesc#",    
+        "#defaultPerson#explain why there's #bigForeignObject.a# in #pronoun# #productDesc#",
+        "#defaultPerson#explain why #pronoun# #productDesc# has #bigForeignObject.a# in it",
+        "#defaultPerson#is it normal for #productDesc.a# to have #bigForeignObject.a#",
+        "#defaultPerson#do you make every #productDesc# with #bigForeignObject.a# in them",
     ], 
     "foreignMessage": [
         "[disco:#foreignObjectDiscovery#]#exclamation.randomUpper(30)# @#account# #disco#, #closingRemark.randomUpper(20)##coda#", 
@@ -125,14 +154,14 @@ export default {
     
     // spoilage types
     "stench": [
-        "rot", "mold", "moldy cheese", "fungus", "rotten eggs", "expired mayonnaise", "ass", "farts", "wet farts", "a bag of old farts", "urine", "piss", "cat piss", "turd", "shit", "bad diarrhoea", "sewage", "a sewerage plant", "a slaughterhouse floor", "an abbatoir", "expired milk", "sour milk", "rancid butter", "dumpster juice", "rotting garbage", "fetid garbage", "heated garbage", "compost", "fertilizer", "medical waste", "a urinal cake", "a rendering plant", "rotting meat", "rancid meat", "a whale carcass on a hot day", "tanning waste", "chemicals", "bad chemicals", "acid", "oven cleaner",
+        "rot", "mold", "moldy cheese", "bad cheese", "fungus", "rotten eggs", "expired mayonnaise", "ass", "the inside of my ass", "farts", "wet farts", "a bag of old farts", "urine", "piss", "cat piss", "turd", "shit", "bad diarrhoea", "sewage", "a sewerage plant", "a slaughterhouse floor", "an abbatoir", "expired milk", "sour milk", "rancid butter", "BO", "dumpster juice", "rotting garbage", "fetid garbage", "heated garbage", "compost", "fertilizer", "sun-roasted fertilizer", "medical waste", "a urinal cake", "a rendering plant", "rotting meat", "rancid meat", "a whale carcass on a hot day", "tanning waste", "chemicals", "bad chemicals", "acid", "oven cleaner", "cyanide"
     ],
     "spoiled": [
         "reeks of #stench#",
         "stinks of #stench#",
         "has a distinct aroma of #stench#",
-        "smells of #stench#",
-        "tasted like #stench#",
+        "smells like #stench#",
+        "tastes like #stench#",
         "had a strong aftertaste of #stench#",
         "was all covered in powder",
         "was powdery and disgusting",
@@ -141,17 +170,25 @@ export default {
         "was rotten",
         "was rancid",
         "clearly has spoiled",
+        "has already gone bad"
     ],
     "spoilDiscovery": [
-        "#genPerson##pName# bought a #product# and it #spoiled#",
-        "I opened up a #product# and it #spoiled#",
-        "how come this #product# #spoiled#",
-        "sorry but this #product# #spoiled#",
-        "I purchased a #product# and it #spoiled#",
-        "got a #product# and it #spoiled#",
+        "#genPerson##pName# bought a #productDesc# and it #spoiled#",
+        "I opened up a #productDesc# and it #spoiled#",
+        "how come this #productDesc# #spoiled#",
+        "this #productDesc# #spoiled#",
+        "sorry but this #productDesc# #spoiled#",
+        "I purchased a #productDesc# and it #spoiled#",
+        "got a #productDesc# and it #spoiled#",
     ],
     "spoilMessage": [
-        "@#account# #spoilDiscovery#",
+        "[disco:#spoilDiscovery#]@#account# #disco#",
+        "[disco:#spoilDiscovery#]#sadEmojiSeq# @#account# #disco#",
+        "[disco:#spoilDiscovery#]@#account# #sadness# #disco#",
+        "[disco:#spoilDiscovery#]@#account# #sadness# #sadEmojiSeq# #disco#",
+        "[disco:#spoilDiscovery#]#sadEmojiSeq# @#account# #sadness# #disco#",
+        "[disco:#spoilDiscovery#]#sadEmojiSeq# @#account# #disco#, #sadness#",
+        "[disco:#spoilDiscovery#]@#account# #disco# #sadEmojiSeq# #sadness#",
     ],
 
     // empty types
@@ -168,54 +205,86 @@ export default {
         "full of sailboat fuel",
     ],
     "emptyDiscovery": [
-        "#genPerson##pName# bought a #product# and there was nothing inside the #package#",
-        "#genPerson##pName# bought a #product# and there was nothing in it",
-        "#genPerson##pNameTheir# #product# is #emptyVolume#",
-        "#genPerson#did someone at the factory get hungry? check out this #emptyVolume# #product#",
+        "#genPerson##pName# bought a #productDesc# and there was nothing inside the #package#",
+        "#genPerson##pName# bought a #productDesc# and there was nothing in it",
+        "#genPerson##pNameTheir# #productDesc# is #emptyVolume#",
+        "#genPerson##pName# just opened a #productDesc# and it was #emptyVolume#",
+        "#genPerson#did someone at the factory get hungry? check out this #productDesc# that's #emptyVolume#",
         "#genPerson#how come there's no #productSingular# in this #package#",
         "#genPerson#is your new business model selling #package.s# that are #emptyVolume#",
-        "#genPerson#I see you've just switched to making the #product.s# #emptyVolume#",
-        "#genPerson#trying to be cheap, my #productSingular# #package# was #emptyVolume#",
-        "#genPerson#which genius thought of making a #product# that's #emptyVolume#",
+        "#genPerson#I see you've just switched to making the #product# #package.s# #emptyVolume#",
+        "#genPerson#trying to be cheap, my #productDesc# was #emptyVolume#",
+        "#genPerson#which genius thought of making a #productDesc# that's #emptyVolume#",
     ],
     "emptyMessage": ["@#account# #emptyDiscovery#", "#sadEmojiSeq# @#account# #emptyDiscovery#", "@#account# #sadEmojiSeq# #emptyDiscovery#"],
 
     // misshapen types
+    "shape": ["dead worm", "turd", "tumor", "blob", "mass", "morass", "lump", "brick", "clump", "slab", ""],
     "misshapenMessage": ["@#account# wah wah wah my food was shaped weird"],
     
+    // experiences
+    "experience": [
+        "end of the day, time to kick back with some @#account# #productSingular.s#",
+        "omg I left a @#account# #product# in the fridge",
+        "#genPartner##pName# must have left a @#account# #product# lying around... #fanEmojiSeq#",
+        "man I can never get enough @#account# #product#",
+        "I seriously need more @#account# #product# in my life",
+        "one @#account# #product# left! past me you are a goddamn genius",
+        "#genPartner#really hope #pName# doesn't disown me for eating the last @#account# #product# #fanEmojiSeq#",
+        "#genPartner##pName# should know better than to buy @#account# #product#! just wolfed the lot",
+        "#genPartner#love is real #fanEmojiSeq# #pName# just gave me a @#account# #product#",
+        "dear @#account#, please send me as many free products as possible",
+        "hey @#account# if I get a million RTs can I have free #product.s# for a year?",
+        "this @#account# #productDesc# is too good for this world",
+        "@#account# this is the best #productDesc# ever, I need more",
+        "@#account# real talk did you put heroin in the #productSingular# recipe, because this is addictive af",
+    ],
+
+    // advertising
+    "advertising": [
+        "#exclamation# @#account# it's been 5 days and I still have that damn jingle from the TV ads stuck in my head",
+        "just letting you know @#account#, your ads are the worst",
+        "please kill me so I never have to see another @#account# ad",
+        "omg @#account# ad again! ",
+        "@#account# is there some amount of money I can pay to stop being spammed by ads for #productSingular.s#" 
+    ],
+
 
     // product types
     "prod_chocolate": [
-        "[productSingular:chocolate][product:candy bar][package:wrapper]", 
-        "[productSingular:chocolate][product:bar][package:wrapper]", 
-        "[productSingular:chocolate][product:choc bar][package:wrapper]", 
-        "[productSingular:chocolate][product:choco bar][package:wrapper]", 
-        "[productSingular:chocolate][product:chocolate bar][package:wrapper]", 
-        "[productSingular:chocolate][product:Kingsley chocolate bar][package:wrapper]", 
-        "[productSingular:chocolate][product:Kingsley bar][package:wrapper]", 
-        "[productSingular:chocolate][product:🍫][package:wrapper]"
+        "[product:candy bar][productSingular:chocolate][productDesc:candy bar][package:wrapper]", 
+        "[product:choc bar][productSingular:chocolate][productDesc:choc bar][package:wrapper]", 
+        "[product:choco bar][productSingular:chocolate][productDesc:choco bar][package:wrapper]", 
+        "[product:chocolate bar][productSingular:chocolate][productDesc:chocolate bar][package:wrapper]", 
+        "[product:chocolate bar][productSingular:chocolate][productDesc:🍫][package:wrapper]"
     ],
     "prod_pebbles": [
-        "[productSingular:fruit pebble][product:🍬][package:wrapper]", 
-        "[productSingular:fruit pebble][product:bag of fruit pebbles][package:wrapper]", 
-        "[productSingular:Fruit Pebble][product:bag of Fruit Pebbles][package:wrapper]", 
-        "[productSingular:fruit pebble][product:bag of 🍬s][package:wrapper]", 
-        "[productSingular:Fruit Pebble][product:Fruit Pebbles bag][package:wrapper]", 
-        "[productSingular:Fruit Pebble][product:pack of Fruit Pebbles][package:box]", 
-        "[productSingular:fruit pebble][product:pack of fruit pebbles][package:box]", 
-        "[productSingular:fruit pebble][product:pack of 🍬s][package:box]", 
-        "[productSingular:Fruit Pebble][product:Fruit Pebbles pack][package:box]", 
+        "[product:fruit pebbles][productSingular:fruit pebble][productDesc:🍬][package:wrapper]", 
+        "[product:fruit pebbles][productSingular:fruit pebble][productDesc:bag of fruit pebbles][package:wrapper]", 
+        "[product:Fruit Pebbles][productSingular:Fruit Pebble][productDesc:bag of Fruit Pebbles][package:wrapper]", 
+        "[product:fruit pebbles][productSingular:fruit pebble][productDesc:bag of 🍬s][package:wrapper]", 
+        "[product:Fruit Pebbles][productSingular:Fruit Pebble][productDesc:Fruit Pebbles bag][package:wrapper]", 
+        "[product:Fruit Pebbles][productSingular:Fruit Pebble][productDesc:pack of Fruit Pebbles][package:box]", 
+        "[product:fruit pebbles][productSingular:fruit pebble][productDesc:pack of fruit pebbles][package:box]", 
+        "[product:fruit pebbles][productSingular:fruit pebble][productDesc:pack of 🍬s][package:box]", 
+        "[product:Fruit Pebbles][productSingular:Fruit Pebble][productDesc:Fruit Pebbles pack][package:box]", 
+    ],
+    "prod_caramel": [
+        "[product:Caramellograms][productSingular:caramel][productDesc:bag of Caramellograms][package:wrapper]", 
+        "[product:Caramellograms][productSingular:caramel][productDesc:box of Caramellograms][package:box]", 
     ],
     
 
     // crappy product weighting
-    "ks_prod": ["#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", 
-                "#prod_pebbles#", "#prod_pebbles#", "#prod_pebbles#", ],
+    "ks_prod": ["#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", 
+                "#prod_pebbles#", "#prod_pebbles#", "#prod_pebbles#", 
+                "#prod_caramel#", "#prod_caramel#", "#prod_caramel#",
+    ],
 
 
     // happy tweet weighting
-    "ks_advertising": ["[account:KingsleySnacks]@#account# catchphrase tagline I am a consumer whore"],
-    "ks_experience": ["[account:KingsleySnacks]@#account# please send me free shit"],
+    "ks_advertising": ["[account:KingsleySnacks]#ks_prod##advertising#"],
+    "ks_experience": ["[account:KingsleySnacks]#ks_prod##experience#"],
 
 
     // furious tweet generators

@@ -41,7 +41,7 @@
 
 .email-select {
     display: block;
-    min-width: 200px;
+    min-width: 260px;
 }
 
 .email-group {

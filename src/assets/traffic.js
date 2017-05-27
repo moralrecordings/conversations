@@ -97,23 +97,23 @@ var levels = [
             {
                 endMark: 60, periodMin: 5.0, periodMax: 10.0,
                 grammar: [
-                    { weight: 50, type: 'ks_foreign' },
+                    { weight: 40, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
                     { weight: 10, type: 'ks_misshapen' },
                     { weight: 10, type: 'ks_experience' },
-                    { weight: 10, type: 'ks_advertising' },
+                    { weight: 5, type: 'ks_advertising' },
                 ]
             },
             {   
                 endMark: 110, periodMin: 8.0, periodMax: 13.0,
                 grammar: [
-                    { weight: 50, type: 'ks_foreign' },
+                    { weight: 40, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
                     { weight: 10, type: 'ks_misshapen' },
                     { weight: 10, type: 'ks_experience' },
-                    { weight: 10, type: 'ks_advertising' },
+                    { weight: 5, type: 'ks_advertising' },
                 ]
             },
             {
@@ -465,7 +465,7 @@ var locations = [
     {"name": "Murrieta", "state": "CA", "country": "US", "weight": 105243},
     {"name": "Centennial", "state": "CO", "country": "US", "weight": 103049},
     {"name": "Richmond", "state": "CA", "country": "US", "weight": 105418},
-    {"name": "San Buenaventura (Ventura)", "state": "CA", "country": "US", "weight": 107797},
+    {"name": "Ventura", "state": "CA", "country": "US", "weight": 107797},
     {"name": "Pueblo", "state": "CO", "country": "US", "weight": 107237},
     {"name": "Pearland", "state": "TX", "country": "US", "weight": 93249},
     {"name": "Waterbury", "state": "CT", "country": "US", "weight": 110087},
