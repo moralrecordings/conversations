@@ -14,10 +14,11 @@ var forms = {
     // Message types and subtypes
     types: [
         { id: 'blank', name: '----', visibleLevel: 0 },
-        { id: 'compliment', name: 'Compliment', visibleLevel: 0, subtypeName: 'Source', subtypes: [
+        { id: 'compliment', name: 'Feedback', visibleLevel: 0, subtypeName: 'Source', subtypes: [
             { id: 'blank', name: '----', visibleLevel: 0 },
             { id: 'experience', name: 'Good experience', visibleLevel: 0 },
             { id: 'advertising', name: 'Advertising campaign', visibleLevel: 0 },
+            { id: 'brandConfusion', name: 'Brand confusion', visibleLevel: 4 },
         ]},
         { id: 'issue', name: 'Product issue', visibleLevel: 0, subtypeName: 'Issue type', subtypes: [
             { id: 'blank', name: '----', visibleLevel: 0 },
@@ -55,18 +56,34 @@ var forms = {
 var messageTypes = {
     'ks_experience': { account: 'KingsleySnacks', type: 'compliment', subtype: 'experience' }, 
     'ks_advertising': { account: 'KingsleySnacks', type: 'compliment', subtype: 'advertising' }, 
+    'cj_experience': { account: 'CapnJackFoods', type: 'compliment', subtype: 'experience' }, 
+    'cj_advertising': { account: 'CapnJackFoods', type: 'compliment', subtype: 'advertising' }, 
+
+
+
     'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject' },
     'ks_foreignLegal': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
     'ks_empty': { account: 'KingsleySnacks', type: 'issue', subtype: 'emptyPackaging' },
     'ks_spoil': { account: 'KingsleySnacks', type: 'issue', subtype: 'spoilage' },
     'ks_misshapen': { account: 'KingsleySnacks', type: 'issue', subtype: 'misshapen' },
+    
+    'cj_foreign': { account: 'CapnJackFoods', type: 'issue', subtype: 'foreignObject' },
+    'cj_foreignLegal': { account: 'CapnJackFoods', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
+    'cj_empty': { account: 'CapnJackFoods', type: 'issue', subtype: 'emptyPackaging' },
+    'cj_spoil': { account: 'CapnJackFoods', type: 'issue', subtype: 'spoilage' },
+    'cj_misshapen': { account: 'CapnJackFoods', type: 'issue', subtype: 'misshapen' },
+
 };
 
 // reply with the first response type in the list that matches all of the criteria
 var responses = [
+    {type: 'beaufort_reply', match: {type: 'compliment', subtype: 'brandConfusion'}},
     {type: 'ks_compliment_reply', match: {account: 'KingsleySnacks', type: 'compliment'}},
     {type: 'ks_issue_reply', match: {account: 'KingsleySnacks', type: 'issue'}},
+    {type: 'cj_compliment_reply', match: {account: 'CapnJackFoods', type: 'compliment'}},
     {type: 'cj_issue_reply', match: {account: 'CapnJackFoods', type: 'issue'}},
+    {type: 'abi_compliment_reply', match: {account: 'AlliedBrandsInc', type: 'compliment'}},
+    {type: 'abi_issue_reply', match: {account: 'AlliedBrandsInc', type: 'issue'}},
     {type: 'generic_reply', match: {}},
 ];
 
@@ -77,9 +94,9 @@ var timesheets = [
     { date: '2011/11/13', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
     { date: '2011/11/20', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,2,1,0,0] },
     { date: '2011/11/27', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
-    { date: '2011/11/06', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
-    { date: '2011/11/06', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
-    { date: '2011/11/06', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/12/04', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/12/11', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/12/18', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
 ];
 
 
@@ -134,23 +151,37 @@ var levels = [
             {
                 endMark: 90, periodMin: 5.0, periodMax: 10.0,
                 grammar: [
-                    { weight: 50, type: 'ks_foreign' },
+                    { weight: 30, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
                     { weight: 10, type: 'ks_misshapen' },
                     { weight: 10, type: 'ks_experience' },
-                    { weight: 10, type: 'ks_advertising' },
+                    { weight: 5, type: 'ks_advertising' },
+                    { weight: 30, type: 'cj_foreign' },
+                    { weight: 10, type: 'cj_spoil' },
+                    { weight: 10, type: 'cj_empty' },
+                    { weight: 10, type: 'cj_misshapen' },
+                    { weight: 10, type: 'cj_experience' },
+                    { weight: 5, type: 'cj_advertising' },
+
                 ]
             },
             {   
                 endMark: 120, periodMin: 10.0, periodMax: 25.0,
                 grammar: [
-                    { weight: 50, type: 'ks_foreign' },
+                    { weight: 30, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
                     { weight: 10, type: 'ks_misshapen' },
                     { weight: 10, type: 'ks_experience' },
-                    { weight: 10, type: 'ks_advertising' },
+                    { weight: 5, type: 'ks_advertising' },
+                    { weight: 30, type: 'cj_foreign' },
+                    { weight: 10, type: 'cj_spoil' },
+                    { weight: 10, type: 'cj_empty' },
+                    { weight: 10, type: 'cj_misshapen' },
+                    { weight: 10, type: 'cj_experience' },
+                    { weight: 5, type: 'cj_advertising' },
+
                 ]
             }
         ]

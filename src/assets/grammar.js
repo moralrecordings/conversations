@@ -110,9 +110,9 @@ export default {
     
     "big": ["large ", "gigantic ", "great big fucking ", "largeass ", "big ", "bigass ", "goddamn ", "huge ", "enormous ", "shitting great ", "fucking ", "", "", "", ""],
     
-    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "very disappointed", "really disappointed", "disappointed", "really sad", "very sad", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "I feel sick", "I feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a good supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this", "this shit is unacceptable", "this is unacceptable", "this is fucking dangerous" ],
+    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "very disappointed", "really disappointed", "disappointed", "really sad", "very sad", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "I feel sick", "I feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a good supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this", "this shit is unacceptable", "this is unacceptable", "this is fucking dangerous", "this is not a hoax" ],
 
-    "litigiousRemark": ["see you in court", "SEE YOU IN COURT", "you'll hear from #pTheir# lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you better pay #pTheir# medical bills", "#pThey# chipped a tooth", "#pThey# is bleeding everywhere", "#pThey# cracked #pTheir# tooth", "#pThey# can't stop vomiting", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney now", "anyone know a good lawyer", "#pThey# almost died"],
+    "litigiousRemark": ["see you in court", "SEE YOU IN COURT", "you'll hear from #pTheir# lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you better pay #pTheir# medical bills", "#pThey# chipped a tooth", "there's blood everywhere", "#pThey# cracked #pTheir# tooth", "#pThey# can't stop vomiting", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney now", "anyone know a good lawyer", "#pThey# almost died"],
     
     "coda": [" fml", " ffs", " you dicks", " you fuckers", " you bastards", " FML", " FFS", " jesus", " JFC", " sigh", " smh", " don't @ me", "", "", "", "", "", "", "", "", "", "", "", ""],
 
@@ -221,7 +221,14 @@ export default {
 
     // misshapen types
     "shape": ["dead worm", "turd", "tumor", "blob", "mass", "morass", "lump", "brick", "clump", "slab"],
-    "misshapenMessage": ["@#account# wah wah wah my food was shaped weird"],
+    "misshapenDiscovery": [
+        "when I opened this #productDesc# everything had solidified into a big #shape#",
+        "pretty sure this #productDesc# isn't meant to be a congealed #shape#",
+    ],
+    
+    "misshapenMessage": [
+        "@#account# #misshapenDsicovery#", "#sadEmojiSeq# @#account# #misshapenDiscovery#", "@#account# #sadEmojiSeq# #misshapenDiscovery#"
+    ],
     
     // experiences
     "experience": [
@@ -239,6 +246,10 @@ export default {
         "this @#account# #productDesc# is too good for this world",
         "@#account# this is the best #productDesc# ever, I need more",
         "@#account# real talk did you put heroin in the #productSingular# recipe, because this is addictive af",
+        "shoutout to @#account# to helping me stay motivated during finals week",
+        "I'm trying to cut down on snacking at the office, god damn you @#account#",
+        "@#account# thank you for creating the greatest snack food ever!",
+        "@#account# just wanted to let you guys know you're doing an outstanding job",
     ],
 
     // advertising
@@ -274,18 +285,38 @@ export default {
         "[product:Caramellograms][productSingular:caramel][productDesc:bag of Caramellograms][package:wrapper]", 
         "[product:Caramellograms][productSingular:caramel][productDesc:box of Caramellograms][package:box]", 
     ],
-    
+    "prod_sheets": [
+        "[product:fruit sheets][productSingular:fruit sheet][productDesc:pack of fruit sheets][package:wrapper]",
+        "[product:Fruit Sheets][productSingular:Fruit Sheet][productDesc:pack of Fruit Sheets][package:wrapper]",
+        "[product:Fruit Sheets][productSingular:Fruit Sheet][productDesc:Fruit Sheets pack][package:wrapper]",
+    ],
+    "prod_poppers": [
+        "[product:Salted Peanut Poppers][productSingular:popper][productDesc:bag of Salted Peanut Poppers][package:wrapper]",
+        "[product:peanut poppers][productSingular:popper][productDesc:bag of peanut poppers][package:wrapper]",
+    ],
+    "prod_loaf": [
+        "[product:Energy Loaf][productSingular:Loaf][productDesc:Energy Loaf][package:wrapper]",
+        "[product:energy loaf][productSingular:loaf][productDesc:energy loaf][package:wrapper]",
+    ],
+
 
     // crappy product weighting
     "ks_prod": ["#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", "#prod_chocolate#", 
                 "#prod_pebbles#", "#prod_pebbles#", "#prod_pebbles#", 
                 "#prod_caramel#", "#prod_caramel#", "#prod_caramel#",
     ],
+    "cj_prod": ["#prod_sheets#","#prod_sheets#", 
+                "#prod_poppers#", "#prod_poppers#", "#prod_poppers#", "#prod_poppers#",
+                "#prod_loaf#", "#prod_loaf#", "#prod_loaf#", "#prod_loaf#",
+    ],
 
 
-    // happy tweet weighting
+    // happy tweet generators
     "ks_advertising": ["[account:KingsleySnacks]#ks_prod##advertising#"],
     "ks_experience": ["[account:KingsleySnacks]#ks_prod##experience#"],
+
+    "cj_advertising": ["[account:CapnJackFoods]#cj_prod##advertising#"],
+    "cj_experience": ["[account:CapnJackFoods]#cj_prod##experience#"],
 
 
     // furious tweet generators
@@ -294,13 +325,23 @@ export default {
     "ks_empty": ["[account:KingsleySnacks]#ks_prod##emptyMessage#"],
     "ks_misshapen": ["[account:KingsleySnacks]#ks_prod##misshapenMessage#"],
 
+    "cj_foreign": ["[account:CapnJackFoods]#cj_prod##foreignMessage#"],
+    "cj_spoil": ["[account:CapnJackFoods]#cj_prod##spoilMessage#"],
+    "cj_empty": ["[account:CapnJackFoods]#cj_prod##emptyMessage#"],
+    "cj_misshapen": ["[account:CapnJackFoods]#cj_prod##misshapenMessage#"],
 
+
+    // soporific response generators
     "ks_compliment_reply": ["we're honored to have a fan like you on Team Kingsley!"],
     "ks_issue_reply": ["Hi, we\'re sorry for your experience but thank you for letting us know, please call 570-330-3000 to discuss"],
 
+    "cj_compliment_reply": ["Ahoy there! Proud to be havin' ye aboard, matey"],
     "cj_issue_reply": ["Aye, very sorry ta be hearin' yer snack weren't ship-shape. Please be callin' 570-330-3000 t' parley about it"],
 
-    "generic_reply": ["I care so little have this generic reply"],
+    "abi_compliment_reply": ["Thanks for your feedback! We will be sure to pass your words along to the appropriate team, have a great day!"],
+    "abi_issue_reply": ["We're sorry to hear about that, please call us on 570-330-3000 so we can learn more"],
+    "beaufort_reply": ["As of September ownership of Healthland Farms has transferred to Beaufort International, for customer service enquiries please contact @BeaufortIntl"],
 
-    "abi_beaufort": ["As of September ownership of Healthland Farms has transferred to Beaufort International, for customer service enquiries please contact @BeaufortIntl"]
+    "generic_reply": ["I don't know if I can help you with that, sorry!"],
+
 };

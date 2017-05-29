@@ -13,8 +13,8 @@
             <mr-messages-app v-if="tutorialMessage" v-bind:account="account" v-bind:message="tutorialMessage" v-bind:level="level" v-on:submitMessage="submitTutorialMessage"  v-on:close="closeTutorialMessageWindow" />
             <!-- warning window -->
             <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
-            <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-if="showFail"/>
-            <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-bind:level="level" v-if="showSuccess"/>
+            <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-if="showFail" v-on:logout="logout"/>
+            <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-bind:level="level" v-if="showSuccess" v-on:nextLevel="nextLevel"/>
         </div>
         <div class="taskbar">
             <button v-on:click="showEmailWindow" title="Email">
@@ -28,6 +28,7 @@
                 </svg>
             </button>
             <button v-on:click="spawnMessage">DEBUG - Spawn angry tweet</button>
+            <button v-on:click="showSuccessWindow">DEBUG - Win</button>
         </div>
     </div>
 </template>
@@ -865,6 +866,12 @@ export default {
             console.log(ev);
             this.theme = ev.theme;
             this.account = ev.id;
+        },
+        logout: function (ev) {
+
+        },
+        nextLevel: function (ev) {
+
         },
         reset: function (levelID) {
             var vm = this;

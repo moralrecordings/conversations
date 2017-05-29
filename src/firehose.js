@@ -2,6 +2,10 @@ import tracery from 'tracery-grammar';
 import grammarData from './assets/grammar';
 import traffic from './assets/traffic';
 
+// lets bloat this up some more by including an enormous name list!
+import firstNames from 'random-name/first-names.json';
+import lastNames from 'random-name/names.json';
+
 
 var getRandomChoice = function(table) {
     var source = table;
@@ -92,8 +96,11 @@ export default {
         return locale.name + ', ' + locale.state;
     },
     getUser: function () {
-        // TODO: user generator
-        return 'ToolbeltKiller';
+        // get a random first and last name as a basis
+        var first = firstNames[Math.floor(Math.random()*firstNames.length)];
+        var last = lastNames[Math.floor(Math.random()*lastNames.length)];
+        
+        return first+last;
     },
     generateResponse: function (params) {
         var responseType = traffic.responses.find(function (el) {
