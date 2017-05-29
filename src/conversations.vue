@@ -30,6 +30,8 @@
             <button v-on:click="spawnMessage">DEBUG - Spawn angry tweet</button>
             <button v-on:click="showSuccessWindow">DEBUG - Win</button>
         </div>
+        <div class="fader" v-bind:class="{ active: fadeout }">
+        </div>
     </div>
 </template>
 
@@ -625,6 +627,9 @@ var initialData = function () {
         messageWindows: [
         ],
 
+        // fader state
+        fadeout: false,
+
         level: 0,
 
         score: {open: 0, rslv: 0, warn: 0},
@@ -868,10 +873,21 @@ export default {
             this.account = ev.id;
         },
         logout: function (ev) {
-
+            var vm = this;
+            this.fadeout = true;
+            setTimeout(function () {
+                vm.$router.push('/');
+            }, 1200);
         },
         nextLevel: function (ev) {
-
+            var vm = this;
+            this.fadeout = true;
+            if (vm.level+1 >= traffic.levels.length) {
+                vm.logout();
+            }
+            setTimeout(function () {
+                vm.$router.push('/session/'+traffic.levels[vm.level+1].name);
+            }, 1200);
         },
         reset: function (levelID) {
             var vm = this;
@@ -905,7 +921,7 @@ export default {
     },
     beforeRouteUpdate: function (to, from, next) {
         var levelID = firehose.getLevelByName(to.params.session_id);
-        if (levelID < 0) {
+        if ((levelID < 0) || (levelID > this.$store.state.savedLevel)) {
             next('/');
             return;
         }

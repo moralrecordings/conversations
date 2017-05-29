@@ -227,7 +227,7 @@ export default {
     ],
     
     "misshapenMessage": [
-        "@#account# #misshapenDsicovery#", "#sadEmojiSeq# @#account# #misshapenDiscovery#", "@#account# #sadEmojiSeq# #misshapenDiscovery#"
+        "@#account# #misshapenDiscovery#", "#sadEmojiSeq# @#account# #misshapenDiscovery#", "@#account# #sadEmojiSeq# #misshapenDiscovery#"
     ],
     
     // experiences
