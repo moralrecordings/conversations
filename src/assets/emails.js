@@ -40,7 +40,7 @@ export default [
         "content": `
             <p>All,</p>
             <p>Welcome to the Allied Brands family! It's good to have you on board.</p>\n<p>If you aren't fully across them yet, now would be a good time to revisit the Corporate Mission Statement and Core Company Values. As a steward of Allied Brands Inc's social media presence, <b>you</b> are the company's public representative and a first point of contact for many of our customers.</p>
-            <p>For your first week of on-the-job training you will be given access to one social media feed: the Kingsley® Snacks promotional account (<b>@kingsleysnacks</b>). Please engage with as many Kingsley® Snacks customers as possible; whether it be to refer them to our amazing customer service team, or just to compliment them on their great taste in treats!</p>
+            <p>For your first week of on-the-job training you will be given access to one social media feed: the Kingsley® Snacks promotional account (<b>@KingsleySnacks</b>). Please engage with as many Kingsley® Snacks customers as possible; whether it be to refer them to our amazing customer service team, or just to compliment them on their great taste in treats!</p>
             <p>Some tips to help you get started:</p>
             <ul>
                 <li>All interaction with customers is handled through our form-based ticketing system, Alwynsoft IssueMagic. Tickets in IssueMagic are drawn from a number of social media sources, including @ mentions, direct messages and mentions of specific keywords.</li>
@@ -355,5 +355,28 @@ export default [
 
         `
     },
+
+    {
+        "visibleLevel": 8,
+        "date": moment("20111226", "YYYYMMDD"),
+        "sender": "Cody Briggs",
+        "senderMail": "cody.briggs@alliedbrandsinc",
+        "recipient": "PR - All Users",
+        "recipientMail": "pr_all@alliedbrandsinc",
+        "subject": "URGENT - Lockdown on Excelsior communications",
+        "content": `
+            <p>All,</p>
+            
+			<p>Allied Brands has retained the services of a reknowned reputation management firm, Siegfried-Blumenthal LLC, to address the small but vocal pocket of consumer animosity towards Excelsior Pharmaceuticals currently playing out in the media. As part of the process of brand repair, this week there is to be a <b>complete lockdown</b> on communications to the press and social media channels, to allow the story to wind down and give the consultants time to remove material which could be seen as objectionable in the current context.</p>
+			
+			<p>By order of the CEO, <b>under no circumstances should the @excelsior_rx account be used</b> during this time. Any employee who breaches this rule will leave us no option but to recommend their <b>immediate termination</b>.</p>
+
+			<p>Best wishes for the holiday season.</p>
+
+            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+		`
+    },
+
+
 
 ];
