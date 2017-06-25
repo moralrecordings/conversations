@@ -3,7 +3,7 @@
         <template v-for="asset in svgAssets">
             <div style="display: none" v-html="asset"/>
         </template>
-        <div class="desktop"> 
+        <div class="desktop" v-bind:class="'bg-'+level"> 
             <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y" v-bind:level="level" v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-bind:level="level" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-on:startShift="start" v-if="showIssues" />
@@ -82,6 +82,7 @@ body {
 .desktop {
     flex: 1 0 auto;
     border-bottom: 1px solid black;
+    background-repeat: repeat;
 }
 
 // taskbar
@@ -433,6 +434,20 @@ input[type=radio]:checked + .picker {
 @include theme_factory( "theme-excelsior", #eeeeec, black, white, #cc0000, #d7cfcf, #666666 ); 
 
 
+// classes for background patterns!
+.bg-0 { background-image: url('assets/bg_0.svg'); }
+.bg-1 { background-image: url('assets/bg_1.svg'); }
+.bg-2 { background-image: url('assets/bg_2.svg'); }
+.bg-3 { background-image: url('assets/bg_3.svg'); }
+.bg-4 { background-image: url('assets/bg_4.svg'); }
+.bg-5 { background-image: url('assets/bg_5.svg'); }
+.bg-6 { background-image: url('assets/bg_6.svg'); }
+.bg-7 { background-image: url('assets/bg_7.svg'); }
+.bg-8 { background-image: url('assets/bg_8.svg'); }
+.bg-9 { background-image: url('assets/bg_9.svg'); }
+.bg-10 { background-image: url('assets/bg_10.svg'); }
+.bg-11 { background-image: url('assets/bg_11.svg'); }
+
 
 
 </style>
@@ -716,7 +731,8 @@ export default {
             setTimeout(tutorial.glue, 250);
         },
         spawnTutorialMessage: function (ev) {
-            audioAssets.messageGet.play();                        
+            audioAssets.messageGet.currentTime = 0;
+            audioAssets.messageGet.play();
             var xOffset = 32;
             var xRange = $('.desktop').width() - 64 - 400;
             var yOffset = 32;
@@ -792,7 +808,8 @@ export default {
                 this.timer.duration-this.timer.count, 'seconds'
             ).format('m:ss', {trim: false});
             if (this.timer.duration - this.timer.count < 15) {
-                audioAssets['tick'].play();
+                audioAssets.tick.currentTime = 0;
+                audioAssets.tick.play();
             }
             if (this.timer.count >= this.timer.duration) {
                 console.log('TIME OVER!');
@@ -816,7 +833,8 @@ export default {
             this.timer.nextMessage = setTimeout(this._trafficCB, Math.floor(1000*firehose.getPeriod(this.level, this.timer.count)));
         },
         spawnMessage: function() {
-            audioAssets.messageGet.play();            
+            audioAssets.messageGet.currentTime = 0;
+            audioAssets.messageGet.play();
             var xOffset = 32;
             var xRange = $('.desktop').width() - 64 - 400;
             var yOffset = 32;
@@ -843,6 +861,7 @@ export default {
         },
 
         submitMessage: function (ev) {
+            audioAssets.messageSend.currentTime = 0;
             audioAssets.messageSend.play();            
             var vm = this;
             console.log('submitMessage');
