@@ -13,6 +13,7 @@
             <mr-messages-app v-if="tutorialMessage" v-bind:account="account" v-bind:message="tutorialMessage" v-bind:level="level" v-on:submitMessage="submitTutorialMessage"  v-on:close="closeTutorialMessageWindow" />
             <!-- warning window -->
             <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
+            <mr-settings-app v-bind:xPos="settingsPos.x" v-bind:yPos="settingsPos.y" v-if="showSettings" v-on:close="closeSettingsWindow" v-on:logout="logout" v-on:debugWin="showSuccessWindow" v-on:debugSpawn="spawnMessage"/>
             <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-if="showFail" v-on:logout="logout"/>
             <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-bind:level="level" v-if="showSuccess" v-on:nextLevel="nextLevel"/>
         </div>
@@ -29,8 +30,12 @@
                 </svg>
                 <span>IssueMagic</span>
             </button>
-            <button v-on:click="spawnMessage">DEBUG - Spawn angry tweet</button>
-            <button v-on:click="showSuccessWindow">DEBUG - Win</button>
+            <button v-on:click="showSettingsWindow" title="Settings" v-bind:class="{ throb: flashSettings }">
+                <svg width="32" height="32" style="margin-left: 8px;" >
+                    <use x="0" y="0"  transform="scale(0.5)" xlink:href="#settingsIcon"/>
+                </svg>
+                <span>Settings</span>
+            </button>
         </div>
         <div class="fader" v-bind:class="{ active: fadeout }">
         </div>
@@ -476,6 +481,7 @@ import email from './components/email';
 import messages from './components/messages';
 import accounts from './components/accounts';
 import activity from './components/activity';
+import settings from './components/settings';
 import success from './components/success';
 import fail from './components/fail';
 import warning from './components/warning';
@@ -492,6 +498,7 @@ var svgAssets = [
     require('assets/egg.rawsvg'),
     require('assets/email.rawsvg'),
     require('assets/activity.rawsvg'),
+    require('assets/settings.rawsvg'),
 ];
 var audioAssets = {
     'tick': new Audio(require('assets/tick.mp3')),
@@ -630,6 +637,7 @@ var initialData = function () {
         showEmail: false,
         showIssues: false,
         showWarning: false,
+        showSettings: false,
         showFail: false,
         showSuccess: false,
 
@@ -648,6 +656,7 @@ var initialData = function () {
         failPos: {x: 0, y: 0},
         successPos: {x: 0, y: 0},
         emailPos: {x: 0, y: 0, w: 1000, h: 600},
+        settingsPos: {x: 0, y: 0},
 
         // messages produced in current session
         messages: [
@@ -699,6 +708,10 @@ export default {
             console.log('closeWarningWindow');
             this.showWarning = false;
         }, 200),
+        closeSettingsWindow: debounce(function(ev) {
+            console.log('closeSettingsWindow');
+            this.showSettings = false;
+        }, 200),
         showEmailWindow: function() {
             console.log('showEmailWindow');
             this.emailPos.x = ($('.desktop').width() - this.emailPos.w)/2;
@@ -719,6 +732,12 @@ export default {
             this.warningPos.x = $('.desktop').width() - 420 -16;
             this.warningPos.y = 16;
             this.showWarning = true;
+        },
+        showSettingsWindow: function() {
+            console.log('showSettingsWindow');
+            this.settingsPos.x = $('.desktop').width() - 420 -16;
+            this.settingsPos.y = 16;
+            this.showSettings = true;
         },
         showFailWindow: function () {
             this.failPos.x = ($('.desktop').width() - 800)/2;
@@ -966,6 +985,7 @@ export default {
         'mr-messages-app': messages,
         'mr-accounts-app': accounts,
         'mr-activity-app': activity,
+        'mr-settings-app': settings,
         'mr-success-app': success,
         'mr-fail-app': fail,
         'mr-warning-app': warning,
