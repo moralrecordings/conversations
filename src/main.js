@@ -29,7 +29,7 @@ const router = new VueRouter({
 const store = new Vuex.Store({
     state: {
         level: 0,
-        savedLevel: 1
+        savedLevel: 12
     },
     plugins: [createPersistedState({
         key: 'mr_conversations',

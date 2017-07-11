@@ -12,7 +12,7 @@
                 <tbody>
                     <tr v-for="(times, index) in timesheets.slice(0, level+1)" v-bind:class="{active: level == index}" style="text-align: center;">
                         <td style="text-align: left;">{{ times.date }}</td>
-                        <td v-for="n in 7">{{ times.hours[n-1] }} <span v-if="times.overtime[n-1]">{{ times.overtime[n-1] }}</span></td>
+                        <td v-for="n in 7">{{ times.hours[n-1] }}<span v-if="times.overtime[n-1]" class="overtime">+{{ times.overtime[n-1] }}</span></td>
                     </tr>
                     
                     <tr><td>Total hours:</td><td colspan="7">{{ timesheets[level].hours.reduce(function (a, b) { return a+b; }) }}</td></tr>
@@ -28,6 +28,9 @@
 
 <style scoped>
 
+.overtime {
+    color: red;
+}
 
 .timesheet {
     font-size: 18px;

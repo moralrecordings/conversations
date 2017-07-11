@@ -56,7 +56,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         query: {
-          limit: 10000,
+          limit: 100000,
           name: utils.assetsPath('img/[name].[ext]')
         }
       },
@@ -68,7 +68,7 @@ module.exports = {
         test: /\.(wav|ogg|mp3)(\?.*)?$/,
         loader: 'file-loader',
         query: {
-          limit: 10000,
+          limit: 100000,
           name: utils.assetsPath('audio/[name].[ext]')
         }
       },

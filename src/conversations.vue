@@ -17,15 +17,17 @@
             <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-bind:level="level" v-if="showSuccess" v-on:nextLevel="nextLevel"/>
         </div>
         <div class="taskbar">
-            <button v-on:click="showEmailWindow" title="Email">
-                <svg width="64" height="64" v-bind:class="{ throb: flashEmail }">
-                    <use x="0" y="0" xlink:href="#emailIcon"/>
+            <button v-on:click="showEmailWindow" title="Email" v-bind:class="{ throb: flashEmail }">
+                <svg width="32" height="32" style="margin-left: 20px;">
+                    <use x="0" y="0" transform="scale(0.5)" xlink:href="#emailIcon"/>
                 </svg>
+                <span>ExpressMail</span>
             </button>
-            <button v-on:click="showIssueWindow" title="IssueMagic">
-                <svg width="64" height="64" v-bind:class="{ throb: flashIssues }">
-                    <use x="0" y="0" xlink:href="#activityIcon"/>
+            <button v-on:click="showIssueWindow" title="IssueMagic" v-bind:class="{ throb: flashIssues }">
+                <svg width="32" height="32" style="margin-left: 18px;" >
+                    <use x="0" y="0"  transform="scale(0.5)" xlink:href="#activityIcon"/>
                 </svg>
+                <span>IssueMagic</span>
             </button>
             <button v-on:click="spawnMessage">DEBUG - Spawn angry tweet</button>
             <button v-on:click="showSuccessWindow">DEBUG - Win</button>
@@ -88,14 +90,13 @@ body {
 // taskbar
 .taskbar {
     padding: 4px;
-    height: 66px;
 }
 
 .taskbar button {
     background: transparent;
     border: 1px solid transparent;
     border-radius: 4px;
-    padding: 0;
+    padding: 4px;
     color: inherit;
 }
 
@@ -129,6 +130,7 @@ body {
 
 // close button on the title bar
 .titlebar button {
+    text-align: center;
     font-weight: bold;
     font-size: 16px;
     background: transparent;
@@ -382,12 +384,15 @@ input[type=radio]:checked + .picker {
     @keyframes #{$class}-svgthrob {
         0% {
             fill: $active_text;
+            color: $active_text;
         }
         50% {
             fill: lighten($active, 25%);
+            color: lighten($active, 25%);
         }
         100% {
             fill: $active_text;
+            color: $active_text;
         }
     }
 
@@ -396,13 +401,22 @@ input[type=radio]:checked + .picker {
         fill: mix($active_text, lighten($active, 25%), 50%);
     }
 
-    .#{$class} .taskbar svg.throb {
+    .#{$class} .taskbar .throb {
+        font-weight: bold;
+    }
+    
+    .#{$class} .taskbar .throb svg, .#{$class} .taskbar .throb {
         animation-name: #{$class}-svgthrob;
         animation-duration: 2s;
         animation-iteration-count: infinite;
     }
 
-    .#{$class} .taskbar button:hover svg, .#{$class} .taskbar button:hover svg.throb {
+    .#{$class} .taskbar button:hover, .#{$class} .taskbar button:hover .throb,  {
+        animation: none;
+        color: $active_text;
+    }
+
+    .#{$class} .taskbar button:hover svg, .#{$class} .taskbar button:hover .throb svg,  {
         animation: none;
         fill: $active_text;
     }

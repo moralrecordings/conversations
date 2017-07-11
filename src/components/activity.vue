@@ -6,7 +6,7 @@
         <div class="body-container"><div class="body">
             <button class="form" v-bind:disabled="!startActive" v-on:click="startShift">Begin shift</button>
             <div class="head">Time remaining:</div>
-            <div class="sub">{{ timer.clock }}</div>
+            <div class="timer">{{ timer.clock }}</div>
             <div class="head">
                 <div class="quart">Open</div><div class="quart">Rslv.</div><div class="quart">Warn</div><div class="quart">Total</div>
             </div>
@@ -44,6 +44,12 @@
 
 .sub {
     font-size: 16px;
+}
+
+.timer {
+    font-size: 32px;
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
 }
 
 .half {

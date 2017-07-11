@@ -132,7 +132,7 @@ export default {
         "#defaultPerson#there's literally #bigForeignObject.a# in #pronoun# #productDesc#",
         "#defaultPerson##pronoun# #productDesc# literally has #bigForeignObject.a# in it",
         "#defaultPerson#wondering why there's #bigForeignObject.a# in #pronoun# #productDesc#",
-        "#defaultPerson##pName# was enjoying this #productDesc# until I found a #bigForeignObject.a# in it",
+        "#defaultPerson##pName# was enjoying this #productDesc# until I found #bigForeignObject.a# in it",
         "#defaultPerson#wondering why #pronoun# #productDesc# has #bigForeignObject.a# in it",
         "#defaultPerson#can't believe there's #bigForeignObject.a# in #pronoun# #productDesc#",
         "#defaultPerson#can't believe #pronoun# #productDesc# has #bigForeignObject.a# in it",

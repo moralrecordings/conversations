@@ -67,7 +67,8 @@ export default [
         "subject": "URGENT - New business rule",
         "content": `
             <p>All,</p>
-            <p>Following a "lessons learned" analysis of last month's surprise loss in court, we are rolling out a sweeping change to our business procedures. In summary: a customer incident was reported to the company through social media and a response issued, but was not escalated to the Customer Settlement Response team in time. As a result, other related externalities convinced the affected customer to file suit against the company. We were unlucky that this individual was unusually well resourced to bring about a case.</p>
+            <p>Following a "lessons learned" analysis of last month's surprise loss in court, we are rolling out a sweeping change to our business procedures. </p>
+            <p>In summary: a customer incident was reported to the company through social media and a response issued, but was not escalated to the Customer Settlement Response team in time. As a result, other related externalities convinced the affected customer to file suit against the company. We were unlucky that this individual was unusually well resourced to bring about a case.</p>
             <p>To prevent the same terrible confluence of events from happening again, we have added a new marker to the ticketing system. In future, please mark any messages wherein a customer makes specific legal demands/threats, or makes allegations of physical harm caused by an Allied Brands product, with the <b>"Litigious"</b> flag. These threads will be monitored by CSR for possible early settlement talks.</p>
 
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
