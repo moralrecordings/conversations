@@ -23,7 +23,7 @@ export default [
                     <li>An inherent understanding of popular-culture and current trends is a must</li>
                     <li>Strong literacy and copy writing skills</li>
                 </ul>
-                <p>This is a casual position, with a two-month internship period to provide on-the-job training and to confirm your efficacy for the role, and is a fantastic opportunity for a social media lover to advance their career!</p>
+                <p>This is a contract position, with a three-month internship period to provide on-the-job training and to confirm your efficacy for the role, and is a fantastic opportunity for a social media lover to advance their career!</p>
             </div>
             <h4>To apply for this job, visit EasyJob and sign into your account, then select it from the My Offers screen.</h4>
             <p><small>© 2011 EasyJob Ltd. This message was sent to againstpollution@ichiromail because you registered for job search notifications from EasyJob Careers.</small></p>

@@ -18,24 +18,29 @@
             <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-bind:level="level" v-if="showSuccess" v-on:nextLevel="nextLevel"/>
         </div>
         <div class="taskbar">
-            <button v-on:click="showEmailWindow" title="Email" v-bind:class="{ throb: flashEmail }">
-                <svg width="32" height="32" style="margin-left: 20px;">
-                    <use x="0" y="0" transform="scale(0.5)" xlink:href="#emailIcon"/>
-                </svg>
-                <span>ExpressMail</span>
-            </button>
-            <button v-on:click="showIssueWindow" title="IssueMagic" v-bind:class="{ throb: flashIssues }">
-                <svg width="32" height="32" style="margin-left: 18px;" >
-                    <use x="0" y="0"  transform="scale(0.5)" xlink:href="#activityIcon"/>
-                </svg>
-                <span>IssueMagic</span>
-            </button>
+            <span class="progs">
+                <button v-on:click="showEmailWindow" title="Email" v-bind:class="{ throb: flashEmail }">
+                    <svg width="32" height="32" style="margin-left: 20px;">
+                        <use x="0" y="0" transform="scale(0.5)" xlink:href="#emailIcon"/>
+                    </svg>
+                    <span>ExpressMail</span>
+                </button>
+                <button v-on:click="showIssueWindow" title="IssueMagic" v-bind:class="{ throb: flashIssues }">
+                    <svg width="32" height="32" style="margin-left: 18px;" >
+                        <use x="0" y="0"  transform="scale(0.5)" xlink:href="#activityIcon"/>
+                    </svg>
+                    <span>IssueMagic</span>
+                </button>
+            </span>
             <button v-on:click="showSettingsWindow" title="Settings" v-bind:class="{ throb: flashSettings }">
                 <svg width="32" height="32" style="margin-left: 8px;" >
                     <use x="0" y="0"  transform="scale(0.5)" xlink:href="#settingsIcon"/>
                 </svg>
                 <span>Settings</span>
             </button>
+            <div class="clock">
+                <span style="font-size: 1.5em;">{{ clock.format('h:mm A') }}</span><br/>{{ clock.format('Do MMM YYYY') }}
+            </div>
         </div>
         <div class="fader" v-bind:class="{ active: fadeout }">
         </div>
@@ -95,6 +100,19 @@ body {
 // taskbar
 .taskbar {
     padding: 4px;
+    display: flex;
+}
+
+.taskbar .progs {
+    flex: 1;
+}
+
+.taskbar .clock {
+    text-align: center;
+    width: 120px;
+    margin-top: 0.5em;
+    cursor: default;
+    user-select: none;
 }
 
 .taskbar button {
@@ -672,7 +690,8 @@ var initialData = function () {
 
         score: {open: 0, rslv: 0, warn: 0},
         timer: {duration: 0, count: 0, clock: '-:--', interval: null, nextMessage: null},
-        
+        clock: moment(),
+
         maxWarnings: 5,
         resolutionRate: 0.5,
 
@@ -952,10 +971,13 @@ export default {
             vm.level = levelID;
             var level = firehose.getLevel(vm.level);
             if (level.tutorial) {
-                this.tutorialMode = true;
+                vm.tutorialMode = true;
             }
-            this.maxWarnings = level.maxWarnings;
-            this.resolutionRate = level.resolutionRate;
+            vm.maxWarnings = level.maxWarnings;
+            vm.resolutionRate = level.resolutionRate;
+
+            // set fake clock to start of day
+            vm.clock = moment(traffic.timesheets[vm.level].date, 'YYYY/MM/DD').subtract(6, 'days').add(8, 'hours').add(Math.floor(Math.random()*30), 'minutes');
         },
     },
     mounted: function () {

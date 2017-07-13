@@ -62,13 +62,13 @@ var messageTypes = {
 
 
     'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject' },
-    'ks_foreignLegal': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
+    'ks_foreign_lit': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
     'ks_empty': { account: 'KingsleySnacks', type: 'issue', subtype: 'emptyPackaging' },
     'ks_spoil': { account: 'KingsleySnacks', type: 'issue', subtype: 'spoilage' },
     'ks_misshapen': { account: 'KingsleySnacks', type: 'issue', subtype: 'misshapen' },
     
     'cj_foreign': { account: 'CapnJackFoods', type: 'issue', subtype: 'foreignObject' },
-    'cj_foreignLegal': { account: 'CapnJackFoods', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
+    'cj_foreign_lit': { account: 'CapnJackFoods', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
     'cj_empty': { account: 'CapnJackFoods', type: 'issue', subtype: 'emptyPackaging' },
     'cj_spoil': { account: 'CapnJackFoods', type: 'issue', subtype: 'spoilage' },
     'cj_misshapen': { account: 'CapnJackFoods', type: 'issue', subtype: 'misshapen' },
@@ -92,11 +92,15 @@ var responses = [
 var timesheets = [
     { date: '2011/11/06', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
     { date: '2011/11/13', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
-    { date: '2011/11/20', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,2,1,0,0] },
-    { date: '2011/11/27', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
-    { date: '2011/12/04', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/11/20', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/11/27', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,2,1,0,0] },
+    { date: '2011/12/04', hours: [8,8,8,8,8,0,0], overtime: [0,2,0,2,3,0,0] },
     { date: '2011/12/11', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
     { date: '2011/12/18', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2011/12/25', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2012/01/01', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2012/01/08', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2012/01/15', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
 ];
 
 
@@ -151,13 +155,15 @@ var levels = [
             {
                 endMark: 90, periodMin: 5.0, periodMax: 10.0,
                 grammar: [
-                    { weight: 30, type: 'ks_foreign' },
+                    { weight: 20, type: 'ks_foreign' },
+                    { weight: 10, type: 'ks_foreign_lit' },
                     { weight: 10, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
                     { weight: 10, type: 'ks_misshapen' },
                     { weight: 10, type: 'ks_experience' },
                     { weight: 5, type: 'ks_advertising' },
-                    { weight: 30, type: 'cj_foreign' },
+                    { weight: 20, type: 'cj_foreign' },
+                    { weight: 10, type: 'cj_foreign_lit' },
                     { weight: 10, type: 'cj_spoil' },
                     { weight: 10, type: 'cj_empty' },
                     { weight: 10, type: 'cj_misshapen' },
@@ -169,13 +175,15 @@ var levels = [
             {   
                 endMark: 120, periodMin: 10.0, periodMax: 25.0,
                 grammar: [
-                    { weight: 30, type: 'ks_foreign' },
+                    { weight: 20, type: 'ks_foreign' },
+                    { weight: 10, type: 'ks_foreign_lit' },
                     { weight: 10, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
                     { weight: 10, type: 'ks_misshapen' },
                     { weight: 10, type: 'ks_experience' },
                     { weight: 5, type: 'ks_advertising' },
-                    { weight: 30, type: 'cj_foreign' },
+                    { weight: 20, type: 'cj_foreign' },
+                    { weight: 10, type: 'cj_foreign_lit' },
                     { weight: 10, type: 'cj_spoil' },
                     { weight: 10, type: 'cj_empty' },
                     { weight: 10, type: 'cj_misshapen' },

@@ -4,9 +4,9 @@
             <span class="titlebar-text">Message from HR</span>
         </div>
         <div class="body-container"><div class="body">
-            <p>Regretfully, we must inform you that after lengthy discussion management has decided to terminate your internship, effective immediately.</p>
-            <p>The feedback from your supervisor and co-workers has been unanimous in convincing us that you are not an ideal cultural fit for our company.</p>
-            <p>We thank you for the good work you've done for Allied Brands and wish you well on your future career prospects.</p>
+            <p>Regretfully we must inform you that after careful consideration, the department has decided to terminate your internship, effective immediately.</p>
+            <p>The feedback from your supervisor and co-workers has been decisive, and convinced us that you are not an ideal cultural fit for our company.</p>
+            <p>We thank you for the good work you have done for Allied Brands, and wish you well on your future career prospects.</p>
             <button class="form" v-on:click="logout">Log out</button>
         </div></div>
     </div>

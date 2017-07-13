@@ -112,7 +112,7 @@ export default {
     
     "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "very disappointed", "really disappointed", "disappointed", "really sad", "very sad", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "I feel sick", "I feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a good supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this", "this shit is unacceptable", "this is unacceptable", "this is fucking dangerous", "this is not a hoax" ],
 
-    "litigiousRemark": ["see you in court", "SEE YOU IN COURT", "you'll hear from #pTheir# lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you better pay #pTheir# medical bills", "#pThey# chipped a tooth", "there's blood everywhere", "#pThey# cracked #pTheir# tooth", "#pThey# can't stop vomiting", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney now", "anyone know a good lawyer", "#pThey# almost died"],
+    "litigiousRemark": ["see you in court", "SEE YOU IN COURT", "you'll hear from #pTheir# lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you better pay #pTheir# medical bills", "#pThey# chipped a tooth", "now #pTheir# blood is everywhere", "#pThey# cracked #pTheir# tooth", "#pThey# can't stop vomiting", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney now", "anyone know a good lawyer", "#pThey# almost died"],
     
     "coda": [" fml", " ffs", " you dicks", " you fuckers", " you bastards", " FML", " FFS", " jesus", " JFC", " sigh", " smh", " don't @ me", "", "", "", "", "", "", "", "", "", "", "", ""],
 
@@ -149,7 +149,12 @@ export default {
         "[disco:#foreignObjectDiscovery#]@#account# #exclamation.randomUpper(30)# #disco#, #closingRemark##coda#", 
         "[disco:#foreignObjectDiscovery#]@#account# #exclamation.randomUpper(50)##exclaimed# #disco#, #closingRemark##coda#", 
         "[disco:#foreignObjectDiscovery#]#complainEmojiSeq# #closingRemark.randomUpper(30)# @#account# #disco##coda#",
-        "[disco:#foreignObjectDiscovery#]#complainEmojiSeq# @#account# #disco#, #closingRemark.randomUpper(20)# #coda#",
+        "[disco:#foreignObjectDiscovery#]#complainEmojiSeq# @#account# #disco#, #closingRemark.randomUpper(20)##coda#",
+    ],
+    "foreignLitigiousMessage": [
+        "[disco:#foreignObjectDiscovery#]@#account# #exclamation.randomUpper(30)# #disco#, #litigiousRemark##coda#", 
+        "[disco:#foreignObjectDiscovery#]@#account# #exclamation.randomUpper(50)##exclaimed# #disco#, #litigiousRemark##coda#", 
+        "[disco:#foreignObjectDiscovery#]#complainEmojiSeq# @#account# #disco#, #litigiousRemark##coda#",
     ],
 
     
@@ -324,15 +329,18 @@ export default {
     "ks_spoil": ["[account:KingsleySnacks]#ks_prod##spoilMessage#"],
     "ks_empty": ["[account:KingsleySnacks]#ks_prod##emptyMessage#"],
     "ks_misshapen": ["[account:KingsleySnacks]#ks_prod##misshapenMessage#"],
+    "ks_foreign_lit": ["[account:KingsleySnacks]#ks_prod##foreignLitigiousMessage#"],
+
 
     "cj_foreign": ["[account:CapnJackFoods]#cj_prod##foreignMessage#"],
     "cj_spoil": ["[account:CapnJackFoods]#cj_prod##spoilMessage#"],
     "cj_empty": ["[account:CapnJackFoods]#cj_prod##emptyMessage#"],
     "cj_misshapen": ["[account:CapnJackFoods]#cj_prod##misshapenMessage#"],
+    "cj_foreign_lit": ["[account:CapnJackFoods]#cj_prod##foreignLitigiousMessage#"],
 
 
     // soporific response generators
-    "ks_compliment_reply": ["we're honored to have a fan like you on Team Kingsley!"],
+    "ks_compliment_reply": ["we're humbled to have a fan like you on Team Kingsley!"],
     "ks_issue_reply": ["Hi, we\'re sorry for your experience but thank you for letting us know, please call 570-330-3000 to discuss"],
 
     "cj_compliment_reply": ["Ahoy there! Proud to be havin' ye aboard, matey"],
