@@ -13,7 +13,7 @@
             <mr-messages-app v-if="tutorialMessage" v-bind:account="account" v-bind:message="tutorialMessage" v-bind:level="level" v-on:submitMessage="submitTutorialMessage"  v-on:close="closeTutorialMessageWindow" />
             <!-- warning window -->
             <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
-            <mr-settings-app v-bind:xPos="settingsPos.x" v-bind:yPos="settingsPos.y" v-if="showSettings" v-on:close="closeSettingsWindow" v-on:logout="logout" v-on:debugWin="showSuccessWindow" v-on:debugSpawn="spawnMessage"/>
+            <mr-settings-app v-bind:xPos="settingsPos.x" v-bind:yPos="settingsPos.y" v-if="showSettings" v-on:close="closeSettingsWindow" v-on:logout="logout" v-on:debugWin="showSuccessWindow" v-on:debugSpawn="spawnMessage" v-on:debugTest="spawnTest"/>
             <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-if="showFail" v-on:logout="logout"/>
             <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-bind:level="level" v-if="showSuccess" v-on:nextLevel="nextLevel"/>
         </div>
@@ -55,8 +55,12 @@ html, body {
     margin: 0px;
     overflow: hidden;
     font-size: 14px;
-    font-family: "Ubuntu", sans-serif;
     line-height: 1.5em;
+}
+
+// chrome makes arial the default for widgets? whyyyyyy
+html, body, input, textarea, select, button {
+    font-family: "Ubuntu", sans-serif;
 }
 
 // tweak for mobile safari
@@ -883,6 +887,23 @@ export default {
             }
             this.spawnMessage();
             this.timer.nextMessage = setTimeout(this._trafficCB, Math.floor(1000*firehose.getPeriod(this.level, this.timer.count)));
+        },
+
+        spawnTest: function () {
+            var msgId = this.messages.length;
+            this.score.open += 1;
+            this.messages.push({
+                id: msgId,
+                user: firehose.getUser(),
+                loc: firehose.getMessageLocation(),
+                type: 'ks_foreign',
+                body: '@CapnJackFoods 😭😭😭 WHAT IS THIS can\'t believe this bag of peanut poppers has a gigantic SPIDER in it, I expected more you fuckers',
+                created: moment(),
+                eggColour: randomEggColour(),
+                xPos: '400px',
+                yPos: '200px'
+            });
+            this.messageWindows.push(msgId);
         },
         spawnMessage: function() {
             audioAssets.messageGet.currentTime = 0;

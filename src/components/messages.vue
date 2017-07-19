@@ -60,7 +60,7 @@ label {
     height: 2.4375rem;
     margin: 0 0 1rem;
     padding: 0.5rem;
-  
+    font-size: 0.875rem;  
 }
 
 textarea {

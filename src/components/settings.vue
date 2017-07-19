@@ -7,6 +7,7 @@
         <div class="body-container"><div class="body">
             <button class="form" v-on:click="debugSpawn">DEBUG - Spawn angry tweet</button>
             <button class="form" v-on:click="debugWin">DEBUG - Win</button>
+            <button class="form" v-on:click="debugTest">DEBUG - Test</button>
             <button class="form" v-on:click="logout">Logout</button>
         </div></div>
     </div>
@@ -35,6 +36,9 @@ export default {
         close: function () {
             this.closed = true;
             this.$emit('close');
+        },
+        debugTest: function () {
+            this.$emit('debugTest');
         },
         debugSpawn: function () {
             this.$emit('debugSpawn');
