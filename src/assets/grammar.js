@@ -104,9 +104,9 @@ export default {
 
 
     // angry customer dialogue chunks
-    "sadness": ["what gives", "what happened", "kinda disappointing", "was really looking forward to it too", "so hungry", "still hungry", "don't mean to overreact or anything", "a replacement would be nice", "this is subpar", "really", "huh", "pretty funny", "comedy gold", "who needs QA, right?", "talk about a letdown", "such an anticlimax", "dunno what to say", "kinda bummed", "this sucks", "this bites", "lame", "frig"],
+    "sadness": ["what gives", "what happened", "kinda disappointing", "was really looking forward to it too", "so hungry", "still hungry", "don't mean to overreact or anything", "a replacement would be nice", "this is subpar", "really", "huh", "pretty funny", "comedy gold", "who needs QA, right?", "talk about a letdown", "such an anticlimax", "dunno what to say", "kinda bummed", "this sucks", "this stinks", "this bites", "lame", "frig"],
     
-    "exclamation": ["wtf", "wtf is this", "what the fuck", "fuck me sideways", "what the hell is this", "what is this", "wtf is this shit", "what is this shit", "what is this horseshit", "what the shit", "holy shit", "holy wow", "my god", "christ", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "not cool", "not happy", "unacceptable", "thanks for nothing"],
+    "exclamation": ["wtf", "wtf is this", "what the fuck", "fuck me sideways", "freak me sideways", "what the hell is this", "what is this", "wtf is this shit", "what is this shit", "what is this horseshit", "what the shit", "holy shit", "holy fuck", "holy wow", "good heavens", "good grief", "my god", "christ", "jesus", "jesus christ", "jesus h. christ", "jesus shitting christ", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "not cool", "not happy", "unacceptable", "thanks for nothing"],
     
     "big": ["large ", "gigantic ", "great big fucking ", "largeass ", "big ", "bigass ", "goddamn ", "huge ", "enormous ", "shitting great ", "fucking ", "", "", "", ""],
     
@@ -160,7 +160,7 @@ export default {
     
     // spoilage types
     "stench": [
-        "rot", "mold", "moldy cheese", "bad cheese", "fungus", "rotten eggs", "expired mayonnaise", "ass", "the inside of my ass", "farts", "wet farts", "a bag of old farts", "urine", "piss", "cat piss", "turd", "shit", "bad diarrhoea", "sewage", "a sewerage plant", "a slaughterhouse floor", "an abbatoir", "expired milk", "sour milk", "rancid butter", "BO", "dumpster juice", "rotting garbage", "fetid garbage", "heated garbage", "compost", "fertilizer", "sun-roasted fertilizer", "medical waste", "a urinal cake", "a rendering plant", "rotting meat", "rancid meat", "a whale carcass on a hot day", "tanning waste", "chemicals", "bad chemicals", "acid", "oven cleaner", "cyanide"
+        "rot", "mold", "moldy cheese", "bad cheese", "fungus", "rotten eggs", "expired mayonnaise", "ass", "the inside of my ass", "farts", "wet farts", "a bag of old farts", "urine", "piss", "cat piss", "pee", "pee pee", "wee", "turd", "shit", "poo", "poo poo", "dog turd", "bad diarrhoea", "sewage", "a sewerage plant", "a slaughterhouse floor", "an abbatoir", "expired milk", "sour milk", "rancid butter", "BO", "dumpster juice", "rotting garbage", "fetid garbage", "heated garbage", "compost", "fertilizer", "sun-roasted fertilizer", "medical waste", "a urinal cake", "a rendering plant", "rotting meat", "rancid meat", "a whale carcass on a hot day", "tanning waste", "chemicals", "bad chemicals", "acid", "oven cleaner", "cyanide"
     ],
     "spoiled": [
         "reeks of #stench#",
@@ -201,6 +201,9 @@ export default {
     "emptyVolume": [
         "empty",
         "empty",
+        "empty",
+        "empty",
+        "maybe half empty",
         "maybe half empty",
         "mostly empty",
         "nearly empty",
@@ -215,20 +218,24 @@ export default {
         "#genPerson##pName# bought a #productDesc# and there was nothing in it",
         "#genPerson##pNameTheir# #productDesc# is #emptyVolume#",
         "#genPerson##pName# just opened a #productDesc# and it was #emptyVolume#",
-        "#genPerson#did someone at the factory get hungry? check out this #productDesc# that's #emptyVolume#",
-        "#genPerson#how come there's no #productSingular# in this #package#",
-        "#genPerson#is your new business model selling #package.s# that are #emptyVolume#",
-        "#genPerson#I see you've just switched to making the #product# #package.s# #emptyVolume#",
-        "#genPerson#trying to be cheap, my #productDesc# was #emptyVolume#",
-        "#genPerson#which genius thought of making a #productDesc# that's #emptyVolume#",
+        "did someone at the factory get hungry? check out this #productDesc# that's #emptyVolume#",
+        "how come there's no #productSingular# in this #package#",
+        "is your new business model selling #package.s# that are #emptyVolume#",
+        "I see you've just switched to making the #product# #package.s# #emptyVolume#",
+        "trying to be cheap, my #productDesc# was #emptyVolume#",
+        "which genius thought of making a #productDesc# that's #emptyVolume#",
+        "thanks for forgetting the #productSingular# in this #package#",
+        "you're right I really just wanted to eat #package.a#, don't bother including any #productSingular.s#",
+        "you trolled me good by selling me this #package# that's #emptyVolume#"
     ],
     "emptyMessage": ["@#account# #emptyDiscovery#", "#sadEmojiSeq# @#account# #emptyDiscovery#", "@#account# #sadEmojiSeq# #emptyDiscovery#"],
 
     // misshapen types
-    "shape": ["dead worm", "turd", "tumor", "blob", "mass", "morass", "lump", "brick", "clump", "slab"],
+    "shape": ["dead worm", "turd", "tumor", "blob", "mass", "morass", "lump", "brick", "clump", "slab", "chunk"],
     "misshapenDiscovery": [
-        "when I opened this #productDesc# everything had solidified into a big #shape#",
-        "pretty sure this #productDesc# isn't meant to be a congealed #shape#",
+        "when I opened this #productDesc# everything had solidified into a #shape# shape",
+        "pretty sure that's the wrong shape for #productSingular.a#",
+        "pretty sure this #productDesc# isn't meant to look like a congealed #shape#",
     ],
     
     "misshapenMessage": [
@@ -244,7 +251,7 @@ export default {
         "I seriously need more @#account# #product# in my life",
         "one @#account# #productDesc# left! past me you are a goddamn genius",
         "#genPartner#really hope #pName# doesn't disown me for eating the last @#account# #productDesc# #fanEmojiSeq#",
-        "#genPartner##pName# should know better than to buy @#account# #product#! just wolfed the lot",
+        "#genPartner##pName# should know better than to buy @#account# #product.s#! just wolfed the lot",
         "#genPartner#love is real #fanEmojiSeq# #pName# just gave me a @#account# #productDesc#",
         "dear @#account#, please send me as many free products as possible",
         "hey @#account# if I get a million RTs can I have free #product.s# for a year?",
@@ -255,6 +262,10 @@ export default {
         "I'm trying to cut down on snacking at the office, god damn you @#account#",
         "@#account# thank you for creating the greatest snack food ever!",
         "@#account# just wanted to let you guys know you're doing an outstanding job",
+        "@#account# you complete me",
+        "I think if I could live off nothing but @#account# #product.s# I would",
+        
+
     ],
 
     // advertising
@@ -263,7 +274,8 @@ export default {
         "just letting you know @#account#, your ads are the worst",
         "please kill me so I never have to see another @#account# ad",
         "omg @#account# ad again! ",
-        "@#account# is there some amount of money I can pay to stop being spammed by ads for #productSingular.s#" 
+        "@#account# is there some amount of money I can pay to stop being spammed by ads for #productSingular.s#",
+        "@#account# please fire your marketing department, you can do better",
     ],
 
 
@@ -291,9 +303,9 @@ export default {
         "[product:Caramellograms][productSingular:caramel][productDesc:box of Caramellograms][package:box]", 
     ],
     "prod_sheets": [
-        "[product:fruit sheets][productSingular:fruit sheet][productDesc:pack of fruit sheets][package:wrapper]",
-        "[product:Fruit Sheets][productSingular:Fruit Sheet][productDesc:pack of Fruit Sheets][package:wrapper]",
-        "[product:Fruit Sheets][productSingular:Fruit Sheet][productDesc:Fruit Sheets pack][package:wrapper]",
+        "[product:fruit topsails][productSingular:sheet][productDesc:pack of fruit topsails][package:wrapper]",
+        "[product:Fruit Topsails][productSingular:sheet][productDesc:pack of Fruit Topsails][package:wrapper]",
+        "[product:Fruit Topsails][productSingular:sheet][productDesc:Fruit Topsails pack][package:wrapper]",
     ],
     "prod_poppers": [
         "[product:Salted Peanut Poppers][productSingular:popper][productDesc:bag of Salted Peanut Poppers][package:wrapper]",
@@ -343,8 +355,11 @@ export default {
     "ks_compliment_reply": ["we're humbled to have a fan like you on Team Kingsley!"],
     "ks_issue_reply": ["Hi, we\'re sorry for your experience but thank you for letting us know, please call 570-330-3000 to discuss"],
 
-    "cj_compliment_reply": ["Ahoy there! Proud to be havin' ye aboard, matey"],
-    "cj_issue_reply": ["Aye, very sorry ta be hearin' yer snack weren't ship-shape. Please be callin' 570-330-3000 t' parley about it"],
+    "cj_greeting": ["Ahoy there", "Avast there", "Aye", "Yo ho"],
+    "cj_exclamation": ["Arrrrrr", "Shiver me timbers", "Blistering barnacles", "Cacchinating cockatoos", "Neptune's navel", "Sufferin' sailors"],
+
+    "cj_compliment_reply": ["#cj_greeting#! Proud to be havin' ye aboard, matey", "#cj_greeting#! It be a real pleasure to have ye on board"],
+    "cj_issue_reply": ["#cj_exclamation#! Very sorry ta be hearin' yer snack weren't ship-shape, please be callin' 570-330-3000 t' parley about it", "#cj_exclamation#! Please be diallin' 570-330-3000 so we can fix yer bad experience"],
 
     "abi_compliment_reply": ["Thanks for your feedback! We will be sure to pass your words along to the appropriate team, have a great day!"],
     "abi_issue_reply": ["We're sorry to hear about that, please call us on 570-330-3000 so we can learn more"],

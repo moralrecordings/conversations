@@ -32,7 +32,7 @@
                     <span>IssueMagic</span>
                 </button>
             </span>
-            <button v-on:click="showSettingsWindow" title="Settings" v-bind:class="{ throb: flashSettings }">
+            <button v-on:click="showSettingsWindow" title="Settings" >
                 <svg width="32" height="32" style="margin-left: 8px;" >
                     <use x="0" y="0"  transform="scale(0.5)" xlink:href="#settingsIcon"/>
                 </svg>

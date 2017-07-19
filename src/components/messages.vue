@@ -31,7 +31,7 @@
                         <option v-for="(attach, index) in forms.attachments" v-if="attach.visibleLevel <= level" v-bind:value="index">{{ attach.name }}</option>
                     </select></label>
                     <label>Reply
-                        <textarea name="replyFull" v-bind:class="{ ready: replyReady }" v-on:keypress="typing" v-model="replyFull" placeholder="Reply to customer"/>
+                        <textarea name="replyFull" v-bind:class="{ ready: replyReady }" v-on:keydown="typing"  v-on:compositionstart="composition" v-model="replyFull" placeholder="Reply to customer"/>
                     </label>
                 </template> 
                 
@@ -141,13 +141,27 @@ export default {
         }
     },
     methods: {
+        composition: function (ev) {
+            console.log('COMPOSITION');
+            console.log(ev);
+            this.addWord();
+            ev.preventDefault();
+        },
         typing: function (ev) {
             var vm = this;
             console.log(ev);
             if (ev.keyCode == 9) { // tab
                 return;
             } 
-            
+            if (ev.keyCode == 13) { // enter
+                vm.submit();
+                return;
+            }
+            this.addWord();
+
+            ev.preventDefault();
+        },
+        addWord: function () {
             if (this.replyContent.length < this.replyBody.length) {
                 var end = this.replyBody.indexOf(' ', this.replyContent.length);
                 if (end === -1) {
@@ -159,11 +173,6 @@ export default {
             if (this.replyContent.length == this.replyBody.length) {
                 this.replyReady = true;
             }
-            if (ev.keyCode == 13) { // enter
-                vm.submit();
-            }
-
-            ev.preventDefault();
         },
         toggleHide: function (ev) {
             this.hidden = !this.hidden;

@@ -118,7 +118,7 @@ var levels = [
             {
                 endMark: 60, periodMin: 5.0, periodMax: 10.0,
                 grammar: [
-                    { weight: 40, type: 'ks_foreign' },
+                    { weight: 30, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
                     { weight: 10, type: 'ks_misshapen' },
@@ -129,7 +129,7 @@ var levels = [
             {   
                 endMark: 110, periodMin: 8.0, periodMax: 13.0,
                 grammar: [
-                    { weight: 40, type: 'ks_foreign' },
+                    { weight: 30, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_spoil' },
                     { weight: 10, type: 'ks_empty' },
                     { weight: 10, type: 'ks_misshapen' },
