@@ -226,6 +226,9 @@ export default {
         submit: debounce(function () {
             var vm = this;
             this.stopClock();
+            // tell mobile to hide the keyboard
+            document.activeElement.blur();
+
             this.flyout = true;
             var result = this.getResult(); 
 
