@@ -799,7 +799,7 @@ export default {
                 user: firehose.getUser(),
                 loc: firehose.getMessageLocation(),
                 type: tutorial.messageType,
-                body: firehose.getMessageBody(tutorial.messageType),
+                message: firehose.getMessageBody(tutorial.messageType),
                 created: moment(),
                 eggColour: randomEggColour(),
                 xPos: Math.floor( ( xOffset + xRange )/2 ) +'px',
@@ -1021,6 +1021,8 @@ export default {
         console.log(audioAssets);
     },
     beforeRouteEnter: function (to, from, next) {
+        console.log('beforeRouteEnter');
+        console.log([to, from, next]);
         var levelID = firehose.getLevelByName(to.params.session_id);
         if (levelID < 0) {
             next('/');
@@ -1031,12 +1033,20 @@ export default {
         });
     },
     beforeRouteUpdate: function (to, from, next) {
+        console.log('beforeRouteUpdate');
+        console.log([to, from, next]);
         var levelID = firehose.getLevelByName(to.params.session_id);
         if ((levelID < 0) || (levelID > this.$store.state.savedLevel)) {
             next('/');
             return;
         }
         this.reset(levelID);
+        next();
+    },
+    beforeRouteLeave: function (to, from, next) {
+        console.log('beforeRouteLeave');
+        console.log([to, from, next]);
+        this.stopShift();
         next();
     },
     components: {
