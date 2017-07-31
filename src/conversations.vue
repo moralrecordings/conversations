@@ -738,6 +738,8 @@ export default {
         }, 200),
         showEmailWindow: function() {
             console.log('showEmailWindow');
+            this.emailPos.w = Math.min( 1000, $('.desktop').width()-64 );
+            this.emailPos.h = Math.min( 600, $('.desktop').height()-64 );
             this.emailPos.x = ($('.desktop').width() - this.emailPos.w)/2;
             this.emailPos.y = ($('.desktop').height() - this.emailPos.h)/2;
             this.showEmail = true;
