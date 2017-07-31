@@ -8,7 +8,7 @@
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-bind:level="level" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-on:startShift="start" v-if="showIssues" />
             <!-- message windows -->
-            <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-bind:level="level" v-on:submitMessage="submitMessage" v-on:close="closeMessageWindow"/>
+            <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-bind:level="level" v-on:submitMessage="submitMessage" v-on:expire="expireMessage" v-on:close="closeMessageWindow"/>
             <!-- tutorial messages -->
             <mr-messages-app v-if="tutorialMessage" v-bind:account="account" v-bind:message="tutorialMessage" v-bind:level="level" v-on:submitMessage="submitTutorialMessage"  v-on:close="closeTutorialMessageWindow" />
             <!-- warning window -->
@@ -523,9 +523,10 @@ var svgAssets = [
     require('assets/settings.rawsvg'),
 ];
 var audioAssets = {
-    'tick': new Audio(require('assets/tick.mp3')),
+    'boot': new Audio(require('assets/boot.mp3')),
+    'messageGet': new Audio(require('assets/message_get.mp3')),
     'messageSend': new Audio(require('assets/message_send.mp3')),
-    'messageGet': new Audio(require('assets/message_get.mp3'))
+    'tick': new Audio(require('assets/tick.mp3')),
 };
 
 // top level window management crap!
@@ -897,7 +898,7 @@ export default {
                 user: firehose.getUser(),
                 loc: firehose.getMessageLocation(),
                 type: 'ks_foreign',
-                body: '@CapnJackFoods 😭😭😭 WHAT IS THIS can\'t believe this bag of peanut poppers has a gigantic SPIDER in it, I expected more you fuckers',
+                message: '@CapnJackFoods 😭😭😭 WHAT IS THIS can\'t believe this bag of peanut poppers has a gigantic SPIDER in it, I expected more you fuckers',
                 created: moment(),
                 eggColour: randomEggColour(),
                 xPos: '400px',
@@ -918,21 +919,33 @@ export default {
             // to return anything
             if (msgData) {
                 this.score.open += 1;
-                this.messages.push({
+                $.extend(msgData, {
                     id: msgId,
                     user: firehose.getUser(),
                     loc: firehose.getMessageLocation(),
-                    type: msgData.type,
-                    body: msgData.message,
                     created: moment(),
                     eggColour: randomEggColour(),
                     xPos: Math.floor( Math.random()*xRange )+xOffset +'px',
-                    yPos: Math.floor( Math.random()*yRange )+yOffset +'px'
+                    yPos: Math.floor( Math.random()*yRange )+yOffset +'px',
                 });
+                this.messages.push(msgData);
                 this.messageWindows.push(msgId);
             }
         },
-
+        expireMessage: function (ev) {
+            var vm = this;
+            setTimeout(function () {
+                vm.warningErrors = ['Message reply was not sent in the required timeframe.'];
+                vm.score.warn += 1;
+                vm.score.open -= 1;
+                if (vm.score.warn < vm.maxWarnings) {
+                        vm.showWarningWindow();
+                } else {
+                    vm.stopShift();
+                    vm.showFailWindow();
+                }
+            }, 2000);
+        },
         submitMessage: function (ev) {
             audioAssets.messageSend.currentTime = 0;
             audioAssets.messageSend.play();            
@@ -999,6 +1012,9 @@ export default {
 
             // set fake clock to start of day
             vm.clock = moment(traffic.timesheets[vm.level].date, 'YYYY/MM/DD').subtract(6, 'days').add(8, 'hours').add(Math.floor(Math.random()*30), 'minutes');
+
+            // deploy godawful startup jingle
+            audioAssets.boot.play();
         },
     },
     mounted: function () {

@@ -2,6 +2,7 @@
     <div class="window window-messages" v-window.under="{ xPos: message.xPos, yPos: message.yPos }" v-bind:class="{ flyout: flyout, close: closed }">
         <div class="titlebar">
             <span class="titlebar-text">@{{ message.user }} - {{ message.loc }}</span>
+            <span v-if="clock" class="titlebar-timer">{{ clock }}</span>
             <button v-on:click="close">×</button>
         </div>
         <div class="body-container"><div class="body">
@@ -10,7 +11,7 @@
                     <use x="0" y="0" xlink:href="#eggAvatar" v-bind:style="{ fill: message.eggColour }"/>
                 </svg>
 
-                <span class="message-body">{{ message.body }}</span>
+                <span class="message-body">{{ message.message }}</span>
             </button>
             
             <div v-bind:class="{ closed: hidden }" class="message-hidden">
@@ -73,7 +74,11 @@ textarea.ready {
     background: #d2f4b1;
 }
 
-
+.titlebar-timer {
+    margin-left: 0.25em; 
+    margin-right: 0.25em; 
+    font-size: 2em;
+}
 
 .message-block {
     display: inline-block;
@@ -117,7 +122,7 @@ textarea.ready {
 </style>
 
 <script>
-
+import moment from 'moment';
 import debounce from 'debounce';
 import traffic from 'assets/traffic';
 import firehose from 'src/firehose';
@@ -137,10 +142,22 @@ export default {
             replyBody: '',
             replyContent: '',
             replyReady: false,
-            closed: false
+            closed: false,
+            clock: null,
+            clockInterval: null,
         }
     },
     methods: {
+        _timerCB: function () {
+            this.message.timer -= 1
+            this.clock = moment.duration(
+                this.message.timer, 'seconds'
+            ).format('m:ss', {trim: false});
+            if (this.message.timer <= 0) {
+                this.close();
+                this.stopClock();
+            }
+        },
         composition: function (ev) {
             console.log('COMPOSITION');
             console.log(ev);
@@ -208,6 +225,7 @@ export default {
         },
         submit: debounce(function () {
             var vm = this;
+            this.stopClock();
             this.flyout = true;
             var result = this.getResult(); 
 
@@ -216,10 +234,34 @@ export default {
         }, 2000, true),
         close: function () {
             this.closed = true;
-            this.$emit('close', {
+            this.$emit(this.closeSignal, {
                 id: this.message.id
             });
+            // if message was provisioned with a timer,
+            // closing it is equivalent to failing
+            if (this.clockInterval && this.message.messageEmit) {
+                this.$emit(this.message.messageEmit, {
+                    id: this.message.id
+                });
+            }
         },
+        stopClock: function () {
+            if (this.clockInterval) {
+                clearInterval(this.clockInterval);
+                this.clockInterval = null;
+            }
+        },
+    },
+    mounted: function () {
+        if (this.message.timer) {
+            this.clock = moment.duration(
+                this.message.timer, 'seconds'
+            ).format('m:ss', {trim: false});
+            this.clockInterval = setInterval(this._timerCB, 1000);
+        }
+    },
+    destroy: function () {
+        this.stopClock();
     },
     computed: {
         replyFull: {

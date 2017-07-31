@@ -81,10 +81,10 @@ export default {
     generateMessage: function (level, time) {
         var messageType = this.getTimeline(level, time).grammar();
         if (messageType && messageType.type) {
-            return {
-                type: messageType.type,
+            var result = {
                 message: this.getMessageBody(messageType.type),
             };
+            return $.extend(result, messageType);
         }
         return null;
     },
