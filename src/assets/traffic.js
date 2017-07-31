@@ -18,6 +18,8 @@ var forms = {
             { id: 'blank', name: '----', visibleLevel: 0 },
             { id: 'experience', name: 'Good experience', visibleLevel: 0 },
             { id: 'advertising', name: 'Advertising campaign', visibleLevel: 0 },
+            { id: 'employment', name: 'Careers', visibleLevel: 2 },
+            { id: 'sponsorship', name: 'Sponsorship request', visibleLevel: 2 },
             { id: 'brandConfusion', name: 'Brand confusion', visibleLevel: 4 },
         ]},
         { id: 'issue', name: 'Product issue', visibleLevel: 0, subtypeName: 'Issue type', subtypes: [
@@ -72,6 +74,8 @@ var messageTypes = {
     'cj_empty': { account: 'CapnJackFoods', type: 'issue', subtype: 'emptyPackaging' },
     'cj_spoil': { account: 'CapnJackFoods', type: 'issue', subtype: 'spoilage' },
     'cj_misshapen': { account: 'CapnJackFoods', type: 'issue', subtype: 'misshapen' },
+
+    'abi_beaufort': { account: 'AlliedBrandsInc', type: 'compliment', subtype: 'brandConfusion' },
 
 };
 
@@ -195,30 +199,77 @@ var levels = [
         ]
     },
     // level 2:
+    // all 3 brands
+    // 30% required
     {  
         name: 'us2appprod004_WEEK2',
+        duration: 120,
+        maxWarnings: 5,
+        resolutionRate: 0.3,
+        timeline: [
+            {
+                endMark: 90, periodMin: 5.0, periodMax: 10.0,
+                grammar: [
+                    { weight: 20, type: 'ks_foreign', timer: 40, timerEmit: '' },
+                    { weight: 20, type: 'ks_foreign' },
+                    { weight: 10, type: 'ks_foreign_lit' },
+                    { weight: 10, type: 'ks_spoil' },
+                    { weight: 10, type: 'ks_empty' },
+                    { weight: 10, type: 'ks_misshapen' },
+                    { weight: 10, type: 'ks_experience' },
+                    { weight: 5, type: 'ks_advertising' },
+                    { weight: 20, type: 'cj_foreign' },
+                    { weight: 10, type: 'cj_foreign_lit' },
+                    { weight: 10, type: 'cj_spoil' },
+                    { weight: 10, type: 'cj_empty' },
+                    { weight: 10, type: 'cj_misshapen' },
+                    { weight: 10, type: 'cj_experience' },
+                    { weight: 5, type: 'cj_advertising' },
+
+                ]
+            },
+        ],
+
     },
     // level 3:
+    // ricardo campaign starts, introduces attachments
+    // last quarter of the day explodes with concerned poisoning victims
     {  
         name: 'us6appprod090_WEEK3',
     },
     // level 4:
+    // introduce swatback of confused users with a time limit
     {  
         name: 'us1appprod045_WEEK4',
+        timeline: [
+            {
+                endMark: 90, periodMin: 5.0, periodMax: 10.0,
+                grammar: [
+                    { weight: 20, type: 'abi_beaufort', timer: 60, timerEmit: 'expire' },
+
+                ]
+            },
+        ],
     },
     // level 5:
+    // shaftoproxin campaign starts
     {  
         name: 'us3appprod055_WEEK5',
     },
     // level 6:
+    // hate mail starts re. pricing
+    // introduce abuse reporting
     {  
         name: 'us2appprod024_WEEK6',
     },
     // level 7:
+    // introduce suicide watch (with short timer)
     {  
         name: 'us6appprod060_WEEK7',
     },
     // level 8:
+    // tricia gets fired
+    // instafire for excelsior messages
     {  
         name: 'us5appprod011_WEEK8',
     },
@@ -227,6 +278,8 @@ var levels = [
         name: 'us1appprod028_WEEK9',
     },
     // level 10:
+    // you're hired
+    // fadeout over a torrent of increasingly abusive messages
     {  
         name: 'us6appprod032_CODA',
     },

@@ -94,7 +94,7 @@ export default [
         "subject": "New account - Cap'n Jack Food Holdings",
         "content": `
             <p>All,</p>
-            <p>Allied Brands has completed its acquisition of the Cap'n Jack family of snack foods, including Cap'n Jack's Salted Peanut Poppers, Cap'n Jack's Compressed Fruit Topsails, and Cap'n Jack's Fun-Size Energy Loaf. As part of the handover, the Cap'n Jack social media presence (<b>@CapnJackFoods</b>) has been added to your console, and the incoming feed adjusted to include mentions of Cap'n Jack products. Please engage with as many such customers as possible from the Cap'n Jack account.</p>
+            <p>Allied Brands has completed its acquisition of the Cap'n Jack family of snack foods, including Cap'n Jack's Salted Peanut Poppers, Cap'n Jack's Spliced Fruit Topsails, and Cap'n Jack's Fun-Size Energy Loaf. As part of the handover, the Cap'n Jack social media presence (<b>@CapnJackFoods</b>) has been added to your console, and the incoming feed adjusted to include mentions of Cap'n Jack products. Please engage with as many such customers as possible from the Cap'n Jack account.</p>
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
@@ -130,7 +130,7 @@ export default [
         "subject": "New account - Excelsior Pharmaceuticals",
         "content": `
             <p>All,</p>
-            <p>The Excelsior Pharmaceuticals division has finished transitioning their customer relations roles to the new central PR group. Excelsior is among the oldest businesses in the Allied Brands stable, and is our primary mark for over-the-counter and prescription medications. Please engage with as many such customers as possible from the Excelsior Pharmaceuticals account (<b>@excelsior_rx</b>).</p>
+            <p>The Excelsior Pharmaceuticals division has finished the transition of customer relations staff to the new central PR group. Excelsior is among the oldest businesses in the Allied Brands stable, and is our primary mark for over-the-counter and prescription medications. Please engage with as many such customers as possible from the Excelsior Pharmaceuticals account (<b>@excelsior_rx</b>).</p>
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
@@ -147,9 +147,9 @@ export default [
         "content": `
             <p>Heya,</p>
 
-            <p>Thanks for replying back. I respect your decision, but I still think you're being played for a chump. Don't get me wrong, I do get that it's a really shit job market right now, but please promise me that you'll look for other positions. This isn't just me being bitter; Allied is seriously a <i>fucked up</i> place. The business is running at a loss, the leadership is an endless buck-passing circlejerk, and everyone is being pushed to cut corners. Oh and they're <i>big</i> fans of stack ranking, so if you've ever wanted a proper Stasi-grade culture of undermining and snitching... Jesus, they actually used the words "quash dissent" to justify cracking down on managers and quality control supervisors for doing their job! I can't make this shit up.</p>
+            <p>Thanks for replying back. I respect your decision, but I still think you're being played for a chump. Don't get me wrong, I do get that it's a really shit job market right now, but please promise me that you'll look for other positions. This isn't just me being bitter; Allied is seriously a <i>fucked up</i> place. The business is running at a loss, the leadership is an endless buck-passing circlejerk, and everyone is being pushed to cut corners. Oh and they're <i>big</i> fans of stack ranking, so if you've ever wanted to see a proper Stasi-grade culture of undermining and snitching... Jesus, they actually used the words "quash dissent" to justify cracking down on managers and quality control supervisors for doing their job! I can't make this shit up.</p>
 
-            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but like the old saying goes I do not use Allied Brands products, nor would I recommend them to anyone wanting to live to a ripe old age. Mark my words; one day there will be a public scandal, and it will be big enough that your job description will change to "human sewer rake". I would not wish that horrorshow on anyone.</p>
+            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but like the old saying goes I do not use Allied Brands products, nor would I recommend them to anyone intending to live to a ripe old age. Mark my words; one day there will be a big public scandal, and your job will basically be the equivalent of unclogging sewer pipes with your bare hands. I would not wish that horrorshow on anyone.</p>
 
             <p>Cheers,<br/>Andrea</p>
         `
@@ -162,7 +162,6 @@ export default [
         "senderMail": "frank.billeton@alliedbrandsinc",
         "recipient": "PR - All Users",
         "recipientMail": "pr_all@alliedbrandsinc",
-        "selfDestruct": 8000,
         "subject": "IMPORTANT - New campaign for Kingsley's Fruit Pebbles",
         "content": `
 
@@ -179,13 +178,15 @@ export default [
         <hr/>
         <p>They only called him in for the exceptional cases. Where all other options have failed. Today was no different.</p>
         <p>Vice-Captain Ricardo Hull of the 3rd Interstellar Reconnaissance Company kicked open the hatch and dropped from the ventilation duct, the familiar smell of blood and charred human remains filling his nostrils. He knew better than to look among the bodies for familiar faces. They were all dead, and he'd soon join them if he got sympathetic now.</p>
-        <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would be back soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
+        <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red; background-color: yellow;">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would be back soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
         <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
         <p>As he attached the plastic explosive charges to the main reactor</p>
 
         <p>From the wings came a bloodcurdling battle cry. It would be the last thing they would hear.</p>
 
         <p><i>"EAT IT, CUCKS!"</i></p>
+
+        <p>By then it was too late for them.</p>
 
         <p>A few rounds ricocheted off the armored brim of his helmet; a gift from his late father.</p>
 
@@ -236,7 +237,7 @@ export default [
                 <h2 style="margin-bottom: 0;">Beaufort issues nationwide recall amid tainted milk scandal</h2>
                 <p style="font-variant: small-caps">Robert Xam in Chicago</p>
 
-                <p>Beaufort North America LLC. has issued an immediate nationwide recall for its Healthland Farms milk product range, following reports of children suffering from impaired kidney functionality.</p>
+                <p>Beaufort North America LLC. has issued an immediate nationwide recall for all Healthland Farms branded milk products, following reports of children suffering from impaired kidney functionality.</p>
                 <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The vast majority of these cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. While FDA inspectors have not yet publicly identified the root cause, unconfirmed reports suggest that batches of the milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
                 <p>A spokesperson for Beaufort stated that the nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that the investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort.</p>
                 <p>The market response to the scandal has been severe, with Beaufort stock down $3.50 to $9.02.</p>
@@ -275,7 +276,7 @@ export default [
         "subject": "Response to Healthland Farms milk scandal",
         "content": `
         <p>All,</p>
-        <p>As you have probably heard, there has been an unfortunate incident attributed to a contaminated batch of Healthland Farms milk, resulting in customers becoming seriously ill. As of last September, Allied Brands Inc. is no longer involved with the production, marketing or distribution of Healthland Farms milk products, with all assets and manufacturing staff transferred to Beaufort International. Nonetheless, our thoughts and prayers are with those affected by the tainted products and their families.</p>
+        <p>As you have probably heard, there has been an unfortunate incident attributed to a contaminated batch of Healthland Farms milk, involving customers becoming seriously ill. As of last September, Allied Brands Inc. is no longer involved with the production, marketing or distribution of Healthland Farms milk products, with all assets and manufacturing staff transferred to Beaufort International. Nonetheless, our thoughts and prayers are with those affected by the tainted products and their families.</p>
         <p>As the transfer of ownership is quite recent, there is still a strong association in the minds of consumers between Healthland Farms and Allied Brands. It is <i>vital</i> that we move quickly to dispel this confusion. For any customers that contact the company regarding Healthland Farms, please inform them of the change of ownership and direct them to Beaufort International's social media presence (<b>@BeaufortIntl</b>).</p>
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
@@ -324,6 +325,46 @@ export default [
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
+    {
+        "visibleLevel": 6,
+        "date": moment("20111211", "YYYYMMDD"),
+        "sender": "Andrea Lisbon",
+        "senderMail": "starbodies@ichiromail",
+        "recipient": "Me",
+        "recipientMail": "againstpollution@ichiromail",
+
+        "subject": "Re: Fwd: IMPORTANT - New campaign for Kingsley's Fruit Pebbles",
+        "content": `
+            <p>Oh my god I'm dying. That's just fantastic. And the campaign lasted a whole three days?</p>
+
+            <p>I am so happy that they let Golden Boy have full creative control over another campaign. If you're ever in Jersey City, pick up the drinks and I'll tell you about the last time that happened. No spoilers, but it was officially the most expensive campaign in company history.</p>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <p><small>Okay one spoiler; three people nearly asphyxiated</small></p>
+        `
+    },
 
 
 
@@ -356,6 +397,7 @@ export default [
 
         `
     },
+    // week 9 starting 20111227
 
     {
         "visibleLevel": 8,
@@ -378,6 +420,29 @@ export default [
 		`
     },
 
+
+    {
+        "visibleLevel": 10,
+        "date": moment("20120109", "YYYYMMDD"),
+        "sender": "Payroll A-M",
+        "senderMail": "payroll.a-m@alliedbrandsinc",
+        "recipient": "PR - All Users",
+        "recipientMail": "pr_all@alliedbrandsinc",
+        "subject": "Successful job application",
+        "content": `
+            <p>Hi,</p>
+          
+            <p>We are pleased to inform you that your application for the following position has been successful:</p>
+
+            <p><i>115368 CUSTOMER SERVICE OFFICER, L2 (12MO) - $32,805.17</i></p>
+
+            <p>A contract has been sent to your mailing address, please sign the documents and fax them to the number provided.</p>
+            
+            <p>Congratulations and welcome aboard!</p>
+
+            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Best regards,<br/><b>Desmond Bellevic</b><br/>Payroll Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 9420)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+		`
+    },
 
 
 ];

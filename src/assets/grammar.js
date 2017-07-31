@@ -279,6 +279,29 @@ export default {
     ],
 
 
+    // pleading for drugs
+    "sponsorship": [
+        "#genPerson##pName# needs #drug# on compassionate grounds, please save #pThem#",
+        "#genPerson#please I urgently need #drug#, the life of #pName# depends on it",
+        "can you sponsor my fun-run"
+    ],
+
+    // asking about jobs
+    "employment": [
+        "do you have any openings for chemical engineers?",
+        "is it possible for me to do an unpaid internship at your company during my gap year?",
+
+        "are you accepting any graduate students for vacation work?",
+        "are there any graduate places left for this year?",
+        "how can I apply for a pharmacology job?",
+
+    ],
+
+    // confusing the product
+    "abi_beaufort": [
+        "@AlliedBrandsInc my kid is very sick thanks to your POISONED MILK"
+    ],
+
     // product types
     "prod_chocolate": [
         "[product:candy bar][productSingular:chocolate][productDesc:candy bar][package:wrapper]", 
