@@ -49,6 +49,37 @@
 
 
 <style lang="scss">
+// load the Ubuntu font family, if not found locally
+@font-face {
+    font-family: "Ubuntu";
+    src: local("Ubuntu Regular"), url("../node_modules/ubuntu-fontface/fonts/ubuntu-regular-webfont.woff") format("woff"); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: local("Ubuntu Italic"), url("../node_modules/ubuntu-fontface/fonts/ubuntu-regular-italic-webfont.woff") format("woff"); 
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: local("Ubuntu Bold"), url("../node_modules/ubuntu-fontface/fonts/ubuntu-bold-webfont.woff") format("woff"); 
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: local("Ubuntu Bold Italic"), url("../node_modules/ubuntu-fontface/fonts/ubuntu-bold-italic-webfont.woff") format("woff"); 
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
 // baseline style rules
 html, body {
     height: 100%;
