@@ -20,20 +20,20 @@
         <div class="taskbar">
             <span class="progs">
                 <button v-on:click="showEmailWindow" title="Email" v-bind:class="{ throb: flashEmail }">
-                    <svg width="32" height="32" style="margin-left: 20px;">
+                    <svg width="32" height="32">
                         <use x="0" y="0" transform="scale(0.5)" xlink:href="#emailIcon"/>
                     </svg>
                     <span>ExpressMail</span>
                 </button>
                 <button v-on:click="showIssueWindow" title="IssueMagic" v-bind:class="{ throb: flashIssues }">
-                    <svg width="32" height="32" style="margin-left: 18px;" >
+                    <svg width="32" height="32">
                         <use x="0" y="0"  transform="scale(0.5)" xlink:href="#activityIcon"/>
                     </svg>
                     <span>IssueMagic</span>
                 </button>
             </span>
-            <button v-on:click="showSettingsWindow" title="Settings" >
-                <svg width="32" height="32" style="margin-left: 8px;" >
+            <button v-on:click="showSettingsWindow" title="Settings">
+                <svg width="32" height="32">
                     <use x="0" y="0"  transform="scale(0.5)" xlink:href="#settingsIcon"/>
                 </svg>
                 <span>Settings</span>
@@ -156,8 +156,12 @@ body {
     border-radius: 4px;
     padding: 4px;
     color: inherit;
+    min-width: 84px;
 }
 
+.taskbar button svg {
+    margin: auto;
+}
 
 // window class, for the topmost level floating box
 .window {
