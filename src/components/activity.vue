@@ -20,11 +20,11 @@
                 <div class="half">{{ resolutionRate }}</div><div class="half">{{ resolutionTargetRate }}</div>
             </div>
             <div class="head">Avg. resolution time:</div>
-            <div class="sub">10.6 sec</div>
-            <div class="head">Avg. resolution time (global):</div>
-            <div class="sub">10.6 sec</div>
+            <div class="sub">{{ avgResolutionTime }}</div>
             <div class="head">Resolution rate (global):</div>
-            <div class="sub">40%</div>
+            <div class="sub">{{ globalAvgResolutionRate }}</div>
+            <div class="head">Avg. resolution time (global):</div>
+            <div class="sub">{{ globalAvgResolutionTime }}</div>
             
         </div></div>
     </div>
@@ -101,6 +101,21 @@ export default {
         resolutionTargetRate: {
             get: function () {
                 return Number(Math.floor(this.resolutionTarget*100)).toString()+'%';
+            }
+        },
+        avgResolutionTime: {
+            get: function () {
+                return this.score.rslv ? Number(Math.round(this.score.rslvTime/(100*this.score.rslv))/10).toString()+' sec' : '-';
+            }
+        },
+        globalAvgResolutionTime: {
+            get: function () {
+                return this.score.rslv+this.score.globalRslv ? Number(Math.round((this.score.rslvTime+this.score.globalRslvTime)/(100*(this.score.rslv+this.score.globalRslv)))/10).toString()+' sec' : '-';
+            }
+        },
+        globalAvgResolutionRate: {
+            get: function () {
+                return this.score.globalTotal ? Number(Math.floor(100*this.score.globalRslv/this.score.globalTotal)).toString()+'%' : '-';
             }
         }
     },

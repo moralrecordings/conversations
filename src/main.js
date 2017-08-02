@@ -28,13 +28,46 @@ const router = new VueRouter({
 
 const store = new Vuex.Store({
     state: {
-        level: 0,
-        savedLevel: 12
+        stats: []
+    },
+    getters: {
+        maxLevel: function (state) {
+            return state.stats.length;
+        },
+        globalResolution: function (state, level) {
+            return function (level) {
+                var result = {
+                    resolvedTime: 0,
+                    resolved: 0,
+                    total: 0,
+                };
+                if (!level) {
+                    return result;
+                }
+
+                for (var i=0; i<level; i++) {
+                    if (state.stats[i]) {
+                        result.resolvedTime += state.stats[i].resolvedTime;
+                        result.resolved += state.stats[i].resolved;
+                        result.total += state.stats[i].resolved + state.stats[i].warnings + state.stats[i].unanswered;
+                    }
+                }
+                return result;
+            }
+        },
     },
     plugins: [createPersistedState({
         key: 'mr_conversations',
         paths: []
-    })]
+    })],
+    mutations: {
+        completeLevel: function (state, payload) { 
+            while (state.stats.length <= payload.level) {
+                state.stats.push(null);
+            }
+            state.stats[payload.level] = payload.stats;
+        }
+    }
 });
 
 global.conversations = new Vue({

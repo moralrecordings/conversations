@@ -271,7 +271,7 @@ export default {
             get: function () {
                 return '@' + this.message.user + ' ' + this.replyContent;
             }
-        },
+        }
     },
     watch: {
         account: function (newAccount) {

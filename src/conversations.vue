@@ -728,7 +728,7 @@ var initialData = function () {
 
         level: 0,
 
-        score: {open: 0, rslv: 0, warn: 0},
+        score: {open: 0, rslv: 0, warn: 0, rslvTime: 0, globalRslv: 0, globalRslvTime: 0, globalTotal: 0},
         timer: {duration: 0, count: 0, clock: '-:--', interval: null, nextMessage: null},
         clock: moment(),
 
@@ -1004,6 +1004,7 @@ export default {
                 } else {
                     console.log(moment().diff(vm.messages[ev.id].created));
                     vm.score.rslv += 1;
+                    vm.score.rslvTime += moment().diff(vm.messages[ev.id].created);
                 }
                 vm.score.open -= 1;
             }, 2000);
@@ -1024,6 +1025,15 @@ export default {
         nextLevel: function (ev) {
             var vm = this;
             this.fadeout = true;
+            this.$store.commit('completeLevel', {
+                level: vm.level,
+                stats: {
+                    resolved: this.score.rslv,
+                    resolvedTime: this.score.rslvTime,
+                    unanswered: this.score.open,
+                    warnings: this.score.warn
+                }
+            });
             if (vm.level+1 >= traffic.levels.length) {
                 vm.logout();
             }
@@ -1046,6 +1056,10 @@ export default {
             }
             vm.maxWarnings = level.maxWarnings;
             vm.resolutionRate = level.resolutionRate;
+            var glob = vm.$store.getters.globalResolution(vm.level);
+            vm.score.globalRslv = glob.resolved;
+            vm.score.globalRslvTime = glob.resolvedTime;
+            vm.score.globalTotal = glob.total;
 
             // set fake clock to start of day
             vm.clock = moment(traffic.timesheets[vm.level].date, 'YYYY/MM/DD').subtract(6, 'days').add(8, 'hours').add(Math.floor(Math.random()*30), 'minutes');
@@ -1073,7 +1087,7 @@ export default {
         console.log('beforeRouteUpdate');
         console.log([to, from, next]);
         var levelID = firehose.getLevelByName(to.params.session_id);
-        if ((levelID < 0) || (levelID > this.$store.state.savedLevel)) {
+        if ((levelID < 0) || (levelID > this.$store.getters.maxLevel)) {
             next('/');
             return;
         }
