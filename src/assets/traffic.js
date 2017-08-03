@@ -132,14 +132,6 @@ var levels = [
             },
             {   
                 endMark: 110, periodMin: 8.0, periodMax: 13.0,
-                grammar: [
-                    { weight: 30, type: 'ks_foreign' },
-                    { weight: 10, type: 'ks_spoil' },
-                    { weight: 10, type: 'ks_empty' },
-                    { weight: 10, type: 'ks_misshapen' },
-                    { weight: 10, type: 'ks_experience' },
-                    { weight: 5, type: 'ks_advertising' },
-                ]
             },
             {
                 endMark: 120, periodMin: 10.0, periodMax: 25.0,
@@ -177,25 +169,12 @@ var levels = [
                 ]
             },
             {   
+                endMark: 110, periodMin: 8.0, periodMax: 13.0,
+            },
+            {   
                 endMark: 120, periodMin: 10.0, periodMax: 25.0,
-                grammar: [
-                    { weight: 20, type: 'ks_foreign' },
-                    { weight: 10, type: 'ks_foreign_lit' },
-                    { weight: 10, type: 'ks_spoil' },
-                    { weight: 10, type: 'ks_empty' },
-                    { weight: 10, type: 'ks_misshapen' },
-                    { weight: 10, type: 'ks_experience' },
-                    { weight: 5, type: 'ks_advertising' },
-                    { weight: 20, type: 'cj_foreign' },
-                    { weight: 10, type: 'cj_foreign_lit' },
-                    { weight: 10, type: 'cj_spoil' },
-                    { weight: 10, type: 'cj_empty' },
-                    { weight: 10, type: 'cj_misshapen' },
-                    { weight: 10, type: 'cj_experience' },
-                    { weight: 5, type: 'cj_advertising' },
-
-                ]
-            }
+                grammar: []
+            },
         ]
     },
     // level 2:
@@ -210,7 +189,6 @@ var levels = [
             {
                 endMark: 90, periodMin: 5.0, periodMax: 10.0,
                 grammar: [
-                    { weight: 20, type: 'ks_foreign', timer: 40, timerEmit: '' },
                     { weight: 20, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_foreign_lit' },
                     { weight: 10, type: 'ks_spoil' },
@@ -236,11 +214,17 @@ var levels = [
     // last quarter of the day explodes with concerned poisoning victims
     {  
         name: 'us6appprod090_WEEK3',
+        duration: 150,
+        maxWarnings: 5,
+        resolutionRate: 0.3,
     },
     // level 4:
     // introduce swatback of confused users with a time limit
     {  
         name: 'us1appprod045_WEEK4',
+        duration: 120,
+        maxWarnings: 5,
+        resolutionRate: 0.3,
         timeline: [
             {
                 endMark: 90, periodMin: 5.0, periodMax: 10.0,
@@ -252,7 +236,8 @@ var levels = [
         ],
     },
     // level 5:
-    // shaftoproxin campaign starts
+    // shaftoproxin campaign starts (with attachment)
+    // productivity gets bumped to 50%
     {  
         name: 'us3appprod055_WEEK5',
     },

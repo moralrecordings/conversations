@@ -34,8 +34,12 @@ var getRandomChoice = function(table) {
 traffic.locations = getRandomChoice(traffic.locations);
 traffic.levels.forEach(function (el) {
     if (el.timeline) {
+        var gram = null;
         el.timeline.forEach(function (fl) {
-            fl.grammar = getRandomChoice(fl.grammar);
+            if (fl.grammar) {
+                gram = fl.grammar;
+            }
+            fl.grammar = getRandomChoice(gram);
         });
     }
 });

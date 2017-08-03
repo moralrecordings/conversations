@@ -21,9 +21,9 @@
             </div>
             <div class="head">Avg. resolution time:</div>
             <div class="sub">{{ avgResolutionTime }}</div>
-            <div class="head">Resolution rate (global):</div>
+            <div class="head">Resolution rate (to date):</div>
             <div class="sub">{{ globalAvgResolutionRate }}</div>
-            <div class="head">Avg. resolution time (global):</div>
+            <div class="head">Avg. resolution time (to date):</div>
             <div class="sub">{{ globalAvgResolutionTime }}</div>
             
         </div></div>
@@ -115,7 +115,7 @@ export default {
         },
         globalAvgResolutionRate: {
             get: function () {
-                return this.score.globalTotal ? Number(Math.floor(100*this.score.globalRslv/this.score.globalTotal)).toString()+'%' : '-';
+                return this.score.globalTotal ? Number(Math.floor(100*(this.score.globalRslv+this.score.rslv)/(this.score.globalTotal+this.score.open+this.score.rslv+this.score.warn))).toString()+'%' : '-';
             }
         }
     },
