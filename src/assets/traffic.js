@@ -14,7 +14,7 @@ var forms = {
     // Message types and subtypes
     types: [
         { id: 'blank', name: '----', visibleLevel: 0 },
-        { id: 'compliment', name: 'Feedback', visibleLevel: 0, subtypeName: 'Source', subtypes: [
+        { id: 'feedback', name: 'Feedback', visibleLevel: 0, subtypeName: 'Source', subtypes: [
             { id: 'blank', name: '----', visibleLevel: 0 },
             { id: 'experience', name: 'Good experience', visibleLevel: 0 },
             { id: 'advertising', name: 'Advertising campaign', visibleLevel: 0 },
@@ -56,12 +56,12 @@ var forms = {
 
 // all the types of customer feedback 
 var messageTypes = {
-    'ks_experience': { account: 'KingsleySnacks', type: 'compliment', subtype: 'experience' }, 
-    'ks_advertising': { account: 'KingsleySnacks', type: 'compliment', subtype: 'advertising' }, 
-    'cj_experience': { account: 'CapnJackFoods', type: 'compliment', subtype: 'experience' }, 
-    'cj_advertising': { account: 'CapnJackFoods', type: 'compliment', subtype: 'advertising' }, 
-
-
+    'ks_experience': { account: 'KingsleySnacks', type: 'feedback', subtype: 'experience' }, 
+    'ks_advertising': { account: 'KingsleySnacks', type: 'feedback', subtype: 'advertising' }, 
+    'cj_experience': { account: 'CapnJackFoods', type: 'feedback', subtype: 'experience' }, 
+    'cj_advertising': { account: 'CapnJackFoods', type: 'feedback', subtype: 'advertising' }, 
+    'ex_employment': { account: 'excelsior_rx', type: 'feedback', subtype: 'employment'},
+    'abi_beaufort': { account: 'AlliedBrandsInc', type: 'feedback', subtype: 'brandConfusion' },
 
     'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject' },
     'ks_foreign_lit': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
@@ -75,18 +75,19 @@ var messageTypes = {
     'cj_spoil': { account: 'CapnJackFoods', type: 'issue', subtype: 'spoilage' },
     'cj_misshapen': { account: 'CapnJackFoods', type: 'issue', subtype: 'misshapen' },
 
-    'abi_beaufort': { account: 'AlliedBrandsInc', type: 'compliment', subtype: 'brandConfusion' },
 
 };
 
 // reply with the first response type in the list that matches all of the criteria
 var responses = [
-    {type: 'beaufort_reply', match: {type: 'compliment', subtype: 'brandConfusion'}},
-    {type: 'ks_compliment_reply', match: {account: 'KingsleySnacks', type: 'compliment'}},
+    {type: 'beaufort_reply', match: {type: 'feedback', subtype: 'brandConfusion'}},
+    {type: 'ks_feedback_reply', match: {account: 'KingsleySnacks', type: 'feedback'}},
     {type: 'ks_issue_reply', match: {account: 'KingsleySnacks', type: 'issue'}},
-    {type: 'cj_compliment_reply', match: {account: 'CapnJackFoods', type: 'compliment'}},
+    {type: 'cj_feedback_reply', match: {account: 'CapnJackFoods', type: 'feedback'}},
     {type: 'cj_issue_reply', match: {account: 'CapnJackFoods', type: 'issue'}},
-    {type: 'abi_compliment_reply', match: {account: 'AlliedBrandsInc', type: 'compliment'}},
+    {type: 'ex_feedback_reply', match: {account: 'excelsior_rxAlliedBrandsInc', type: 'feedback'}},
+    {type: 'ex_issue_reply', match: {account: 'AlliedBrandsInc', type: 'issue'}},
+    {type: 'abi_feedback_reply', match: {account: 'AlliedBrandsInc', type: 'feedback'}},
     {type: 'abi_issue_reply', match: {account: 'AlliedBrandsInc', type: 'issue'}},
     {type: 'generic_reply', match: {}},
 ];

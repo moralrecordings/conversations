@@ -375,16 +375,16 @@ export default {
 
 
     // soporific response generators
-    "ks_compliment_reply": ["we're humbled to have a fan like you on Team Kingsley!"],
+    "ks_feedback_reply": ["we're humbled to have a fan like you on Team Kingsley!"],
     "ks_issue_reply": ["Hi, we\'re sorry for your experience but thank you for letting us know, please call 570-330-3000 to discuss"],
 
     "cj_greeting": ["Ahoy there", "Avast there", "Aye", "Yo ho"],
     "cj_exclamation": ["Arrrrrr", "Shiver me timbers", "Blistering barnacles", "Cacchinating cockatoos", "Neptune's navel", "Sufferin' sailors"],
 
-    "cj_compliment_reply": ["#cj_greeting#! Proud to be havin' ye aboard, matey", "#cj_greeting#! It be a real pleasure to have ye on board"],
+    "cj_feedback_reply": ["#cj_greeting#! Proud to be havin' ye aboard, matey", "#cj_greeting#! It be a real pleasure to have ye on board"],
     "cj_issue_reply": ["#cj_exclamation#! Very sorry ta be hearin' yer snack weren't ship-shape, please be callin' 570-330-3000 t' parley about it", "#cj_exclamation#! Please be diallin' 570-330-3000 so we can fix yer bad experience"],
 
-    "abi_compliment_reply": ["Thanks for your feedback! We will be sure to pass your words along to the appropriate team, have a great day!"],
+    "abi_feedback_reply": ["Thanks for your feedback! We will be sure to pass your words along to the appropriate team, have a great day!"],
     "abi_issue_reply": ["We're sorry to hear about that, please call us on 570-330-3000 so we can learn more"],
     "beaufort_reply": ["As of September ownership of Healthland Farms has transferred to Beaufort International, for customer service enquiries please contact @BeaufortIntl"],
 
