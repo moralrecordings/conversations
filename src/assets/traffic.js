@@ -85,8 +85,8 @@ var responses = [
     {type: 'ks_issue_reply', match: {account: 'KingsleySnacks', type: 'issue'}},
     {type: 'cj_feedback_reply', match: {account: 'CapnJackFoods', type: 'feedback'}},
     {type: 'cj_issue_reply', match: {account: 'CapnJackFoods', type: 'issue'}},
-    {type: 'ex_feedback_reply', match: {account: 'excelsior_rxAlliedBrandsInc', type: 'feedback'}},
-    {type: 'ex_issue_reply', match: {account: 'AlliedBrandsInc', type: 'issue'}},
+    {type: 'ex_feedback_reply', match: {account: 'excelsior_rx', type: 'feedback'}},
+    {type: 'ex_issue_reply', match: {account: 'excelsior_rx', type: 'issue'}},
     {type: 'abi_feedback_reply', match: {account: 'AlliedBrandsInc', type: 'feedback'}},
     {type: 'abi_issue_reply', match: {account: 'AlliedBrandsInc', type: 'issue'}},
     {type: 'generic_reply', match: {}},
@@ -97,14 +97,14 @@ var responses = [
 var timesheets = [
     { date: '2011/11/06', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
     { date: '2011/11/13', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
-    { date: '2011/11/20', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
-    { date: '2011/11/27', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,2,1,0,0] },
+    { date: '2011/11/20', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,2,1,0,0] },
+    { date: '2011/11/27', hours: [8,8,8,0,0,0,0], overtime: [0,0,0,8,9,0,0] },
     { date: '2011/12/04', hours: [8,8,8,8,8,0,0], overtime: [0,2,0,2,3,0,0] },
     { date: '2011/12/11', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
     { date: '2011/12/18', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
     { date: '2011/12/25', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
-    { date: '2012/01/01', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
-    { date: '2012/01/08', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2012/01/01', hours: [0,0,8,8,8,0,0], overtime: [8,8,0,0,0,0,0] },
+    { date: '2012/01/08', hours: [0,8,8,8,8,0,0], overtime: [8,0,0,0,0,0,0] },
     { date: '2012/01/15', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
 ];
 
@@ -223,7 +223,7 @@ var levels = [
     // introduce swatback of confused users with a time limit
     {  
         name: 'us1appprod045_WEEK4',
-        duration: 120,
+        duration: 150,
         maxWarnings: 5,
         resolutionRate: 0.3,
         timeline: [
@@ -241,6 +241,10 @@ var levels = [
     // productivity gets bumped to 50%
     {  
         name: 'us3appprod055_WEEK5',
+        duration: 150,
+        maxWarnings: 5,
+        resolutionRate: 0.5,
+
     },
     // level 6:
     // hate mail starts re. pricing

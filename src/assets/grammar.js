@@ -384,6 +384,9 @@ export default {
     "cj_feedback_reply": ["#cj_greeting#! Proud to be havin' ye aboard, matey", "#cj_greeting#! It be a real pleasure to have ye on board"],
     "cj_issue_reply": ["#cj_exclamation#! Very sorry ta be hearin' yer snack weren't ship-shape, please be callin' 570-330-3000 t' parley about it", "#cj_exclamation#! Please be diallin' 570-330-3000 so we can fix yer bad experience"],
 
+    "ex_feedback_reply": ["Thanks for getting in touch! We will pass on your message."],
+    "ex_issue_reply": ["Thanks for reaching out to us, it may be best to contact our support team on 570-330-3000. Best wishes."],
+
     "abi_feedback_reply": ["Thanks for your feedback! We will be sure to pass your words along to the appropriate team, have a great day!"],
     "abi_issue_reply": ["We're sorry to hear about that, please call us on 570-330-3000 so we can learn more"],
     "beaufort_reply": ["As of September ownership of Healthland Farms has transferred to Beaufort International, for customer service enquiries please contact @BeaufortIntl"],
