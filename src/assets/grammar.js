@@ -217,7 +217,7 @@ export default {
         "#genPerson##pName# bought a #productDesc# and there was nothing inside the #package#",
         "#genPerson##pName# bought a #productDesc# and there was nothing in it",
         "#genPerson##pNameTheir# #productDesc# is #emptyVolume#",
-        "#genPerson##pName# just opened a #productDesc# and it was #emptyVolume#",
+        "#genPerson##pName# just opened a new #productDesc# and it was #emptyVolume#",
         "did someone at the factory get hungry? check out this #productDesc# that's #emptyVolume#",
         "how come there's no #productSingular# in this #package#",
         "is your new business model selling #package.s# that are #emptyVolume#",
@@ -241,7 +241,29 @@ export default {
     "misshapenMessage": [
         "@#account# #misshapenDiscovery#", "#sadEmojiSeq# @#account# #misshapenDiscovery#", "@#account# #sadEmojiSeq# #misshapenDiscovery#"
     ],
-    
+   
+
+    // side effects
+    "sideEffectAdjective": [
+        "awful", "burning", "debilitating", "explosive", "flagrant", "intense", "massive", "overwhelming", "profuse", "stabbing", "terrible", "the worst", "unbearable", "uncontrollable", "", "", "", "", "", "", "", "", "", ""
+    ],
+    "sideEffect": [
+        "acne", "allergic reaction", "amnesia", "anemia", "asthma", "back pain", "bleeding gums", "bloodlust", "blurred vision", "bloody stool", "body odor", "breathing difficulty", "bruising", "chest pain", "cramping", "cysts", "chillblains", "cold flushes", "constipation", "cramps", "dandruff", "dehydration", "diarrhea", "eczema", "hair loss", "hallucinations", "headaches", "heart stoppage", "hives", "indigestion", "insomnia", "lesions", "incontinence", "itching", "joint pain", "loose bowels", "memory lapses", "migraines", "motion sickness", "mucous", "muscle pain", "nausea", "neck pain", "nightmares", "night terrors", "phlegm", "piles",  "priapism", "psychosis", "stomach ache", "sweating", "swelling", "tinnitus", "toothache", "twitching", "spasms", "vertigo", "vomiting", "weight gain",
+    ],
+    "sideEffectMessage": [
+        "#ex_prod#@#account# ever since I started taking #product# I have experienced #sideEffectAdjective# #sideEffect#",
+        "#ex_prod#has anyone else had #sideEffectAdjective# #sideEffect# after taking @#account# #product# or am I alone",
+        "#ex_prod#thanks @#account# for years of #sideEffectAdjective# #sideEffect#",
+        "#ex_prod#I keep having #sideEffectAdjective# #sideEffect#, maybe it's the @#account# #product#",
+        "#ex_prod#@#account# I buy your product to treat #sideEffect#, not to give me #sideEffect#",
+        "#ex_prod#maybe if I increase the dose of @#account# #product# enough the #sideEffectAdjective# #sideEffect# will stop",
+        "#ex_prod#@#account# why should I keep taking your medication for #sideEffect#, I'm sick of the #sideEffectAdjective# #sideEffect#",
+        "#ex_prod#@#account# [se_orig:#sideEffect#]before treatment I had #se_orig#, now I have #se_orig# and #sideEffectAdjective# #sideEffect#",
+        "#ex_prod#@#account# how is #product# still allowed on the market when it's giving everyone #sideEffectAdjective# #sideEffect#",
+
+
+    ],
+
     // experiences
     "experience": [
         "end of the day, time to kick back with some @#account# #productSingular.s#",
@@ -255,6 +277,7 @@ export default {
         "#genPartner#love is real #fanEmojiSeq# #pName# just gave me a @#account# #productDesc#",
         "dear @#account#, please send me as many free products as possible",
         "hey @#account# if I get a million RTs can I have free #product.s# for a year?",
+        "hey @#account# if I marry you can I have free #product.s# for a year?",
         "this @#account# #productDesc# is too good for this world",
         "@#account# this is the best #productDesc# ever, I need more",
         "@#account# real talk did you put heroin in the #productSingular# recipe, because this is addictive af",
@@ -264,6 +287,7 @@ export default {
         "@#account# just wanted to let you guys know you're doing an outstanding job",
         "@#account# you complete me",
         "I think if I could live off nothing but @#account# #product.s# I would",
+        "I just invented a new diet, it's called the \"@#account# #product# and cheese\" diet. please buy my book",
         
 
     ],
@@ -273,27 +297,49 @@ export default {
         "#exclamation# @#account# it's been 5 days and I still have that damn jingle from the TV ads stuck in my head",
         "just letting you know @#account#, your ads are the worst",
         "please kill me so I never have to see another @#account# ad",
-        "omg @#account# ad again! ",
+        "hey @#account# if I get your new logo tattooed can I have free #product.s# for a year?",
+        "omg @#account# ad again!",
+        "@#account# did you seriously pay off the whole internet to show your ad",
+        "I hate this @#account# ad so much",
+        "please stop showing me ads for @#account#, I hate #product#",
         "@#account# is there some amount of money I can pay to stop being spammed by ads for #productSingular.s#",
         "@#account# please fire your marketing department, you can do better",
     ],
 
 
     // pleading for drugs
-    "sponsorship": [
-        "#genPerson##pName# needs #drug# on compassionate grounds, please save #pThem#",
-        "#genPerson#please I urgently need #drug#, the life of #pName# depends on it",
-        "can you sponsor my fun-run"
+    "sponsorshipMessage": [
+        "#ex_prod#@#account# #genPerson##pName# needs #product# on compassionate grounds, please save #pThem#!!!",
+        "#ex_prod#@#account# #genPerson#please I urgently need #product#, #pNameTheir# life depends on it",
+        "#ex_prod#@#account# can #product# sponsor my fun-run"
     ],
 
-    // asking about jobs
-    "employment": [
-        "do you have any openings for chemical engineers?",
-        "is it possible for me to do an unpaid internship at your company during my gap year?",
+    "genJob": [
+        "[jobTitle:process engineer][jobField:process engineering]",
+        "[jobTitle:chemical engineer][jobField:chemical engineering]",
+        "[jobTitle:chemical biologist][jobField:chemical biology]",
+        "[jobTitle:biologist][jobField:biology]",
+        "[jobTitle:pharmacist][jobField:pharmacology]",
+        "[jobTitle:pathologist][jobField:pathology]",
+        "[jobTitle:toxicologist][jobField:toxicology]",
+        "[jobTitle:product marketeer][jobField:product marketing]",
+        "[jobTitle:plant operator][jobField:plant operator]",
+        "[jobTitle:safety inspector][jobField:health and safety]",
+        "[jobTitle:scientist][jobField:science]",
+        "[jobTitle:alchemist][jobField:alchemy]",
 
-        "are you accepting any graduate students for vacation work?",
-        "are there any graduate places left for this year?",
-        "how can I apply for a pharmacology job?",
+    ],
+
+
+    // asking about jobs
+    "employmentMessage": [
+        "@#account# do you have any openings for #jobTitle.s#?",
+        "@#account# is it possible for me to do an unpaid #jobField# internship at your company during my gap year?",
+        "@#account# are you accepting any graduate students for vacation work?",
+        "@#account# are there any #jobField# graduate places left for this year?",
+        "@#account# how can I apply for a #jobField# job?",
+        "@#account# are there any #jobTitle# places available?",
+        "@#account# I just graduated as a #jobTitle#, do you take students?",
 
     ],
 
@@ -325,6 +371,7 @@ export default {
         "[product:Caramellograms][productSingular:caramel][productDesc:bag of Caramellograms][package:wrapper]", 
         "[product:Caramellograms][productSingular:caramel][productDesc:box of Caramellograms][package:box]", 
     ],
+
     "prod_sheets": [
         "[product:fruit topsails][productSingular:sheet][productDesc:pack of fruit topsails][package:wrapper]",
         "[product:Fruit Topsails][productSingular:sheet][productDesc:pack of Fruit Topsails][package:wrapper]",
@@ -338,6 +385,18 @@ export default {
         "[product:Energy Loaf][productSingular:Loaf][productDesc:Energy Loaf][package:wrapper]",
         "[product:energy loaf][productSingular:loaf][productDesc:energy loaf][package:wrapper]",
     ],
+    "prod_shaftoproxin": [
+        "[product:Shaftoproxin][productSingular:capsule][productDesc:pack of Shaftoproxin][package:blister pack]",
+    ],
+    "prod_rejuvaplem": [
+        "[product:Rejuvaplem][productSingular:cream][productDesc:tube of Rejuvaplem][package:tube]",
+    ],
+    "prod_recupremax": [
+        "[product:Recupremax][productSingular:tablet][productDesc:pack of Recupremax][package:blister pack]",
+    ],
+    "prod_equestrinol": [
+        "[product:Equestrinol][productSingular:suppository][productDesc:bottle of Equestrinol][package:bottle]"
+    ],
 
 
     // crappy product weighting
@@ -348,6 +407,12 @@ export default {
     "cj_prod": ["#prod_sheets#","#prod_sheets#", 
                 "#prod_poppers#", "#prod_poppers#", "#prod_poppers#", "#prod_poppers#",
                 "#prod_loaf#", "#prod_loaf#", "#prod_loaf#", "#prod_loaf#",
+    ],
+    "ex_prod": [
+        "#prod_shaftoproxin#", 
+        "#prod_rejuvaplem#", "#prod_rejuvaplem#", "#prod_rejuvaplem#", "#prod_rejuvaplem#", 
+        "#prod_recupremax#", "#prod_recupremax#", "#prod_recupremax#", "#prod_recupremax#",
+        "#prod_equestrinol#", "#prod_equestrinol#",
     ],
 
 
@@ -374,6 +439,10 @@ export default {
     "cj_foreign_lit": ["[account:CapnJackFoods]#cj_prod##foreignLitigiousMessage#"],
 
 
+    "ex_side_effect": ["[account:excelsior_rx]#sideEffectMessage#"],
+    "ex_employment": ["[account:excelsior_rx]#genJob##employmentMessage#"],
+    "ex_sponsorship": ["[account:excelsior_rx]#sponsorshipMessage#"],
+
     // soporific response generators
     "ks_feedback_reply": ["we're humbled to have a fan like you on Team Kingsley!"],
     "ks_issue_reply": ["Hi, we\'re sorry for your experience but thank you for letting us know, please call 570-330-3000 to discuss"],
@@ -386,6 +455,7 @@ export default {
 
     "ex_feedback_reply": ["Thanks for getting in touch! We will pass on your message."],
     "ex_issue_reply": ["Thanks for reaching out to us, it may be best to contact our support team on 570-330-3000. Best wishes."],
+    "ex_drug": ["Ask your doctor about exciting new treatments for sudden onset kidney trauma"],
 
     "abi_feedback_reply": ["Thanks for your feedback! We will be sure to pass your words along to the appropriate team, have a great day!"],
     "abi_issue_reply": ["We're sorry to hear about that, please call us on 570-330-3000 so we can learn more"],

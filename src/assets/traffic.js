@@ -61,6 +61,7 @@ var messageTypes = {
     'cj_experience': { account: 'CapnJackFoods', type: 'feedback', subtype: 'experience' }, 
     'cj_advertising': { account: 'CapnJackFoods', type: 'feedback', subtype: 'advertising' }, 
     'ex_employment': { account: 'excelsior_rx', type: 'feedback', subtype: 'employment'},
+    'ex_sponsorship': { account: 'excelsior_rx', type: 'feedback', subtype: 'sponsorship'},
     'abi_beaufort': { account: 'AlliedBrandsInc', type: 'feedback', subtype: 'brandConfusion' },
 
     'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject' },
@@ -75,6 +76,7 @@ var messageTypes = {
     'cj_spoil': { account: 'CapnJackFoods', type: 'issue', subtype: 'spoilage' },
     'cj_misshapen': { account: 'CapnJackFoods', type: 'issue', subtype: 'misshapen' },
 
+    'ex_side_effect': { account: 'excelsior_rx', type: 'issue', subtype: 'sideEffect'},
 
 };
 
@@ -188,8 +190,12 @@ var levels = [
         resolutionRate: 0.3,
         timeline: [
             {
-                endMark: 90, periodMin: 5.0, periodMax: 10.0,
+                endMark: 90, periodMin: 4.0, periodMax: 10.0,
                 grammar: [
+                    { weight: 50, type: 'ex_side_effect' },
+                    { weight: 40, type: 'ex_employment' },
+                    { weight: 20, type: 'ex_sponsorship' },
+
                     { weight: 20, type: 'ks_foreign' },
                     { weight: 10, type: 'ks_foreign_lit' },
                     { weight: 10, type: 'ks_spoil' },
@@ -197,6 +203,7 @@ var levels = [
                     { weight: 10, type: 'ks_misshapen' },
                     { weight: 10, type: 'ks_experience' },
                     { weight: 5, type: 'ks_advertising' },
+
                     { weight: 20, type: 'cj_foreign' },
                     { weight: 10, type: 'cj_foreign_lit' },
                     { weight: 10, type: 'cj_spoil' },
@@ -207,6 +214,14 @@ var levels = [
 
                 ]
             },
+            {   
+                endMark: 110, periodMin: 8.0, periodMax: 13.0,
+            },
+            {   
+                endMark: 120, periodMin: 10.0, periodMax: 25.0,
+                grammar: []
+            },
+
         ],
 
     },
@@ -218,6 +233,15 @@ var levels = [
         duration: 150,
         maxWarnings: 5,
         resolutionRate: 0.3,
+        timeline: [
+            {
+                endMark: 90, periodMin: 5.0, periodMax: 10.0,
+                grammar: [
+                    { weight: 20, type: 'ex_side_effect' },
+
+                ]
+            },
+        ],
     },
     // level 4:
     // introduce swatback of confused users with a time limit

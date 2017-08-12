@@ -113,7 +113,7 @@ export default [
 
             <p>You probably don't know me, I used to be the social media manager for Allied Brands. Sorry for the unsolicited email, I got your contact info from a friend still working inside the Beast.</p>
 
-            <p>Basically, in case you haven't picked up on it there's no long-term prospects for the job. ABI hired some teenage fucks from the Bay Area to "train" some neural AI thing with what you're doing, which they intend to set loose on the public again as soon as they figure out how to make it stop talking like a Nazi. You probably heard about the last time their social media account was on the news? Yeah, that happened a few days after me and my team got canned and replaced with version 1. </p>
+            <p>Basically, in case you haven't picked up on it there's no long-term prospects for the job. Allied hired some teenage fucks from the Bay Area to "train" some neural AI thing with what you're doing, which they intend to set loose on the public again as soon as they figure out how to make it stop talking like a Nazi. You probably heard about the last time their social media account was all over the news? Yeah, that happened a few days after me and my team got canned and replaced with version 1.</p>
 
             <p>What makes me fucking livid is this unpaid internship horseshit. Okay, the job wasn't great money, but it was at least a salary! I am 99% sure that their game plan is to ditch you at the end of the trial period and just churn people until they have enough data or whatever to switch CyberGoebbels back on. Obviously you're free to do as you wish, but I figure the least I can do is warn you about what's going down.</p>
 
@@ -130,7 +130,8 @@ export default [
         "subject": "New account - Excelsior Pharmaceuticals",
         "content": `
             <p>All,</p>
-            <p>The Excelsior Pharmaceuticals division has finished the transition of customer relations staff to the new central PR group. Excelsior is among the oldest businesses in the Allied Brands stable, and is our primary mark for over-the-counter and prescription medications. Please engage with as many such customers as possible from the Excelsior Pharmaceuticals account (<b>@excelsior_rx</b>).</p>
+            <p>As of today, the customer relations divison of Excelsior Pharmaceuticals has merged into the new central PR group. Excelsior is our primary mark for over-the-counter and prescription medications, and is one of the oldest businesses in the Allied Brands stable. Please join me in giving our new colleagues a warm welcome!</p>
+            <p>As part of the restructuring, our team has taken custodianship of the Excelsior social media feeds. Please engage with as many customers as possible from the Excelsior Pharmaceuticals account (<b>@excelsior_rx</b>).</p>
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
@@ -149,7 +150,7 @@ export default [
 
             <p>Thanks for replying back. I respect your decision, but I still think you're being played for a chump. Don't get me wrong, I do get that it's a really shit job market right now, but please promise me that you'll look for other positions. This isn't just me being bitter; Allied is seriously a <i>fucked up</i> place. The business is running at a loss, the leadership is an endless buck-passing circlejerk, and everyone is being pushed to cut corners. Oh and they're <i>big</i> fans of stack ranking, so if you've ever wanted to see a proper Stasi-grade culture of undermining and snitching... Jesus, they actually used the words "quash dissent" to justify cracking down on managers and quality control supervisors for doing their job! I can't make this shit up.</p>
 
-            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but like the old saying goes I do not use Allied Brands products, nor would I recommend them to anyone intending to live to a ripe old age. Mark my words; one day there will be a big public scandal, and your job will basically be the equivalent of unclogging sewer pipes with your bare hands. I would not wish that horrorshow on anyone.</p>
+            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but like the old saying goes I do not use Allied Brands products, nor would I recommend them to anyone wanting to live to a ripe old age. Mark my words; one day there will be a big public scandal, and your job will basically be the equivalent of unclogging sewer pipes with your bare hands. I would not wish that horrorshow on anyone.</p>
 
             <p>Cheers,<br/>Andrea</p>
         `
@@ -170,29 +171,38 @@ export default [
         <p>As you're probably aware, we are launching a new marketing campaign for Kingsley's Fruit Pebbles this week. Those of you who were present at the full presentation on Friday should already be across it, but for those who were unable to make it I've nutshelled the main points for you below.</p>
 
         <p>In all honesty, it's no secret that the Fruit Pebbles line has been considered for discontinuation. The products have missed sales targets for the last 12 quarters, and the focus groups have consistently reported that they perceive the brand as unexciting and old-fashioned.</p>
-        <p>However, there has been an <b>upsurge</b> in web searches for Fruit Pebbles in the past month, due to its misappropriation by certain political figures. Naturally, Allied PR has released a full statement condemning the use of our snack product as an abhorrent and factually incorrect metaphor for ethnic cleansing. But the interest in the product is real; in the last few weeks unit sales have almost tripled!</p>
-        <p>This boom will most likely be a temporary one if we leave it unaddressed, but we have a rare and ideal opportunity to pivot this underperforming brand and focus like a laser on a new and growing group of consumers, making up the bulk of the new sales. The demographic is predominantly male, middle-class, age 15-35, single, and interested in technology and video games.</p>
+        <p>However, there has been a <b>surge</b> in web searches for Fruit Pebbles in the past month, due to its misappropriation by certain political figures. Naturally, Allied PR has released a full statement condemning the use of our snack product as an abhorrent and factually incorrect metaphor for ethnic cleansing. But the interest in the product is real; in the last few weeks unit sales have almost tripled!</p>
+        <p>This boom will most likely be a temporary one if we leave it unaddressed, but we have a rare and ideal opportunity to pivot this underperforming brand and focus like a laser on the new and growing group of consumers making up the bulk of these sales. The demographic is predominantly male, middle-class, age 15-35, single, and interested in technology and video games.</p>
         <p>Now I know what you're thinking, and I promise you we are not going to fall into that 90s trope of "X-Treme"ifying everything!! This is 2011, and Fruit Pebbles are a mature product for mature consumers. It goes without saying that the advertising can and will be darker and more realistic compared to other campaigns.</p>
         <p>Of course, no advertising campaign is complete without a compelling original character, and no character is complete without an origin story. Sit back, relax, and enjoy this slice from the distant future...</p>
 
         <hr/>
-        <p>They only called him in for the exceptional cases. Where all other options have failed. Today was no different.</p>
+        <p>They only called him in for the exceptional jobs. Once all other options have failed. Today was no different.</p>
+
         <p>Vice-Captain Ricardo Hull of the 3rd Interstellar Reconnaissance Company kicked open the hatch and dropped from the ventilation duct, the familiar smell of blood and charred human remains filling his nostrils. He knew better than to look among the bodies for familiar faces. They were all dead, and he'd soon join them if he got sympathetic now.</p>
+        
         <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red; background-color: yellow;">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would be back soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
+
         <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
-        <p>As he attached the plastic explosive charges to the main reactor</p>
+
+        <p>As he attached the plastic explosive charges to the main reactor, he thought about the events leading up to this point. About the war. About the enslavement and death</p>
+
+        <p>Each xenospawn's clawed forearms was festooned with a bulbous ovipositor. Ricardo suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
 
         <p>From the wings came a bloodcurdling battle cry. It would be the last thing they would hear.</p>
 
         <p><i>"EAT IT, CUCKS!"</i></p>
 
-        <p>By then it was too late for them.</p>
+        <p>By then it was too late. The cluster mine decorated the hallway with a shower of xenospawn viscera.</p>
+
 
         <p>A few rounds ricocheted off the armored brim of his helmet; a gift from his late father.</p>
 
+
+
         <hr/>
         <p>As a limited edition tie-in to promote the character, Fruit Pebbles will be released in gunmetal grey. In your communications with Kingsley Snacks customers, be sure to work in a reference to the promotion and include the image attached below.</p>
-        <p>I hope you will join me in welcoming Ricardo into our permanent stable of brand mascots.</p>
+        <p>I hope you will join me in welcoming Ricardo into our diverse lineup of brand mascots.</p>
         <p>#ricardolives</p>
 
 
@@ -241,7 +251,7 @@ export default [
                 <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The vast majority of these cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. While FDA inspectors have not yet publicly identified the root cause, unconfirmed reports suggest that batches of the milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
                 <p>A spokesperson for Beaufort stated that the nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that the investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort.</p>
                 <p>The market response to the scandal has been severe, with Beaufort stock down $3.50 to $9.02.</p>
-                <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms Milk. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone activist investor demanding a higher premium on the market price. A source inside Beaufort, who asked not to be identified, said that the investigation had unearthed possible links to members of Allied Brands senior management.<p>
+                <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms Dairy. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone investor demanding a higher premium on the market price. A source inside Beaufort, who asked not to be identified, said that the investigation had unearthed possible links to members of Allied Brands senior management.<p>
                 <p>A spokesperson for Allied Brands Inc. declined to comment, citing the complete divestment of the Healthland Farms product line. The Allied stock price suffered some early losses when news of the scandal broke on Wednesday, but has since rallied to be slightly ahead by close of trading.</p>
             </div>
             <p style="text-align: center;"><small>© 2011 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
@@ -294,8 +304,8 @@ export default [
         "subject": "Good news story - relaunch of Shaftoproxin®",
         "content": `
             <p>Hi team,</p>
-            <p>There's been some good news from our medical division Excelsior Pharmaceuticals. Shaftoproxin® is a pharmaceutical product originally developed as a treatment for stump rash, boatswain's disease, and night prowls. Thanks to some diligent work by our excellent pathology team Shaftoproxin® has proven effective in relieving the symptoms of sudden onset kidney trauma, and as the product has existing FDA approval, Excelsior is first to market with such a treatment.</p>
-            <p>In order to best engage customers and medical professionals about the benefits of Shaftoproxin®, Excelsior plans to launch an awareness campaign along with updated product packaging and marketing materials, plus a wider rollout to retailers to meet anticipated demand. </p>
+            <p>There's been some good news from our medical division Excelsior Pharmaceuticals. Shaftoproxin® is a pharmaceutical product originally developed in 1973 as a treatment for boatswain's disease, but today is more commonly prescribed for treating stump rash and night prowls. Thanks to some diligent work by our excellent pathology team, Shaftoproxin® has proven effective in relieving the symptoms of sudden onset kidney trauma, and as the product has existing FDA approval, Excelsior is first to market with such a treatment.</p>
+            <p>In order to best engage customers and medical professionals about the benefits of Shaftoproxin®, Excelsior plans to launch an awareness campaign along with updated product packaging and marketing materials. This will precede a wider rollout to pharmacies across the country to meet anticipated demand. </p>
             <p>As part of this push, the incoming feed will now include messages from prospective customers who have posted about sudden onset kidney trauma. Please note that this treatment is still an off-label use of the drug, so from a legal standpoint it is crucial that we do <b>not</b> directly advocate people buy Shaftoproxin®. Instead, please encourage as many prospective customers as possible to <b>ask their doctor or healthcare provider</b> about exciting new treatments for sudden onset kidney trauma, from the Excelsior Pharmaceuticals (<b>@excelsior_rx</b>) account. </p>
 
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
