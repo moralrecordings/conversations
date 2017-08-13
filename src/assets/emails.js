@@ -187,13 +187,17 @@ export default [
 
         <p>As he attached the plastic explosive charges to the main reactor, he thought about the events leading up to this point. About the war. About the enslavement and death</p>
 
-        <p>Each xenospawn's clawed forearms was festooned with a bulbous ovipositor. Ricardo suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
+        <p>A group of xenospawn . Ricardo surmised they were a mop-up unit deployed to do a final sweep before assuming control of the base.</p>
+
+        <p>Crucially, each xenospawn has two bulbous ovipositors, one on the back of each forearm. Ricardo suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
+
+        
 
         <p>From the wings came a bloodcurdling battle cry. It would be the last thing they would hear.</p>
 
         <p><i>"EAT IT, CUCKS!"</i></p>
 
-        <p>By then it was too late. The cluster mine decorated the hallway with a shower of xenospawn viscera.</p>
+        <p>By then it was too late. With an earsplitting detonation, the flavor grenade decorated the hallway with xenospawn viscera. The survivors, momentarily stunned that most of their patrol had been reduced to a fine mist</p>
 
 
         <p>A few rounds ricocheted off the armored brim of his helmet; a gift from his late father.</p>
