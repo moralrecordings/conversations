@@ -1024,6 +1024,10 @@ export default {
         },
         nextLevel: function (ev) {
             var vm = this;
+            if (vm.level+1 >= traffic.levelCutOff) {
+                vm.logout();
+                return;
+            }
             this.fadeout = true;
             this.$store.commit('completeLevel', {
                 level: vm.level,
@@ -1034,9 +1038,7 @@ export default {
                     warnings: this.score.warn
                 }
             });
-            if (vm.level+1 >= traffic.levels.length) {
-                vm.logout();
-            }
+
             setTimeout(function () {
                 vm.$router.push('/session/'+traffic.levels[vm.level+1].name);
             }, 1200);

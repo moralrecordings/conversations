@@ -110,6 +110,8 @@ var timesheets = [
     { date: '2012/01/15', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
 ];
 
+// hard level cutoff for public builds of the game 
+var levelCutOff = 3;
 
 var levels = [
     // level 0:
@@ -1073,6 +1075,7 @@ export default {
     messageTypes: messageTypes,
     responses: responses,
     levels: levels,
+    levelCutOff: levelCutOff,
     locations: locations,
     timesheets: timesheets
 };
