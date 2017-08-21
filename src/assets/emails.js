@@ -113,7 +113,7 @@ export default [
 
             <p>You probably don't know me, I used to be the social media manager for Allied Brands. Sorry for the unsolicited email, I got your contact info from a friend still working inside the Beast.</p>
 
-            <p>Basically, in case you haven't picked up on it there's no long-term prospects for the job. Allied hired some teenage fucks from the Bay Area to "train" some neural AI thing with what you're doing, which they intend to set loose on the public again as soon as they figure out how to make it stop talking like a Nazi. You probably heard about the last time their social media account was all over the news? Yeah, that happened a few days after me and my team got canned and replaced with version 1.</p>
+            <p>Basically, in case you haven't picked up on it there's no long-term prospects for the job. Allied hired some teenage fucks from the Bay Area to "train" some neural AI thing with what you're doing, which they intend to set loose on the public again as soon as they figure out how to make it stop talking like a Nazi. You probably heard about the last time their social media account was all over the news? Yeah, that happened a few days after me and my co-workers got canned and replaced with version 1.</p>
 
             <p>What makes me fucking livid is this unpaid internship horseshit. Okay, the job wasn't great money, but it was at least a salary! I am 99% sure that their game plan is to ditch you at the end of the trial period and just churn people until they have enough data or whatever to switch CyberGoebbels back on. Obviously you're free to do as you wish, but I figure the least I can do is warn you about what's going down.</p>
 
@@ -150,7 +150,7 @@ export default [
 
             <p>Thanks for replying back. I respect your decision, but I still think you're being played for a chump. Don't get me wrong, I do get that it's a really shit job market right now, but please promise me that you'll look for other positions. This isn't just me being bitter; Allied is seriously a <i>fucked up</i> place. The business is running at a loss, the leadership is an endless buck-passing circlejerk, and everyone is being pushed to cut corners. Oh and they're <i>big</i> fans of stack ranking, so if you've ever wanted to see a proper Stasi-grade culture of undermining and snitching... Jesus, they actually used the words "quash dissent" to justify cracking down on managers and quality control supervisors for doing their job! I can't make this shit up.</p>
 
-            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but like the old saying goes I do not use Allied Brands products, nor would I recommend them to anyone wanting to live to a ripe old age. Mark my words; one day there will be a big public scandal, and your job will basically be the equivalent of unclogging sewer pipes with your bare hands. I would not wish that horrorshow on anyone.</p>
+            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but like the old saying goes I do not use Allied Brands products, nor would I recommend them to anyone wishing to live to a ripe old age. Mark my words; one day there will be a big public scandal, and your job will basically be the equivalent of unclogging sewer pipes with your bare hands. I would not wish that horrorshow on anyone.</p>
 
             <p>Cheers,<br/>Andrea</p>
         `
@@ -178,29 +178,32 @@ export default [
 
         <hr/>
         <p>They only called him in for the exceptional jobs. Once all other options have failed. Today was no different.</p>
-
-        <p>Vice-Captain Ricardo Hull of the 3rd Interstellar Reconnaissance Company kicked open the hatch and dropped from the ventilation duct, the familiar smell of blood and charred human remains filling his nostrils. He knew better than to look among the bodies for familiar faces. They were all dead, and he'd soon join them if he got sympathetic now.</p>
-        
-        <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red; background-color: yellow;">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would be back soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
-
+        <p>Vice-Captain Ricardo Hull of the 3rd Interstellar Reconnaissance Company kicked open the hatch and dropped from the ventilation duct, the familiar smell of blood and charred human remains filling his nostrils. He knew better than to look among the bodies for familiar faces. They were all dead, and he'd soon join them if he got sympathetic now.</p>       
+        <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red; background-color: yellow;">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would arrive soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
         <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
-
-        <p>As he attached the plastic explosive charges to the main reactor, he thought about the events leading up to this point. About the war. About the enslavement and death</p>
-
-        <p>A group of xenospawn . Ricardo surmised they were a mop-up unit deployed to do a final sweep before assuming control of the base.</p>
-
-        <p>Crucially, each xenospawn has two bulbous ovipositors, one on the back of each forearm. Ricardo suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
-
+        <p>No sooner had he attached the final plastic explosive charge to the main reactor, he heard the sound of approaching footsteps. The xenospawn army MO was to send out a mop-up squad and do a final sweep before handing over control of the base.</p>
         
+        
+        <p>Ricardo saw the bulbous ovipositors and suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
 
-        <p>From the wings came a bloodcurdling battle cry. It would be the last thing they would hear.</p>
+        <p></p>
+
+        <p>From the wings came a bloodcurdling battle cry. It would be the last thing they would ever hear.</p>
 
         <p><i>"EAT IT, CUCKS!"</i></p>
 
-        <p>By then it was too late. With an earsplitting detonation, the flavor grenade decorated the hallway with xenospawn viscera. The survivors, momentarily stunned that most of their patrol had been reduced to a fine mist</p>
+        <p>The flavor grenade exploded, painting the hallway with a shower of xenospawn viscera. The three survivors, unfazed that their comrades had been reduced to a fine mist, rolled for cover and began searching for the source of the attack.</p>
 
 
         <p>A few rounds ricocheted off the armored brim of his helmet; a gift from his late father.</p>
+
+        <p>It was all over. </p>
+        
+        <p>Slumping in defeat, Ricardo gestured towards his Fruit Pebbles box on the ground, as one last request before his execution by parasite. The xenospawn smiled a terrible smile. Hands still in the air, Ricardo reached over for the box, removed a pebble and placed it in his mouth.</p>
+
+        <p>A fruit pebble with an emergency microswitch for the detonator.</p>
+        
+        <p>The shaped charge ripped through the xenospawn's midsection and upper body, leaving only a grisly pair of legs standing.</p>
 
 
 
@@ -252,7 +255,7 @@ export default [
                 <p style="font-variant: small-caps">Robert Xam in Chicago</p>
 
                 <p>Beaufort North America LLC. has issued an immediate nationwide recall for all Healthland Farms branded milk products, following reports of children suffering from impaired kidney functionality.</p>
-                <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The vast majority of these cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. While FDA inspectors have not yet publicly identified the root cause, unconfirmed reports suggest that batches of the milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
+                <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The vast majority of these cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. While FDA inspectors have not yet publicly identified the root cause, unconfirmed reports suggest that several batches of the milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
                 <p>A spokesperson for Beaufort stated that the nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that the investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort.</p>
                 <p>The market response to the scandal has been severe, with Beaufort stock down $3.50 to $9.02.</p>
                 <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms Dairy. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone investor demanding a higher premium on the market price. A source inside Beaufort, who asked not to be identified, said that the investigation had unearthed possible links to members of Allied Brands senior management.<p>
@@ -300,6 +303,46 @@ export default [
     // week 6 starting 20111205
     {
         "visibleLevel": 5,
+        "date": moment("20111202", "YYYYMMDD"),
+        "sender": "Andrea Lisbon",
+        "senderMail": "starbodies@ichiromail",
+        "recipient": "Me",
+        "recipientMail": "againstpollution@ichiromail",
+
+        "subject": "Re: Fwd: IMPORTANT - New campaign for Kingsley's Fruit Pebbles",
+        "content": `
+            <p>Oh my god I'm dying. That's just fantastic. And the campaign lasted a whole three days?</p>
+
+            <p>I am so happy that they let Golden Boy have full creative control over another campaign. If you're ever in Jersey City, pick up the drinks and I'll tell you all about the last time that happened. No spoilers, but it was officially the most expensive campaign in company history.</p>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <p><small>Okay one spoiler; three people nearly asphyxiated</small></p>
+        `
+    },
+    {
+        "visibleLevel": 5,
         "date": moment("20111205", "YYYYMMDD"),
         "sender": "Tricia Huxton",
         "senderMail": "tricia.huxton@alliedbrandsinc",
@@ -310,7 +353,7 @@ export default [
             <p>Hi team,</p>
             <p>There's been some good news from our medical division Excelsior Pharmaceuticals. Shaftoproxin® is a pharmaceutical product originally developed in 1973 as a treatment for boatswain's disease, but today is more commonly prescribed for treating stump rash and night prowls. Thanks to some diligent work by our excellent pathology team, Shaftoproxin® has proven effective in relieving the symptoms of sudden onset kidney trauma, and as the product has existing FDA approval, Excelsior is first to market with such a treatment.</p>
             <p>In order to best engage customers and medical professionals about the benefits of Shaftoproxin®, Excelsior plans to launch an awareness campaign along with updated product packaging and marketing materials. This will precede a wider rollout to pharmacies across the country to meet anticipated demand. </p>
-            <p>As part of this push, the incoming feed will now include messages from prospective customers who have posted about sudden onset kidney trauma. Please note that this treatment is still an off-label use of the drug, so from a legal standpoint it is crucial that we do <b>not</b> directly advocate people buy Shaftoproxin®. Instead, please encourage as many prospective customers as possible to <b>ask their doctor or healthcare provider</b> about exciting new treatments for sudden onset kidney trauma, from the Excelsior Pharmaceuticals (<b>@excelsior_rx</b>) account. </p>
+            <p>As part of this push, the incoming feed will now include messages from prospective customers who have posted about sudden onset kidney trauma. Please note that this treatment is still an off-label use of the drug, so from a legal standpoint it is crucial that we do <b>not</b> directly advocate people buy Shaftoproxin®. Instead, please encourage as many prospective customers as possible to <b>ask their doctor or healthcare provider</b> about <b>exciting new treatments</b> for sudden onset kidney trauma, from the Excelsior Pharmaceuticals (<b>@excelsior_rx</b>) account. </p>
 
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
@@ -339,51 +382,29 @@ export default [
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
-    {
-        "visibleLevel": 6,
-        "date": moment("20111211", "YYYYMMDD"),
-        "sender": "Andrea Lisbon",
-        "senderMail": "starbodies@ichiromail",
-        "recipient": "Me",
-        "recipientMail": "againstpollution@ichiromail",
-
-        "subject": "Re: Fwd: IMPORTANT - New campaign for Kingsley's Fruit Pebbles",
-        "content": `
-            <p>Oh my god I'm dying. That's just fantastic. And the campaign lasted a whole three days?</p>
-
-            <p>I am so happy that they let Golden Boy have full creative control over another campaign. If you're ever in Jersey City, pick up the drinks and I'll tell you about the last time that happened. No spoilers, but it was officially the most expensive campaign in company history.</p>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <p><small>Okay one spoiler; three people nearly asphyxiated</small></p>
-        `
-    },
 
 
 
 
     // week 8 starting 20111220
+    {
+        "visibleLevel": 7,
+        "date": moment("20111215"),
+        "sender": "Richard Hull",
+        "senderMail": "richard.hull@alliedbrandsinc",
+        "recipient": "PR - All Users",
+        "recipientMail": "pr_all@alliedbrandsinc",
+        "subject": "Exciting Kingsley Christmas cross-promotion",
+        "content": `
+            <p>Hi guys,</p>
+
+            <p>Christmas is nearly here, and it's freezing outside. So why not spice things up in the bedroom with Kingsley Snacks?</p>
+            
+            <p>You heard that right. For the first time  with the hashtag #hotforchristmas.</p>
+             
+             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Peace,<br/><b>Richard Hull</b><br/>Public Relations Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/>
+        `
+    },
     {
         "visibleLevel": 7,
         "date": moment("20111219", "YYYYMMDD"),
@@ -412,6 +433,47 @@ export default [
         `
     },
     // week 9 starting 20111227
+    {
+        "visibleLevel": 8,
+        "date": moment("20111222", "YYYYMMDD"),
+        "sender": "MediaMunch Alerts",
+        "senderMail": "alerts@mediamunch",
+        "recipient": "Me",
+        "recipientMail": "againstpollution@ichiromail",
+        "subject": "New Article: Allied Brands fires employee who was target of harassment campaign",
+        "content": `
+            <p style="font-size: 1.5rem;">News alerts for "allied brands":</p>
+            <div style="border-radius: 8px; border: 1px solid grey; padding-left: 1em; padding-right: 1em;">
+                <h2 style="margin-bottom: 0;">Allied Brands fires employee who was target of harassment campaign</h2>
+                <p style="font-variant: small-caps">Francisco Muëller in Pittsburgh</p>
+
+    
+                <p>Yesterday, Huxton posted a short statement on her personal social media feeds saying she had been fired from her position at Allied Brands, accusing the company of doing so to "draw away some unwanted heat". The company is still dealing with the fallout of the Healthland Farms milk scandal, which has escalated to be one of the worst food safety incidents in the history of the United States.</p>
+
+                <p>An official statement from an Allied Brands' spokesperson claimed that the firing was due to holding a second job in breach of company policy.</p>
+                <p>"Tricia Huxton was terminated due to violation of an internal company policy involving holding a second job in conflict with Allied Brands' corporate culture. Though Ms. Huxton's termination follows her being the subject of criticism from certain groups via social media some weeks ago, the two are absolutely not related. Allied Brands is a company committed to fostering inclusion and diversity in both our company and the broader consumer products space and we firmly reject the harassment of individuals based on gender, race or personal beliefs. We wish Ms. Huxton well in her future endeavors."</p>
+                
+            </div>
+            <p style="text-align: center;"><small>© 2011 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
+
+        `
+    },
+    {
+        "visibleLevel": 8,
+        "date": moment("20111223", "YYYYMMDD"),
+        "sender": "Andrea Lisbon",
+        "senderMail": "starbodies@ichiromail",
+        "recipient": "Me",
+        "recipientMail": "againstpollution@ichiromail",
+        "subject": "What did you expect was going to happen",
+        "content": `
+            <p>You know, looking back on it Tricia was probably the best boss I ever had. She made sure her reports had what they needed to work, she protected them from most of the infighting, and even on the worst days when the business was in the toilet, she gave the job everything she had.</p>
+            <p>She fucking deserved fucking better than to be hurled under a bus by that spineless, chickenshit, traitorous, incompetent oxygen-thief of a CMO, too busy running scared from a self-appointed peepants internet detective squad to protect someone who's had his back from day fucking one. And for what? To dodge some bad press???</p>
+            <p><b>SHE DID NOTHING WRONG AND THEY THREW HER TO THE WOLVES</b></p>
+            <p></p>
+            <p>I don't know what else to say. I mean I appreciate you filling me in from the frontlines, but think hard about what you're enabling here</p>
+        `
+    },
 
     {
         "visibleLevel": 8,

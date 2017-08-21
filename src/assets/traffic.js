@@ -279,6 +279,7 @@ var levels = [
         name: 'us2appprod024_WEEK6',
     },
     // level 7:
+    // start flavored condom cross promotion
     // introduce suicide watch (with short timer)
     {  
         name: 'us6appprod060_WEEK7',
