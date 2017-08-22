@@ -34,6 +34,11 @@ const store = new Vuex.Store({
         maxLevel: function (state) {
             return state.stats.length;
         },
+        unlocked: function (state, level) {
+            return function (level) {
+                return (level <= state.stats.length);
+            }
+        },
         globalResolution: function (state, level) {
             return function (level) {
                 var result = {

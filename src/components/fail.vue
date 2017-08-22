@@ -4,9 +4,7 @@
             <span class="titlebar-text">Message from HR</span>
         </div>
         <div class="body-container"><div class="body">
-            <p>Regretfully we must inform you that after careful consideration, the department has decided to terminate your internship, effective immediately.</p>
-            <p>The feedback from your supervisor and co-workers has been decisive, and convinced us that you are not an ideal cultural fit for our company.</p>
-            <p>We thank you for the good work you have done for Allied Brands, and wish you well on your future career prospects.</p>
+            <div v-html="message"/>
             <button class="form" v-on:click="logout">Log out</button>
         </div></div>
     </div>
@@ -26,11 +24,11 @@
 </style>
 
 <script>
-
+import traffic from 'assets/traffic';
 
 export default {
     name: 'fail-app',
-    props: ['xPos', 'yPos'],
+    props: ['xPos', 'yPos', 'endless'],
     methods: {
         logout: function () {
             this.$emit('logout');
@@ -39,6 +37,15 @@ export default {
     data: function() {
         return {
         };
+    },
+    computed: {
+        message: function () {
+            if (this.endless) {
+                return traffic.text.failureEndless;
+            } else {
+                return traffic.text.failure;
+            }
+        }
     }
 };
 </script>

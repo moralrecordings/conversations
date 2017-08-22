@@ -521,4 +521,55 @@ export default [
     },
 
 
+
+    // extra information for endless mode
+
+    {
+        "visibleLevel": 11,
+        "date": moment("20120116", "YYYYMMDD"),
+        "sender": "Tricia Huxton",
+        "senderMail": "tricia.huxton@alliedbrandsinc",
+        "recipient": "PR - Temporary Staff",
+        "recipientMail": "pr_temp@alliedbrandsinc",
+        "subject": "Orientation - READ THIS FIRST",
+        "content": `
+            <p>All,</p>
+            <p>Welcome to the Allied Brands family! It's good to have you on board.</p>\n<p>If you aren't fully across them yet, now would be a good time to revisit the Corporate Mission Statement and Core Company Values. As a steward of Allied Brands Inc's social media presence, <b>you</b> are the company's public representative and a first point of contact for many of our customers.</p>
+            <p>Some tips to help you get started:</p>
+            <ul>
+                <li>All interaction with customers is handled through our form-based ticketing system, Alwynsoft IssueMagic. Tickets in IssueMagic are drawn from a number of social media sources, including @ mentions, direct messages and mentions of specific keywords.</li>
+                <li>When a ticket shows up in IssueMagic, click on the message to expand the answer form. Answering a ticket in IssueMagic will send a response back to the customer; it's easy as that!</li>
+                <li>When preparing a response to a customer, it is important that it arrives to them from the <b>correct brand account</b>. You can change the active account using the button group on the right side of the IssueMagic interface.</li>
+                <li>We wouldn't expect you to respond to every single query that arrives in on a given day. That said, the business has reasonable expectations for KPIs such as <b>resolution rate</b>. You can keep track of these metrics using the gauges on the left side of the IssueMagic interface.</li>
+                <li>All responses you make to customer queries are verified by a supervisor before release. Any noted mistakes will be flagged with a <b>formal warning</b>, which you should review to help avoid future mistakes.</li>
+                <li>Repeated warnings may result in performance management or disciplinary proceedings.</li>
+            </ul>
+            <p>That's about it, best of luck and have fun! Our customers really are the best. <span style=\"font-family: serif;\">&nbsp;J</span></p>
+            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+        `
+    },
+    {
+        "visibleLevel": 11,
+        "date": moment("20120116", "YYYYMMDD"),
+        "sender": "Cody Briggs",
+        "senderMail": "cody.briggs@alliedbrandsinc",
+        "recipient": "PR - Temporary Staff",
+        "recipientMail": "pr_temp@alliedbrandsinc",
+        "subject": "Business rules and current promotions",
+        "content": `
+            <p>All,</p>
+            <p>Firstly, Allied Brands is grateful for the extra assistance provided by Roshan Backoffice Services Ltd. in managing our social media during this period of high customer demand. Assuming all goes well, we will definitely be considering your services for any planned expansion of our customer outreach capability.</p>
+            <p>As outlined in the contract, we need first line responders to man the following social media accounts 24/7:</p>
+            <p><ul>
+                <li><b>@AlliedBrandsInc</b> - Allied Brands Inc. corporate account</li>
+            </ul></p>
+            <p>Please refer to our standard orientation email for an overview of how our ticketing system works. In addition to the standard rules for replying to customers, there are a number of custom rules relating to current requirements by the business.</p>
+            <p><ul>
+                <li>For any message where the customer makes specific legal demands/threats, or makes allegations of physical harm caused by an Allied Brands product, mark it with the <b>"Litigious"</b> flag.</li>
+            </ul></p>
+
+            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+        `
+    },
+
 ];

@@ -4,17 +4,17 @@
             <div style="display: none" v-html="asset"/>
         </template>
         <div class="desktop" v-bind:class="'bg-'+level"> 
-            <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y" v-bind:level="level" v-if="showEmail" v-on:close="closeEmailWindow"/>
+            <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y" v-bind:level="level" v-bind:todayOnly="endless" v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-bind:level="level" v-if="showIssues" v-on:changeAccount="changeAccount"/>
-            <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-on:startShift="start" v-if="showIssues" />
+            <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:maxQueue="maxQueue" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-bind:endless="endless" v-on:startShift="start" v-if="showIssues" />
             <!-- message windows -->
             <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-bind:level="level" v-on:submitMessage="submitMessage" v-on:expire="expireMessage" v-on:close="closeMessageWindow"/>
             <!-- tutorial messages -->
             <mr-messages-app v-if="tutorialMessage" v-bind:account="account" v-bind:message="tutorialMessage" v-bind:level="level" v-on:submitMessage="submitTutorialMessage"  v-on:close="closeTutorialMessageWindow" />
             <!-- warning window -->
             <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
-            <mr-settings-app v-bind:xPos="settingsPos.x" v-bind:yPos="settingsPos.y" v-if="showSettings" v-on:close="closeSettingsWindow" v-on:logout="logout" v-on:debugWin="showSuccessWindow" v-on:debugSpawn="spawnMessage" v-on:debugTest="spawnTest"/>
-            <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-if="showFail" v-on:logout="logout"/>
+            <mr-settings-app v-bind:xPos="settingsPos.x" v-bind:yPos="settingsPos.y" v-if="showSettings" v-on:close="closeSettingsWindow" v-on:logout="logout" v-on:debugWin="showSuccessWindow" v-on:debugLose="showFailWindow" v-on:debugSpawn="spawnMessage" v-on:debugTest="spawnTest"/>
+            <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-bind:endless="endless" v-if="showFail" v-on:logout="logout"/>
             <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-bind:level="level" v-if="showSuccess" v-on:nextLevel="nextLevel"/>
         </div>
         <div class="taskbar">
@@ -706,6 +706,9 @@ var initialData = function () {
         // tutorial flags
         tutorialMode: false,
         tutorialMessage: null,
+        
+        // endless mode flags
+        endless: false,
 
         // window position hacks
         activityPos: {x: 0, y: 0},
@@ -733,6 +736,7 @@ var initialData = function () {
         clock: moment(),
 
         maxWarnings: 5,
+        maxQueue: 0,
         resolutionRate: 0.5,
 
         svgAssets: svgAssets,
@@ -898,14 +902,24 @@ export default {
         },
         _countdownCB: function () {
             this.timer.count += 1;
-            this.timer.clock = moment.duration(
-                this.timer.duration-this.timer.count, 'seconds'
-            ).format('m:ss', {trim: false});
+            if (this.endless) {
+                this.timer.clock = moment.duration(
+                    this.timer.count, 'seconds'
+                ).format('m:ss', {trim: false});
+            } else { 
+                this.timer.clock = moment.duration(
+                    this.timer.duration-this.timer.count, 'seconds'
+                ).format('m:ss', {trim: false});
+            }
             if (this.timer.duration - this.timer.count < 15) {
                 audioAssets.tick.currentTime = 0;
                 audioAssets.tick.play();
             }
-            if (this.timer.count >= this.timer.duration) {
+
+            if ((this.maxWarnings && (this.score.warn >= this.maxWarnings)) || (this.maxQueue && (this.score.open >= this.maxQueue))) {
+                this.stopShift();
+                this.showFailWindow();
+            } else if (this.timer.count >= this.timer.duration) {
                 console.log('TIME OVER!');
                 this.stopShift();
                 if ((this.score.rslv / (this.score.open+this.score.rslv+this.score.warn))< this.resolutionRate) {
@@ -976,11 +990,8 @@ export default {
                 vm.score.warn += 1;
                 vm.score.open -= 1;
                 if (vm.score.warn < vm.maxWarnings) {
-                        vm.showWarningWindow();
-                } else {
-                    vm.stopShift();
-                    vm.showFailWindow();
-                }
+                    vm.showWarningWindow();
+                } 
             }, 2000);
         },
         submitMessage: function (ev) {
@@ -997,9 +1008,6 @@ export default {
                     vm.score.warn += 1;
                     if (vm.score.warn < vm.maxWarnings) {
                         vm.showWarningWindow();
-                    } else {
-                        vm.stopShift();
-                        vm.showFailWindow();
                     }
                 } else {
                     console.log(moment().diff(vm.messages[ev.id].created));
@@ -1056,7 +1064,9 @@ export default {
             if (level.tutorial) {
                 vm.tutorialMode = true;
             }
-            vm.maxWarnings = level.maxWarnings;
+            vm.endless = level.endless || vm.endless;
+            vm.maxWarnings = level.maxWarnings || vm.maxWarnings;
+            vm.maxQueue = level.maxQueue || vm.maxQueue;
             vm.resolutionRate = level.resolutionRate;
             var glob = vm.$store.getters.globalResolution(vm.level);
             vm.score.globalRslv = glob.resolved;

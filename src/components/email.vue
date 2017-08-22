@@ -8,7 +8,7 @@
             
             <div class="email-select overflow">
                 <template v-for="(messageGroup, groupIndex) in messages">
-                    <div v-if="messages.length-1 -groupIndex <= level" class="email-group">
+                    <div v-if="(messages.length-1-groupIndex <= level) && (messageGroup.length)" class="email-group">
                         {{ getGroup(groupIndex) }}
                     </div>
                     <button v-for="(message, messageIndex) in messageGroup" class="email-select-row clickable" v-bind:class="{ active: message.index == selectIndex, unread: message.read != true }" v-if="level >= emails[message.index].visibleLevel" v-on:click="setMessage(groupIndex, messageIndex)">
@@ -95,7 +95,7 @@ import emails from 'assets/emails';
 
 export default {
     name: 'email-app',
-    props: ['width', 'height', 'xPos', 'yPos', 'level'],
+    props: ['width', 'height', 'xPos', 'yPos', 'level', 'todayOnly'],
     data: function() {
         return {
             emails: emails,
@@ -129,11 +129,15 @@ export default {
     mounted: function () {
         var vm = this;
         emails.forEach(function (el, index) {
+            if (vm.todayOnly && (el.visibleLevel != vm.level)) {
+                return;
+            }
             if (el.visibleLevel > vm.level) {
                 return;
             }
-            if (vm.messages.length <= el.visibleLevel) {
-                for (var i=0; i<el.visibleLevel - vm.messages.length+1; i += 1) {
+            if (vm.messages.length < el.visibleLevel+1) {
+                var size = el.visibleLevel+1 - vm.messages.length
+                for (var i=0; i<size; i += 1) {
                     vm.messages.push([]);
                 }
             }
@@ -150,7 +154,8 @@ export default {
         });
         vm.messages.reverse();
         vm.selectIndex = vm.messages[0][0].index;
-        console.log(vm.messages);
+        console.log('email');
+        console.log(vm);
     },
 };
 </script>

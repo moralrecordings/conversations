@@ -108,6 +108,7 @@ var timesheets = [
     { date: '2012/01/01', hours: [0,0,8,8,8,0,0], overtime: [8,8,0,0,0,0,0] },
     { date: '2012/01/08', hours: [0,8,8,8,8,0,0], overtime: [8,0,0,0,0,0,0] },
     { date: '2012/01/15', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
+    { date: '2012/01/22', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
 ];
 
 // hard level cutoff for public builds of the game 
@@ -300,10 +301,41 @@ var levels = [
     {  
         name: 'us6appprod032_CODA',
     },
-
+    // level 11:
+    // endless
+    {
+        name: 'us4appprod096_ENDLESS',
+        endless: true,
+        tutorial: true,
+        maxWarnings: 5,
+        maxQueue: 20,
+        timeline: [
+            {
+                endMark: 900, periodMin: 5.0, periodMax: 10.0,
+                grammar: [
+                    { weight: 30, type: 'ks_foreign' },
+                    { weight: 10, type: 'ks_spoil' },
+                    { weight: 10, type: 'ks_empty' },
+                    { weight: 10, type: 'ks_misshapen' },
+                    { weight: 10, type: 'ks_experience' },
+                    { weight: 5, type: 'ks_advertising' },
+                ]
+            },
+        ]
+    }
 ];
 
 
+var text = {
+    'failure': `
+        <p>Regretfully we must inform you that after careful consideration, the department has decided to terminate your internship, effective immediately.</p>
+        <p>The feedback from your supervisor and co-workers has been decisive, and convinced us that you are not an ideal cultural fit for our company.</p>
+        <p>We thank you for the good work you have done for Allied Brands, and wish you well on your future career prospects.</p>
+    `,
+    'failureEndless': `
+        <p>Thanks for your time!</p>
+    `,
+};
 
 // for now, let's just pick locations weighted by population and see how that goes
 // US census data yanked from http://factfinder2.census.gov/bkmk/table/1.0/en/PEP/2015/PEPANNRSIP.US12A
@@ -1078,5 +1110,6 @@ export default {
     levels: levels,
     levelCutOff: levelCutOff,
     locations: locations,
-    timesheets: timesheets
+    timesheets: timesheets,
+    text: text,
 };
