@@ -112,7 +112,7 @@ var timesheets = [
 ];
 
 // hard level cutoff for public builds of the game 
-var levelCutOff = 3;
+var levelCutOff = 11;
 
 var levels = [
     // level 0:
