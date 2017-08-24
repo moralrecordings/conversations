@@ -526,7 +526,7 @@ export default [
 
     {
         "visibleLevel": 11,
-        "date": moment("20120116", "YYYYMMDD"),
+        "date": moment("20111205", "YYYYMMDD"),
         "sender": "Tricia Huxton",
         "senderMail": "tricia.huxton@alliedbrandsinc",
         "recipient": "PR - Temporary Staff",
@@ -550,7 +550,7 @@ export default [
     },
     {
         "visibleLevel": 11,
-        "date": moment("20120116", "YYYYMMDD"),
+        "date": moment("20111205", "YYYYMMDD"),
         "sender": "Cody Briggs",
         "senderMail": "cody.briggs@alliedbrandsinc",
         "recipient": "PR - Temporary Staff",
@@ -558,7 +558,7 @@ export default [
         "subject": "Business rules and current promotions",
         "content": `
             <p>All,</p>
-            <p>Firstly, Allied Brands is grateful for the extra assistance provided by Roshan Backoffice Services Ltd. in managing our social media during this period of high customer demand. Assuming all goes well, we will definitely be considering your services for any planned expansion of our customer outreach capability.</p>
+            <p>Firstly, Allied Brands is grateful for the extra assistance provided by <span style="font-family: serif; font-size: 15px;">&nbsp;&nbsp;Roshan Backoffice Services Ltd.</span> in managing our social media during this period of high customer demand. Assuming all goes well, we will definitely be considering your services for any planned expansion of our customer outreach capability.</p>
             <p>As outlined in the contract, we need first line responders to man the following social media accounts 24/7:</p>
             <p><ul>
                 <li><b>@AlliedBrandsInc</b> - Allied Brands Inc. corporate account</li>

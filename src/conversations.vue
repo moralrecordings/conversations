@@ -725,20 +725,29 @@ var initialData = function () {
         // message window list
         messageWindows: [
         ],
+        // attachments available in current session
+        attachments: [
+        ],
 
         // fader state
         fadeout: false,
 
+        // level ID
         level: 0,
 
+        // score and timekeeping
         score: {open: 0, rslv: 0, warn: 0, rslvTime: 0, globalRslv: 0, globalRslvTime: 0, globalTotal: 0},
         timer: {duration: 0, count: 0, clock: '-:--', interval: null, nextMessage: null},
+
+        // fake datetime widget
         clock: moment(),
 
+        // default gameplay limits
         maxWarnings: 5,
         maxQueue: 0,
         resolutionRate: 0.5,
 
+        // theming elements
         svgAssets: svgAssets,
         theme: 'theme-allied',
         account: 'AlliedBrandsInc',
@@ -1068,6 +1077,7 @@ export default {
             vm.maxWarnings = level.maxWarnings || vm.maxWarnings;
             vm.maxQueue = level.maxQueue || vm.maxQueue;
             vm.resolutionRate = level.resolutionRate;
+
             var glob = vm.$store.getters.globalResolution(vm.level);
             vm.score.globalRslv = glob.resolved;
             vm.score.globalRslvTime = glob.resolvedTime;
