@@ -6,7 +6,7 @@
                 <ul class="session-list">
                     <li v-for="(level, index) in levels">
                         <button v-if="$store.getters.unlocked(index) || (index == levels.length-1)" class="session-button" v-on:click="loadLevel(index)">{{ level.name }}</button>
-                        <button v-else class="session-button" disabled>{{ level.name }}</button>
+                        <button v-else class="session-button" disabled>---</button>
                     </li>
                 </ul>
             </div></div>
