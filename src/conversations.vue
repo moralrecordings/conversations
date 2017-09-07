@@ -31,6 +31,12 @@
                     </svg>
                     <span>IssueMagic</span>
                 </button>
+                <button v-for="att in attachments" v-on:click="showIssueWindow" title="Attachment">
+                    <svg width="32" height="32">
+                        <use x="0" y="0"  transform="scale(0.5)" xlink:href="#activityIcon"/>
+                    </svg>
+                    <span>{{ att.name }}</span>
+                </button>
             </span>
             <button v-on:click="showSettingsWindow" title="Settings">
                 <svg width="32" height="32">
@@ -1073,6 +1079,14 @@ export default {
             if (level.tutorial) {
                 vm.tutorialMode = true;
             }
+
+            vm.attachments = [];
+            for (var i=1; i<traffic.forms.attachments.length; i++) {
+                if (traffic.forms.attachments[i].visibleLevel >= vm.level) {
+                    vm.attachments.push(traffic.forms.attachments[i].name);
+                }
+            }
+
             vm.endless = level.endless || vm.endless;
             vm.maxWarnings = level.maxWarnings || vm.maxWarnings;
             vm.maxQueue = level.maxQueue || vm.maxQueue;
