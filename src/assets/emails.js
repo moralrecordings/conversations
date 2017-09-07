@@ -258,7 +258,7 @@ export default [
                 <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The vast majority of these cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. While FDA inspectors have not yet publicly identified the root cause, unconfirmed reports suggest that several batches of the milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
                 <p>A spokesperson for Beaufort stated that the nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that the investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort.</p>
                 <p>The market response to the scandal has been severe, with Beaufort stock down $3.50 to $9.02.</p>
-                <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms Dairy. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone investor demanding a higher premium on the market price. A source inside Beaufort, who asked not to be identified, said that the investigation had unearthed possible links to members of Allied Brands senior management.<p>
+                <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone investor demanding a higher premium on the market price. A source inside Beaufort, who asked not to be identified, said that the investigation had unearthed possible links to members of Allied Brands senior management.<p>
                 <p>A spokesperson for Allied Brands Inc. declined to comment, citing the complete divestment of the Healthland Farms product line. The Allied stock price suffered some early losses when news of the scandal broke on Wednesday, but has since rallied to be slightly ahead by close of trading.</p>
             </div>
             <p style="text-align: center;"><small>© 2011 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
@@ -386,7 +386,7 @@ export default [
 
 
 
-    // week 8 starting 20111220
+    // week 8 starting 20111219
     {
         "visibleLevel": 7,
         "date": moment("20111215"),
@@ -401,7 +401,7 @@ export default [
             <p>Christmas is nearly here, and it's freezing outside. So why not spice things up in the bedroom with Kingsley Snacks?</p>
             
             <p>You heard that right. For the first time  with the hashtag #hotforchristmas.</p>
-             
+                
              <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Peace,<br/><b>Richard Hull</b><br/>Public Relations Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/>
         `
     },
@@ -432,7 +432,7 @@ export default [
 
         `
     },
-    // week 9 starting 20111227
+    // week 9 starting 20111226
     {
         "visibleLevel": 8,
         "date": moment("20111222", "YYYYMMDD"),
@@ -465,7 +465,7 @@ export default [
         "senderMail": "starbodies@ichiromail",
         "recipient": "Me",
         "recipientMail": "againstpollution@ichiromail",
-        "subject": "What did you expect was going to happen",
+        "subject": "I am furious",
         "content": `
             <p>You know, looking back on it Tricia was probably the best boss I ever had. She made sure her reports had what they needed to work, she protected them from most of the infighting, and even on the worst days when the business was in the toilet, she gave the job everything she had.</p>
             <p>She fucking deserved fucking better than to be hurled under a bus by that spineless, chickenshit, traitorous, incompetent oxygen-thief of a CMO, too busy running scared from a self-appointed peepants internet detective squad to protect someone who's had his back from day fucking one. And for what? To dodge some bad press???</p>
@@ -477,7 +477,7 @@ export default [
 
     {
         "visibleLevel": 8,
-        "date": moment("20111226", "YYYYMMDD"),
+        "date": moment("20111223", "YYYYMMDD"),
         "sender": "Cody Briggs",
         "senderMail": "cody.briggs@alliedbrandsinc",
         "recipient": "PR - All Users",
@@ -496,7 +496,52 @@ export default [
 		`
     },
 
+    // week 10 starting 20120102
+    
+    
+    // week 11 starting 20120109
+    {
+        "visibleLevel": 10,
+        "date": moment("20120109", "YYYYMMDD"),
+        "sender": "MediaMunch Alerts",
+        "senderMail": "alerts@mediamunch",
+        "recipient": "Me",
+        "recipientMail": "againstpollution@ichiromail",
+        "subject": "New Article: Revealed - the machinations behind the Healthland Farms milk crisis",
+        "content": `
+            <p style="font-size: 1.5rem;">News alerts for "allied brands":</p>
+            <div style="border-radius: 8px; border: 1px solid grey; padding-left: 1em; padding-right: 1em;">
+                <h2 style="margin-bottom: 0;">Revealed - the machinations behind the Healthland Farms milk crisis</h2>
+                <p style="font-variant: small-caps">Robert Xam in Chicago</p>
 
+                <p>Contrary to the name, Healthland Farms is not a dairy supplier, but a refiner. Their business model is to create value-added processed milk drinks (such as the infamous Low-Fat Chocolate Milk); combining milk from a supplier with a number of additives and flavoring agents, then packaging it for distribution. Healthland Farms also has a number of purchasing contracts it must fulfil; essentially, agreements the company has entered into to provide a quantity of product for a specific length of time at agreed-upon pricing.</p>
+
+                <p>According to investigators, in November of 2009 Healthland Farms signed a 3-year fixed price contract with the US Department of Agriculture to provide processed milk drinks to the National School Lunch Program. Emails from inside the company show that the move was celebrated at the time, as the costing was based on a then-unprecedented spike in the milk price, with all projections showing the market to stabilise and return to normal within a few months. The perceived returns were great enough that the company willingly conceded clauses allowing for corrections based on the market price.</p>
+
+                <p>Unfortunately for Healthland Farms, the momentary spike turned out to be the start of a long-term pattern. As the Global Financial Crisis began to ease, speculators piled into the Class III Milk futures market, driving up demand and creating a shortage. Within a year, businesses which relied on a steady stream of bulk milk had to pay double the price, sometimes more just to guarantee supply. Most simply passed this additional cost onto customers, but Healthland Farms was now contractually bound to sell its products to the USDA at an eye-watering loss.</p>
+
+                <p>In September of 2011, parent company Allied Brands sold the entire Healthland Farms business to competitor Beaufort International, including director David Praxis. In the year leading up to the sale, Praxis was under intense pressure to meet a series of escalating financial targets from Allied Brands CEO Roger Billeton, who proved wholly unsympathetic to Healthland Farms' failed attempt at shorting the milk market.</p>
+
+                <p>Healthland Farms was trapped in a crisis of its own making. The fat margins it sought were long gone, and fulfilling the entire USDA procurement contract at the current prices ran the risk of bankrupting the business. So what were they to do?</p>
+
+                <p>A small group of individuals inside the company (lead by Praxis) hatched an audacious plan to continue selling processed milk drinks, but with less milk. The plan hinged on the exact method of compliance testing performed by the USDA; specifically the nitrogen level check (a common indicator for protein content), and the tests for common food adulterants.</p> 
+
+                <p>In an off-the-books transaction, Healthland Farms employed a Chinese chemical supplier to synthesize a nitrogen-rich compound similar to melamine, but engineered specifically to pass the previous-generation adulterant checks used by the USDA. (The USDA confirmed that in the wake of the Healthland Farms incident they are moving to a more resilient testing regimen). Next, a number of flowmeters in the processing train frequently used for the USDA contract were recalibrated with a bias, skewing the overall proportion of milk used without affecting the monitoring figures. Finally, the correct proportion of compound was introduced during the thickening stage by a plant operator who was party to the scheme.</p>
+
+                <p>Incredibly, this ramshackle process did not backfire until the events of November 2011, where thousands of children fell ill from drinking Healthland Farms milk. Investigators concluded that on this occasion the compound was added too late during the thickening process, leading to an uneven distribution in the cartons shipped out to schools.</p>
+
+                <p>Praxis and 5 other individuals have been arrested and charged, with a hearing set for early February. Beaufort International CEO Marina Chelworth has resigned, and the future of the company is uncertain due to pending litigation. As for Allied Brands, the Securities and Exchange Commission has charged CFO Kenneth Shanks and two other individuals with materially overstating the value of Healthland Farms, which is expected to be settled later this month.</p>
+ 
+                <p>But despite widespread public outrage, Allied Brands CEO Roger Billeton stubbornly remains in his position. A letter from his personal lawyer made it clear that investigators found no evidence of Allied Brands senior management being aware of exactly what was taking place at Healthland Farms to meet financial targets. With an emergency meeting of the board scheduled for next week, the watertightness of that statment is about to be put to the test.</p>
+
+                <p>Ultimately, the investigation findings have dramatically increased the number of potential litigants, which now includes anyone who drank the affected USDA batches in the last 7 months. We can expect many more class action suits to be filed against both Allied Brands and the USDA; and you can be sure the former will continue doing whatever it takes to keep this case out of a courtroom.</p>
+
+            </div>
+            <p style="text-align: center;"><small>© 2012 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
+
+        `
+
+    },
     {
         "visibleLevel": 10,
         "date": moment("20120109", "YYYYMMDD"),

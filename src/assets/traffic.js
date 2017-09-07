@@ -292,11 +292,13 @@ var levels = [
         name: 'us5appprod011_WEEK8',
     },
     // level 9:
+    // company sues families
     {  
         name: 'us1appprod028_WEEK9',
     },
     // level 10:
     // you're hired
+    // milk poisoning methodology revealed
     // fadeout over a torrent of increasingly abusive messages
     {  
         name: 'us6appprod032_CODA',
