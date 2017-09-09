@@ -7,6 +7,7 @@
             <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y" v-bind:level="level" v-bind:todayOnly="endless" v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-bind:level="level" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:maxQueue="maxQueue" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-bind:endless="endless" v-on:startShift="start" v-if="showIssues" />
+            <mr-attachment-app v-for="att in attachments" v-if="att.show"/>
             <!-- message windows -->
             <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-bind:level="level" v-on:submitMessage="submitMessage" v-on:expire="expireMessage" v-on:close="closeMessageWindow"/>
             <!-- tutorial messages -->
@@ -31,7 +32,7 @@
                     </svg>
                     <span>IssueMagic</span>
                 </button>
-                <button v-for="att in attachments" v-on:click="showIssueWindow" title="Attachment">
+                <button v-for="att in attachments" v-on:click="showAttachment(att)" title="Attachment">
                     <svg width="32" height="32">
                         <use x="0" y="0"  transform="scale(0.5)" xlink:href="#activityIcon"/>
                     </svg>
@@ -543,6 +544,7 @@ import moment from 'moment';
 import email from './components/email';
 import messages from './components/messages';
 import accounts from './components/accounts';
+import attachment from './components/attachment';
 import activity from './components/activity';
 import settings from './components/settings';
 import success from './components/success';
@@ -1082,8 +1084,11 @@ export default {
 
             vm.attachments = [];
             for (var i=1; i<traffic.forms.attachments.length; i++) {
-                if (traffic.forms.attachments[i].visibleLevel >= vm.level) {
-                    vm.attachments.push(traffic.forms.attachments[i].name);
+                if (traffic.forms.attachments[i].visibleLevel <= vm.level) {
+                    vm.attachments.push({
+                        'name': traffic.forms.attachments[i].name,
+                        'show': true
+                    });
                 }
             }
 
@@ -1140,6 +1145,7 @@ export default {
         'mr-email-app': email,
         'mr-messages-app': messages,
         'mr-accounts-app': accounts,
+        'mr-attachment-app': attachment,
         'mr-activity-app': activity,
         'mr-settings-app': settings,
         'mr-success-app': success,

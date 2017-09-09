@@ -12,7 +12,10 @@
 
 <style scoped>
 .body {
-    background-image: url('assets/placeholder.svg');
+    background-image: url('../assets/placeholder.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 </style>
 
