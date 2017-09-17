@@ -26,7 +26,9 @@ export default {
     methods: {
         close: function() {
             this.closed = true;
-            this.$emit('close');
+            this.$emit('close', {
+                id: this.name   
+            });
         },
     },
     data: function() {

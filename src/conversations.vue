@@ -7,7 +7,7 @@
             <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y" v-bind:level="level" v-bind:todayOnly="endless" v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-bind:level="level" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:maxQueue="maxQueue" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-bind:endless="endless" v-on:startShift="start" v-if="showIssues" />
-            <mr-attachment-app v-for="att in attachments" v-if="att.show"/>
+            <mr-attachment-app v-for="att in attachments" v-if="att.show" v-bind:width="att.width" v-bind:height="att.height" v-bind:xPos="att.xPos" v-bind:yPos="att.yPos" v-bind:src="att.src" v-bind:name="att.name" v-on:close="closeAttachmentWindow"/>
             <!-- message windows -->
             <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-bind:level="level" v-on:submitMessage="submitMessage" v-on:expire="expireMessage" v-on:close="closeMessageWindow"/>
             <!-- tutorial messages -->
@@ -32,9 +32,9 @@
                     </svg>
                     <span>IssueMagic</span>
                 </button>
-                <button v-for="att in attachments" v-on:click="showAttachment(att)" title="Attachment">
+                <button v-for="att in attachments" v-on:click="showAttachmentWindow(att)" title="Attachment">
                     <svg width="32" height="32">
-                        <use x="0" y="0"  transform="scale(0.5)" xlink:href="#activityIcon"/>
+                        <use x="0" y="0"  transform="scale(0.5)" xlink:href="#attachmentIcon"/>
                     </svg>
                     <span>{{ att.name }}</span>
                 </button>
@@ -564,6 +564,7 @@ var svgAssets = [
     require('assets/email.rawsvg'),
     require('assets/activity.rawsvg'),
     require('assets/settings.rawsvg'),
+    require('assets/attachment.rawsvg'),
 ];
 var audioAssets = {
     'boot': new Audio(require('assets/boot.mp3')),
@@ -792,6 +793,13 @@ export default {
             console.log('closeSettingsWindow');
             this.showSettings = false;
         }, 200),
+        closeAttachmentWindow: debounce(function(ev) {
+            console.log('closeAttachmentWindow');
+            var index = this.attachments.findIndex(function (el) {
+                return el.name === ev.id;
+            });
+            this.attachments[index].show = false;
+        }, 200),
         showEmailWindow: function() {
             console.log('showEmailWindow');
             this.emailPos.w = Math.min( 1000, $('.desktop').width()-64 );
@@ -830,6 +838,13 @@ export default {
             this.successPos.x = ($('.desktop').width() - 800)/2;
             this.successPos.y = ($('.desktop').height() - 320)/2;
             this.showSuccess = true;
+        },
+        showAttachmentWindow: function (att) {
+            att.width = Math.min( 640, $('.desktop').width()-64 );
+            att.height = Math.min( 480, $('.desktop').height()-64 );
+            att.xPos = ($('.desktop').width() - att.width)/2;
+            att.yPos = ($('.desktop').height() - att.height)/2;
+            att.show = true;
         },
         start: function () {
             if (this.tutorialMode) {
@@ -1087,7 +1102,9 @@ export default {
                 if (traffic.forms.attachments[i].visibleLevel <= vm.level) {
                     vm.attachments.push({
                         'name': traffic.forms.attachments[i].name,
-                        'show': true
+                        'src': traffic.forms.attachments[i].filename,
+                        'show': false,
+                        'xPos': 0, 'yPos': 0, 'width': 640, 'height': 480
                     });
                 }
             }
