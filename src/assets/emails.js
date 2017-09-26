@@ -467,8 +467,8 @@ export default [
         "recipientMail": "againstpollution@ichiromail",
         "subject": "I am furious",
         "content": `
-            <p>You know, looking back on it Tricia was probably the best boss I ever had. She made sure her reports had what they needed to work, she protected them from most of the infighting, and even on the worst days when the business was in the toilet, she gave the job everything she had.</p>
-            <p>She fucking deserved fucking better than to be hurled under a bus by that spineless, chickenshit, traitorous, incompetent oxygen-thief of a CMO, too busy running scared from a self-appointed peepants internet detective squad to protect someone who's had his back from day fucking one. And for what? To dodge some bad press???</p>
+            <p>You know, looking back on it Tricia was probably the best boss I ever had. She made sure her reports had what they needed to work, she protected them from most of the infighting, and even on the worst days when the business was in the toilet? She gave the job everything she had.</p>
+            <p>She fucking deserved fucking better than to be hurled under a bus by that spineless, chickenshit, traitorous, incompetent, oxygen-thief Judas of a CMO, too busy running scared from a self-appointed peepants internet detective squad to protect someone who's had his back from day fucking one. And for what? To dodge some bad press???</p>
             <p><b>SHE DID NOTHING WRONG AND THEY THREW HER TO THE WOLVES</b></p>
             <p></p>
             <p>I don't know what else to say. I mean I appreciate you filling me in from the frontlines, but think hard about what you're enabling here</p>
@@ -486,9 +486,9 @@ export default [
         "content": `
             <p>All,</p>
             
-			<p>Allied Brands has retained the services of a reknowned reputation management firm, Siegfried-Blumenthal LLC, to address the small but vocal pocket of consumer animosity towards Excelsior Pharmaceuticals currently playing out in the media. As part of the process of brand repair, this week there is to be a <b>complete lockdown</b> on communications to the press and social media channels, to allow the story to wind down and give the consultants time to remove material which could be seen as objectionable in the current context.</p>
+			<p>Allied Brands has retained the services of a reknowned reputation management firm, Siegfried-Blumenthal LLC, to address the small but vocal pocket of consumer animosity towards Excelsior Pharmaceuticals currently playing out in the media. As part of the process of brand repair, this week there is to be a <b>complete lockdown</b> on communications to the press and social media channels, to allow the story to cool down and give the consultants time to remove material which could be seen as objectionable in the current context.</p>
 			
-			<p>By order of the CEO, <b>under no circumstances should the @excelsior_rx account be used</b> during this time. Any employee who breaches this rule will leave us no option but to recommend their <b>immediate termination</b>.</p>
+			<p>By order of the CEO, <b>under no circumstances should the @excelsior_rx account be used</b> during the next seven days. Any employee who breaches this rule will leave us no option but to recommend their <b>immediate termination</b>.</p>
 
 			<p>Best wishes for the holiday season.</p>
 
@@ -497,6 +497,41 @@ export default [
     },
 
     // week 10 starting 20120102
+    {
+        "visibleLevel": 9,
+        "date": moment("20111230", "YYYYMMDD"),
+        "sender": "MediaMunch Alerts",
+        "senderMail": "alerts@mediamunch",
+        "recipient": "Me",
+        "recipientMail": "againstpollution@ichiromail",
+        "subject": "New Article: ",
+        "content": `
+            <p style="font-size: 1.5rem;">News alerts for "allied brands":</p>
+            <div style="border-radius: 8px; border: 1px solid grey; padding-left: 1em; padding-right: 1em;">
+                <h2 style="margin-bottom: 0;">EXCLUSIVE: Allied Brands Inc. sues Healthland Farms victims for defamation after failed settlement talks</h2>
+                <p style="font-variant: small-caps">Peyton Hammersmith in Roxborough</p>
+
+                <p>Embattled conglomerate Allied Brands Inc. today filed a defamation lawsuit against a group of parents who have publicly accused the company of causing the Healthland Farms milk crisis, following failed attempts to buy their silence.</p>
+
+                <p>The Coalition Of Families Affected By Sudden Onset Kidney Trauma (COFABS) is a support network formed by parents of children who were poisoned by an adulterated batch of Healthland Farms Low-Fat Chocolate milk in November of 2011. COFABS have been vocal in their disapproval of Allied Brands' response to the scandal, which has largely been to shift the blame to new owners Beaufort International. (The Healthland Farms business was sold to Beaufort three months before the crisis.)</p>
+
+                <p>In a press release, Allied Brands general counsel Nathaniel Hardcastle made the following statement: "The emotionally-charged nature of the Healthland Farms incident does not license this group to make knowingly false or inaccurate statements about Allied Brands Inc. or its products. Allied Brands Inc. initiated this lawsuit because, despite repeated efforts by Allied Brands Inc. to engage in a constructive dialogue with the group, they persisted in making false accusations that they knew to be untrue. This action is intended to prevent the further repetition of those statements."</p>
+
+                <p>In an astonishing development, email exchanges seen by Roxborough Daily show that a high-ranking official at Allied Brands, vice-president of logistics Donald Banyon, had obtained the confidential medical records of at least one member of COFABS. The circumstances under which Banyon acquired the documents, whether he was directed to do so or acted on his own volition, and the extent that the documents have been distributed within Allied Brands, are all unclear. When asked about his status this morning, a spokesperson for Allied Brands stated that Banyon was still working for the company. Further queries made as the story was developing have been returned with no further comment.</p>
+                
+                <p>Roxborough Daily can exclusively reveal that prior to today's announcement, several members of COFABS had been offered cash settlements from Allied Brands, in return for a laundry list of legal concessions. These included full indemnity, an agreed limit of liability of $1, a blanket non-disparagement agreement against the company for this and any future food safety incidents, and a perpetual covenant not to sue. The settlement group included the person whose medical records had been obtained by Banyon.</p>
+ 
+                <p>"The settlement amount on offer was frankly an insult", said a source familiar with the negotiations. "For a family without insurance, $56,000 is chump change when you're looking at years of expensive tests and medication. The whole thing is a heartless attempt to wedge low-income families desperate to pay for their child's treatment."</p>
+
+                <p>Only two families so far have accepted the terms of the settlement. The remainder are considering their options.</p>
+
+
+            </div>
+            <p style="text-align: center;"><small>© 2011 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
+
+        `
+
+    },
     
     
     // week 11 starting 20120109
@@ -514,6 +549,8 @@ export default [
                 <h2 style="margin-bottom: 0;">Revealed - the machinations behind the Healthland Farms milk crisis</h2>
                 <p style="font-variant: small-caps">Robert Xam in Chicago</p>
 
+                <p>
+
                 <p>Contrary to the name, Healthland Farms is not a dairy supplier, but a refiner. Their business model is to create value-added processed milk drinks (such as the infamous Low-Fat Chocolate Milk); combining milk from a supplier with a number of additives and flavoring agents, then packaging it for distribution. Healthland Farms also has a number of purchasing contracts it must fulfil; essentially, agreements the company has entered into to provide a quantity of product for a specific length of time at agreed-upon pricing.</p>
 
                 <p>According to investigators, in November of 2009 Healthland Farms signed a 3-year fixed price contract with the US Department of Agriculture to provide processed milk drinks to the National School Lunch Program. Emails from inside the company show that the move was celebrated at the time, as the costing was based on a then-unprecedented spike in the milk price, with all projections showing the market to stabilise and return to normal within a few months. The perceived returns were great enough that the company willingly conceded clauses allowing for corrections based on the market price.</p>
@@ -526,15 +563,15 @@ export default [
 
                 <p>A small group of individuals inside the company (lead by Praxis) hatched an audacious plan to continue selling processed milk drinks, but with less milk. The plan hinged on the exact method of compliance testing performed by the USDA; specifically the nitrogen level check (a common indicator for protein content), and the tests for common food adulterants.</p> 
 
-                <p>In an off-the-books transaction, Healthland Farms employed a Chinese chemical supplier to synthesize a nitrogen-rich compound similar to melamine, but engineered specifically to pass the previous-generation adulterant checks used by the USDA. (The USDA confirmed that in the wake of the Healthland Farms incident they are moving to a more resilient testing regimen). Next, a number of flowmeters in the processing train frequently used for the USDA contract were recalibrated with a bias, skewing the overall proportion of milk used without affecting the monitoring figures. Finally, the correct proportion of compound was introduced during the thickening stage by a plant operator who was party to the scheme.</p>
+                <p>In an off-the-books transaction, Healthland Farms employed a Chinese chemical supplier to produce a custom nitrogen-rich compound referred to in the report as "NH53C", with all importation paperwork and container markings referring to it as powdered sodium carbonate. NH53C is chemically similar to melamine, and was designed specifically to pass the previous-generation adulterant checks used by the USDA. (The USDA confirmed that in the wake of the Healthland Farms incident they are moving to a more resilient testing regimen). Next, a number of flowmeters in the processing train frequently used for the USDA contract were recalibrated with a bias, skewing the overall proportion of milk used in each batch without affecting the monitoring figures. Finally, the correct proportion of NH53C was introduced during the thickening stage by a plant operator who was party to the scheme.</p>
 
-                <p>Incredibly, this ramshackle process did not backfire until the events of November 2011, where thousands of children fell ill from drinking Healthland Farms milk. Investigators concluded that on this occasion the compound was added too late during the thickening process, leading to an uneven distribution in the cartons shipped out to schools.</p>
+                <p>Incredibly, this ramshackle process did not backfire until the events of November 2011, where thousands of children fell ill from drinking Healthland Farms milk. Investigators concluded that on this occasion the compound was added too late during the thickening process, leading to an uneven distribution in the cartons shipped out to schools. </p>
 
-                <p>Praxis and 5 other individuals have been arrested and charged, with a hearing set for early February. Beaufort International CEO Marina Chelworth has resigned, and the future of the company is uncertain due to pending litigation. As for Allied Brands, the Securities and Exchange Commission has charged CFO Kenneth Shanks and two other individuals with materially overstating the value of Healthland Farms, which is expected to be settled later this month.</p>
+                <p>Praxis and 5 other individuals at Healthland Farms have been arrested and charged, with a hearing set for early February. Beaufort International CEO Marina Chelworth has resigned, and the future of the company is uncertain due to pending litigation. As for Allied Brands, the Securities and Exchange Commission has charged CFO Kenneth Shanks and two other individuals with materially overstating the value of Healthland Farms, which is expected to be settled later this month. In a related incident, Vice-president of logistics Donald Banyon was fired soon after a story broke alleging he obtained the medical records of a victim.</p>
  
                 <p>But despite widespread public outrage, Allied Brands CEO Roger Billeton stubbornly remains in his position. A letter from his personal lawyer made it clear that investigators found no evidence of Allied Brands senior management being aware of exactly what was taking place at Healthland Farms to meet financial targets. With an emergency meeting of the board scheduled for next week, the watertightness of that statment is about to be put to the test.</p>
 
-                <p>Ultimately, the investigation findings have dramatically increased the number of potential litigants, which now includes anyone who drank the affected USDA batches in the last 7 months. We can expect many more class action suits to be filed against both Allied Brands and the USDA; and you can be sure the former will continue doing whatever it takes to keep this case out of a courtroom.</p>
+                <p>Ultimately, the investigation findings have dramatically increased the number of potential litigants, which now includes anyone who drank the affected USDA batches in the last 7 months. We can expect more class action suits to be filed against both Allied Brands and the USDA; and you can be sure the former will continue doing whatever it takes to keep this case out of a courtroom.</p>
 
             </div>
             <p style="text-align: center;"><small>© 2012 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>

@@ -46,7 +46,7 @@
                 <span>Settings</span>
             </button>
             <div class="clock">
-                <span style="font-size: 1.5em;">{{ clock.format('h:mm A') }}</span><br/>{{ clock.format('Do MMM YYYY') }}
+                <span style="font-size: 1.5em;">{{ clock.topLine }}</span><br/>{{ clock.bottomLine }}
             </div>
         </div>
         <div class="fader" v-bind:class="{ active: fadeout }">
@@ -749,7 +749,7 @@ var initialData = function () {
         timer: {duration: 0, count: 0, clock: '-:--', interval: null, nextMessage: null},
 
         // fake datetime widget
-        clock: moment(),
+        clock: {time: moment(), interval: null, topLine: '', bottomLine: ''},
 
         // default gameplay limits
         maxWarnings: 5,
@@ -845,6 +845,10 @@ export default {
             att.xPos = ($('.desktop').width() - att.width)/2;
             att.yPos = ($('.desktop').height() - att.height)/2;
             att.show = true;
+        },
+        updateClock: function () {
+            this.clock.topLine = this.clock.time.format('h:mm A');
+            this.clock.bottomLine = this.clock.time.format('Do MMM YYYY');
         },
         start: function () {
             if (this.tutorialMode) {
@@ -1120,14 +1124,25 @@ export default {
             vm.score.globalTotal = glob.total;
 
             // set fake clock to start of day
-            vm.clock = moment(traffic.timesheets[vm.level].date, 'YYYY/MM/DD').subtract(6, 'days').add(8, 'hours').add(Math.floor(Math.random()*30), 'minutes');
+            vm.clock.time = moment(traffic.timesheets[vm.level].date, 'YYYY/MM/DD').subtract(6, 'days').add(8, 'hours').add(Math.floor(Math.random()*30), 'minutes');
+            vm.updateClock();
 
             // deploy godawful startup jingle
             audioAssets.boot.play();
         },
     },
-    mounted: function () {
-        console.log(audioAssets);
+    beforeMount: function () {
+        var vm = this;
+        var update = function () {
+            vm.clock.time.add(1, 'minutes')
+            vm.updateClock();
+        };
+        vm.clock.interval = setInterval(update, 60000);
+    },
+    beforeDestroy: function () {
+        var vm = this;
+        clearInterval(vm.clock.interval);
+        vm.clock.interval = null;
     },
     beforeRouteEnter: function (to, from, next) {
         console.log('beforeRouteEnter');
