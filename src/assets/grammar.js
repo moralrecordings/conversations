@@ -79,6 +79,14 @@ export default {
         "[pTheir:my][pTheirs:mine][pThey:I][pThem:me][pName:I][pNameTheir:#pTheir#]",
         "[pTheir:my][pTheirs:mine][pThey:I][pThem:me][pName:I][pNameTheir:#pTheir#]",
     ],
+    "genChild": [
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my son][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my daughter][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my kid][pNameTheir:#pName#'s]",
+
+    ],
     "genPartner": [
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my girlfriend][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my gf][pNameTheir:#pName#'s]",
@@ -314,7 +322,7 @@ export default {
         "#ex_prod#@#account# can #product# sponsor my fun-run"
     ],
 
-    "genJob": [
+    "ex_genJob": [
         "[jobTitle:process engineer][jobField:process engineering]",
         "[jobTitle:chemical engineer][jobField:chemical engineering]",
         "[jobTitle:chemical biologist][jobField:chemical biology]",
@@ -338,15 +346,41 @@ export default {
         "@#account# are you accepting any graduate students for vacation work?",
         "@#account# are there any #jobField# graduate places left for this year?",
         "@#account# how can I apply for a #jobField# job?",
-        "@#account# are there any #jobTitle# places available?",
+        "@#account# are there any places for #jobTitle.s# available?",
         "@#account# I just graduated as a #jobTitle#, do you take students?",
 
     ],
 
-    // confusing the product
-    "abi_beaufort": [
-        "@AlliedBrandsInc my kid is very sick thanks to your POISONED MILK"
+    // anemic response to the ricardo campaign
+    "ricardoLives": [
+        "@KingsleySnacks this is a joke right #ricardolives"
     ],
+
+
+    // initial poisoning reactions
+    "poisoningInitial": [
+        "@#account# I heard on the radio that there's something wrong with your milk, what's the story?",
+        "weird chatter on the police band today, something about @#account# milk at an elementary school? could be big",
+        "#genChild#I just got a call from my school, #pName# got sent to hospital. I am freaking out. they're testing for food poisoning, all #pThey# had that day was @#account# milk.",
+    ],
+
+    "poisoningSustain": [
+        "everyone! the investigation is still ongoing, do NOT RT information about @#account# #milkgate unless it comes from a verified source!",
+        "#genPerson#jesus christ #pName# just got told their kid is in the hospital, they think it might have been @#account# milk, oh god I am so worried",
+        "RT @#account# SOLD POISONED CHOCOLATE MILK TO THE SCHOOL LUNCH PROGRAM, CALL YOUR SCHOOL DISTRICT IMMEDIATELY #milkgate",
+        "A reminder: your safest option is to pull your child from school until they confirm the removal of @#account# milk",
+        "in case you missed the news do NOT drink @#account# Healthland Farms milk! 38 children have been poisoned",
+        "BREAKING: 41 children have been hospitalised after drinking @#account# milk",
+        "Hi @#account# I am a reporter with PPS Newswire, could you respond to the allegations of NSLP Healthland Farms milk being unfit for human consumption? Thanks.",
+        "#genChild#@#account# #pName# is very sick thanks to your POISONED MILK",
+        "#genChild#oh god oh god #pName# drank some @#account# milk what do I do now?????",
+        "Goes without saying everyone in @#account# senior management should be locked up for what they did #milkgate",
+        "@#account# are you cowardly fucks going to say anything #milkgate",
+        "@#account# just so you know I am never buying another one of your deadly horseshit products again #milkgate",
+        "what kind of evil company would allow shit like #milkgate to affect innocent children? fucking @#account#",
+
+    ],
+
 
     // product types
     "prod_chocolate": [
@@ -440,8 +474,15 @@ export default {
 
 
     "ex_side_effect": ["[account:excelsior_rx]#sideEffectMessage#"],
-    "ex_employment": ["[account:excelsior_rx]#genJob##employmentMessage#"],
+    "ex_employment": ["[account:excelsior_rx]#ex_genJob##employmentMessage#"],
     "ex_sponsorship": ["[account:excelsior_rx]#sponsorshipMessage#"],
+
+
+    // issue tweet generators
+    "abi_poisoning_initial": ["[account:AlliedBrandsInc]#poisoningInitial"],
+    "abi_poisoning_sustain": ["[account:AlliedBrandsInc]#poisoningSustain"],
+    "abi_beaufort": ["[account:AlliedBrandsInc]#poisoningSustain#"],
+
 
     // soporific response generators
     "ks_feedback_reply": ["we're humbled to have a fan like you on Team Kingsley!"],

@@ -171,7 +171,7 @@ export default [
         <p>As you're probably aware, we are launching a new marketing campaign for Kingsley's Fruit Pebbles this week. Those of you who were present at the full presentation on Friday should already be across it, but for those who were unable to make it I've nutshelled the main points for you below.</p>
 
         <p>In all honesty, it's no secret that the Fruit Pebbles line has been considered for discontinuation. The products have missed sales targets for the last 12 quarters, and the focus groups have consistently reported that they perceive the brand as unexciting and old-fashioned.</p>
-        <p>However, there has been a <b>surge</b> in web searches for Fruit Pebbles in the past month, due to its misappropriation by certain political figures. Naturally, Allied PR has released a full statement condemning the use of our snack product as an abhorrent and factually incorrect metaphor for ethnic cleansing. But the interest in the product is real; in the last few weeks unit sales have almost tripled!</p>
+        <p>However, there has been a <b>surge</b> in web searches for Fruit Pebbles in the past month, due to misappropriation by certain political figures. Naturally, Allied PR has released a full statement condemning the use of our snack product as an abhorrent and factually incorrect metaphor for ethnic cleansing. But the interest in the product is real; in the last few weeks unit sales have almost tripled!</p>
         <p>This boom will most likely be a temporary one if we leave it unaddressed, but we have a rare and ideal opportunity to pivot this underperforming brand and focus like a laser on the new and growing group of consumers making up the bulk of these sales. The demographic is predominantly male, middle-class, age 15-35, single, and interested in technology and video games.</p>
         <p>Now I know what you're thinking, and I promise you we are not going to fall into that 90s trope of "X-Treme"ifying everything!! This is 2011, and Fruit Pebbles are a mature product for mature consumers. It goes without saying that the advertising can and will be darker and more realistic compared to other campaigns.</p>
         <p>Of course, no advertising campaign is complete without a compelling original character, and no character is complete without an origin story. Sit back, relax, and enjoy this slice from the distant future...</p>
@@ -208,7 +208,7 @@ export default [
 
 
         <hr/>
-        <p>As a limited edition tie-in to promote the character, Fruit Pebbles will be released in gunmetal grey. In your communications with Kingsley Snacks customers, be sure to work in a reference to the promotion and include the image attached below.</p>
+        <p>As a limited edition tie-in to promote the character, Fruit Pebbles will be released in gunmetal grey with "ammo box" packaging. In your communications with Kingsley Snacks customers, be sure to work in a reference to the promotion and include the image attached below.</p>
         <p>I hope you will join me in welcoming Ricardo into our diverse lineup of brand mascots.</p>
         <p>#ricardolives</p>
 
@@ -256,7 +256,7 @@ export default [
 
                 <p>Beaufort North America LLC. has issued an immediate nationwide recall for all Healthland Farms branded milk products, following reports of children suffering from impaired kidney functionality.</p>
                 <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The vast majority of these cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. While FDA inspectors have not yet publicly identified the root cause, unconfirmed reports suggest that several batches of the milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
-                <p>A spokesperson for Beaufort stated that the nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that the investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort.</p>
+                <p>A spokesperson for Beaufort stated that the nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that the investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort immediately.</p>
                 <p>The market response to the scandal has been severe, with Beaufort stock down $3.50 to $9.02.</p>
                 <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone investor demanding a higher premium on the market price. A source inside Beaufort, who asked not to be identified, said that the investigation had unearthed possible links to members of Allied Brands senior management.<p>
                 <p>A spokesperson for Allied Brands Inc. declined to comment, citing the complete divestment of the Healthland Farms product line. The Allied stock price suffered some early losses when news of the scandal broke on Wednesday, but has since rallied to be slightly ahead by close of trading.</p>
@@ -293,7 +293,7 @@ export default [
         "subject": "Response to Healthland Farms milk scandal",
         "content": `
         <p>All,</p>
-        <p>As you have probably heard, there has been an unfortunate incident attributed to a contaminated batch of Healthland Farms milk, involving customers becoming seriously ill. As of last September, Allied Brands Inc. is no longer involved with the production, marketing or distribution of Healthland Farms milk products, with all assets and manufacturing staff transferred to Beaufort International. Nonetheless, our thoughts and prayers are with those affected by the tainted products and their families.</p>
+        <p>As you have probably heard, there has been an unfortunate incident attributed to a contaminated batch of Healthland Farms milk, involving a small number of customers falling seriously ill. As of last September, Allied Brands Inc. is no longer involved with the production, marketing or distribution of Healthland Farms milk products, with all assets and staff transferred to Beaufort International. Nonetheless, our thoughts and prayers are with those affected by the tainted products and their families.</p>
         <p>As the transfer of ownership is quite recent, there is still a strong association in the minds of consumers between Healthland Farms and Allied Brands. It is <i>vital</i> that we move quickly to dispel this confusion. For any customers that contact the company regarding Healthland Farms, please inform them of the change of ownership and direct them to Beaufort International's social media presence (<b>@BeaufortIntl</b>).</p>
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
@@ -400,7 +400,7 @@ export default [
 
             <p>Christmas is nearly here, and it's freezing outside. So why not spice things up in the bedroom with Kingsley Snacks?</p>
             
-            <p>You heard that right. For the first time  with the hashtag #hotforchristmas.</p>
+            <p>You heard that right. For the first time, Allied Brands stablemates Kingsley  with the hashtag #hotforchristmas.</p>
                 
              <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Peace,<br/><b>Richard Hull</b><br/>Public Relations Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/>
         `

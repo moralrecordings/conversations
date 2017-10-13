@@ -193,7 +193,7 @@ var levels = [
         resolutionRate: 0.3,
         timeline: [
             {
-                endMark: 90, periodMin: 4.0, periodMax: 10.0,
+                endMark: 90, periodMin: 5.0, periodMax: 10.0,
                 grammar: [
                     { weight: 50, type: 'ex_side_effect' },
                     { weight: 40, type: 'ex_employment' },
@@ -238,10 +238,43 @@ var levels = [
         resolutionRate: 0.3,
         timeline: [
             {
-                endMark: 90, periodMin: 5.0, periodMax: 10.0,
+                endMark: 90, periodMin: 7.0, periodMax: 10.0,
                 grammar: [
-                    { weight: 20, type: 'ex_side_effect' },
+                    { weight: 50, type: 'ex_side_effect' },
+                    { weight: 40, type: 'ex_employment' },
+                    { weight: 20, type: 'ex_sponsorship' },
 
+                    { weight: 20, type: 'ks_foreign' },
+                    { weight: 10, type: 'ks_foreign_lit' },
+                    { weight: 10, type: 'ks_spoil' },
+                    { weight: 10, type: 'ks_empty' },
+                    { weight: 10, type: 'ks_misshapen' },
+                    { weight: 10, type: 'ks_experience' },
+                    { weight: 5, type: 'ks_advertising' },
+
+                    { weight: 20, type: 'cj_foreign' },
+                    { weight: 10, type: 'cj_foreign_lit' },
+                    { weight: 10, type: 'cj_spoil' },
+                    { weight: 10, type: 'cj_empty' },
+                    { weight: 10, type: 'cj_misshapen' },
+                    { weight: 10, type: 'cj_experience' },
+                    { weight: 5, type: 'cj_advertising' },
+
+                ]
+            },
+            {
+                endMark: 120, periodMin: 8.0, periodMax: 10.0,
+            },
+            {
+                endMark: 135, periodMin: 5.0, periodMax: 5.0,
+                grammar: [
+                    { weight: 10, type: 'abi_poisoning_initial' }
+                ]
+            },
+            {
+                endMark: 150, periodMin: 1.0, periodMax: 5.0,
+                grammar: [
+                    { weight: 10, type: 'abi_poisoning_sustain' }
                 ]
             },
         ],
