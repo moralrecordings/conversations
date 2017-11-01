@@ -29,7 +29,11 @@ export default {
         "?!",
         "!?!?!"
     ],
-    
+
+    // leave me I am beyond help
+    "largeAdultSon": [
+        "large adult son", "beautiful adult son", "adult son", "large son", "big son", "large boy", "big boy", "adult boy", "large adult boy"
+    ],
 
     // person generator
     "genPerson": [
@@ -44,6 +48,7 @@ export default {
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my friend][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my fiancee][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my lady][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my girl][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my son][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my brother][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my kid][pNameTheir:#pName#'s]",
@@ -55,6 +60,10 @@ export default {
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my friend][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my fiance][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my man][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my boy][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my #largeAdultSon#][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my #largeAdultSon#][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my #largeAdultSon#][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my kid][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my sibling][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my partner][pNameTheir:#pName#'s]",
