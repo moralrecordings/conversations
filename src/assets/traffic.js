@@ -36,8 +36,9 @@ var forms = {
             { id: 'hateSpeech', name: 'Hate speech', visibleLevel: 0 },
             { id: 'stalking', name: 'Stalking', visibleLevel: 0 },
             { id: 'extortion', name: 'Extortion', visibleLevel: 0 },
-            { id: 'deathThreat', name: 'Death threat', visibleLevel: 0 },
             { id: 'personal', name: 'Personal attack', visibleLevel: 0 },
+            { id: 'deathThreat', name: 'Death threat', visibleLevel: 0 },
+            { id: 'copyright', name: 'Copyright infringement', visibleLevel: 0 },
         ]}
     ],
     // Flags
@@ -164,6 +165,7 @@ var levels = [
                     { weight: 10, type: 'ks_misshapen' },
                     { weight: 10, type: 'ks_experience' },
                     { weight: 5, type: 'ks_advertising' },
+
                     { weight: 20, type: 'cj_foreign' },
                     { weight: 10, type: 'cj_foreign_lit' },
                     { weight: 10, type: 'cj_spoil' },

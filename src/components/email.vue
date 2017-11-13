@@ -84,7 +84,7 @@
 }
 
 .email-message {
-    padding: 0.5em;
+    padding: 1em;
 }
 </style>
 

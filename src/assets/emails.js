@@ -68,7 +68,7 @@ export default [
         "content": `
             <p>All,</p>
             <p>Following a "lessons learned" analysis of last month's surprise loss in court, we are rolling out a sweeping change to our business procedures. </p>
-            <p>In summary: a unfortunate customer incident was reported to the company through social media. An official response was issued, but the ticket was not escalated to the Customer Settlement Response team until a week later. By this time, other related externalities had convinced the customer to file suit against the company. We were unlucky that this individual was unusually well resourced to bring about a case.</p>
+            <p>In summary: a customer reported an unfortunate product-related incident to the company through social media. An official response was issued, but the ticket was not escalated to the Customer Settlement Response team until 10 days later. By this time, other related externalities had convinced the customer to file suit against the company. We were unlucky that this individual was unusually well resourced to bring about a case.</p>
             <p>To prevent the same terrible confluence of events from happening again, we have added a new marker to the ticketing system. In future, please mark any messages wherein a customer makes specific legal demands/threats, or makes allegations of physical harm caused by an Allied Brands product, with the <b>"Litigious"</b> flag. These threads will be monitored by CSR for possible early settlement talks.</p>
 
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
@@ -94,7 +94,7 @@ export default [
         "subject": "New account - Cap'n Jack Food Holdings",
         "content": `
             <p>All,</p>
-            <p>Allied Brands has completed its acquisition of the Cap'n Jack family of snack foods, including Cap'n Jack's Salted Peanut Poppers, Cap'n Jack's Spliced Fruit Topsails, and Cap'n Jack's Fun-Size Energy Loaf. As part of the handover, the Cap'n Jack social media presence (<b>@CapnJackFoods</b>) has been added to your console, and the incoming feed adjusted to include mentions of Cap'n Jack products. Please engage with as many such customers as possible from the Cap'n Jack account.</p>
+            <p>Allied Brands has finalized the acquisition of the Cap'n Jack family of snack foods, including Cap'n Jack's Salted Peanut Poppers, Cap'n Jack's Spliced Fruit Topsails, and Cap'n Jack's Fun-Size Energy Loaf. As part of the handover, the Cap'n Jack social media presence (<b>@CapnJackFoods</b>) has been added to your console, and the incoming feed adjusted to include mentions of Cap'n Jack products. Please engage with as many such customers as possible from the Cap'n Jack account.</p>
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
@@ -150,7 +150,7 @@ export default [
 
             <p>Thanks for replying back. I respect your decision, but I still think you're being played for a chump. Don't get me wrong, I do get that it's a really shit job market right now, but please promise me that you'll look for other positions. This isn't just me being bitter; Allied is seriously a <i>fucked up</i> place. The business is running at a loss, the leadership is an endless buck-passing circlejerk, and everyone is being pushed to cut corners. Oh and they're <i>big</i> fans of stack ranking, so if you've ever wanted to see a proper Stasi-grade culture of undermining and snitching... Jesus, they actually used the words "quash dissent" to justify cracking down on managers and quality control supervisors for doing their job! I can't make this shit up.</p>
 
-            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but like the old saying goes I do not use Allied Brands products, nor would I recommend them to anyone wishing to live to a ripe old age. Mark my words; one day there will be a big public scandal, and your job will basically be the equivalent of unclogging sewer pipes with your bare hands. I would not wish that horrorshow on anyone.</p>
+            <p>But yes, lots of mistakes are being made and good people are being pressured to quit. I probably shouldn't go into old gossip, but like the old saying goes I do not use Allied Brands products, nor would I recommend them to anyone wishing to live to a ripe old age. Mark my words; one day there will be a big public scandal, and your job will become the equivalent of unclogging sewer pipes with your bare hands. I would not wish that horrorshow on anyone.</p>
 
             <p>Cheers,<br/>Andrea</p>
         `
@@ -170,8 +170,8 @@ export default [
 
         <p>As you're probably aware, we are launching a new marketing campaign for Kingsley's Fruit Pebbles this week. Those of you who were present at the full presentation on Friday should already be across it, but for those who were unable to make it I've nutshelled the main points for you below.</p>
 
-        <p>In all honesty, it's no secret that the Fruit Pebbles line has been considered for discontinuation. The products have missed sales targets for the last 12 quarters, and the focus groups have consistently reported that they perceive the brand as unexciting and old-fashioned.</p>
-        <p>However, there has been a <b>surge</b> in web searches for Fruit Pebbles in the past month, due to misappropriation by certain political figures. Naturally, Allied PR has released a full statement condemning the use of our snack product as an abhorrent and factually incorrect metaphor for ethnic cleansing. But the interest in the product is real; in the last few weeks unit sales have almost tripled!</p>
+        <p>In all honesty, it's no secret that the Fruit Pebbles line has been considered for discontinuation. The products have missed sales targets for the last 12 quarters, and customers have consistently reported that the brand is perceived as unexciting and old-fashioned.</p>
+        <p>However, there has been a <b>surge</b> in web searches for Fruit Pebbles in the past month, due to misappropriation by certain political figures. Naturally, Allied PR has released a full statement condemning the use of our snack product as an abhorrent and factually incorrect metaphor for ethnic cleansing. But the renewed interest in the product is real; in the last few weeks unit sales have almost tripled!</p>
         <p>This boom will most likely be a temporary one if we leave it unaddressed, but we have a rare and ideal opportunity to pivot this underperforming brand and focus like a laser on the new and growing group of consumers making up the bulk of these sales. The demographic is predominantly male, middle-class, age 15-35, single, and interested in technology and video games.</p>
         <p>Now I know what you're thinking, and I promise you we are not going to fall into that 90s trope of "X-Treme"ifying everything!! This is 2011, and Fruit Pebbles are a mature product for mature consumers. It goes without saying that the advertising can and will be darker and more realistic compared to other campaigns.</p>
         <p>Of course, no advertising campaign is complete without a compelling original character, and no character is complete without an origin story. Sit back, relax, and enjoy this slice from the distant future...</p>
@@ -181,30 +181,33 @@ export default [
         <p>Vice-Captain Ricardo Hull of the 3rd Interstellar Reconnaissance Company kicked open the hatch and dropped from the ventilation duct, the familiar smell of blood and charred human remains filling his nostrils. He knew better than to look among the bodies for familiar faces. They were all dead, and he'd soon join them if he got sympathetic now.</p>       
         <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red; background-color: yellow;">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would arrive soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
         <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
-        <p>No sooner had he attached the final plastic explosive charge to the main reactor, he heard the sound of approaching footsteps. The xenospawn army MO was to send out a mop-up squad and do a final sweep before handing over control of the base.</p>
+        <p>No sooner had he attached the final plastic explosive charge to the main reactor, he heard the sound of approaching footsteps. The xenospawn army MO was to send out a mop-up squad before assuming control of the base.</p>
         
-        
-        <p>Ricardo saw the bulbous ovipositors and suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
+        <p>A patrol of six xenospawn, armed with pulse rifles. Ricardo saw the bulbous ovipositors on each clawed hand and suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
 
-        <p></p>
+        <p>The patrol began their sweep of the room, It wasn't long before one xenospawn discovered the explosives planted on the reactor and alerted the others. One reached for a comms unit to call for backup.</p>
 
-        <p>From the wings came a bloodcurdling battle cry. It would be the last thing they would ever hear.</p>
+        <p>Suddenly, from the wings came a bloodcurdling battle cry. It would be the last thing they would ever hear.</p>
 
         <p><i>"EAT IT, CUCKS!"</i></p>
 
-        <p>The flavor grenade exploded, painting the hallway with a shower of xenospawn viscera. The three survivors, unfazed that their comrades had been reduced to a fine mist, rolled for cover and began searching for the source of the attack.</p>
+        <p>The flavor grenade exploded, reducing three of the xenospawn to a fine mist. The survivors, dazed from the shockwave, dove for cover and began scanning for the source of the attack.</p>
 
+        <p>A few rounds ricocheted off the armored brim of his helmet; a gift from his late father. </p>
 
-        <p>A few rounds ricocheted off the armored brim of his helmet; a gift from his late father.</p>
+        <p>One left. Ricardo peered around his cover and scanned the area with his weapon, to no avail. Something wasn't right.</p>
 
-        <p>It was all over. </p>
+        <p>Click. Something cold and heavy jabbed Ricardo's head from behind. Ricardo sighed and dropped the pulse rifle. It was all over.</p>
         
-        <p>Slumping in defeat, Ricardo gestured towards his Fruit Pebbles box on the ground, as one last request before his execution by parasite. The xenospawn smiled a terrible smile. Hands still in the air, Ricardo reached over for the box, removed a pebble and placed it in his mouth.</p>
+        <p>Slumping in defeat, Ricardo gestured towards his Fruit Pebbles box on the ground; one last request before his execution by parasite. The xenospawn smiled a terrible smile. Hands still raised, Ricardo reached over for the box, removed a pebble and placed it between his teeth.</p>
 
         <p>A fruit pebble with an emergency microswitch for the detonator.</p>
         
-        <p>The shaped charge ripped through the xenospawn's midsection and upper body, leaving only a grisly pair of legs standing.</p>
+        <p>The shaped charge ripped through the xenospawn's midsection and upper body, leaving only a grisly pair of legs.</p>
 
+        <p>Many men had fallen here today.</p>
+
+        <p>He let go a wry smile. Not <i>all</i> men.</p>
 
 
         <hr/>
@@ -311,9 +314,9 @@ export default [
 
         "subject": "Re: Fwd: IMPORTANT - New campaign for Kingsley's Fruit Pebbles",
         "content": `
-            <p>Oh my god I'm dying. That's just fantastic. And the campaign lasted a whole three days?</p>
+            <p>Oh my god I'm dying. That's just fantastic. And the promotion lasted a whole three days?</p>
 
-            <p>I am so happy that they let Golden Boy have full creative control over another campaign. If you're ever in Jersey City, pick up the drinks and I'll tell you all about the last time that happened. No spoilers, but it was officially the most expensive campaign in company history.</p>
+            <p>I am so happy that they let Golden Boy have full creative control over another campaign. If you're ever in Jersey City, pick up the tab and I'll tell you all about the last time that happened. No spoilers, but it was officially the most expensive campaign in company history.</p>
             <br/>
             <br/>
             <br/>
@@ -447,12 +450,17 @@ export default [
                 <h2 style="margin-bottom: 0;">Allied Brands fires employee who was target of harassment campaign</h2>
                 <p style="font-variant: small-caps">Francisco Muëller in Pittsburgh</p>
 
+
+                <p>Huxton, an avid writer, has been the subject of a sustained harassment campaign</p>
     
                 <p>Yesterday, Huxton posted a short statement on her personal social media feeds saying she had been fired from her position at Allied Brands, accusing the company of doing so to "draw away some unwanted heat". The company is still dealing with the fallout of the Healthland Farms milk scandal, which has escalated to be one of the worst food safety incidents in the history of the United States.</p>
 
                 <p>An official statement from an Allied Brands' spokesperson claimed that the firing was due to holding a second job in breach of company policy.</p>
+                
                 <p>"Tricia Huxton was terminated due to violation of an internal company policy involving holding a second job in conflict with Allied Brands' corporate culture. Though Ms. Huxton's termination follows her being the subject of criticism from certain groups via social media some weeks ago, the two are absolutely not related. Allied Brands is a company committed to fostering inclusion and diversity in both our company and the broader consumer products space and we firmly reject the harassment of individuals based on gender, race or personal beliefs. We wish Ms. Huxton well in her future endeavors."</p>
                 
+                
+
             </div>
             <p style="text-align: center;"><small>© 2011 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
 
@@ -471,7 +479,7 @@ export default [
             <p>She fucking deserved fucking better than to be hurled under a bus by that spineless, chickenshit, traitorous, incompetent, oxygen-thief Judas of a CMO, too busy running scared from a self-appointed peepants internet detective squad to protect someone who's had his back from day fucking one. And for what? To dodge some bad press???</p>
             <p><b>SHE DID NOTHING WRONG AND THEY THREW HER TO THE WOLVES</b></p>
             <p></p>
-            <p>I don't know what else to say. I mean I appreciate you filling me in from the frontlines, but think hard about what you're enabling here</p>
+            <p>I don't know what else to say. I mean I appreciate you filling me in from the frontlines, but think hard about what you're enabling</p>
         `
     },
 
@@ -504,26 +512,28 @@ export default [
         "senderMail": "alerts@mediamunch",
         "recipient": "Me",
         "recipientMail": "againstpollution@ichiromail",
-        "subject": "New Article: ",
+        "subject": "New Article: EXCLUSIVE: Allied Brands Inc. sues Healthland victims for defamation after failed settlement talks",
         "content": `
             <p style="font-size: 1.5rem;">News alerts for "allied brands":</p>
             <div style="border-radius: 8px; border: 1px solid grey; padding-left: 1em; padding-right: 1em;">
-                <h2 style="margin-bottom: 0;">EXCLUSIVE: Allied Brands Inc. sues Healthland Farms victims for defamation after failed settlement talks</h2>
+                <h2 style="margin-bottom: 0;">EXCLUSIVE: Allied Brands Inc. sues Healthland victims for defamation after failed settlement talks</h2>
                 <p style="font-variant: small-caps">Peyton Hammersmith in Roxborough</p>
 
-                <p>Embattled conglomerate Allied Brands Inc. today filed a defamation lawsuit against a group of parents who have publicly accused the company of causing the Healthland Farms milk crisis, following failed attempts to buy their silence.</p>
+                <p>Embattled conglomerate Allied Brands Inc. today filed a defamation lawsuit against a group of parents who have publicly accused the company of causing the Healthland Farms milk crisis, following failed attempts to secretly buy their silence.</p>
 
                 <p>The Coalition Of Families Affected By Sudden Onset Kidney Trauma (COFABS) is a support network formed by parents of children who were poisoned by an adulterated batch of Healthland Farms Low-Fat Chocolate milk in November of 2011. COFABS have been vocal in their disapproval of Allied Brands' response to the scandal, which has largely been to shift the blame to new owners Beaufort International. (The Healthland Farms business was sold to Beaufort three months before the crisis.)</p>
 
                 <p>In a press release, Allied Brands general counsel Nathaniel Hardcastle made the following statement: "The emotionally-charged nature of the Healthland Farms incident does not license this group to make knowingly false or inaccurate statements about Allied Brands Inc. or its products. Allied Brands Inc. initiated this lawsuit because, despite repeated efforts by Allied Brands Inc. to engage in a constructive dialogue with the group, they persisted in making false accusations that they knew to be untrue. This action is intended to prevent the further repetition of those statements."</p>
 
-                <p>In an astonishing development, email exchanges seen by Roxborough Daily show that a high-ranking official at Allied Brands, vice-president of logistics Donald Banyon, had obtained the confidential medical records of at least one member of COFABS. The circumstances under which Banyon acquired the documents, whether he was directed to do so or acted on his own volition, and the extent that the documents have been distributed within Allied Brands, are all unclear. When asked about his status this morning, a spokesperson for Allied Brands stated that Banyon was still working for the company. Further queries made as the story was developing have been returned with no further comment.</p>
+                <p>In an astonishing development, email exchanges seen by Roxborough Daily show that a high-ranking official at Allied Brands, vice-president of logistics Donald Banyon, had obtained the confidential medical records of at least one member of COFABS. The circumstances under which Banyon acquired the documents, whether he was directed to do so or acted on his own volition, and the extent that the documents have been distributed within Allied Brands, are all unclear. When asked about his status this morning, a spokesperson for Allied Brands stated that Banyon was still working for the company. Further queries made as the story was developing were returned with no further comment.</p>
                 
                 <p>Roxborough Daily can exclusively reveal that prior to today's announcement, several members of COFABS had been offered cash settlements from Allied Brands, in return for a laundry list of legal concessions. These included full indemnity, an agreed limit of liability of $1, a blanket non-disparagement agreement against the company for this and any future food safety incidents, and a perpetual covenant not to sue. The settlement group included the person whose medical records had been obtained by Banyon.</p>
  
                 <p>"The settlement amount on offer was frankly an insult", said a source familiar with the negotiations. "For a family without insurance, $56,000 is chump change when you're looking at years of expensive tests and medication. The whole thing is a heartless attempt to wedge low-income families desperate to pay for their child's treatment."</p>
 
                 <p>Only two families so far have accepted the terms of the settlement. The remainder are considering their options.</p>
+                
+                <p>Yesterday, Healthland Farms director David Praxis was arrested for multiple offences under US public health ordinances, along with a number of employees. The initial investigation report into the incident is due to be published next week.</p>
 
 
             </div>
@@ -548,8 +558,10 @@ export default [
             <div style="border-radius: 8px; border: 1px solid grey; padding-left: 1em; padding-right: 1em;">
                 <h2 style="margin-bottom: 0;">Revealed - the machinations behind the Healthland Farms milk crisis</h2>
                 <p style="font-variant: small-caps">Robert Xam in Chicago</p>
-
-                <p></p>
+                
+                <p>The Healthland Farms milk scandal has left 85 people hospitalised with life-threatening renal disorders, and created an unprecedented crisis of confidence over the U.S. Government's commitments to child welfare and food safety. But not only did the contamination turn out to be a deliberate act, the number of affected people could be far larger than previously anticipated.</p>
+    
+                <p>Following the release of the official investigation report last Friday, documents and email exchanges obtained by Ill Media finally reveal the full chain of events leading up to the worst food safety incident in American history.</p>
 
                 <p>Contrary to the name, Healthland Farms is not a dairy supplier, but a refiner. Their business model is creating processed milk drinks; namely, combining milk from a supplier with a number of additives and flavoring agents then packaging the beverage for distribution. Healthland Farms has a number of purchasing contracts it must fulfil; essentially, agreements the company has entered into to provide a quantity of product for a specific length of time at agreed-upon pricing.</p>
 
@@ -567,11 +579,11 @@ export default [
 
                 <p>Incredibly, this ramshackle process did not backfire until the events of November 2011, where thousands of children fell ill from drinking Healthland Farms milk. Investigators concluded that on this occasion the compound was added too late during the thickening process, leading to an uneven distribution in the cartons shipped out to schools. </p>
 
-                <p>Praxis and 5 other individuals at Healthland Farms have been arrested and charged, with a hearing set for early February. Beaufort International CEO Marina Chelworth has resigned, and the future of the company is uncertain due to pending litigation. As for Allied Brands, the Securities and Exchange Commission has charged CFO Kenneth Shanks and two other individuals with materially overstating the value of Healthland Farms, which is expected to be settled later this month. In a related incident, Vice-president of logistics Donald Banyon was fired soon after a story broke alleging he obtained the medical records of a victim.</p>
+                <p>Praxis and 5 other individuals at Healthland Farms have been arrested and charged, with a hearing set for early February. Beaufort International CEO Marina Chelworth has resigned, and the future of the company is uncertain due to pending litigation. As for Allied Brands, the Securities and Exchange Commission has charged CFO Kenneth Shanks and two other individuals with materially overstating the value of Healthland Farms, which is expected to be settled later this month. In a related incident, Vice-president of logistics Donald Banyon was fired soon after a story broke alleging he obtained the private medical records of a victim.</p>
  
-                <p>But despite widespread public outrage, Allied Brands CEO Roger Billeton stubbornly remains in his position. A letter from his personal lawyer made it clear that investigators found no evidence of Allied Brands senior management being aware of exactly what was taking place at Healthland Farms to meet financial targets. With an emergency meeting of the board scheduled for next week, the watertightness of that statment is about to be put to the test.</p>
+                <p>But despite widespread public and shareholder outrage, Allied Brands CEO Roger Billeton stubbornly remains in his position. A letter from his personal lawyer made it clear that investigators found no evidence of Allied Brands senior management being aware of exactly what was taking place at Healthland Farms to meet financial targets. With an emergency meeting of the board scheduled for next week, the watertightness of that argument is about to be put to the test.</p>
 
-                <p>Ultimately, the investigation findings have dramatically increased the number of potential litigants, which now includes anyone who drank the affected USDA batches in the last 7 months. We can expect more class action suits to be filed against both Allied Brands and the USDA; and you can be sure the former will continue doing whatever it takes to keep this case out of a courtroom.</p>
+                <p>Ultimately, the investigation findings have thrown the door open to thousands more potential litigants, including anyone who drank the affected USDA batches in the last 7 months. We can expect more class action suits to be filed against both Allied Brands and the USDA; and you can be sure the former will continue doing whatever it takes to keep this case out of a courtroom.</p>
 
             </div>
             <p style="text-align: center;"><small>© 2012 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
@@ -592,7 +604,7 @@ export default [
           
             <p>We are pleased to inform you that your application for the following position has been successful:</p>
 
-            <p><i>115368 CUSTOMER SERVICE OFFICER, L2 (12MO) - $32,805.17</i></p>
+            <p style="font-size: 110%; font-family: serif; font-weight: bold; font-style: italic;">&nbsp;&nbsp;115368 CUSTOMER SERVICE OFFICER, L2 (12MO) - $32,805.17</p>
 
             <p>A contract has been sent to your mailing address, please sign the documents and fax them to the number provided.</p>
             
