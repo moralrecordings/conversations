@@ -67,8 +67,8 @@ export default [
         "subject": "URGENT - New business rule",
         "content": `
             <p>All,</p>
-            <p>Following a "lessons learned" analysis of last month's surprise loss in court, we are rolling out a sweeping change to our business procedures. </p>
-            <p>In summary: a customer reported an unfortunate product-related incident to the company through social media. An official response was issued, but the ticket was not escalated to the Customer Settlement Response team until 10 days later. By this time, other related externalities had convinced the customer to file suit against the company. We were unlucky that this individual was unusually well resourced to bring about a case.</p>
+            <p>Following a "lessons learned" analysis of last month's surprise loss in court, Allied Brands is rolling out a sweeping change to our customer service procedures.</p>
+            <p>In summary: a customer reported an unfortunate product-related incident to the company through social media. An official response was issued, but the support ticket was not escalated to the Customer Settlement Response team until 10 days later. By this time, other related externalities had convinced the customer to file suit against Allied Brands. We were unlucky that this individual was unusually well resourced to bring about a case.</p>
             <p>To prevent the same terrible confluence of events from happening again, we have added a new marker to the ticketing system. In future, please mark any messages wherein a customer makes specific legal demands/threats, or makes allegations of physical harm caused by an Allied Brands product, with the <b>"Litigious"</b> flag. These threads will be monitored by CSR for possible early settlement talks.</p>
 
             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
@@ -180,30 +180,37 @@ export default [
         <p>They only called him in for the exceptional jobs. Once all other options have failed. Today was no different.</p>
         <p>Vice-Captain Ricardo Hull of the 3rd Interstellar Reconnaissance Company kicked open the hatch and dropped from the ventilation duct, the familiar smell of blood and charred human remains filling his nostrils. He knew better than to look among the bodies for familiar faces. They were all dead, and he'd soon join them if he got sympathetic now.</p>       
         <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red; background-color: yellow;">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would arrive soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
-        <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
-        <p>No sooner had he attached the final plastic explosive charge to the main reactor, he heard the sound of approaching footsteps. The xenospawn army MO was to send out a mop-up squad before assuming control of the base.</p>
-        
-        <p>A patrol of six xenospawn, armed with pulse rifles. Ricardo saw the bulbous ovipositors on each clawed hand and suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
 
-        <p>The patrol began their sweep of the room, It wasn't long before one xenospawn discovered the explosives planted on the reactor and alerted the others. One reached for a comms unit to call for backup.</p>
+        <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
+        <p>No sooner had he attached the final plastic explosive charge to the main reactor, he heard the sound of approaching footsteps. Ricardo flicked the arming switch and dove clear. He hoped fervently the sound was just some maintenance workers and not a whole platoon.</p>
+        
+        <p>A patrol of seven xenospawn, armed to the teeth with pulse rifles. Ricardo saw the bulbous ovipositors on each clawed hand and suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
+
+        <p>The patrol began their primitive sweep of the room. It wasn't long before one xenospawn discovered the explosives planted on the reactor and alerted the others. One reached for a comms unit to call for backup.</p>
 
         <p>Suddenly, from the wings came a bloodcurdling battle cry. It would be the last thing they would ever hear.</p>
 
         <p><i>"EAT IT, CUCKS!"</i></p>
 
-        <p>The flavor grenade exploded, reducing three of the xenospawn to a fine mist. The survivors, dazed from the shockwave, dove for cover and began scanning for the source of the attack.</p>
+        <p>The Flavor Grenade exploded, reducing three of the xenospawn to a fine mist. The survivors, dazed from the shock, dove for cover and opened fire in the direction of the remark.</p>
 
-        <p>A few rounds ricocheted off the armored brim of his helmet; a gift from his late father. </p>
+        <p>Maybe one day I'll meet some savages that won't fall for that old ventriloquism trick, Ricardo smugly thought. From his vantage point <i>behind</i> the direction of fire, he bagged two headshots before the remaining two xenospawn got wise and returned fire.</p>
 
-        <p>One left. Ricardo peered around his cover and scanned the area with his weapon, to no avail. Something wasn't right.</p>
-
-        <p>Click. Something cold and heavy jabbed Ricardo's head from behind. Ricardo sighed and dropped the pulse rifle. It was all over.</p>
+        <p>Shots buzzed overhead as Ricardo hugged the low wall, calmly planning his next move. A few rounds ricocheted off the armored brim of his helmet; a gift from his late father. Rationally he knew this was a conflict zone and that battle damage was an inevidable risk, but his normally cool-headed demeanor soon gave way to a thirst for vengeance.</p>
         
-        <p>Slumping in defeat, Ricardo gestured towards his Fruit Pebbles box on the ground; one last request before his execution by parasite. The xenospawn smiled a terrible smile. Hands still raised, Ricardo reached over for the box, removed a pebble and placed it between his teeth.</p>
-
-        <p>A fruit pebble with an emergency microswitch for the detonator.</p>
+        <p>He hurled back a Fizzer Bomb, long since banned by the Mandelbrot Treaty on Neurotoxic Weapons. The terrified xenospawn was engulfed by a cloud of orange vapour, then hit the floor a few seconds later as the excruciating full body paralysis set in.</p> 
         
-        <p>The shaped charge ripped through the xenospawn's midsection and upper body, leaving only a grisly pair of legs.</p>
+        <p>Ricardo made a mental note to come back to this xenospawn and stamp on every single egg in front of them. The ultimate abhorrence to a xenospawn is the notion of their eggs being desecrated in any way.</p>
+
+        <p>One left. Ricardo peered around his cover and scanned the area with his weapon. No sign of the remaining goon. Something wasn't right.</p>
+
+        <p>Click. Something cold and heavy jabbed Ricardo's head from behind. Ricardo sighed and dropped his gun. It was all over.</p>
+        
+        <p>Slumping in defeat, Ricardo gestured towards his Fruit Pebbles box on the ground; one last request before his execution by parasite. The xenospawn smiled a terrible smile. With hands still raised, Ricardo reached over for the box, removed a pebble and placed it between his teeth.</p>
+
+        <p>A pebble with the emergency microswitch for the detonator.</p>
+        
+        <p>The shaped charge ripped through the xenospawn's midsection, leaving a pair of legs still standing like a grisly marionette. The upper half of the xenomorph landed at Ricardo's feet, face locked in a grimace halfway between terror and surprise.</p>
 
         <p>Many men had fallen here today.</p>
 
@@ -211,7 +218,7 @@ export default [
 
 
         <hr/>
-        <p>As a limited edition tie-in to promote the character, Fruit Pebbles will be released in gunmetal grey with "ammo box" packaging. In your communications with Kingsley Snacks customers, be sure to work in a reference to the promotion and include the image attached below.</p>
+        <p>As a limited edition tie-in to promote the character, Fruit Pebbles will be released in gunmetal grey with "future ammo box" style packaging. In your communications with Kingsley Snacks customers, be sure to work in a reference to the promotion and include the image attached below.</p>
         <p>I hope you will join me in welcoming Ricardo into our diverse lineup of brand mascots.</p>
         <p>#ricardolives</p>
 
@@ -255,13 +262,13 @@ export default [
             <p style="font-size: 1.5rem;">News alerts for "allied brands":</p>
             <div style="border-radius: 8px; border: 1px solid grey; padding-left: 1em; padding-right: 1em;">
                 <h2 style="margin-bottom: 0;">Beaufort issues nationwide recall amid tainted milk scandal</h2>
-                <p style="font-variant: small-caps">Robert Xam in Chicago</p>
+                <p style="font-variant: small-caps">Peter Thorsten in Chicago</p>
 
-                <p>Beaufort North America LLC. has issued an immediate nationwide recall for all Healthland Farms branded milk products, following reports of children suffering from impaired kidney functionality.</p>
+                <p>Beaufort North America LLC. (NASDAQ: BEAU) has issued an immediate nationwide recall for all Healthland Farms branded milk products, following reports of children suffering from impaired kidney functionality.</p>
                 <p>Since Wednesday, there has been a spike in diagnosed cases of sudden-onset kidney trauma; an uncommon renal disorder affecting pre-teen children. The vast majority of these cases have been traced back to the consumption of Healthland Farms Low-Fat Chocolate Milk; a flavoured milk drink produced by Beaufort and supplied to the National School Lunch Program. While FDA inspectors have not yet publicly identified the root cause, unconfirmed reports suggest that several batches of the milk were tainted by a melamine-like additive to boost the apparent protein content.</p>
                 <p>A spokesperson for Beaufort stated that the nationwide recall was a necessary safety precaution, the company was "shocked and dismayed at this unforeseeable turn of events", and that the investigation into the incident was still ongoing. Customers who believe they are affected by the recall are urged not to consume the product and to get in contact with Beaufort immediately.</p>
                 <p>The market response to the scandal has been severe, with Beaufort stock down $3.50 to $9.02.</p>
-                <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc., including Healthland Farms. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone investor demanding a higher premium on the market price. A source inside Beaufort, who asked not to be identified, said that the investigation had unearthed possible links to members of Allied Brands senior management.<p>
+                <p>In September, Beaufort finalized their acquisition of several product lines from Pennsylvania-based conglomerate Allied Brands Inc. (NASDAQ: ALLB), including Healthland Farms. At the time, the milk product business was considered healthy and no concerns were raised, aside from a lone investor demanding a higher premium on the market price. A source inside Beaufort, who asked not to be identified, said that the investigation had unearthed possible links to members of Allied Brands senior management.<p>
                 <p>A spokesperson for Allied Brands Inc. declined to comment, citing the complete divestment of the Healthland Farms product line. The Allied stock price suffered some early losses when news of the scandal broke on Wednesday, but has since rallied to be slightly ahead by close of trading.</p>
             </div>
             <p style="text-align: center;"><small>© 2011 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
@@ -314,7 +321,7 @@ export default [
 
         "subject": "Re: Fwd: IMPORTANT - New campaign for Kingsley's Fruit Pebbles",
         "content": `
-            <p>Oh my god I'm dying. That's just fantastic. And the promotion lasted a whole three days?</p>
+            <p>Oh my god I'm dying. That's just fantastic. And the promotion lasted a whole three days???</p>
 
             <p>I am so happy that they let Golden Boy have full creative control over another campaign. If you're ever in Jersey City, pick up the tab and I'll tell you all about the last time that happened. No spoilers, but it was officially the most expensive campaign in company history.</p>
             <br/>
@@ -517,7 +524,8 @@ export default [
             <p style="font-size: 1.5rem;">News alerts for "allied brands":</p>
             <div style="border-radius: 8px; border: 1px solid grey; padding-left: 1em; padding-right: 1em;">
                 <h2 style="margin-bottom: 0;">EXCLUSIVE: Allied Brands Inc. sues Healthland victims for defamation after failed settlement talks</h2>
-                <p style="font-variant: small-caps">Peyton Hammersmith in Roxborough</p>
+                <p style="font-variant: small-caps">Peyton Hammersmith</p>
+                <p style="font-variant: small-caps">Roxborough Daily</p>
 
                 <p>Embattled conglomerate Allied Brands Inc. today filed a defamation lawsuit against a group of parents who have publicly accused the company of causing the Healthland Farms milk crisis, following failed attempts to secretly buy their silence.</p>
 

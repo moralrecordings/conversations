@@ -4,7 +4,7 @@
             <span class="titlebar-text">Message from Supervisor</span>
         </div>
         <div class="body-container"><div class="body">
-            <p>Your timesheet summary for the current quarter:</p>
+            <p>Your timesheet for the current quarter:</p>
             <table class="timesheet">
                 <thead><tr>
                     <td style="text-align: left;">Week ending</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td><td>Sun</td>

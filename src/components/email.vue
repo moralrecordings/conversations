@@ -104,8 +104,12 @@ export default {
             closed: false
         };
     },
+    watch: {
+        level: function (newLevel, oldLevel) {
+            this.load(newLevel);
+        }
+    },
     methods: {
-
         close: function() {
             this.closed = true;
             this.$emit('close');
@@ -124,38 +128,40 @@ export default {
             this.messages[groupIndex][messageIndex].read = true;
             this.selectIndex = this.messages[groupIndex][messageIndex].index;
             $('.email-message').scrollTop(0);
+        },
+        load: function(levelFilter) {
+            var vm = this;
+            vm.messages.length = 0;
+            emails.forEach(function (el, index) {
+                if (vm.todayOnly && (el.visibleLevel != levelFilter)) {
+                    return;
+                }
+                if (el.visibleLevel > vm.level) {
+                    return;
+                }
+                if (vm.messages.length < el.visibleLevel+1) {
+                    var size = el.visibleLevel+1 - vm.messages.length
+                    for (var i=0; i<size; i += 1) {
+                        vm.messages.push([]);
+                    }
+                }
+                vm.messages[el.visibleLevel].push({
+                    index: index,
+                    read: false,
+                });
+            });
+            vm.messages.forEach(function (el) {
+                el.sort(function (emailA, emailB) {
+                    return vm.emails[emailB.index].date - vm.emails[emailA.index].date;
+                });
+            });
+            vm.messages.reverse();
+            vm.selectIndex = vm.messages[0][0].index;
+
         }
     },
     mounted: function () {
-        var vm = this;
-        emails.forEach(function (el, index) {
-            if (vm.todayOnly && (el.visibleLevel != vm.level)) {
-                return;
-            }
-            if (el.visibleLevel > vm.level) {
-                return;
-            }
-            if (vm.messages.length < el.visibleLevel+1) {
-                var size = el.visibleLevel+1 - vm.messages.length
-                for (var i=0; i<size; i += 1) {
-                    vm.messages.push([]);
-                }
-            }
-            vm.messages[el.visibleLevel].push({
-                index: index,
-                read: false,
-            });
-        });
-        vm.messages.forEach(function (el) {
-            el.sort(function (emailA, emailB) {
-                return vm.emails[emailB.index].date - vm.emails[emailA.index].date;
-            });
-            console.log(el);
-        });
-        vm.messages.reverse();
-        vm.selectIndex = vm.messages[0][0].index;
-        console.log('email');
-        console.log(vm);
+        this.load(this.level);
     },
 };
 </script>

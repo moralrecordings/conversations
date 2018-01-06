@@ -4,7 +4,7 @@
             <div style="display: none" v-html="asset"/>
         </template>
         <div class="desktop" v-bind:class="'bg-'+level"> 
-            <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y" v-bind:level="level" v-bind:todayOnly="endless" v-if="showEmail" v-on:close="closeEmailWindow"/>
+            <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y" v-bind:level="emailLevel" v-bind:todayOnly="endless" v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-bind:level="level" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:maxQueue="maxQueue" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-bind:endless="endless" v-on:startShift="start" v-if="showIssues" />
             <mr-attachment-app v-for="att in attachments" v-if="att.show" v-bind:width="att.width" v-bind:height="att.height" v-bind:xPos="att.xPos" v-bind:yPos="att.yPos" v-bind:src="att.src" v-bind:name="att.name" v-on:close="closeAttachmentWindow"/>
@@ -14,7 +14,7 @@
             <mr-messages-app v-if="tutorialMessage" v-bind:account="account" v-bind:message="tutorialMessage" v-bind:level="level" v-on:submitMessage="submitTutorialMessage"  v-on:close="closeTutorialMessageWindow" />
             <!-- warning window -->
             <mr-warning-app v-bind:xPos="warningPos.x" v-bind:yPos="warningPos.y" v-if="showWarning" v-bind:errors="warningErrors" v-on:close="closeWarningWindow"/>
-            <mr-settings-app v-bind:xPos="settingsPos.x" v-bind:yPos="settingsPos.y" v-if="showSettings" v-on:close="closeSettingsWindow" v-on:logout="logout" v-on:debugWin="showSuccessWindow" v-on:debugLose="showFailWindow" v-on:debugSpawn="spawnMessage" v-on:debugTest="spawnTest"/>
+            <mr-settings-app v-bind:xPos="settingsPos.x" v-bind:yPos="settingsPos.y" v-if="showSettings" v-on:close="closeSettingsWindow" v-on:logout="logout" v-on:debugWin="showSuccessWindow" v-on:debugLose="showFailWindow" v-on:debugEmails="showAllEmails" v-on:debugSpawn="spawnMessage" v-on:debugTest="spawnTest"/>
             <mr-fail-app v-bind:xPos="failPos.x" v-bind:yPos="failPos.y" v-bind:endless="endless" v-if="showFail" v-on:logout="logout"/>
             <mr-success-app v-bind:xPos="successPos.x" v-bind:yPos="successPos.y" v-bind:level="level" v-if="showSuccess" v-on:nextLevel="nextLevel"/>
         </div>
@@ -743,6 +743,7 @@ var initialData = function () {
 
         // level ID
         level: 0,
+        emailLevel: 0,
 
         // score and timekeeping
         score: {open: 0, rslv: 0, warn: 0, rslvTime: 0, globalRslv: 0, globalRslvTime: 0, globalTotal: 0},
@@ -845,6 +846,9 @@ export default {
             att.xPos = ($('.desktop').width() - att.width)/2;
             att.yPos = ($('.desktop').height() - att.height)/2;
             att.show = true;
+        },
+        showAllEmails: function () {
+            this.emailLevel = 11;
         },
         updateClock: function () {
             this.clock.topLine = this.clock.time.format('h:mm A');
@@ -1100,6 +1104,8 @@ export default {
             if (level.tutorial) {
                 vm.tutorialMode = true;
             }
+            // set email level
+            vm.emailLevel = levelID;
 
             vm.attachments = [];
             for (var i=1; i<traffic.forms.attachments.length; i++) {
