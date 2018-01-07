@@ -11,7 +11,7 @@
                     <div v-if="(messages.length-1-groupIndex <= level) && (messageGroup.length)" class="email-group">
                         {{ getGroup(groupIndex) }}
                     </div>
-                    <button v-for="(message, messageIndex) in messageGroup" class="email-select-row clickable" v-bind:class="{ active: message.index == selectIndex, unread: message.read != true }" v-if="level >= emails[message.index].visibleLevel" v-on:click="setMessage(groupIndex, messageIndex)">
+                    <button v-for="(message, messageIndex) in messageGroup" class="email-select-row clickable" v-bind:class="{ active: message.index == selectIndex, unread: message.read != true }" v-if="(level >= emails[message.index].visibleLevel) && !(emails[message.index].recalled)" v-on:click="setMessage(groupIndex, messageIndex)">
                         <span>{{ emails[message.index].date.format('D MMM') }}</span>
                         <p class="sender">{{ emails[message.index].sender }}</p>
                         <p>{{ emails[message.index].subject }}</p>
@@ -25,7 +25,8 @@
                     <span style="display: block"><b>Subject:</b> {{ emails[selectIndex].subject }}</span>
                 </p>
                 <hr/>
-                <div v-html="emails[selectIndex].content"/>
+                <div v-if="emails[selectIndex].recalled">This email message has been recalled.</div>
+                <div v-html="emails[selectIndex].content" v-bind:class="{ recalled: emails[selectIndex].recalled }"/>
             </div>
 
         </div></div>
@@ -86,6 +87,10 @@
 .email-message {
     padding: 1em;
 }
+
+.recalled {
+    opacity: 0.3;
+}
 </style>
 
 <script>
@@ -125,9 +130,18 @@ export default {
             return Number(test).toString() + ' weeks ago';
         },
         setMessage: function(groupIndex, messageIndex) {
-            this.messages[groupIndex][messageIndex].read = true;
-            this.selectIndex = this.messages[groupIndex][messageIndex].index;
+            var vm = this;
+            vm.messages[groupIndex][messageIndex].read = true;
+            vm.selectIndex = vm.messages[groupIndex][messageIndex].index;
             $('.email-message').scrollTop(0);
+            if (vm.emails[vm.selectIndex].recallAfter && !(vm.messages[groupIndex][messageIndex].recaller)) {
+                console.log(`timebomb set for ${vm.emails[vm.selectIndex].recallAfter}`);
+                vm.messages[groupIndex][messageIndex].recaller = setTimeout(function () {
+                    console.log(vm.emails[vm.selectIndex]);
+                    vm.emails[vm.selectIndex].recalled = true;
+                    vm.$forceUpdate();
+                }, vm.emails[vm.selectIndex].recallAfter);
+            }
         },
         load: function(levelFilter) {
             var vm = this;

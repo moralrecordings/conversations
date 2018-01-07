@@ -237,7 +237,7 @@ export default [
         "senderMail": "roger.billeton@alliedbrandsinc",
         "recipient": "All Users",
         "recipientMail": "all@alliedbrandsinc",
-        "selfDestruct": 8000,
+        "recallAfter": 8000,
         "subject": "Re: FW: IMPORTANT - New campaign for Kingsley's Fruit Pebbles",
         "content": `
             <p>someone tell Kate's team they better get on Board with this shit if they want jobs after Christmas</p>
@@ -484,7 +484,7 @@ export default [
         "content": `
             <p>You know, looking back on it Tricia was probably the best boss I ever had. She made sure her reports had what they needed to work, she protected them from most of the infighting, and even on the worst days when the business was in the toilet? She gave the job everything she had.</p>
             <p>She fucking deserved fucking better than to be hurled under a bus by that spineless, chickenshit, traitorous, incompetent, oxygen-thief Judas of a CMO, too busy running scared from a self-appointed peepants internet detective squad to protect someone who's had his back from day fucking one. And for what? To dodge some bad press???</p>
-            <p><b>SHE DID NOTHING WRONG AND THEY THREW HER TO THE WOLVES</b></p>
+            <p><b style="font-size: 200%;">SHE DID NOTHING WRONG AND THEY THREW HER TO THE WOLVES</b></p>
             <p></p>
             <p>I don't know what else to say. I mean I appreciate you filling me in from the frontlines, but think hard about what you're enabling</p>
         `
@@ -660,10 +660,13 @@ export default [
         "subject": "Business rules and current promotions",
         "content": `
             <p>All,</p>
-            <p>Firstly, Allied Brands is grateful for the extra assistance provided by <span style="font-family: serif; font-size: 15px;">&nbsp;&nbsp;Roshan Backoffice Services Ltd.</span> in managing our social media during this period of high customer demand. Assuming all goes well, we will definitely be considering your services for any planned expansion of our customer outreach capability.</p>
+            <p>Firstly, Allied Brands is grateful for the extra assistance provided by <span style="font-family: serif; font-size: 15px;">&nbsp;&nbsp;Roshan Backoffice Services Ltd.</span> in managing our social media during this period of high customer demand. Assuming all goes well, we will definitely be considering your services for any planned expansion of our customer outreach program.</p>
             <p>As outlined in the contract, we need first line responders to man the following social media accounts 24/7:</p>
             <p><ul>
                 <li><b>@AlliedBrandsInc</b> - Allied Brands Inc. corporate account</li>
+                <li><b>@kingsleysnacks</b> - Kingsley® Snacks brand account</li>
+                <li><b>@CapnJackFoods</b> - Cap'n Jack brand account</li>
+                <li><b>@excelsior_rx</b> - Excelsior Pharmaceuticals brand account</li>
             </ul></p>
             <p>Please refer to our standard orientation email for an overview of how our ticketing system works. In addition to the standard rules for replying to customers, there are a number of custom rules relating to current requirements by the business.</p>
             <p><ul>
