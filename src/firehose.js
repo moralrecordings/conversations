@@ -135,20 +135,20 @@ export default {
         var match = traffic.messageTypes[messageType];
         var errors = [];
         if (match.account != response.account) {
-            errors.push('Response should be sent from @'+match.account+' account.');
+            errors.push('Reply should be sent from @'+match.account+' account.');
         }
         
         var type = traffic.forms.types.find(function (el) {
             return el.id === match.type;
         });
         if (match.type != response.type) {
-            errors.push('Response type should be "'+type.name+'".');
+            errors.push('Category should be "'+type.name+'".');
         }
         if (match.subtype != response.subtype) {
             var subtype = type.subtypes.find(function (el) {
                 return el.id === match.subtype;
             });
-            errors.push('Response subtype should be "'+subtype.name+'".');
+            errors.push('Category subtype should be "'+subtype.name+'".');
         }
         for (var flag in response.flags) {
             var flagName = traffic.forms.flags.find(function (el) {
@@ -177,7 +177,7 @@ export default {
             }
         }
         if (!response.ready) {
-            errors.push('Response message was sent unfinished.');
+            errors.push('Reply was sent unfinished.');
         }
         return {
             valid: errors.length === 0,
