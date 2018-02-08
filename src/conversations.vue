@@ -571,6 +571,7 @@ var audioAssets = {
     'messageGet': new Audio(require('assets/message_get.mp3')),
     'messageSend': new Audio(require('assets/message_send.mp3')),
     'tick': new Audio(require('assets/tick.mp3')),
+    'fired': new Audio(require('assets/fired.mp3')),
 };
 
 // top level window management crap!
@@ -833,6 +834,7 @@ export default {
         showFailWindow: function () {
             this.failPos.x = ($('.desktop').width() - 800)/2;
             this.failPos.y = ($('.desktop').height() - 320)/2;
+            audioAssets.fired.play();
             this.showFail = true;
         },
         showSuccessWindow: function () {
