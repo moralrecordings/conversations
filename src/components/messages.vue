@@ -231,7 +231,6 @@ export default {
 
             this.flyout = true;
             var result = this.getResult(); 
-
             this.$emit('submitMessage', result);
             setTimeout(this.close, 800);
         }, 2000, true),
@@ -242,8 +241,8 @@ export default {
             });
             // if message was provisioned with a timer,
             // closing it is equivalent to failing
-            if (this.clockInterval && this.message.messageEmit) {
-                this.$emit(this.message.messageEmit, {
+            if (this.clockInterval && this.message.timerEmit) {
+                this.$emit(this.message.timerEmit, {
                     id: this.message.id
                 });
             }

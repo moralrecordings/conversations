@@ -115,7 +115,7 @@ export default [
 
             <p>Basically, in case you haven't picked up on it there's no long-term prospects for the job. Allied hired some teenage fucks from the Bay Area to "train" some neural AI thing with what you're doing, which they intend to set loose on the public again as soon as they figure out how to make it stop talking like a Nazi. You probably heard about the last time their social media account was all over the news? Yeah, that happened a few days after me and my co-workers got canned and replaced with version 1.</p>
 
-            <p>What makes me fucking livid is this unpaid internship horseshit. Okay, the job wasn't great money, but it was at least a salary! I am 99% sure that their game plan is to ditch you at the end of the trial period and just churn people until they have enough data or whatever to switch CyberGoebbels back on. Obviously you're free to do as you wish, but I figure the least I can do is warn you about what's going down.</p>
+            <p>What makes me fucking livid is this unpaid internship horseshit. Okay, the job wasn't great money, but it was at least a salary! I am 99% sure that their game plan is to ditch you at the end of the trial period and just churn people until they have enough data or whatever to switch CyberGoebbels back on. Obviously you're free to do as you wish, but I figure the least I can do is warn you about what's going on.</p>
 
             <p>Cheers,<br/>Andrea</p>
         `
@@ -179,12 +179,12 @@ export default [
         <hr/>
         <p>They only called him in for the exceptional jobs. Once all other options have failed. Today was no different.</p>
         <p>Vice-Captain Ricardo Hull of the 3rd Interstellar Reconnaissance Company kicked open the hatch and dropped from the ventilation duct, the familiar smell of blood and charred human remains filling his nostrils. He knew better than to look among the bodies for familiar faces. They were all dead, and he'd soon join them if he got sympathetic now.</p>       
-        <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red; background-color: yellow;">(CB: can we cross promote with e-cig? check with legal)</span>. The queen would arrive soon; unless he acted now hundreds of thousands of carnivorous xenospawn would overrun the outpost, and eventually the whole planet. This was humanity's last chance.</p>
+        <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red; background-color: yellow;">(CB: can we cross promote with e-cig? check with legal)</span>. The natives would arrive soon; unless he acted now hundreds of thousands of savage, bloodthirsty xenospawn would overrun the colony, and eventually the whole planet. This was humanity's last chance.</p>
 
         <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
-        <p>No sooner had he attached the final plastic explosive charge to the main reactor, he heard the sound of approaching footsteps. Ricardo flicked the arming switch and dove clear. He hoped fervently the sound was just some maintenance workers and not a whole platoon.</p>
+        <p>No sooner had he attached the final plastic explosive charge to the main reactor, he heard the sound of approaching footsteps. Ricardo hit the arm switch and dove clear. He hoped fervently the sound was just from one scout and not a whole platoon.</p>
         
-        <p>A patrol of seven xenospawn, armed to the teeth with pulse rifles. Ricardo saw the bulbous ovipositors on each clawed hand and suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
+        <p>No luck. A patrol of seven xenospawn, armed with pulse rifles. Ricardo saw the bulbous ovipositors on each clawed hand and suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
 
         <p>The patrol began their primitive sweep of the room. It wasn't long before one xenospawn discovered the explosives planted on the reactor and alerted the others. One reached for a comms unit to call for backup.</p>
 
@@ -212,7 +212,7 @@ export default [
         
         <p>The shaped charge ripped through the xenospawn's midsection, leaving a pair of legs still standing like a grisly marionette. The upper half of the xenomorph landed at Ricardo's feet, face locked in a grimace halfway between terror and surprise.</p>
 
-        <p>Many men had fallen here today.</p>
+        <p>Many men had fallen here today, but they had managed to save what was rightfully theirs.</p>
 
         <p>He let go a wry smile. Not <i>all</i> men.</p>
 

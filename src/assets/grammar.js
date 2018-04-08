@@ -3,7 +3,7 @@
 export default {
     // emoji sequence generator
     "fanEmoji": ["👍", "😋", "😍", "😄", "💕", "✨", "💖", "💛", "💯", "😙", "👀"],
-    "complainEmoji": ["👎", "🚮", "🚽", "🤷",  "😂", "🤔", "🔥", "😑", "😐", "😒", "😥", "😲", "🤢", "💩", "😱", "😭", "😠"],
+    "complainEmoji": ["👎", "🚮", "🚽", "🤷",  "😂", "🤔", "🔥", "😑", "😐", "😒", "😥", "😲", "🤢", "💩", "😱", "😭", "😠", "🤮", "🤦"],
     "sadEmoji": ["😂", "🤔", "😶", "😧", "😦", "😞", "☹"],
     "emojiSeq": [
         "#emoji1#", 
@@ -132,23 +132,33 @@ export default {
         "[pTheir:my][pTheirs:mine][pThey:I][pThem:me][pName:I][pNameTheir:#pTheir#]",
     ],
 
+    // synonyms for "quite"
+    "quite": [
+        "quite", "quite",
+        "pretty", "pretty",
+        "really",
+        "super",
+        "unbelievably",
+        "", "", "",
+    ],
+    
 
     // angry customer dialogue chunks
-    "sadness": ["what gives", "what happened", "kinda disappointing", "was really looking forward to it too", "so hungry", "still hungry", "don't mean to overreact or anything", "a replacement would be nice", "this is subpar", "really", "huh", "pretty funny", "comedy gold", "who needs QA, right?", "talk about a letdown", "such an anticlimax", "dunno what to say", "kinda bummed", "this sucks", "this stinks", "this bites", "lame", "frig"],
+    "sadness": ["what gives", "what happened", "kinda disappointing", "was really looking forward to it too", "so hungry", "still hungry", "don't mean to overreact or anything", "a replacement would be nice", "this is subpar", "really", "huh", "pretty funny", "comedy gold", "who needs QA, right?", "talk about a letdown", "such an anticlimax", "dunno what to say", "kinda bummed", "this sucks", "this stinks", "this bites", "lame", "frig", "I guess I'm not surprised"],
     
     "exclamation": ["wtf", "wtf is this", "what the fuck", "fuck me sideways", "freak me sideways", "what the hell is this", "what is this", "wtf is this shit", "what is this shit", "what is this horseshit", "what the shit", "holy shit", "holy fuck", "holy wow", "good heavens", "good grief", "my god", "christ", "jesus", "jesus christ", "jesus h. christ", "jesus shitting christ", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "not cool", "not happy", "unacceptable", "thanks for nothing"],
     
     "big": ["large ", "gigantic ", "great big fucking ", "largeass ", "big ", "bigass ", "goddamn ", "huge ", "enormous ", "shitting great ", "fucking ", "", "", "", ""],
     
-    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is pretty bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "very disappointed", "really disappointed", "disappointed", "really sad", "very sad", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "I feel sick", "I feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a good supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this", "this shit is unacceptable", "this is unacceptable", "this is fucking dangerous", "this is not a hoax", "unblock me you cowards" ],
+    "closingRemark": ["you're not even trying", "not fun at all", "I expected more", "you can do better", "you can do better than this", "this is #quite# bad", "this is the worst", "this is awful", "never buying again", "fucking disgusting", "very disappointed", "really disappointed", "disappointed", "really sad", "very sad", "never again", "avoid at all costs", "avoid", "everyone avoid", "I feel disrespected", "I feel sick", "I feel ill", "step up your game", "fix this", "you better fix this", "you ripped me off", "what a fucking swindle", "from a good supermarket", "from a reputable shop", "from my local shop", "from the gas station", "everyone don't buy", "you expect #pThem# to eat that", "the press will love this", "you'll burn for this", "you're going down", "you're going down for this", "this shit is unacceptable", "this is unacceptable", "this is fucking dangerous", "this is not a hoax", "how dare you do this to #pThem#", "unblock me" ],
 
     "litigiousRemark": ["see you in court", "SEE YOU IN COURT", "you'll hear from #pTheir# lawyer", "I demand compensation", "#pThey# had to go to the hospital", "in the emergency room", "at the hospital", "you better pay #pTheir# medical bills", "#pThey# chipped a tooth", "now #pTheir# blood is everywhere", "#pThey# cracked #pTheir# tooth", "#pThey# can't stop vomiting", "next step is a lawsuit", "better lawyer up", "seems like an open and shut case", "enjoy being sued", "talking to an attorney now", "anyone know a good lawyer", "#pThey# almost died"],
     
-    "coda": [" fml", " ffs", " you dicks", " you fuckers", " you bastards", " FML", " FFS", " jesus", " JFC", " sigh", " smh", " don't @ me", "", "", "", "", "", "", "", "", "", "", "", ""],
+    "coda": [" fml", " ffs", " you dicks", " you fuckers", " you bastards", " you cowards", " FML", " FFS", " jesus", " JFC", " sigh", " smh", " don't @ me", "", "", "", "", "", "", "", "", "", "", "", ""],
 
 
     // foreign object types and righteous outrage generator
-    "foreignObject": ["piece of wood", "stick", "wood chip", "wood splinter", "splinter", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand",  "coin", "penny", "shell", "lump", "hair", "eyelash", "dandruff flake", "dust bunny", "ball of dust", "ball of lint", "chunk of lint", "clump of hair", "fingernail", "finger nail", "fake nail", "bandaid", "sticking plaster", "bone", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "wire", "bit of wire", "peanut shell", "nail", "fly", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "worm", "maggot", "spider", "insect", "bug", "roach", "cockroach", "locust", "dead rat", "tail", "severed finger"],
+    "foreignObject": ["piece of wood", "stick", "wood chip", "wood splinter", "splinter", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand",  "coin", "penny", "shell", "lump", "hair", "eyelash", "dandruff flake", "dust bunny", "ball of dust", "ball of lint", "chunk of lint", "clump of hair", "fingernail", "finger nail", "fake nail", "bandaid", "sticking plaster", "bone", "tooth", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "wire", "bit of wire", "peanut shell", "nail", "fly", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "worm", "maggot", "spider", "insect", "bug", "roach", "cockroach", "locust", "dead rat", "tail", "severed finger"],
     "bigForeignObject": ["[whut:#big##foreignObject#]#whut.randomUpper(10)#", "#big##foreignObject.randomUpper(10)#"],
     "foreignObjectDiscovery": [
         "#genPerson##pName# found #bigForeignObject.a# in #pTheir# #productDesc#",
@@ -201,12 +211,12 @@ export default {
         "had a strong aftertaste of #stench#",
         "was all covered in powder",
         "was powdery and disgusting",
-        "looked pretty gross",
-        "smelled pretty rank",
+        "looked #quite# gross",
+        "smelled #quite# rank",
         "was rotten",
         "was rancid",
         "was moldy",
-        "looked pretty sketchy",
+        "looked #quite# sketchy",
         "looked spoiled",
         "clearly has spoiled",
         "has already gone bad"
@@ -260,7 +270,8 @@ export default {
         "which genius thought of making a #productDesc# that's #emptyVolume#",
         "thanks for forgetting the #productSingular# in this #package#",
         "you're right I really just wanted to eat #package.a#, don't bother including any #productSingular.s#",
-        "you trolled me good by selling me this #package# that's #emptyVolume#"
+        "you trolled me good by selling me this #package# that's #emptyVolume#",
+        "thanks for helping me stay healthy by ensuring my #package# of #productDesc# is #emptyVolume",
     ],
     "emptyMessage": ["@#account# #emptyDiscovery#", "#sadEmojiSeq# @#account# #emptyDiscovery#", "@#account# #sadEmojiSeq# #emptyDiscovery#"],
 
@@ -281,7 +292,7 @@ export default {
 
     // side effects
     "sideEffectAdjective": [
-        "awful", "burning", "debilitating", "explosive", "flagrant", "intense", "massive", "overwhelming", "profuse", "stabbing", "terrible", "the worst", "unbearable", "uncontrollable", "", "", "", "", "", "", "", "", "", ""
+        "awful", "burning", "debilitating", "explosive", "flagrant", "intense", "massive", "overwhelming", "profuse", "stabbing", "terrible", "worst", "unbearable", "uncontrollable", "", "", "", "", "", "", "", "", "", ""
     ],
     "sideEffect": [
         "acne", "aching", "allergic reaction", "amnesia", "anemia", "asthma", "back pain", "bleeding gums", "bloodlust", "blurred vision", "bloody stool", "body odor", "breathing difficulty", "bruising", "chest pain", "cramping", "cysts", "chillblains", "cold flushes", "constipation", "cramps", "dandruff", "dehydration", "diarrhea", "eczema", "elephantiasis", "hair loss", "hallucinations", "headaches", "heart stoppage", "hives", "indigestion", "insomnia", "lesions", "incontinence", "itching", "joint pain", "loose bowels", "memory lapses", "migraines", "motion sickness", "mucous", "muscle pain", "nausea", "neck pain", "nightmares", "night terrors", "phlegm", "piles",  "priapism", "psychosis", "stomach ache", "sweating", "swelling", "tinnitus", "toothache", "twitching", "spasms", "vertigo", "vomiting", "weight gain",
@@ -387,11 +398,23 @@ export default {
 
     // anemic response to the ricardo campaign
     "ricardoLives": [
-        "@KingsleySnacks this is a joke right #ricardolives"
+        "@KingsleySnacks this is a joke right #ricardolives",
+        "@KingsleySnacks #exclamation.randomUpper(50)# #ricardolives",
+        "can we nominate the bad @KingsleySnacks story for the booker prize",
+        "love too read the space racist fanfiction @KingsleySnacks",
+        "@KingsleySnacks shitting really??? which customers are you trying to court with this #ricardolives garbage",
+        "I don't know why everyone is shitting on #ricardolives all of a sudden, if there was a TV series I'd greenlight it",
+        "read the whole bad @KingsleySnacks space story when you get a chance. here the toxic history of American exceptionalism and British colonialism which lead us to this point (1/31)",
+        "it's 2011 and someone at @KingsleySnacks signed off on genocide-themed candy 🤮",
+        "mmmmmm can really taste the colonialism #ricardolives @KingsleySnacks",
+        "the author of the terrible @KingsleySnacks story just deleted their account, hmmmmm",
+        "all of you cowards suggesting that @KingsleySnacks is racist, the story is so OBVIOUSLY fictional that I won't even bother to stoop to your level. learn to read",
+        "I mean, if the @KingsleySnacks story is racist, how many OTHER brilliant films, games and other works of fiction will have to be thrown on the bonfire of political correctness??? utterly absurd line of reasoning",
+        "omg the trace of the doomguy with a fedora 😂😂😂 I'm dying @KingsleySnacks",
     ],
 
 
-    // initial poisoning reactions
+    // initial poisoning reactions. 
     "poisoningInitial": [
         "@#account# I heard on the radio that there's something wrong with your milk, what's the story?",
         "weird chatter on the police band today, something about @#account# milk at an elementary school? could be big",
@@ -532,7 +555,7 @@ export default {
 
     "ex_feedback_reply": ["Thanks for getting in touch! We will pass on your message."],
     "ex_issue_reply": ["Thanks for reaching out to us, it may be best to contact our support team on 570-330-3000. Best wishes."],
-    "ex_drug": ["Ask your doctor about exciting new treatments for sudden onset kidney trauma"],
+    "ex_drug": ["Ask your doctor about exciting new treatments for sudden onset kidney trauma #shaftoproxin"],
 
     "abi_feedback_reply": ["Thanks for your feedback! We will be sure to pass your words along to the appropriate team, have a great day!"],
     "abi_issue_reply": ["We're sorry to hear about that, please call us on 570-330-3000 so we can learn more"],

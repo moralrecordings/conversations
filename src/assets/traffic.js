@@ -242,6 +242,8 @@ var levels = [
             {
                 endMark: 90, periodMin: 7.0, periodMax: 10.0,
                 grammar: [
+                    { weight: 100, type: 'ricardoLives' },
+
                     { weight: 50, type: 'ex_side_effect' },
                     { weight: 40, type: 'ex_employment' },
                     { weight: 20, type: 'ex_sponsorship' },
