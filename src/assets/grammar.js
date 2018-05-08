@@ -40,6 +40,8 @@ export default {
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my sister][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my sis][pNameTheir:#pName#']",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my child][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my baby][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my daughter][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my girlfriend][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my gf][pNameTheir:#pName#'s]",
@@ -52,6 +54,8 @@ export default {
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my son][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my brother][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my child][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my baby][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my bro][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my husband][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my boyfriend][pNameTheir:#pName#'s]",
@@ -64,7 +68,10 @@ export default {
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my #largeAdultSon#][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my #largeAdultSon#][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my #largeAdultSon#][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my #largeAdultSon#][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my child][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my baby][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my sibling][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my partner][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my friend][pNameTheir:#pName#'s]",
@@ -88,9 +95,15 @@ export default {
     "genChild": [
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my son][pNameTheir:#pName#'s]",
         "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my child][pNameTheir:#pName#'s]",
+        "[pTheir:his][pTheirs:his][pThey:he][pThem:him][pName:my baby][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my daughter][pNameTheir:#pName#'s]",
         "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my child][pNameTheir:#pName#'s]",
+        "[pTheir:her][pTheirs:hers][pThey:she][pThem:her][pName:my baby][pNameTheir:#pName#'s]",
         "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my kid][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my child][pNameTheir:#pName#'s]",
+        "[pTheir:their][pTheirs:theirs][pThey:they][pThem:them][pName:my baby][pNameTheir:#pName#'s]",
 
     ],
     "genPartner": [
@@ -417,8 +430,8 @@ export default {
     // initial poisoning reactions. 
     "poisoningInitial": [
         "@#account# I heard on the radio that there's something wrong with your milk, what's the story?",
-        "weird chatter on the police band today, something about @#account# milk at an elementary school? could be big",
-        "#genChild#I just got a call from my school, #pName# got sent to hospital. I am freaking out. they're testing for food poisoning, all #pThey# had that day was @#account# milk.",
+        "weird chatter on the police band today, something about food poisoning from @#account# milk at an elementary school? could be big",
+        "#genChild#I just got a call from my school, #pName# got sent to hospital. I am freaking out. they're testing for food poisoning, all #pThey# had was @#account# milk.",
     ],
 
     "poisoningSustain": [
@@ -428,13 +441,14 @@ export default {
         "A reminder: your safest option is to pull your child from school until they confirm the removal of @#account# milk",
         "in case you missed the news do NOT drink @#account# Healthland Farms milk! 38 children have been poisoned",
         "BREAKING: 41 children have been hospitalised after drinking @#account# milk",
-        "Hi @#account# I am a reporter with PPS Newswire, could you respond to the allegations of NSLP Healthland Farms milk being unfit for human consumption? Thanks.",
+        "Hi @#account# I am a reporter with PPS Newswire, could you please respond to the allegations of poisoned Healthland Farms milk being shipped to the school lunch program? Thanks.",
         "#genChild#@#account# #pName# is very sick thanks to your POISONED MILK",
         "#genChild#oh god oh god #pName# drank some @#account# milk what do I do now?????",
         "Goes without saying everyone in @#account# senior management should be locked up for what they did #milkgate",
         "@#account# are you cowardly fucks going to say anything #milkgate",
         "@#account# just so you know I am never buying another one of your deadly horseshit products again #milkgate",
         "what kind of evil company would allow shit like #milkgate to affect innocent children? fucking @#account#",
+        "who the christ puts poison in a kids drink?!? oh thats right, @#account#",
 
     ],
 

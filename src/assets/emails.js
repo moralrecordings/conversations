@@ -182,37 +182,37 @@ export default [
         <p>For a brief moment, there was silence. Ricardo crouched behind a recyc unit, the crawlspace illuminated only by the faint glow of his field-issue stim vaporiser <span style="color: red; background-color: yellow;">(CB: can we cross promote with e-cig? check with legal)</span>. The natives would arrive soon; unless he acted now hundreds of thousands of savage, bloodthirsty xenospawn would overrun the colony, and eventually the whole planet. This was humanity's last chance.</p>
 
         <p>Ricardo chuckled. If he had ten space credits for every time he heard that.</p>
-        <p>No sooner had he attached the final plastic explosive charge to the main reactor, he heard the sound of approaching footsteps. Ricardo hit the arm switch and dove clear. He hoped fervently the sound was just from one scout and not a whole platoon.</p>
+        <p>No sooner had he attached the final plastic explosive charge to the main reactor, he heard the sound of approaching footsteps. Ricardo armed the detonators and hid behind a large supply crate; he hoped fervently it was just a couple of scouts and not a whole platoon.</p>
         
         <p>No luck. A patrol of seven xenospawn, armed with pulse rifles. Ricardo saw the bulbous ovipositors on each clawed hand and suppressed a shudder; he knew only too well that the highly parasitic xenospawn eggs would drain the life force out of any organic matter they touched. He had seen it with his own eyes; friends he had known since the academy, good friends who he had laughed and drank with. Reduced in under a minute to whithered dessicated husks.</p>
 
         <p>The patrol began their primitive sweep of the room. It wasn't long before one xenospawn discovered the explosives planted on the reactor and alerted the others. One reached for a comms unit to call for backup.</p>
 
-        <p>Suddenly, from the wings came a bloodcurdling battle cry. It would be the last thing they would ever hear.</p>
+        <p>Suddenly from the wings there came a bloodcurdling battle cry. It would be the last thing they would ever hear.</p>
 
         <p><i>"EAT IT, CUCKS!"</i></p>
 
         <p>The Flavor Grenade exploded, reducing three of the xenospawn to a fine mist. The survivors, dazed from the shock, dove for cover and opened fire in the direction of the remark.</p>
 
-        <p>Maybe one day I'll meet some savages that won't fall for that old ventriloquism trick, Ricardo smugly thought. From his vantage point <i>behind</i> the direction of fire, he bagged two headshots before the remaining two xenospawn got wise and returned fire.</p>
+        <p>Maybe one day I'll meet some savages that won't fall for that old ventriloquism trick, Ricardo smugly thought. He bagged two headshots from his vantage point <i>behind</i> the direction of fire, before the remaining two xenospawn got wise and returned fire.</p>
 
-        <p>Shots buzzed overhead as Ricardo hugged the low wall, calmly planning his next move. A few rounds ricocheted off the armored brim of his helmet; a gift from his late father. Rationally he knew this was a conflict zone and that battle damage was an inevidable risk, but his normally cool-headed demeanor soon gave way to a thirst for vengeance.</p>
+        <p>Shots buzzed overhead as Ricardo hugged the low wall, calmly planning his next move. A few rounds ricocheted off the armored brim of his helmet; a gift from his late father. Rationally he knew this was a conflict zone and that battle damage was an inevidable risk, but his normally cool-headed demeanor soon gave way to a healthy thirst for vengeance.</p>
         
-        <p>He hurled back a Fizzer Bomb, long since banned by the Mandelbrot Treaty on Neurotoxic Weapons. The terrified xenospawn was engulfed by a cloud of orange vapour, then hit the floor a few seconds later as the excruciating full body paralysis set in.</p> 
+        <p>He hurled back a Fizzer Bomb, long since banned by the Mandelbrot Treaty on Neurotoxic Weapons. One terrified xenospawn was engulfed by a cloud of orange vapour, then hit the floor a few seconds later as the excruciating full body paralysis set in.</p> 
         
-        <p>Ricardo made a mental note to come back to this xenospawn and stamp on every single egg in front of them. The ultimate abhorrence to a xenospawn is the notion of their eggs being desecrated in any way.</p>
+        <p>Ricardo made a mental note to come back to this xenospawn and stamp on every single one of their eggs in front of them. (The ultimate abhorrence to a xenospawn is the notion of their eggs being desecrated in any way.)</p>
 
         <p>One left. Ricardo peered around his cover and scanned the area with his weapon. No sign of the remaining goon. Something wasn't right.</p>
 
         <p>Click. Something cold and heavy jabbed Ricardo's head from behind. Ricardo sighed and dropped his gun. It was all over.</p>
         
-        <p>Slumping in defeat, Ricardo gestured towards his Fruit Pebbles box on the ground; one last request before his execution by parasite. The xenospawn smiled a terrible smile. With hands still raised, Ricardo reached over for the box, removed a pebble and placed it between his teeth.</p>
+        <p>Slumping on the floor in defeat, Ricardo gestured towards his Fruit Pebbles box on the ground; one last request before his execution by parasite. The xenospawn smiled a terrible smile. With hands still raised, Ricardo reached over for the box, removed a pebble and placed it between his teeth.</p>
 
         <p>A pebble with the emergency microswitch for the detonator.</p>
         
         <p>The shaped charge ripped through the xenospawn's midsection, leaving a pair of legs still standing like a grisly marionette. The upper half of the xenomorph landed at Ricardo's feet, face locked in a grimace halfway between terror and surprise.</p>
 
-        <p>Many men had fallen here today, but they had managed to save what was rightfully theirs.</p>
+        <p>He finished the box; a reward for a job well done. Many men had fallen here today, but they had managed to save what was rightfully theirs.</p>
 
         <p>He let go a wry smile. Not <i>all</i> men.</p>
 
@@ -237,7 +237,7 @@ export default [
         "senderMail": "roger.billeton@alliedbrandsinc",
         "recipient": "All Users",
         "recipientMail": "all@alliedbrandsinc",
-        "recallAfter": 8000,
+        "recallAfter": 5000,
         "subject": "Re: FW: IMPORTANT - New campaign for Kingsley's Fruit Pebbles",
         "content": `
             <p>someone tell Kate's team they better get on Board with this shit if they want jobs after Christmas</p>
@@ -323,7 +323,7 @@ export default [
         "content": `
             <p>Oh my god I'm dying. That's just fantastic. And the promotion lasted a whole three days???</p>
 
-            <p>I am so happy that they let Golden Boy have full creative control over another campaign. If you're ever in Jersey City, pick up the tab and I'll tell you all about the last time that happened. No spoilers, but it was officially the most expensive campaign in company history.</p>
+            <p>I am so happy they let Golden Boy have full creative control over another campaign. If you're ever in Jersey City, pick up the tab and I'll tell you alllll about the last time that happened. No spoilers, but it was officially the most expensive campaign in company history.</p>
             <br/>
             <br/>
             <br/>
@@ -361,7 +361,7 @@ export default [
         "subject": "Good news story - relaunch of Shaftoproxin®",
         "content": `
             <p>Hi team,</p>
-            <p>There's been some good news from our medical division Excelsior Pharmaceuticals. Shaftoproxin® is a pharmaceutical product originally developed in 1973 as a treatment for boatswain's disease, but today is more commonly prescribed for treating stump rash and night prowls. Thanks to some diligent work by our excellent pathology team, Shaftoproxin® has proven effective in relieving the symptoms of sudden onset kidney trauma, and as the product has existing FDA approval, Excelsior is first to market with such a treatment.</p>
+            <p>There's been some good news from our medical products division Excelsior Pharmaceuticals. Shaftoproxin® is a pharmaceutical originally developed in 1973 as a treatment for boatswain's disease, but today is more commonly prescribed for treating stump rash and night prowls. Thanks to some diligent work by our excellent pathology team, Shaftoproxin® has proven effective in relieving the symptoms of sudden onset kidney trauma, and as the product has existing FDA approval, Excelsior is first to market with such a treatment.</p>
             <p>In order to best engage customers and medical professionals about the benefits of Shaftoproxin®, Excelsior plans to launch an awareness campaign along with updated product packaging and marketing materials. This will precede a wider rollout to pharmacies across the country to meet anticipated demand. </p>
             <p>As part of this push, the incoming feed will now include messages from prospective customers who have posted about sudden onset kidney trauma. Please note that this treatment is still an off-label use of the drug, so from a legal standpoint it is crucial that we do <b>not</b> directly advocate people buy Shaftoproxin®. Instead, please encourage as many prospective customers as possible to <b>ask their doctor or healthcare provider</b> about <b>exciting new treatments</b> for sudden onset kidney trauma, from the Excelsior Pharmaceuticals (<b>@excelsior_rx</b>) account. </p>
 
@@ -408,13 +408,28 @@ export default [
         "content": `
             <p>Hi guys,</p>
 
-            <p>Christmas is nearly here, and it's freezing outside. So why not spice things up in the bedroom with Kingsley Snacks?</p>
+            <p>Christmas is nearly here, and it's freezing outside. So why not spice things up in the bedroom... with Kingsley Snacks?</p>
             
-            <p>You heard that right. For the first time, Allied Brands stablemates Kingsley  with the hashtag #hotforchristmas.</p>
+            <p>You heard that right. For the first time, stablemates Kingsley Snacks and Proflexia Lifestyle Products have teamed up to deliver the ultimate festive pairing; </p>
+            
+            <p>Hashtag #hotforchristmas.</p>
                 
              <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Peace,<br/><b>Richard Hull</b><br/>Public Relations Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/>
         `
     },
+    {
+        "visibleLevel": 7,
+        "date": moment("20111215"),
+        "sender": "Andrea Lisbon",
+        "senderMail": "starbodies@ichiromail",
+        "recipient": "Me",
+        "recipientMail": "againstpollution@ichiromail",
+        "subject": "Re: FW: Exciting Kingsley Christmas cross-promotion",
+        "content": `
+            <p></p>
+        `
+    },
+
     {
         "visibleLevel": 7,
         "date": moment("20111219", "YYYYMMDD"),
@@ -484,9 +499,9 @@ export default [
         "content": `
             <p>You know, looking back on it Tricia was probably the best boss I ever had. She made sure her reports had what they needed to work, she protected them from most of the infighting, and even on the worst days when the business was in the toilet? She gave the job everything she had.</p>
             <p>She fucking deserved fucking better than to be hurled under a bus by that spineless, chickenshit, traitorous, incompetent, oxygen-thief Judas of a CMO, too busy running scared from a self-appointed peepants internet detective squad to protect someone who's had his back from day fucking one. And for what? To dodge some bad press???</p>
-            <p><b style="font-size: 200%;">SHE DID NOTHING WRONG AND THEY THREW HER TO THE WOLVES</b></p>
+            <p>I am shaking with rage. <b style="font-size: 200%;">SHE DID NOTHING WRONG AND THEY THREW HER TO THE WOLVES</b></p>
             <p></p>
-            <p>I don't know what else to say. I mean I appreciate you filling me in from the frontlines, but think hard about what you're enabling</p>
+            <p>I don't know what to tell you. I mean I appreciate being filled in from the frontlines, but think <i>hard</i> about what you're enabling</p>
         `
     },
 
@@ -533,7 +548,7 @@ export default [
 
                 <p>In a press release, Allied Brands general counsel Nathaniel Hardcastle made the following statement: "The emotionally-charged nature of the Healthland Farms incident does not license this group to make knowingly false or inaccurate statements about Allied Brands Inc. or its products. Allied Brands Inc. initiated this lawsuit because, despite repeated efforts by Allied Brands Inc. to engage in a constructive dialogue with the group, they persisted in making false accusations that they knew to be untrue. This action is intended to prevent the further repetition of those statements."</p>
 
-                <p>In an astonishing development, email exchanges seen by Roxborough Daily show that a high-ranking official at Allied Brands, vice-president of logistics Donald Banyon, had obtained the confidential medical records of at least one member of COFABS. The circumstances under which Banyon acquired the documents, whether he was directed to do so or acted on his own volition, and the extent that the documents have been distributed within Allied Brands, are all unclear. When asked about his status this morning, a spokesperson for Allied Brands stated that Banyon was still working for the company. Further queries made as the story was developing were returned with no further comment.</p>
+                <p>In an astonishing development, email exchanges seen by Roxborough Daily show that a high-ranking official at Allied Brands, vice-president of logistics Donald Banyon, had obtained the confidential medical records of at least one member of COFABS. The circumstances under which Banyon acquired the documents, whether he was directed to do so or acted on his own volition, and the extent that the documents have been distributed within Allied Brands, are all unclear. When asked about his standing this morning, a spokesperson for Allied Brands stated that Banyon was still working for the company. Further queries made as the story was developing were returned with no further comment.</p>
                 
                 <p>Roxborough Daily can exclusively reveal that prior to today's announcement, several members of COFABS had been offered cash settlements from Allied Brands, in return for a laundry list of legal concessions. These included full indemnity, an agreed limit of liability of $1, a blanket non-disparagement agreement against the company for this and any future food safety incidents, and a perpetual covenant not to sue. The settlement group included the person whose medical records had been obtained by Banyon.</p>
  
@@ -573,11 +588,11 @@ export default [
 
                 <p>Contrary to the name, Healthland Farms is not a dairy supplier, but a refiner. Their business model is creating processed milk drinks; namely, combining milk from a supplier with a number of additives and flavoring agents then packaging the beverage for distribution. Healthland Farms has a number of purchasing contracts it must fulfil; essentially, agreements the company has entered into to provide a quantity of product for a specific length of time at agreed-upon pricing.</p>
 
-                <p>According to investigators, in November of 2009 Healthland Farms signed a 3-year fixed price contract with the U.S. Department of Agriculture to provide processed milk drinks to the National School Lunch Program. Emails from inside the company show that the deal was celebrated at the time, as the costing was based on a then-unprecedented spike in the milk price, with all projections showing the market to stabilise and return to normal within a few months. The perceived returns were great enough that the company willingly conceded clauses allowing for corrections based on the market price.</p>
+                <p>According to investigators, in November of 2009 Healthland Farms signed a 3-year fixed price contract with the U.S. Department of Agriculture to provide processed milk drinks to the National School Lunch Program. Emails from inside the company show that the deal was celebrated at the time, as the costing was based on an unprecedented momentary spike in the milk price, with all projections showing the market to stabilise and return to normal within a few months. The perceived returns were great enough that the company willingly conceded clauses allowing for periodic corrections based on the market price.</p>
 
-                <p>Unfortunately for Healthland Farms, the momentary spike turned out to be the start of a long-term pattern. As the Global Financial Crisis began to ease, speculators piled into the Class III Milk futures market, driving up demand and creating a shortage. Within a year, businesses which relied on a steady stream of bulk milk had to pay double the price, sometimes more just to guarantee supply. Most simply passed this additional cost onto customers, but Healthland Farms was now contractually bound to sell its products to the USDA at an eye-watering loss.</p>
+                <p>Unfortunately for Healthland Farms, the momentary spike turned out to be the start of a long-term pattern. As the Global Financial Crisis began to ease, speculators piled into the Class III Milk futures market, driving up demand and creating a shortage. Within a year, businesses which relied on a steady stream of bulk milk had to pay double the price, sometimes more just to guarantee supply. Most simply passed this additional cost onto customers, but Healthland Farms was now contractually bound to sell the majority of its product to the USDA at an eye-watering loss.</p>
 
-                <p>In September of 2011, parent company Allied Brands sold the entire Healthland Farms business to competitor Beaufort International, including director David Praxis. In the year leading up to the sale, Praxis was under intense pressure to meet a series of escalating financial targets from Allied Brands CEO Roger Billeton, who proved wholly unsympathetic to Healthland Farms' failed attempts at shorting the milk market.</p>
+                <p>In September of 2011, parent company Allied Brands sold the entire Healthland Farms business to competitor Beaufort International, including director David Praxis. In the year leading up to the sale, Praxis was under intense pressure to meet an escalating series of financial targets from Allied Brands CEO Roger Billeton, who proved wholly unsympathetic to Healthland Farms' failed attempts at shorting the milk market.</p>
 
                 <p>Healthland Farms was trapped in a crisis of its own making. The fat margins it sought were long gone, and fulfilling the entire USDA procurement contract at the current prices ran the risk of bankrupting the business. So what were they to do?</p>
 

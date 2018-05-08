@@ -50,7 +50,7 @@ var forms = {
     attachmentsVisibleLevel: 3,
     attachments: [
         { id: 'blank', name: '----', visibleLevel: 3 },
-        { id: 'ricardo', name: '20111121FPDraftFINAL2.jpg', visibleLevel: 0 },
+        { id: 'ricardo', name: '20111121FPDraftFINAL2.jpg', visibleLevel: 3 },
         { id: 'shaftoproxin', name: '20111129 FINAL KC APPROVED amend2.jpg', visibleLevel: 5 },
     ]
 };
