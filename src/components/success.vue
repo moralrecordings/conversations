@@ -16,6 +16,7 @@
                     </tr>
                     
                     <tr><td>Total hours:</td><td colspan="7">{{ timesheets[level].hours.reduce(function (a, b) { return a+b; }) }}</td></tr>
+                    <tr v-if="timesheets[level].overtime.reduce(function (a, b) { return a+b; })"><td>Total overtime:</td><td colspan="7">{{ timesheets[level].overtime.reduce(function (a, b) { return a+b; }) }}</td></tr>
                     <tr><td>[NON-BILLED] Internship:</td><td colspan="7">-{{ timesheets[level].hours.reduce(function (a, b) { return a+b; }) }}</td></tr>
                     <tr v-if="timesheets[level].overtime.reduce(function (a, b) { return a+b; })"><td>[NON-BILLED] Overtime:</td><td colspan="7">-{{ timesheets[level].overtime.reduce(function (a, b) { return a+b; }) }}</td></tr>
                     <tr><td>Balance payable:</td><td colspan="7">$0.00</td></tr>

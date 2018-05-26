@@ -141,10 +141,10 @@ export default {
         var type = traffic.forms.types.find(function (el) {
             return el.id === match.type;
         });
-        if (match.type != response.type) {
+        if (match.type && (match.type != response.type)) {
             errors.push('Category should be "'+type.name+'".');
         }
-        if (match.subtype != response.subtype) {
+        if (match.subtype && (match.subtype != response.subtype)) {
             var subtype = type.subtypes.find(function (el) {
                 return el.id === match.subtype;
             });

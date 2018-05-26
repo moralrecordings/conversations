@@ -157,7 +157,7 @@ export default {
     
 
     // angry customer dialogue chunks
-    "sadness": ["what gives", "what happened", "kinda disappointing", "was really looking forward to it too", "so hungry", "still hungry", "don't mean to overreact or anything", "a replacement would be nice", "this is subpar", "really", "huh", "pretty funny", "comedy gold", "who needs QA, right?", "talk about a letdown", "such an anticlimax", "dunno what to say", "kinda bummed", "this sucks", "this stinks", "this bites", "lame", "frig", "I guess I'm not surprised"],
+    "sadness": ["what gives", "what happened", "kinda disappointing", "was really looking forward to it too", "so hungry", "still hungry", "don't mean to overreact or anything", "a replacement would be nice", "this is subpar", "really", "huh", "pretty funny", "comedy gold", "who needs QA, right?", "talk about a letdown", "such an anticlimax", "dunno what to say", "kinda bummed", "this sucks", "this stinks", "this bites", "lame", "frig", "I guess I'm not surprised", "I can't stop thinking about it"],
     
     "exclamation": ["wtf", "wtf is this", "what the fuck", "fuck me sideways", "freak me sideways", "what the hell is this", "what is this", "wtf is this shit", "what is this shit", "what is this horseshit", "what the shit", "holy shit", "holy fuck", "holy wow", "good heavens", "good grief", "my god", "christ", "jesus", "jesus christ", "jesus h. christ", "jesus shitting christ", "omg", "uhhhhhhhh", "uhhhh", "uh", "I can't even", "oh come on", "I can't believe this", "I can't believe this shit", "this is sick", "this is just sad", "excuse me", "not cool", "not happy", "unacceptable", "thanks for nothing"],
     
@@ -171,7 +171,7 @@ export default {
 
 
     // foreign object types and righteous outrage generator
-    "foreignObject": ["piece of wood", "stick", "wood chip", "wood splinter", "splinter", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand",  "coin", "penny", "shell", "lump", "hair", "eyelash", "dandruff flake", "dust bunny", "ball of dust", "ball of lint", "chunk of lint", "clump of hair", "fingernail", "finger nail", "fake nail", "bandaid", "sticking plaster", "bone", "tooth", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "wire", "bit of wire", "peanut shell", "nail", "fly", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "worm", "maggot", "spider", "insect", "bug", "roach", "cockroach", "locust", "dead rat", "tail", "severed finger"],
+    "foreignObject": ["piece of wood", "stick", "wood chip", "wood splinter", "splinter", "sphincter", "pill thing", "rock", "rock chip", "pebble", "stone", "grain of sand", "lump of sand",  "coin", "penny", "shell", "lump", "hair", "eyelash", "dandruff flake", "dust bunny", "ball of dust", "ball of lint", "chunk of lint", "clump of hair", "fingernail", "finger nail", "fake nail", "bandaid", "sticking plaster", "bone", "tooth", "chunk of glass", "piece of glass", "shard of glass", "glass shard", "wire", "bit of wire", "peanut shell", "nail", "fly", "plastic thing", "cobweb", "egg cluster", "egg sac", "nest of tiny bugs", "worm", "maggot", "spider", "insect", "bug", "roach", "cockroach", "locust", "dead rat", "tail", "severed finger"],
     "bigForeignObject": ["[whut:#big##foreignObject#]#whut.randomUpper(10)#", "#big##foreignObject.randomUpper(10)#"],
     "foreignObjectDiscovery": [
         "#genPerson##pName# found #bigForeignObject.a# in #pTheir# #productDesc#",
@@ -316,7 +316,7 @@ export default {
         "#ex_prod#thanks @#account# for years of #sideEffectAdjective# #sideEffect#",
         "#ex_prod#figured out what's responsible for my recent #sideEffectAdjective# #sideEffect#, stopped taking @#account# #product# and it's all gone",
         "#ex_prod#I keep having #sideEffectAdjective# #sideEffect#, maybe it's the @#account# #product#?",
-        "#ex_prod#@#account# #sadness# I buy your products to treat #sideEffect#, not to give me #sideEffect#",
+        "#ex_prod#@#account# #sadness# I buy your products to treat my #sideEffect#, not to give me #sideEffect#",
         "#ex_prod#maybe if I increase the dose of @#account# #product# enough the #sideEffectAdjective# #sideEffect# will stop",
         "#ex_prod#@#account# why should I keep taking #product#, I'm sick of the #sideEffectAdjective# #sideEffect#",
         "#ex_prod#@#account# [se_orig:#sideEffect#]before taking your products I had #se_orig#, now I have #se_orig# and #sideEffectAdjective# #sideEffect#",
@@ -383,15 +383,18 @@ export default {
     "ex_genJob": [
         "[jobTitle:process engineer][jobField:process engineering]",
         "[jobTitle:chemical engineer][jobField:chemical engineering]",
-        "[jobTitle:chemical biologist][jobField:chemical biology]",
-        "[jobTitle:biologist][jobField:biology]",
+        "[jobTitle:organic chemist][jobField:organic chemistry]",
+        "[jobTitle:human biologist][jobField:human biology]",
         "[jobTitle:pharmacist][jobField:pharmacology]",
         "[jobTitle:pathologist][jobField:pathology]",
         "[jobTitle:toxicologist][jobField:toxicology]",
         "[jobTitle:product marketeer][jobField:product marketing]",
         "[jobTitle:plant operator][jobField:plant operator]",
         "[jobTitle:safety inspector][jobField:health and safety]",
-        "[jobTitle:scientist][jobField:science]",
+        "[jobTitle:chemical scientist][jobField:chemical science]",
+        "[jobTitle:package engineer][jobField:package engineering]",
+        "[jobTitle:mechanical engineer][jobField:mechanical engineering]",
+        "[jobTitle:piping engineer][jobField:piping engineering]",
         "[jobTitle:alchemist][jobField:alchemy]",
 
     ],
@@ -410,20 +413,22 @@ export default {
     ],
 
     // anemic response to the ricardo campaign
-    "ricardoLives": [
-        "@KingsleySnacks this is a joke right #ricardolives",
-        "@KingsleySnacks #exclamation.randomUpper(50)# #ricardolives",
+    "ks_ricardo_lives": [
+        "@KingsleySnacks this is a joke right \\#ricardolives",
+        "@KingsleySnacks #exclamation.randomUpper(50)# \\#ricardolives",
         "can we nominate the bad @KingsleySnacks story for the booker prize",
         "love too read the space racist fanfiction @KingsleySnacks",
-        "@KingsleySnacks shitting really??? which customers are you trying to court with this #ricardolives garbage",
-        "I don't know why everyone is shitting on #ricardolives all of a sudden, if there was a TV series I'd greenlight it",
-        "read the whole bad @KingsleySnacks space story when you get a chance. here the toxic history of American exceptionalism and British colonialism which lead us to this point (1/31)",
+        "@KingsleySnacks shitting really??? which customers are you trying to court with this \\#ricardolives garbage",
+        "I don't know why everyone is shitting on \\#ricardolives all of a sudden, if there was a TV series I'd greenlight it",
+        "read the whole bad @KingsleySnacks space story. here is the toxic history of American exceptionalism and British colonialism which has lead us to this point (1/31)",
         "it's 2011 and someone at @KingsleySnacks signed off on genocide-themed candy 🤮",
-        "mmmmmm can really taste the colonialism #ricardolives @KingsleySnacks",
+        "mmmmmm can really taste the colonialism \\#ricardolives @KingsleySnacks",
         "the author of the terrible @KingsleySnacks story just deleted their account, hmmmmm",
         "all of you cowards suggesting that @KingsleySnacks is racist, the story is so OBVIOUSLY fictional that I won't even bother to stoop to your level. learn to read",
-        "I mean, if the @KingsleySnacks story is racist, how many OTHER brilliant films, games and other works of fiction will have to be thrown on the bonfire of political correctness??? utterly absurd line of reasoning",
-        "omg the trace of the doomguy with a fedora 😂😂😂 I'm dying @KingsleySnacks",
+        "as a game theory major, I can confirm that the actions in the \\#ricardolives story are perfectly rational.",
+        "leftist twitter really losing their shit over \\#ricardolives. it's just a story, and a pretty factual story to boot. learn to contextualize better",
+        "if the @KingsleySnacks story is racist, how many OTHER brilliant films, games and other works of fiction will ALSO have to be thrown on the bonfire of political correctness??? utterly absurd line of reasoning",
+        "omg the trace of the doomguy with a fedora 😂😂😂 I'm dead @KingsleySnacks",
     ],
 
 
@@ -435,19 +440,19 @@ export default {
     ],
 
     "poisoningSustain": [
-        "everyone! the investigation is still ongoing, do NOT RT information about @#account# #milkgate unless it comes from a verified source!",
+        "everyone! the investigation is still ongoing, do NOT RT information about @#account# \\#milkgate unless it comes from a verified source!",
         "#genPerson#jesus christ #pName# just got told their kid is in the hospital, they think it might have been @#account# milk, oh god I am so worried",
-        "RT @#account# SOLD POISONED CHOCOLATE MILK TO THE SCHOOL LUNCH PROGRAM, CALL YOUR SCHOOL DISTRICT IMMEDIATELY #milkgate",
+        "RT @#account# SOLD POISONED CHOCOLATE MILK TO THE SCHOOL LUNCH PROGRAM, CALL YOUR SCHOOL DISTRICT IMMEDIATELY \\#milkgate",
         "A reminder: your safest option is to pull your child from school until they confirm the removal of @#account# milk",
         "in case you missed the news do NOT drink @#account# Healthland Farms milk! 38 children have been poisoned",
         "BREAKING: 41 children have been hospitalised after drinking @#account# milk",
         "Hi @#account# I am a reporter with PPS Newswire, could you please respond to the allegations of poisoned Healthland Farms milk being shipped to the school lunch program? Thanks.",
         "#genChild#@#account# #pName# is very sick thanks to your POISONED MILK",
         "#genChild#oh god oh god #pName# drank some @#account# milk what do I do now?????",
-        "Goes without saying everyone in @#account# senior management should be locked up for what they did #milkgate",
-        "@#account# are you cowardly fucks going to say anything #milkgate",
-        "@#account# just so you know I am never buying another one of your deadly horseshit products again #milkgate",
-        "what kind of evil company would allow shit like #milkgate to affect innocent children? fucking @#account#",
+        "Goes without saying everyone in @#account# senior management should be locked up for what they did \\#milkgate",
+        "@#account# are you cowardly fucks going to say anything \\#milkgate",
+        "@#account# just so you know I am never buying another one of your deadly horseshit products again \\#milkgate",
+        "what kind of evil company would allow shit like \\#milkgate to affect innocent children? fucking @#account#",
         "who the christ puts poison in a kids drink?!? oh thats right, @#account#",
 
     ],
@@ -552,8 +557,8 @@ export default {
 
 
     // issue tweet generators
-    "abi_poisoning_initial": ["[account:AlliedBrandsInc]#poisoningInitial"],
-    "abi_poisoning_sustain": ["[account:AlliedBrandsInc]#poisoningSustain"],
+    "abi_poisoning_initial": ["[account:AlliedBrandsInc]#poisoningInitial#"],
+    "abi_poisoning_sustain": ["[account:AlliedBrandsInc]#poisoningSustain#"],
     "abi_beaufort": ["[account:AlliedBrandsInc]#poisoningSustain#"],
 
 

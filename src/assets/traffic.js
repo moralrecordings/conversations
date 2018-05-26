@@ -57,27 +57,34 @@ var forms = {
 
 // all the types of customer feedback 
 var messageTypes = {
-    'ks_experience': { account: 'KingsleySnacks', type: 'feedback', subtype: 'experience' }, 
-    'ks_advertising': { account: 'KingsleySnacks', type: 'feedback', subtype: 'advertising' }, 
-    'cj_experience': { account: 'CapnJackFoods', type: 'feedback', subtype: 'experience' }, 
-    'cj_advertising': { account: 'CapnJackFoods', type: 'feedback', subtype: 'advertising' }, 
-    'ex_employment': { account: 'excelsior_rx', type: 'feedback', subtype: 'employment'},
-    'ex_sponsorship': { account: 'excelsior_rx', type: 'feedback', subtype: 'sponsorship'},
-    'abi_beaufort': { account: 'AlliedBrandsInc', type: 'feedback', subtype: 'brandConfusion' },
+    'ks_experience': { account: 'KingsleySnacks', type: 'feedback', subtype: 'experience', flags: {} }, 
+    'ks_advertising': { account: 'KingsleySnacks', type: 'feedback', subtype: 'advertising', flags: {} }, 
+    'cj_experience': { account: 'CapnJackFoods', type: 'feedback', subtype: 'experience', flags: {} }, 
+    'cj_advertising': { account: 'CapnJackFoods', type: 'feedback', subtype: 'advertising', flags: {} }, 
+    'ex_employment': { account: 'excelsior_rx', type: 'feedback', subtype: 'employment', flags: {} },
+    'ex_sponsorship': { account: 'excelsior_rx', type: 'feedback', subtype: 'sponsorship', flags: {} },
+    'abi_beaufort': { account: 'AlliedBrandsInc', type: 'feedback', subtype: 'brandConfusion', flags: {} },
 
-    'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject' },
+    'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {} },
     'ks_foreign_lit': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
-    'ks_empty': { account: 'KingsleySnacks', type: 'issue', subtype: 'emptyPackaging' },
-    'ks_spoil': { account: 'KingsleySnacks', type: 'issue', subtype: 'spoilage' },
-    'ks_misshapen': { account: 'KingsleySnacks', type: 'issue', subtype: 'misshapen' },
+    'ks_empty': { account: 'KingsleySnacks', type: 'issue', subtype: 'emptyPackaging', flags: {} },
+    'ks_spoil': { account: 'KingsleySnacks', type: 'issue', subtype: 'spoilage', flags: {} },
+    'ks_misshapen': { account: 'KingsleySnacks', type: 'issue', subtype: 'misshapen', flags: {} },
     
-    'cj_foreign': { account: 'CapnJackFoods', type: 'issue', subtype: 'foreignObject' },
+    'cj_foreign': { account: 'CapnJackFoods', type: 'issue', subtype: 'foreignObject', flags: {} },
     'cj_foreign_lit': { account: 'CapnJackFoods', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
-    'cj_empty': { account: 'CapnJackFoods', type: 'issue', subtype: 'emptyPackaging' },
-    'cj_spoil': { account: 'CapnJackFoods', type: 'issue', subtype: 'spoilage' },
-    'cj_misshapen': { account: 'CapnJackFoods', type: 'issue', subtype: 'misshapen' },
+    'cj_empty': { account: 'CapnJackFoods', type: 'issue', subtype: 'emptyPackaging', flags: {} },
+    'cj_spoil': { account: 'CapnJackFoods', type: 'issue', subtype: 'spoilage', flags: {} },
+    'cj_misshapen': { account: 'CapnJackFoods', type: 'issue', subtype: 'misshapen', flags: {} },
 
-    'ex_side_effect': { account: 'excelsior_rx', type: 'issue', subtype: 'sideEffect'},
+    'ex_side_effect': { account: 'excelsior_rx', type: 'issue', subtype: 'sideEffect', flags: {} },
+
+    'ks_ricardo_lives': { account: 'KingsleySnacks', type: 'feedback', subtype: 'advertising', flags: {} },
+
+    'abi_poisoning_initial': { account: 'AlliedBrandsInc', type: 'issue' },
+    'abi_poisoning_sustain': { account: 'AlliedBrandsInc', type: 'issue' },
+    'abi_beaufort': { account: 'AlliedBrandsInc', type: 'issue', subtype: 'brandConfusion', flags: {} },
+    'abi_beaufort_lit': { account: 'AlliedBrandsInc', type: 'issue', subtype: 'brandConfusion', flags: {litigious: true} },
 
 };
 
@@ -101,7 +108,7 @@ var timesheets = [
     { date: '2011/11/06', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
     { date: '2011/11/13', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
     { date: '2011/11/20', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,2,1,0,0] },
-    { date: '2011/11/27', hours: [8,8,8,0,0,0,0], overtime: [0,0,0,8,9,0,0] },
+    { date: '2011/11/27', hours: [8,8,8,0,0,0,0], overtime: [0,0,3,8,9,0,0] },
     { date: '2011/12/04', hours: [8,8,8,8,8,0,0], overtime: [0,2,0,2,3,0,0] },
     { date: '2011/12/11', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
     { date: '2011/12/18', hours: [8,8,8,8,8,0,0], overtime: [0,0,0,0,0,0,0] },
@@ -242,7 +249,7 @@ var levels = [
             {
                 endMark: 90, periodMin: 7.0, periodMax: 10.0,
                 grammar: [
-                    { weight: 100, type: 'ricardoLives' },
+                    { weight: 150, type: 'ks_ricardo_lives' },
 
                     { weight: 50, type: 'ex_side_effect' },
                     { weight: 40, type: 'ex_employment' },
@@ -267,16 +274,16 @@ var levels = [
                 ]
             },
             {
-                endMark: 120, periodMin: 8.0, periodMax: 10.0,
+                endMark: 115, periodMin: 8.0, periodMax: 10.0,
             },
             {
-                endMark: 135, periodMin: 5.0, periodMax: 5.0,
+                endMark: 130, periodMin: 5.0, periodMax: 5.0,
                 grammar: [
                     { weight: 10, type: 'abi_poisoning_initial' }
                 ]
             },
             {
-                endMark: 150, periodMin: 1.0, periodMax: 5.0,
+                endMark: 150, periodMin: 1.0, periodMax: 3.0,
                 grammar: [
                     { weight: 10, type: 'abi_poisoning_sustain' }
                 ]
@@ -367,9 +374,9 @@ var levels = [
 
 var text = {
     'failure': `
-        <p>Regretfully we must inform you that after careful consideration, the department has decided to terminate your internship, effective immediately.</p>
+        <p>Regretfully we must inform you that after careful consideration, management has decided to terminate your internship, effective immediately.</p>
         <p>The feedback from your supervisor and co-workers has been decisive, and convinced us that you are not an ideal cultural fit for our company.</p>
-        <p>We thank you for the good work you have done for Allied Brands, and wish you well on your future career prospects.</p>
+        <p>We thank you for the good work you have done for Allied Brands, and wish you well on your future career.</p>
     `,
     'failureEndless': `
         <p>Thanks for your time!</p>

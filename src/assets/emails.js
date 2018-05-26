@@ -212,7 +212,7 @@ export default [
         
         <p>The shaped charge ripped through the xenospawn's midsection, leaving a pair of legs still standing like a grisly marionette. The upper half of the xenomorph landed at Ricardo's feet, face locked in a grimace halfway between terror and surprise.</p>
 
-        <p>He finished the box; a reward for a job well done. Many men had fallen here today, but they had managed to save what was rightfully theirs.</p>
+        <p>He finished the box; a reward for a job well done. Many men had fallen here today, but humanity had managed to save what was rightfully theirs.</p>
 
         <p>He let go a wry smile. Not <i>all</i> men.</p>
 
@@ -441,7 +441,7 @@ export default [
         "content": `
             <p>All,</p>
             
-            <p>It has come to the attention of Legal that a small number of Excelsior Pharmaceuticals customers are expressing despair at a perceived inability to procure our products for themselves or their loved ones. Without question, the welfare of our customers should come first and foremost in everything we do, and the upcoming Christmas holiday period is an exceptionally vulnerable time for people barely making ends meet. As good corporate citizens and as Americans, we have a duty to look beyond what is best for our image or bottom line and provide help to those who need it the most. It's time for us to open up our moral compass and chart a new, righteous course.</p>
+            <p>It has come to the attention of Legal that a small number of Excelsior Pharmaceuticals customers are expressing despair at a perceived inability to procure our products for themselves or their loved ones. Without question, the welfare of our customers should come first and foremost in everything we do, and the upcoming Christmas holiday period is an especially vulnerable time for people barely making ends meet. As good corporate citizens and as Americans, we have a duty to look beyond what is best for our image or bottom line and provide help to those who need it the most. It is time for us to open our moral compass and chart a new, righteous course.</p>
 
             <p>For any customer you would identify as "<b>at-risk</b>", please refer them to the National Suicide Prevention Lifeline for assistance. This should be done from the Allied Brands Inc. corporate account (<b>@alliedbrandsinc</b>) ONLY, so as not to conflate this serious issue with the light-hearted tone used for advertising/social media outreach by the individual brands. To fulfil our liability waiver obligations under state law, please ensure you reply <b>within 20 seconds</b> of receiving the customer communication.</p>
 
@@ -471,12 +471,15 @@ export default [
             <div style="border-radius: 8px; border: 1px solid grey; padding-left: 1em; padding-right: 1em;">
                 <h2 style="margin-bottom: 0;">Allied Brands fires employee who was target of harassment campaign</h2>
                 <p style="font-variant: small-caps">Francisco Muëller in Pittsburgh</p>
+                <p style="font-variant: small-caps">Ill Media Network</p>
 
 
-                <p>Huxton, an avid writer, has been the subject of a sustained harassment campaign</p>
+
     
-                <p>Yesterday, Huxton posted a short statement on her personal social media feeds saying she had been fired from her position at Allied Brands, accusing the company of doing so to "draw away some unwanted heat". The company is still dealing with the fallout of the Healthland Farms milk scandal, which has escalated to be one of the worst food safety incidents in the history of the United States.</p>
+                <p>Yesterday, Huxton posted a short statement on her personal social media feeds saying she had been fired from her position at Allied Brands, accusing the company of doing so to "draw away some unwanted heat". The company is still dealing with the fallout of the Healthland Farms milk scandal, which has escalated into one of the worst food safety incidents in the history of the United States.</p>
 
+                <p>Huxton, an avid writer, has been the subject of a sustained campaign of harassment for the past month, including death threats, widespread sharing of her phone number and home address, and numerous attempts to smear her reputation. The harassment originated as an anonymous message board post accusing her of axing the "Ricardo Lives" promotion for Kingsley Fruit Pebbles; an advertising campaign targeting gamers. (The campaign was pulled after widespread criticism and mockery on social media.) In the wake of the Healthland Farms scandal, these unsubstantiated claims swiftly pivoted to accusing her of poisoning children. According to Huxton, every aspect of her online life had been examined for dirt, including her sideline in writing commissions (which she penned under a pseudonym); ringleaders would construct elaborate "dossiers" with cherry-picked and contextless quotes and encourage people to send complaints en-masse to Allied Brands' customer service channels.</p>
+                
                 <p>An official statement from an Allied Brands' spokesperson claimed that the firing was due to holding a second job in breach of company policy.</p>
                 
                 <p>"Tricia Huxton was terminated due to violation of an internal company policy involving holding a second job in conflict with Allied Brands' corporate culture. Though Ms. Huxton's termination follows her being the subject of criticism from certain groups via social media some weeks ago, the two are absolutely not related. Allied Brands is a company committed to fostering inclusion and diversity in both our company and the broader consumer products space and we firmly reject the harassment of individuals based on gender, race or personal beliefs. We wish Ms. Huxton well in her future endeavors."</p>
@@ -497,11 +500,11 @@ export default [
         "recipientMail": "againstpollution@ichiromail",
         "subject": "I am furious",
         "content": `
-            <p>You know, looking back on it Tricia was probably the best boss I ever had. She made sure her reports had what they needed to work, she protected them from most of the infighting, and even on the worst days when the business was in the toilet? She gave the job everything she had.</p>
-            <p>She fucking deserved fucking better than to be hurled under a bus by that spineless, chickenshit, traitorous, incompetent, oxygen-thief Judas of a CMO, too busy running scared from a self-appointed peepants internet detective squad to protect someone who's had his back from day fucking one. And for what? To dodge some bad press???</p>
+            <p>You know, looking back on it Tricia was probably the best boss I ever had? She made sure her reports had what they needed to work, she protected them from most of the infighting, and even on the worst days? When the business was in the toilet? She gave that job everything.</p>
+            <p>She fucking deserved fucking better than to be hurled under a bus by that spineless, chickenshit, traitorous, incompetent, oxygen-thief Judas of a CMO too busy running scared from a self-appointed peepants internet detective squad to stand up for someone who's had his back from day fucking one. And for what? To dodge some bad press???</p>
             <p>I am shaking with rage. <b style="font-size: 200%;">SHE DID NOTHING WRONG AND THEY THREW HER TO THE WOLVES</b></p>
             <p></p>
-            <p>I don't know what to tell you. I mean I appreciate being filled in from the frontlines, but think <i>hard</i> about what you're enabling</p>
+            <p>I don't know what to tell you. I mean I appreciate being filled in from the frontlines, but really think <i>hard</i> about what you're enabling</p>
         `
     },
 
@@ -516,7 +519,7 @@ export default [
         "content": `
             <p>All,</p>
             
-			<p>Allied Brands has retained the services of a reknowned reputation management firm, Siegfried-Blumenthal LLC, to address the small but vocal pocket of consumer animosity towards Excelsior Pharmaceuticals currently playing out in the media. As part of the process of brand repair, this week there is to be a <b>complete lockdown</b> on communications to the press and social media channels, to allow the story to cool down and give the consultants time to remove material which could be seen as objectionable in the current context.</p>
+			<p>Allied Brands has retained the services of a reknowned reputation management firm, Sigrid-Blumenthal LLC, to address the small-but-vocal pocket of consumer animosity towards Excelsior Pharmaceuticals currently playing out in the media. As part of the process of brand repair, this week there is to be a <b>complete lockdown</b> on communications to the press and social media channels, to allow the story to cool down and give the consultants time to remove material which could be seen as objectionable in the current context.</p>
 			
 			<p>By order of the CEO, <b>under no circumstances should the @excelsior_rx account be used</b> during the next seven days. Any employee who breaches this rule will leave us no option but to recommend their <b>immediate termination</b>.</p>
 
@@ -544,7 +547,7 @@ export default [
 
                 <p>Embattled conglomerate Allied Brands Inc. today filed a defamation lawsuit against a group of parents who have publicly accused the company of causing the Healthland Farms milk crisis, following failed attempts to secretly buy their silence.</p>
 
-                <p>The Coalition Of Families Affected By Sudden Onset Kidney Trauma (COFABS) is a support network formed by parents of children who were poisoned by an adulterated batch of Healthland Farms Low-Fat Chocolate milk in November of 2011. COFABS have been vocal in their disapproval of Allied Brands' response to the scandal, which has largely been to shift the blame to new owners Beaufort International. (The Healthland Farms business was sold to Beaufort three months before the crisis.)</p>
+                <p>The Coalition Of Families Affected By Sudden Onset Kidney Trauma (COFABS) is a support network formed by the parents of children poisoned by an adulterated batch of Healthland Farms Low-Fat Chocolate milk in November of 2011. COFABS have been vocal in their disapproval of Allied Brands' response to the scandal, which has largely been to shift the blame to Healthland's new owners Beaufort International. (The Healthland Farms business was sold three months before the scandal went public.)</p>
 
                 <p>In a press release, Allied Brands general counsel Nathaniel Hardcastle made the following statement: "The emotionally-charged nature of the Healthland Farms incident does not license this group to make knowingly false or inaccurate statements about Allied Brands Inc. or its products. Allied Brands Inc. initiated this lawsuit because, despite repeated efforts by Allied Brands Inc. to engage in a constructive dialogue with the group, they persisted in making false accusations that they knew to be untrue. This action is intended to prevent the further repetition of those statements."</p>
 
@@ -581,8 +584,9 @@ export default [
             <div style="border-radius: 8px; border: 1px solid grey; padding-left: 1em; padding-right: 1em;">
                 <h2 style="margin-bottom: 0;">Revealed - the machinations behind the Healthland Farms milk crisis</h2>
                 <p style="font-variant: small-caps">Robert Xam in Chicago</p>
+                <p style="font-variant: small-caps">Ill Media Network</p>
                 
-                <p>The Healthland Farms milk scandal has left 85 people hospitalised with life-threatening renal disorders, and created an unprecedented crisis of confidence over the U.S. Government's commitments to child welfare and food safety. But not only did the contamination turn out to be a deliberate act, the number of affected people could be far larger than previously anticipated.</p>
+                <p>The Healthland Farms milk scandal has left 85 people hospitalised with life-threatening renal disorders, and created an unprecedented crisis of confidence over the U.S. Government's commitments to child welfare and food safety. But not only did this contamination turn out to be a deliberate act, the number of affected people could be far larger than previously anticipated.</p>
     
                 <p>Following the release of the official investigation report last Friday, documents and email exchanges obtained by Ill Media finally reveal the full chain of events leading up to the worst food safety incident in American history.</p>
 
@@ -592,21 +596,21 @@ export default [
 
                 <p>Unfortunately for Healthland Farms, the momentary spike turned out to be the start of a long-term pattern. As the Global Financial Crisis began to ease, speculators piled into the Class III Milk futures market, driving up demand and creating a shortage. Within a year, businesses which relied on a steady stream of bulk milk had to pay double the price, sometimes more just to guarantee supply. Most simply passed this additional cost onto customers, but Healthland Farms was now contractually bound to sell the majority of its product to the USDA at an eye-watering loss.</p>
 
-                <p>In September of 2011, parent company Allied Brands sold the entire Healthland Farms business to competitor Beaufort International, including director David Praxis. In the year leading up to the sale, Praxis was under intense pressure to meet an escalating series of financial targets from Allied Brands CEO Roger Billeton, who proved wholly unsympathetic to Healthland Farms' failed attempts at shorting the milk market.</p>
+                <p>In September of 2011, parent company Allied Brands sold the entire Healthland Farms business to competitor Beaufort International, including staff lead by director David Praxis. In the year leading up to the sale, Praxis was under intense pressure to meet an escalating series of financial targets from Allied Brands CEO Roger Billeton, who proved wholly unsympathetic to Healthland Farms' failed attempts at shorting the milk market.</p>
 
                 <p>Healthland Farms was trapped in a crisis of its own making. The fat margins it sought were long gone, and fulfilling the entire USDA procurement contract at the current prices ran the risk of bankrupting the business. So what were they to do?</p>
 
-                <p>A small group of individuals (lead by Praxis) hatched an audacious plan to continue selling processed milk drinks, but with less milk. The plan hinged on cheating the USDA's mandatory compliance testing; specifically the nitrogen level check (a common indicator for protein content), and the tests for common food adulterants.</p>
+                <p>According to investigators, a small group of individuals (lead by Praxis) hatched an audacious plan to continue selling processed milk drinks, but with less milk. The plan hinged on cheating the USDA's mandatory compliance testing; specifically the nitrogen level check (a common indicator for protein content), and the tests for common food adulterants.</p>
 
-                <p>In an off-the-books transaction, Healthland Farms employed a Chinese chemical supplier to produce a custom nitrogen-rich compound referred to in the report as "NH53C". Healthland received several shipments of this compound, with customs paperwork and container markings referring to it as "powdered sodium carbonate". NH53C is chemically similar to melamine, and was designed specifically to pass the previous-generation adulterant checks used by the USDA. (The USDA confirmed that in the wake of the Healthland Farms incident they are moving to a new testing regimen). Next, a number of flow-meters in the processing train used for the USDA contract were recalibrated with a bias, reducing the proportion of milk used in each batch without affecting the monitoring figures. Finally, the correct proportion of NH53C was introduced during the thickening stage by a plant operator who was party to the scheme.</p>
+                <p>In an off-the-books transaction, Healthland Farms employed a Chinese chemical supplier to produce a custom nitrogen-rich compound referred to in the report as "NH53C". Healthland received several shipments of this compound, with customs paperwork and container markings referring to it as "powdered sodium carbonate". NH53C is chemically similar to melamine, and was designed specifically to pass the previous-generation adulterant checks used by the USDA. (The USDA confirmed that in the wake of the Healthland Farms incident they are moving to a new testing regimen). Next, a number of flow-meters in the processing train used for the USDA contract were recalibrated with an incorrect bias, reducing the proportion of milk used in each batch without affecting the monitoring figures. Finally, the correct proportion of NH53C was introduced during the thickening stage by a plant operator who was party to the scheme.</p>
 
                 <p>Incredibly, this ramshackle process did not backfire until the events of November 2011, where thousands of children fell ill from drinking Healthland Farms milk. Investigators concluded that on this occasion the compound was added too late during the thickening process, leading to an uneven distribution in the cartons shipped out to schools. </p>
 
                 <p>Praxis and 5 other individuals at Healthland Farms have been arrested and charged, with a hearing set for early February. Beaufort International CEO Marina Chelworth has resigned, and the future of the company is uncertain due to pending litigation. As for Allied Brands, the Securities and Exchange Commission has charged CFO Kenneth Shanks and two other individuals with materially overstating the value of Healthland Farms, which is expected to be settled later this month. In a related incident, Vice-president of logistics Donald Banyon was fired soon after a story broke alleging he obtained the private medical records of a victim.</p>
  
-                <p>But despite widespread public and shareholder outrage, Allied Brands CEO Roger Billeton stubbornly remains in his position. A letter from his personal lawyer made it clear that investigators found no evidence of Allied Brands senior management being aware of exactly what was taking place at Healthland Farms to meet financial targets. With an emergency meeting of the board scheduled for next week, the watertightness of that argument is about to be put to the test.</p>
+                <p>But despite widespread public outrage and shareholder discontent, Allied Brands CEO Roger Billeton stubbornly remains in his position. A letter from his personal lawyer to Ill Media made it clear that investigators found no evidence senior management at Allied Brands was aware of what was taking place at Healthland Farms, to meet financial targets or otherwise. With an emergency board meeting scheduled for next week, the watertightness of that argument is about to be put to the test.</p>
 
-                <p>Ultimately, the investigation findings have thrown the door open to thousands more potential litigants, including anyone who drank the affected USDA batches in the last 7 months. We can expect more class action suits to be filed against both Allied Brands and the USDA; and you can be sure the former will continue doing whatever it takes to keep this case out of a courtroom.</p>
+                <p>Ultimately the findings of the investigation have thrown the door open to thousands more potential litigants, including anyone who drank the affected USDA batches in the last 7 months. We can expect more class action suits to be filed against Allied Brands and the USDA; and you can be sure Allied will continue doing whatever it takes to keep this case out of a courtroom.</p>
 
             </div>
             <p style="text-align: center;"><small>© 2012 MediaMunch Holdings.<br/>To adjust your notification preferences, visit the website.</small></p>
