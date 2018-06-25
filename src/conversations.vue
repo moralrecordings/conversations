@@ -552,26 +552,26 @@ import fail from './components/fail';
 import warning from './components/warning';
 
 import firehose from './firehose';
-import traffic from 'assets/traffic';
-import tutorial from 'assets/tutorial';
+import traffic from './assets/traffic';
+import tutorial from './assets/tutorial';
 
 // sometimes there'll be SVGs we want to be able to style with CSS
 // these have to be inserted inline as <svg> DOM spew instead of an <img> tag
 // the GOOD news is that this only has to be done once, then you can throw down
 // <use xlink:href="#svgid"/> to happily stamp it in multiple places.
 var svgAssets = [
-    require('assets/egg.rawsvg'),
-    require('assets/email.rawsvg'),
-    require('assets/activity.rawsvg'),
-    require('assets/settings.rawsvg'),
-    require('assets/attachment.rawsvg'),
+    require('./assets/egg.rawsvg'),
+    require('./assets/email.rawsvg'),
+    require('./assets/activity.rawsvg'),
+    require('./assets/settings.rawsvg'),
+    require('./assets/attachment.rawsvg'),
 ];
 var audioAssets = {
-    'boot': new Audio(require('assets/boot.mp3')),
-    'messageGet': new Audio(require('assets/message_get.mp3')),
-    'messageSend': new Audio(require('assets/message_send.mp3')),
-    'tick': new Audio(require('assets/tick.mp3')),
-    'fired': new Audio(require('assets/fired.mp3')),
+    'boot': new Audio(require('./assets/boot.mp3')),
+    'messageGet': new Audio(require('./assets/message_get.mp3')),
+    'messageSend': new Audio(require('./assets/message_send.mp3')),
+    'tick': new Audio(require('./assets/tick.mp3')),
+    'fired': new Audio(require('./assets/fired.mp3')),
 };
 
 // top level window management crap!

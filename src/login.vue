@@ -2,7 +2,7 @@
     <div id="login" class="app">
         <div class="app-inner">
             <div class="login-frame"><div class="login-window">
-                <p style="text-align: center;"><img v-bind:src="require('assets/logo-crap.jpg')" style="border: 1px solid #cccccc;"/><br/>Select remote session to join:</p>
+                <p style="text-align: center;"><img v-bind:src="require('./assets/logo-crap.jpg')" style="border: 1px solid #cccccc;"/><br/>Select remote session to join:</p>
                 <ul class="session-list">
                     <li v-for="(level, index) in levels">
                         <button v-if="$store.getters.unlocked(index) || (index == levels.length-1)" class="session-button" v-on:click="loadLevel(index)">{{ level.name }}</button>

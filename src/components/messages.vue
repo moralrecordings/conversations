@@ -124,8 +124,8 @@ textarea.ready {
 <script>
 import moment from 'moment';
 import debounce from 'debounce';
-import traffic from 'assets/traffic';
-import firehose from 'src/firehose';
+import traffic from '@/assets/traffic';
+import firehose from '@/firehose';
 
 export default {
     name: 'messages-app',

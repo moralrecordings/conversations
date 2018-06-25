@@ -67,7 +67,7 @@
 
 <script>
 
-import traffic from 'assets/traffic';
+import traffic from '@/assets/traffic';
 
 export default {
     name: 'success-app',

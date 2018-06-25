@@ -13,6 +13,7 @@ require('moment-duration-format');
 
 import conversations from './conversations';
 import login from './login';
+import base from './base';
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
@@ -76,8 +77,9 @@ const store = new Vuex.Store({
 });
 
 global.conversations = new Vue({
-    el: '#conversations',
+    router: router,
     store: store,
-    template: '<router-view/>',
-    router: router
-});
+    render: function (h) {
+        return h(base);
+    }
+}).$mount('#conversations');

@@ -96,7 +96,7 @@
 <script>
 import moment from 'moment';
 
-import emails from 'assets/emails';
+import emails from '@/assets/emails';
 
 export default {
     name: 'email-app',

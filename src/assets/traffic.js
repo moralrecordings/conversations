@@ -6,10 +6,10 @@
 var forms = {
     // Social media accounts
     accounts: [
-        { id: 'AlliedBrandsInc', name: 'Allied Brands Inc.', theme: 'theme-allied', icon: require('assets/allied_icon.svg'), visibleLevel: 0 }, 
-        { id: 'KingsleySnacks', name: 'Kingsley® Snacks', theme: 'theme-kingsley', icon: require('assets/kingsley_icon.svg'), visibleLevel: 0 }, 
-        { id: 'CapnJackFoods', name: 'Cap\'n Jack Foods', theme: 'theme-capnjack', icon: require('assets/capnjack_icon.svg'), visibleLevel: 1 }, 
-        { id: 'excelsior_rx', name: 'Excelsior Pharmaceuticals', theme: 'theme-excelsior', icon: require('assets/excelsior_icon.svg'), visibleLevel: 2 },
+        { id: 'AlliedBrandsInc', name: 'Allied Brands Inc.', theme: 'theme-allied', icon: require('@/assets/allied_icon.svg'), visibleLevel: 0 }, 
+        { id: 'KingsleySnacks', name: 'Kingsley® Snacks', theme: 'theme-kingsley', icon: require('@/assets/kingsley_icon.svg'), visibleLevel: 0 }, 
+        { id: 'CapnJackFoods', name: 'Cap\'n Jack Foods', theme: 'theme-capnjack', icon: require('@/assets/capnjack_icon.svg'), visibleLevel: 1 }, 
+        { id: 'excelsior_rx', name: 'Excelsior Pharmaceuticals', theme: 'theme-excelsior', icon: require('@/assets/excelsior_icon.svg'), visibleLevel: 2 },
     ],
     // Message types and subtypes
     types: [
