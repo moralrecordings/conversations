@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 import tracery from 'tracery-grammar';
 import grammarData from './assets/grammar';
 import traffic from './assets/traffic';

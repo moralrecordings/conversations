@@ -564,7 +564,7 @@ export default {
 
     // soporific response generators
     "ks_feedback_reply": ["we're humbled to have a fan like you on Team Kingsley!"],
-    "ks_issue_reply": ["Hi, we\'re sorry for your experience but thank you for letting us know, please call 570-330-3000 to discuss", "That doesn't sound right! Please call us on 570-330-3000 so we can make this right", "We're sorry to hear that you had this experience! Please call 570-330-3000 so we can resolve"],
+    "ks_issue_reply": ["Hi, we're sorry for your experience but thank you for letting us know, please call 570-330-3000 to discuss", "That doesn't sound right! Please call us on 570-330-3000 so we can make this right", "We're sorry to hear that you had this experience! Please call 570-330-3000 so we can resolve"],
 
     "cj_greeting": ["Ahoy there", "Avast there", "Aye", "Yo ho"],
     "cj_exclamation": ["Arrrrrr", "Shiver me timbers", "Blistering barnacles", "Cacchinating cockatoos", "Neptune's navel", "Sufferin' sailors"],

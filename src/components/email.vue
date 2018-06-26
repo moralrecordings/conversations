@@ -7,11 +7,11 @@
         <div class="body-container"><div class="body email-body">
             
             <div class="email-select overflow">
-                <template v-for="(messageGroup, groupIndex) in messages">
-                    <div v-if="(messages.length-1-groupIndex <= level) && (messageGroup.length)" class="email-group">
+                <template v-for="(messageGroup, groupIndex) in messages" >
+                    <div v-bind:key="groupIndex" v-if="(messages.length-1-groupIndex <= level) && (messageGroup.length)" class="email-group">
                         {{ getGroup(groupIndex) }}
                     </div>
-                    <button v-for="(message, messageIndex) in messageGroup" class="email-select-row clickable" v-bind:class="{ active: message.index == selectIndex, unread: message.read != true }" v-if="(level >= emails[message.index].visibleLevel) && !(emails[message.index].recalled)" v-on:click="setMessage(groupIndex, messageIndex)">
+                    <button v-for="(message, messageIndex) in messageGroup" v-bind:key="message.index" class="email-select-row clickable" v-bind:class="{ active: message.index == selectIndex, unread: message.read != true }" v-if="(level >= emails[message.index].visibleLevel) && !(emails[message.index].recalled)" v-on:click="setMessage(groupIndex, messageIndex)">
                         <span>{{ emails[message.index].date.format('D MMM') }}</span>
                         <p class="sender">{{ emails[message.index].sender }}</p>
                         <p>{{ emails[message.index].subject }}</p>
@@ -94,7 +94,7 @@
 </style>
 
 <script>
-import moment from 'moment';
+import $ from 'jquery';
 
 import emails from '@/assets/emails';
 

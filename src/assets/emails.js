@@ -50,9 +50,9 @@ export default [
                 <li>All responses you make to customer queries are verified by a supervisor before release. Any noted mistakes will be flagged with a <b>formal warning</b>, which you should review to help avoid future mistakes.</li>
                 <li>Repeated warnings may result in performance management or disciplinary proceedings.</li>
             </ul>
-            <p>That's about it, best of luck and have fun! Our customers really are the best. <span style=\"font-family: serif;\">&nbsp;J</span></p>
+            <p>That's about it, best of luck and have fun! Our customers really are the best. <span style="font-family: serif;">&nbsp;J</span></p>
             <p>(if you haven't yet signed and emailed back the Standard Work-For-Hire Contract and Standard Contractor Non-Disclosure Agreement, please do so ASAP as they are needed by payroll!)</p>
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
 
@@ -71,7 +71,7 @@ export default [
             <p>In summary: a customer reported an unfortunate product-related incident to the company through social media. An official response was issued, but the support ticket was not escalated to the Customer Settlement Response team until 10 days later. By this time, other related externalities had convinced the customer to file suit against Allied Brands. We were unlucky that this individual was unusually well resourced to bring about a case.</p>
             <p>To prevent the same terrible confluence of events from happening again, we have added a new marker to the ticketing system. In future, please mark any messages wherein a customer makes specific legal demands/threats, or makes allegations of physical harm caused by an Allied Brands product, with the <b>"Litigious"</b> flag. These threads will be monitored by CSR for possible early settlement talks.</p>
 
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
             <p style="font-family: serif">This email (including any attachments) is confidential and intended for the named recipient(s) only. It may be subject to legal or other professional privilege and contain copyright material. Any confidentiality or privilege is not waived or lost because this email has been sent to you by mistake.</p>
 
             <p style="font-family: serif">Access to this email or its attachments by anyone else is unauthorised. If you are not the intended recipient, you may not disclose, copy or distribute this email or its attachments, nor take or omit to take any action in reliance on it. If you have received this email in error, please notify the sender immediately, delete it from your system and destroy any copies.</p>
@@ -95,7 +95,7 @@ export default [
         "content": `
             <p>All,</p>
             <p>Allied Brands has finalized the acquisition of the Cap'n Jack family of snack foods, including Cap'n Jack's Salted Peanut Poppers, Cap'n Jack's Spliced Fruit Topsails, and Cap'n Jack's Fun-Size Energy Loaf. As part of the handover, the Cap'n Jack social media presence (<b>@CapnJackFoods</b>) has been added to your console, and the incoming feed adjusted to include mentions of Cap'n Jack products. Please engage with as many such customers as possible from the Cap'n Jack account.</p>
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
 
@@ -132,7 +132,7 @@ export default [
             <p>All,</p>
             <p>As of today, the customer relations divison of Excelsior Pharmaceuticals has merged into the new central PR group. Excelsior is our primary mark for over-the-counter and prescription medications, and is one of the oldest businesses in the Allied Brands stable. Please join me in giving our new colleagues a warm welcome!</p>
             <p>As part of the restructuring, our team has taken custodianship of the Excelsior social media feeds. Please engage with as many customers as possible from the Excelsior Pharmaceuticals account (<b>@excelsior_rx</b>).</p>
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
 
@@ -224,7 +224,7 @@ export default [
 
 
 
-<p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Thanks,<br/><br/><b>Frank Billeton</b><br/>Vice President - Marketing<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1517)<br/>Fax: 570-330-9000<br/></span><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+<p><span style="color: darkblue; font-family: serif; line-height: 1em;">Thanks,<br/><br/><b>Frank Billeton</b><br/>Vice President - Marketing<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1517)<br/>Fax: 570-330-9000<br/></span><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         
         `,
     },
@@ -242,7 +242,7 @@ export default [
         "content": `
             <p>someone tell Kate's team they better get on Board with this shit if they want jobs after Christmas</p>
 
-<p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\"><b>Roger Billeton</b><br/>&nbsp;Chief Executive Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1119)<br/>Fax: 570-330-9000<br/></span></p>
+<p><span style="color: darkblue; font-family: serif; line-height: 1em;"><b>Roger Billeton</b><br/>&nbsp;Chief Executive Officer<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1119)<br/>Fax: 570-330-9000<br/></span></p>
             <p style="font-family: serif">This email (including any attachments) is confidential and intended for the named recipient(s) only. It may be subject to legal or other professional privilege and contain copyright material. Any confidentiality or privilege is not waived or lost because this email has been sent to you by mistake.</p>
         `,
     },
@@ -305,7 +305,7 @@ export default [
         <p>All,</p>
         <p>As you have probably heard, there has been an unfortunate incident attributed to a contaminated batch of Healthland Farms milk, involving a small number of customers falling seriously ill. As of last September, Allied Brands Inc. is no longer involved with the production, marketing or distribution of Healthland Farms milk products, with all assets and staff transferred to Beaufort International. Nonetheless, our thoughts and prayers are with those affected by the tainted products and their families.</p>
         <p>As the transfer of ownership is quite recent, there is still a strong association in the minds of consumers between Healthland Farms and Allied Brands. It is <i>vital</i> that we move quickly to dispel this confusion. For any customers that contact the company regarding Healthland Farms, please inform them of the change of ownership and direct them to Beaufort International's social media presence (<b>@BeaufortIntl</b>).</p>
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
 
@@ -365,7 +365,7 @@ export default [
             <p>In order to best engage customers and medical professionals about the benefits of Shaftoproxin®, Excelsior plans to launch an awareness campaign along with updated product packaging and marketing materials. This will precede a wider rollout to pharmacies across the country to meet anticipated demand. </p>
             <p>As part of this push, the incoming feed will now include messages from prospective customers who have posted about sudden onset kidney trauma. Please note that this treatment is still an off-label use of the drug, so from a legal standpoint it is crucial that we do <b>not</b> directly advocate people buy Shaftoproxin®. Instead, please encourage as many prospective customers as possible to <b>ask their doctor or healthcare provider</b> about <b>exciting new treatments</b> for sudden onset kidney trauma, from the Excelsior Pharmaceuticals (<b>@excelsior_rx</b>) account. </p>
 
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
 
@@ -389,7 +389,7 @@ export default [
         <p><b>Your company is denying sick people access to vital medicine.</b><br/>Our priority continues to be supporting our healthcare providers and ensuring their patients who need Shaftoproxin® have ready and affordable access to it. We pledge that no patient needing Shaftoproxin® will ever be denied access.</p>
         <p><b>Your company is gouging customers with this new price.</b><br/>For sudden onset kidney trauma and other critical, under-treated diseases, the status quo is not an option. Excelsior hopes to change that by targeting investments that both improve on the current formulation and seek to develop new therapeutics with better clinical profiles that we hope will help eradicate the disease.</p>
 
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
 
@@ -414,7 +414,7 @@ export default [
             
             <p>Hashtag #hotforchristmas.</p>
                 
-             <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Peace,<br/><b>Richard Hull</b><br/>Public Relations Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/>
+             <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Peace,<br/><b>Richard Hull</b><br/>Public Relations Officer<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/>
         `
     },
     {
@@ -445,7 +445,7 @@ export default [
 
             <p>For any customer you would identify as "<b>at-risk</b>", please refer them to the National Suicide Prevention Lifeline for assistance. This should be done from the Allied Brands Inc. corporate account (<b>@alliedbrandsinc</b>) ONLY, so as not to conflate this serious issue with the light-hearted tone used for advertising/social media outreach by the individual brands. To fulfil our liability waiver obligations under state law, please ensure you reply <b>within 20 seconds</b> of receiving the customer communication.</p>
 
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Regards,<br/><br/><b>Nathaniel Hardcastle</b><br/>General Counsel - North America<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 1778)<br/>Fax: 570-330-9000<br/></span></p>
             <p style="font-family: serif">This email (including any attachments) is confidential and intended for the named recipient(s) only. It may be subject to legal or other professional privilege and contain copyright material. Any confidentiality or privilege is not waived or lost because this email has been sent to you by mistake.</p>
 
             <p style="font-family: serif">Access to this email or its attachments by anyone else is unauthorised. If you are not the intended recipient, you may not disclose, copy or distribute this email or its attachments, nor take or omit to take any action in reliance on it. If you have received this email in error, please notify the sender immediately, delete it from your system and destroy any copies.</p>
@@ -525,7 +525,7 @@ export default [
 
 			<p>Best wishes for the holiday season.</p>
 
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
 		`
     },
 
@@ -637,7 +637,7 @@ export default [
             
             <p>Congratulations and welcome aboard!</p>
 
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Best regards,<br/><b>Desmond Bellevic</b><br/>Payroll Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 9420)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Best regards,<br/><b>Desmond Bellevic</b><br/>Payroll Officer<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 9420)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
 		`
     },
 
@@ -665,8 +665,8 @@ export default [
                 <li>All responses you make to customer queries are verified by a supervisor before release. Any noted mistakes will be flagged with a <b>formal warning</b>, which you should review to help avoid future mistakes.</li>
                 <li>Repeated warnings may result in performance management or disciplinary proceedings.</li>
             </ul>
-            <p>That's about it, best of luck and have fun! Our customers really are the best. <span style=\"font-family: serif;\">&nbsp;J</span></p>
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+            <p>That's about it, best of luck and have fun! Our customers really are the best. <span style="font-family: serif;">&nbsp;J</span></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Kind regards,<br/><b>Tricia Huxton</b><br/>Public Relations Coordinator<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 3519)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
     {
@@ -692,7 +692,7 @@ export default [
                 <li>For any message where the customer makes specific legal demands/threats, or makes allegations of physical harm caused by an Allied Brands product, mark it with the <b>"Litigious"</b> flag.</li>
             </ul></p>
 
-            <p><span style=\"color: darkblue; font-family: serif; line-height: 1em;\">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src=\"`+ require('./logo.svg')+`\"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
+            <p><span style="color: darkblue; font-family: serif; line-height: 1em;">Regards,<br/><b>Cody Briggs</b><br/>Chief Media Officer<br/><img src="`+ require('./logo.svg')+`"><br/>111 Electric City Ave.<br/>Scranton, PA 18509<br/>Ph: 570-330-0000 (ext 4816)<br/>Fax: 570-330-9000</span><br/><br/><small style="color: darkgreen; font-family: serif; line-height: 1em;">🌳&nbsp;&nbsp; Please consider your carbon footprint before printing this email<small></p>
         `
     },
 

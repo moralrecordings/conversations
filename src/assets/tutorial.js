@@ -1,4 +1,5 @@
 
+import $ from 'jquery';
 import Shepherd from 'tether-shepherd';
 require('tether-shepherd/dist/css/shepherd-theme-dark.css');
 
@@ -64,8 +65,6 @@ tour.addStep({
 
 var glue = function () {
     tour.start();
-
-    global.$ = $;
 
     // for sanity's sake, we won't add tutorial hooks to all of the vue.js code.
     // no, instead we'll do things the bonkers way with selectors and jquery!

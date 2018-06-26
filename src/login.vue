@@ -4,7 +4,7 @@
             <div class="login-frame"><div class="login-window">
                 <p style="text-align: center;"><img v-bind:src="require('./assets/logo-crap.jpg')" style="border: 1px solid #cccccc;"/><br/>Select remote session to join:</p>
                 <ul class="session-list">
-                    <li v-for="(level, index) in levels">
+                    <li v-for="(level, index) in levels" v-bind:key="index">
                         <button v-if="$store.getters.unlocked(index) || (index == levels.length-1)" class="session-button" v-on:click="loadLevel(index)">{{ level.name }}</button>
                         <button v-else class="session-button" disabled>---</button>
                     </li>
@@ -14,7 +14,7 @@
         <div class="footer">
             <p>
                 <span class="chunk"><b>RemoteTeamPro Server v6.0.31.2303</b></span> - <span class="chunk">Copyright (c) 2006 <u>Alwyn Megasoftware Ltd.</u></span><br/>
-                <span class="chunk scare blink">TRIAL PERIOD EXPIRED!</span> <span class="chunk scare">Please contact your local sales representative today.</span><br/>
+                <span class="chunk scare blink">TRIAL PERIOD EXPIRED!</span>&nbsp;&nbsp;<span class="chunk scare">Please contact your local sales representative today.</span><br/>
                 <span class="chunk">You are on day <b>1825</b> of your 30 day trial.</span>
             </p>
         </div>

@@ -4,7 +4,7 @@
             <span class="titlebar-text">Accounts</span>
         </div>
         <div class="body-container"><div class="body">
-            <label v-for="(account, index) in forms.accounts" v-if="account.visibleLevel <= level" v-bind:title="'@' + account.id + ' - ' + account.name" >
+            <label v-for="(account, index) in forms.accounts" v-bind:key="account.id" v-if="account.visibleLevel <= level" v-bind:title="'@' + account.id + ' - ' + account.name" >
                 <input style="display: none" type="radio" v-bind:checked="index == 0" name="accounts" v-bind:value="account.id" v-on:change="changeAccount(index)"/>
                 <img class="picker" v-bind:src="account.icon"/>
             </label>

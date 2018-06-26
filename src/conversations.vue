@@ -1,15 +1,15 @@
 <template>
     <div id="conversations" class="app" v-bind:class="[theme]">
-        <template v-for="asset in svgAssets">
-            <div style="display: none" v-html="asset"/>
+        <template v-for="(asset, index) in svgAssets">
+            <div style="display: none" v-bind:key="index" v-html="asset"/>
         </template>
         <div class="desktop" v-bind:class="'bg-'+level"> 
             <mr-email-app v-bind:width="emailPos.w" v-bind:height="emailPos.h" v-bind:xPos="emailPos.x" v-bind:yPos="emailPos.y" v-bind:level="emailLevel" v-bind:todayOnly="endless" v-if="showEmail" v-on:close="closeEmailWindow"/>
             <mr-accounts-app v-bind:xPos="accountsPos.x" v-bind:yPos="accountsPos.y" v-bind:level="level" v-if="showIssues" v-on:changeAccount="changeAccount"/>
             <mr-activity-app v-bind:timer="timer" v-bind:score="score" v-bind:maxWarnings="maxWarnings" v-bind:maxQueue="maxQueue" v-bind:resolutionTarget="resolutionRate" v-bind:xPos="activityPos.x" v-bind:yPos="activityPos.y" v-bind:endless="endless" v-on:startShift="start" v-if="showIssues" />
-            <mr-attachment-app v-for="att in attachments" v-if="att.show" v-bind:width="att.width" v-bind:height="att.height" v-bind:xPos="att.xPos" v-bind:yPos="att.yPos" v-bind:src="att.src" v-bind:name="att.name" v-on:close="closeAttachmentWindow"/>
+            <mr-attachment-app v-for="att in attachments" v-bind:key="att.name" v-if="att.show" v-bind:width="att.width" v-bind:height="att.height" v-bind:xPos="att.xPos" v-bind:yPos="att.yPos" v-bind:src="att.src" v-bind:name="att.name" v-on:close="closeAttachmentWindow"/>
             <!-- message windows -->
-            <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" :key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-bind:level="level" v-on:submitMessage="submitMessage" v-on:expire="expireMessage" v-on:close="closeMessageWindow"/>
+            <mr-messages-app v-bind:class="{ close: showFail||showSuccess }" v-for="msgId in messageWindows" v-bind:key="msgId" v-bind:account="account" v-bind:message="messages[msgId]" v-bind:level="level" v-on:submitMessage="submitMessage" v-on:expire="expireMessage" v-on:close="closeMessageWindow"/>
             <!-- tutorial messages -->
             <mr-messages-app v-if="tutorialMessage" v-bind:account="account" v-bind:message="tutorialMessage" v-bind:level="level" v-on:submitMessage="submitTutorialMessage"  v-on:close="closeTutorialMessageWindow" />
             <!-- warning window -->
@@ -32,7 +32,7 @@
                     </svg>
                     <span>IssueMagic</span>
                 </button>
-                <button v-for="att in attachments" v-on:click="showAttachmentWindow(att)" title="Attachment">
+                <button v-for="att in attachments" v-bind:key="att.name" v-on:click="showAttachmentWindow(att)" title="Attachment">
                     <svg width="32" height="32">
                         <use x="0" y="0"  transform="scale(0.5)" xlink:href="#attachmentIcon"/>
                     </svg>
@@ -540,6 +540,7 @@ input[type=radio]:checked + .picker {
 import Vue from 'vue';
 import debounce from 'debounce';
 import moment from 'moment';
+import $ from 'jquery';
 
 import email from './components/email';
 import messages from './components/messages';
@@ -779,12 +780,12 @@ export default {
             var vm = this;
             console.log('closeMessageWindow');
             console.log(ev);
-            var index = this.messageWindows.findIndex(function (el) {
+            var index = vm.messageWindows.findIndex(function (el) {
                 return el === ev.id;
             });
-            console.log(this.messageWindows[index]);
+            console.log(vm.messageWindows[index]);
             if (index != -1) {
-                this.messageWindows.splice(index, 1);
+                vm.messageWindows.splice(index, 1);
             }
         }, 200),
         closeWarningWindow: debounce(function(ev) {

@@ -16,10 +16,10 @@
             
             <div v-bind:class="{ closed: hidden }" class="message-hidden">
                 <label>Category<select class="form" v-model="replyType" name="replyType" v-on:change="changeType">
-                    <option v-for="(type, index) in forms.types" v-if="type.visibleLevel <= level" v-bind:value="index">{{ type.name }}</option>
+                    <option v-for="(type, index) in forms.types" v-bind:key="type.name" v-if="type.visibleLevel <= level" v-bind:value="index">{{ type.name }}</option>
                 </select></label>               
                 <label v-if="forms.types[replyType].subtypes">{{ forms.types[replyType].subtypeName }}<select class="form" v-model="replySubtype" name="replySubtype" v-on:change="changeReply">
-                    <option v-for="(subtype, index) in forms.types[replyType].subtypes" v-if="subtype.visibleLevel <= level" v-bind:value="index">{{ subtype.name }}</option>
+                    <option v-for="(subtype, index) in forms.types[replyType].subtypes" v-bind:key="subtype.name" v-if="subtype.visibleLevel <= level" v-bind:value="index">{{ subtype.name }}</option>
                 </select></label>
 
                 
@@ -27,9 +27,9 @@
                 </template><template v-else-if="forms.types[replyType].id == 'abuse'">
                     <button class="form">Report user</button>
                 </template><template v-else>
-                    <label v-for="(flag, index) in forms.flags"  v-if="flag.visibleLevel <= level"><input type="checkbox" v-model="replyFlags[index]" v-on:change="changeReply"/> {{ flag.name }}</label>
+                    <label v-for="(flag, index) in forms.flags" v-bind:key="flag.name" v-if="flag.visibleLevel <= level"><input type="checkbox" v-model="replyFlags[index]" v-on:change="changeReply"/> {{ flag.name }}</label>
                     <label v-if="forms.attachmentsVisibleLevel <= level">Attachment<select class="form" v-model="replyAttachment" v-on:change="changeReply">
-                        <option v-for="(attach, index) in forms.attachments" v-if="attach.visibleLevel <= level" v-bind:value="index">{{ attach.name }}</option>
+                        <option v-for="(attach, index) in forms.attachments" v-bind:key="attach.name" v-if="attach.visibleLevel <= level" v-bind:value="index">{{ attach.name }}</option>
                     </select></label>
                     <label>Reply
                         <textarea name="replyFull" v-bind:class="{ ready: replyReady }" v-on:keydown="typing"  v-on:compositionstart="composition" v-model="replyFull" placeholder="Reply to customer"/>
@@ -124,6 +124,8 @@ textarea.ready {
 <script>
 import moment from 'moment';
 import debounce from 'debounce';
+import $ from 'jquery';
+
 import traffic from '@/assets/traffic';
 import firehose from '@/firehose';
 
@@ -224,7 +226,6 @@ export default {
             return result;
         },
         submit: debounce(function () {
-            var vm = this;
             this.stopClock();
             // tell mobile to hide the keyboard
             document.activeElement.blur();

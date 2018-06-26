@@ -20,6 +20,8 @@
 </style>
 
 <script>
+import traffic from '@/assets/traffic';
+
 export default {
     name: 'attachment-app',
     props: ['width', 'height', 'xPos', 'yPos', 'src', 'name'],
