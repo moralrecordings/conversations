@@ -1,4 +1,3 @@
-
 // Information for populating the response form.
 // We don't want to overwhelm people with options, so we introduce dumb rules
 // slowly over time. 'visibleLevel' is used to control what level of the game
@@ -63,7 +62,6 @@ var messageTypes = {
     'cj_advertising': { account: 'CapnJackFoods', type: 'feedback', subtype: 'advertising', flags: {} }, 
     'ex_employment': { account: 'excelsior_rx', type: 'feedback', subtype: 'employment', flags: {} },
     'ex_sponsorship': { account: 'excelsior_rx', type: 'feedback', subtype: 'sponsorship', flags: {} },
-    'abi_beaufort': { account: 'AlliedBrandsInc', type: 'feedback', subtype: 'brandConfusion', flags: {} },
 
     'ks_foreign': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {} },
     'ks_foreign_lit': { account: 'KingsleySnacks', type: 'issue', subtype: 'foreignObject', flags: {litigious: true} },
